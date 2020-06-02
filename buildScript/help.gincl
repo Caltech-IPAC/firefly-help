@@ -1,0 +1,215 @@
+import java.nio.file.*;
+import org.apache.tools.ant.taskdefs.condition.Os
+
+class ClosureScript extends groovy.lang.Script {
+    Closure closure
+    def run() {
+        closure.resolveStrategy = Closure.DELEGATE_FIRST
+        closure.delegate = this
+        closure.call()
+    }
+}
+
+ext["app-name"] =  findProperty("app-name") ?: name
+ext.buildRoot = "${rootDir}/build"
+ext.firefly_onlinehelp_dir = "$fireflyPath/src/onlinehelp/"
+
+// make sure public/share exists.  if it does not, use the one from firefly's
+Path share = Paths.get("${projectDir}/public/share/");
+if (!Files.exists(share)) {
+    Files.createSymbolicLink(share, Paths.get("${firefly_onlinehelp_dir}/public/share/"))       // creates symlink
+}
+
+
+task clean {
+    delete buildDir
+
+}
+
+task generatePdf (type: Exec) {
+    description= 'Generate PDF'
+
+    executable "htmldoc"
+
+    doFirst {
+
+        try {
+            "$executable --version".execute()
+        } catch (Exception e) {
+            println ">> HTMLDoc is not installed.  Skipping pdf generation."
+            throw new StopExecutionException(">> HTMLDoc is not installed.  Skipping pdf generation.")
+        }
+        workingDir = buildDir
+
+        def pdfFile = 'help.pdf'
+        String inputs = new File("$buildDir/.pdf-input").text.trim()
+        args "--left", ".7in", "--right", ".7in", "--linkcolor", "blue", "--webpage", "-f", "$buildDir/$pdfFile", "--titleimage"
+        args inputs.split()
+
+        println ">> generatePdf: $commandLine"
+    }
+}
+
+
+task loadConfig {
+    doLast {
+        project.ext.appProps = new Properties()
+
+        if (project.hasProperty("appConfig")) {
+            def source = appConfig instanceof File ? appConfig.toURL() : new ClosureScript(closure: appConfig)
+            project.ext.appProps = new ConfigSlurper().parse(source).toProperties()
+        }
+
+        // generate version tag
+        def major = appProps.get('BuildMajor', '1')
+        def minor = appProps.get('BuildMinor', '0')
+        def rev = appProps.get('BuildRev', '0')
+        def type = appProps.get('BuildType', 'Final')
+        def buildNum = appProps.get('BuildNumber', '0')
+
+        appProps.put('REACT_APP_VersionTag', "${project['app-name']}_$major.$minor.${rev}")
+        appProps.put('REACT_APP_BuildCommit', getCommitHash())
+        if (fireflyPath != rootDir.getPath()) {
+            appProps.put('REACT_APP_BuildCommitFirefly', getCommitHash(fireflyPath))
+        }
+
+        appProps.put('REACT_APP_BuildTime', new Date().toString())
+        appProps.put('REACT_APP_BuildDate',new Date().format("yyyy-MM-dd"))
+    }
+}
+
+task copyHtml(dependsOn: loadConfig) {
+
+    doLast {
+        copy {
+            from "public"
+            into buildDir
+        }
+
+        copy {
+            from"public/index.html"
+            into buildDir
+
+            filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: project.ext.appProps)
+        }
+
+    }
+}
+
+task zipHelp(type: Zip) {
+    baseName = "${project.property("app-name")}_help"
+    destinationDir = file("$buildRoot/dist")
+    from("$buildDir") {
+        exclude "war"
+    }
+    into project.property("app-name")
+}
+
+task buildPdfInput(type:Exec) {
+    workingDir = projectDir
+    commandLine "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./buildPdfInput.js ${buildDir}".split(" ")
+}
+
+task buildClient(dependsOn: loadConfig) {
+
+    doLast {
+
+        InitNode(rootDir);
+
+        def res = exec {
+            commandLine 'yarn', 'build'
+            environment ('BUILD_DIR', buildDir)
+            for (String key : appProps.keySet()) {
+                if (key.startsWith('REACT_APP_')) {
+                    environment (key, appProps[key])
+                }
+            }
+        }
+        if (res.getExitValue() != 0) {
+            throw new GradleException("buildJs failed")
+        }
+        ant.move(file: "${rootDir}/build", tofile: buildDir)
+    }
+}
+
+
+task build(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf, zipHelp])
+
+task run(dependsOn: build) {
+    doLast {
+
+        if (Os.isFamily(Os.FAMILY_WINDOWS)) {
+            "cmd /c start ${buildDir}/index.html".execute()
+        } else {
+            "open ${buildDir}/index.html".execute()
+        }
+    }
+}
+
+task install(dependsOn: build) {
+    description= 'Sub project level.  Deploy onlinehelp onto a web server.  Requires property or environment CM_BASE_APP_DIR to be set.  Made for IRSA env.'
+
+    doFirst {
+        def irsaDir = appProps.get("CM_BASE_APP_DIR")
+        if (irsaDir == null) {
+            irsaDir = System.getenv('CM_BASE_APP_DIR')
+        }
+        if (irsaDir == null) {
+            throw ProjectConfigurationException("CM_BASE_APP_DIR is not set.  install aborted.")
+        }
+        if (!file("$irsaDir/web/html/").exists()) {
+            throw ProjectConfigurationException("$irsaDir/web/html/ not found.  install aborted.")
+        }
+        def outputDir = file("$irsaDir/web/html/onlinehelp")
+        mkdir(outputDir)
+        def zips = fileTree(dir: "${buildRoot}/dist", include: '*.zip')
+        zips.each { File zipFile ->
+            copy {
+                from zipTree(zipFile)
+                into outputDir
+            }
+        }
+    }
+}
+
+
+ext.InitNode = { workDir ->
+    try {
+        "yarn version".execute()
+    } catch (Exception e) {
+        println ">> Task failed due to missing yarn package manager which comes bundled with node.js"
+        throw new GradleException("Task failed due to missing yarn package manager which comes bundled with node.js", e)
+    }
+
+    if (file("${workDir}/package.json").exists()) {
+        exec {
+            workingDir = workDir
+            executable "yarn"
+            args "install", "--ignore-platform", "--frozen-lockfile"
+        }
+    }
+}
+
+
+ext.getCommitHash = { workDir="." ->
+    try {
+        def hashOut = new ByteArrayOutputStream()
+        exec {
+            commandLine "git", "rev-parse", "--short", "HEAD"
+            workingDir = workDir
+            standardOutput = hashOut
+        }
+        return hashOut.toString().trim();
+    } catch (Exception e) {
+        return 'n/a'
+    }
+}
+
+
+//-------------------------
+// define task order
+//-------------------------
+zipHelp.mustRunAfter       generatePdf
+generatePdf.mustRunAfter   buildPdfInput
+buildPdfInput.mustRunAfter buildClient
+buildClient.mustRunAfter   copyHtml

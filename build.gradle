@@ -1,0 +1,10 @@
+ext['app-name'] = "firefly"
+ext.fireflyPath = rootDir.getPath()
+project.buildDir = "${rootDir}/build/firefly/"
+
+apply from: "$fireflyPath/buildScript/help.gincl"
+
+
+ext.appConfig = {
+    REACT_APP_TITLE = "Firefly Help"
+}

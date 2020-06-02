@@ -1,0 +1,128 @@
+
+body {
+  margin: 0;
+  font-family: Arial Unicode MS, Arial, sans-serif;
+  font-size: small;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  monospace;
+}
+
+#page-root {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+#app-root {
+  flex-grow: 1;
+  display: flex;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+.App-main {
+  display: inline-flex;
+  flex-grow: 1;
+}
+
+.button {
+  padding: 2px;
+  height: 20px;
+  margin: 0 3px;
+  border: 1px solid #d2d2d2;
+}
+
+.button::before {
+ margin-right: 2px;
+ color: black;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.App-header {
+  display: flex;
+  height: 30px;
+  margin: 2px;
+  border: 1px solid #d6d6d6;
+  background: linear-gradient(to right, #f5f8fd 0%, #dedede 100%);
+  justify-content: space-between;
+  padding: 2px 20px;
+  align-items: center;
+}
+
+.TOC {
+  overflow: auto;
+  margin: 2px;
+  border: 1px solid #d6d6d6;
+  background: linear-gradient(to bottom, #f5f8fd 0%,#b9b9b9 100%);
+}
+
+.TOC-toolbar {
+  display: inline-flex;
+  background-color: #e2e2e2;
+  width: 100%;
+  border-bottom: 1px solid #cecece;
+  height: 30px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.TOC-view {
+  flex-grow: 1;
+  position: relative;
+  margin: 0 8px 6px 0;
+  min-width: 100px;
+}
+
+.HelpFrame {
+  width: 100%;
+  height: 100%;
+  margin: 2px;
+  border: 1px solid #d6d6d6;
+  background: linear-gradient(to bottom, #f5f8fd 0%,#b9b9b9 100%);
+}
+
+.rc-tree {
+  height: 0;
+  padding: 0 5px;
+}
+
+.versionInfo {
+  margin-left: 3px;
+  font-style: italic;
+  color: gray;
+}
+
+.verLine {
+  display: inline-flex
+}
+
+.verValue {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.navVertical {
+  margin-top: 5px;
+}
+
+.navVertical > *{
+  margin-top: 5px;
+}
