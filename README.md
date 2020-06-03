@@ -1,7 +1,7 @@
 ## About Firefly Help
 
-Firefly is an [open source](https://github.com/Caltech-IPAC/firefly/) framework of archive components. 
-It provides an interactive web user interface for astronomers. 
+Firefly Help is an open source development framework for creating help content.  It's used by [Firefly](https://github.com/Caltech-IPAC/firefly-help/)
+and other Firefly-based applications.
 
 
 #### Prerequisites
@@ -33,12 +33,30 @@ Builds and launch the help application in the default browser.
 
 ## Learn More
 
+### File Structure
 
+    app/
+       public/
+         index.html
+       src/
+         toc/
+           toc_creator.js        
+    html/
+      firefly/
+        images/
+
+
+`app` directory contains source code needed to create the Help application.  
+`index.html` is the default page hosting this application.  Modify this customize the page.
+`toc` stands for table of contents.  `toc_creator.js` is where you define your table of content.
+
+`html` directory contains help content.  It is further divided into subdirectory to allow multiple Help applications.
+It is recommended to separate images into an `images` subdirectory
 
 
 ### Creating Table of Content
 
-[see](src/toc.js)
+[see](app/src/toc/toc_creator.js)
 
 ### Extending Firefly Help
 

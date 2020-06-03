@@ -1,4 +1,3 @@
-import java.nio.file.*;
 import org.apache.tools.ant.taskdefs.condition.Os
 
 class ClosureScript extends groovy.lang.Script {
@@ -10,15 +9,7 @@ class ClosureScript extends groovy.lang.Script {
     }
 }
 
-ext["app-name"] =  findProperty("app-name") ?: name
-ext.buildRoot = "${rootDir}/build"
-ext.firefly_onlinehelp_dir = "$fireflyPath/src/onlinehelp/"
-
-// make sure public/share exists.  if it does not, use the one from firefly's
-Path share = Paths.get("${projectDir}/public/share/");
-if (!Files.exists(share)) {
-    Files.createSymbolicLink(share, Paths.get("${firefly_onlinehelp_dir}/public/share/"))       // creates symlink
-}
+ext.app_name =  findProperty("app_name") ?: name
 
 
 task clean {
@@ -64,59 +55,43 @@ task loadConfig {
         def major = appProps.get('BuildMajor', '1')
         def minor = appProps.get('BuildMinor', '0')
         def rev = appProps.get('BuildRev', '0')
-        def type = appProps.get('BuildType', 'Final')
-        def buildNum = appProps.get('BuildNumber', '0')
 
-        appProps.put('REACT_APP_VersionTag', "${project['app-name']}_$major.$minor.${rev}")
+        appProps.put('REACT_APP_VersionTag', "${app_name}_$major.$minor.${rev}")
         appProps.put('REACT_APP_BuildCommit', getCommitHash())
-        if (fireflyPath != rootDir.getPath()) {
-            appProps.put('REACT_APP_BuildCommitFirefly', getCommitHash(fireflyPath))
-        }
 
         appProps.put('REACT_APP_BuildTime', new Date().toString())
         appProps.put('REACT_APP_BuildDate',new Date().format("yyyy-MM-dd"))
     }
 }
 
-task copyHtml(dependsOn: loadConfig) {
-
-    doLast {
-        copy {
-            from "public"
-            into buildDir
-        }
-
-        copy {
-            from"public/index.html"
-            into buildDir
-
-            filter(org.apache.tools.ant.filters.ReplaceTokens, tokens: project.ext.appProps)
-        }
-
-    }
+task copyHtml(type: Copy, dependsOn: loadConfig) {
+    from "${rootDir}/html"
+    include "${app_name}/**"
+    into buildDir
 }
 
 task zipHelp(type: Zip) {
-    baseName = "${project.property("app-name")}_help"
+    baseName = "${app_name}_help"
     destinationDir = file("$buildRoot/dist")
     from("$buildDir") {
         exclude "war"
     }
-    into project.property("app-name")
+    into app_name
 }
 
 task buildPdfInput(type:Exec) {
-    workingDir = projectDir
-    commandLine "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./buildPdfInput.js ${buildDir}".split(" ")
+    workingDir = appRoot
+    commandLine "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/builder.js ${app_name} ${buildDir}".split(" ")
 }
 
 task buildClient(dependsOn: loadConfig) {
 
     doLast {
 
-        InitNode(rootDir);
+        InitNode(appRoot);
 
         def res = exec {
+            workingDir appRoot
             commandLine 'yarn', 'build'
             environment ('BUILD_DIR', buildDir)
             for (String key : appProps.keySet()) {
@@ -128,7 +103,8 @@ task buildClient(dependsOn: loadConfig) {
         if (res.getExitValue() != 0) {
             throw new GradleException("buildJs failed")
         }
-        ant.move(file: "${rootDir}/build", tofile: buildDir)
+        mkdir buildRoot
+        "mv ${appRoot}/build ${buildDir}".execute()
     }
 }
 
@@ -210,6 +186,6 @@ ext.getCommitHash = { workDir="." ->
 // define task order
 //-------------------------
 zipHelp.mustRunAfter       generatePdf
+generatePdf.mustRunAfter   copyHtml
 generatePdf.mustRunAfter   buildPdfInput
 buildPdfInput.mustRunAfter buildClient
-buildClient.mustRunAfter   copyHtml

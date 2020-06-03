@@ -106,12 +106,12 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
             <div className='TOC'>
                 <div className='TOC-toolbar'>
                     <div style={{display: 'inline-flex'}}>
-                        <div className='button' onClick={() => expandAll(true)}><img title='Expand All' src={expandIco}/></div>
-                        <div className='button' onClick={() => expandAll(false)}><img title='Collapse All' src={collapseIco}/></div>
-                        <div className='button' onClick={previous} style={{marginLeft: 20}}><img title='Previous' src={previousIco}/></div>
-                        <div className='button' onClick={next}><img title='Next' src={nextIco}/></div>
+                        <div className='button' onClick={() => expandAll(true)}><img alt='' title='Expand All' src={expandIco}/></div>
+                        <div className='button' onClick={() => expandAll(false)}><img alt='' title='Collapse All' src={collapseIco}/></div>
+                        <div className='button' onClick={previous} style={{marginLeft: 20}}><img alt='' title='Previous' src={previousIco}/></div>
+                        <div className='button' onClick={next}><img alt='' title='Next' src={nextIco}/></div>
                     </div>
-                    <div className='button' onClick={() => setOpen(false)}><img title='Close Navigator' src={closeIco}/></div>
+                    <div className='button' onClick={() => setOpen(false)}><img alt='' title='Close Navigator' src={closeIco}/></div>
                 </div>
                 <Tree showLine {...pickBy({onSelect, expandedKeys, onExpand, selectedKeys, defaultExpandedKeys, autoExpandParent: true})} >
                     {treeRoot}
@@ -122,9 +122,9 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
         return (
             <div className='TOC'>
                 <div className={'navVertical'}>
-                    <div className='button' onClick={() => setOpen(true)}><img title='Open' src={openIco}/></div>
-                    <div className='button' onClick={previous}><img title='Previous' src={previousIco}/></div>
-                    <div className='button' onClick={next}><img title='Next' src={nextIco}/></div>
+                    <div className='button' onClick={() => setOpen(true)}><img alt='' title='Open' src={openIco}/></div>
+                    <div className='button' onClick={previous}><img alt='' title='Previous' src={previousIco}/></div>
+                    <div className='button' onClick={next}><img alt='' title='Next' src={nextIco}/></div>
                 </div>
             </div>
         );
@@ -197,7 +197,7 @@ function VersionPopup ({vTag, vCommit, buildTime, hideVersionPopup}) {
     useEffect(() => {
         document.addEventListener('click', hideVersionPopup);
         return () => document.removeEventListener('click', hideVersionPopup);
-    }, []);
+    }, [hideVersionPopup]);
 
     return (
         <div style={{display: 'grid', marginTop: 10}}>

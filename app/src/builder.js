@@ -1,11 +1,22 @@
+/* eslint-env node */
+
 import {get, uniq} from 'lodash';
+import {create} from './toc/toc_creator';
+
+const appName = process.argv[2] || './build';
+const buildDir = process.argv[3] || './build';
+const {toc} = create(appName);
+build(buildDir, toc);
+
 
 /**
  * additional javascript build logic
+ * - dynamically generate a _toc.html page so PDF generator can use to create a Table of Content
+ * - dynamically create .pdf-input file containing only the referenced HTML files used in the given toc
  * @param config
  * @param toc
  */
-export default function (outDir='.', toc) {
+function build(outDir, toc) {
     const fs = require('fs');
 
     if (!fs.existsSync(outDir)){
@@ -33,7 +44,7 @@ export default function (outDir='.', toc) {
         .map( (l) => get(l.match(/href[ ]*=[ ]*'([^']+)'/i), [1], l))              // return all href with single quotes
         .map( (l) => l.split('#')[0]);          // return the portion before the hash... this should be the file path
 
-    const pdfInput = 'share/blank.gif _toc.html ' + uniq(files).join(' ');
+    const pdfInput = 'firefly/blank.gif _toc.html ' + uniq(files).join(' ');
     const pdfFname =  outDir + '/.pdf-input';
     fs.writeFile(pdfFname, pdfInput, function (err) {
         if (err) {

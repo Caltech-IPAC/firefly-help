@@ -1,71 +1,3 @@
-import {get, set, omit, has, clone} from 'lodash';
-
-
-/*
-    This file contains reusable parts used to construct a table of contents.
-    Below are key parts you should be aware of:
-
-    Table of contents:  A tree-like structure consisting of HelpItems rendered as the left navigation panel of the app.
-
-    Topic:      A HelpItem with sub-items.  Because HelpItem may contain sub-items of other HelpItems, you can create a tree
-                with unlimited branches and leaves.
-
-    HelpItem:   One entry of help that can be referenced by the app or other help pages.
-                HelpItem contains properties that's defined below: @typedef {object} HelpItem
-
-
-    Suggested Usage:
-
-    For greater reusability, a topic should be written as 2 parts; overview and details.
-    Overview is a project specific information.  The details part should be sub-items and written in a generic way
-    so that other projects can easily include it into their onlinehelp.
-
-    For example:
-        export const toc_a_topic = {
-            id: 'a_topic',
-            title: 'My topic',
-            href: 'a_topic.html',           // points to html file in the public folder
-            items: [
-                {
-                    id: 'a_topic.item1',
-                    title: 'Item 1',
-                    href: 'share/a_topic_details.html#item1'         // points to html file in the public/share folder
-                },
-                {
-                    id: 'a_topic.item2',
-                    title: 'Item 2',
-                    href: 'share/a_topic_details_item2.html'         // can be part of a shared file or separate files
-                }
-            ]
-        };
-
-
-    This way, other project can reuse this topic like this:
-
-        import {toc_a_topic} from 'firelfyHelp/toc';
-        const my_topic = {...toc_a_topic, title: 'custom title if needed', href: 'my_topic.html'};
-
-        or, insert an item into an existing topic:
-
-        const my_topic = add{toc_a_topic, 'items.2', {id: 'new_id', title: 'New Item', href: 'new_topic.html'};
-
-
-*/
-
-
-/**
- * @typedef {object} HelpItem
- * @prop {string}   id      unique ID of the help item
- * @prop {string}   title   title of this item
- * @prop {string}   href    link to html content for this help item
- * @prop {string}   hidden  default false.  When true, entry will not be shown in the navigation tree.
- * @prop {object}   style   additional style to apply to this item
- * @prop [HelpItem] items   array of help items.  This is used to build the table of contents
- *
- * @global
- * @public
- */
-
 
 //-------------------------------------------------------------------------------------------------
 //  Below is a set of predefined topics.  Use this to construct your table of contents
@@ -74,127 +6,127 @@ import {get, set, omit, has, clone} from 'lodash';
 export const toc_about = {
     id: 'about',
     title: 'About Firefly',
-    href: 'share/about.html'
+    href: 'firefly/about.html'
 };
 
 export const toc_user = {
     id: 'user',
     title: 'User Registration',
-    href: 'share/user.html'
+    href: 'firefly/user.html'
 };
 
 //export const toc_faq = {
 //    id: 'faq',
 //    title: 'FAQ',
-//    href: 'share/faq.html'
+//    href: 'firefly/faq.html'
 //};
 
 export const toc_privacy = {
     id: 'privacy',
     title: 'IRSA Privacy Notice',
-    href: 'share/privacy.html'
+    href: 'firefly/privacy.html'
 };
 
 const toc_visualization = {
     id: 'visualization',
     title: 'Visualization',
-    href: 'share/visualization.html',
+    href: 'firefly/visualization.html',
     items: [
         {
             id: 'visualization.imageoptions',
             title: 'Image Toolbar',
-            href: 'share/visualization.html#toolbar',
+            href: 'firefly/visualization.html#toolbar',
             hidden: true,
         },
         {
             id: 'visualization.Rotate',
             title: 'Rotation',
-            href: 'share/visualization.html#rotateImage',
+            href: 'firefly/visualization.html#rotateImage',
             hidden: true,
         },
         {
             id: 'visualization.selectregion',
             title: 'Select Region',
-            href: 'share/visualization.html#selectregion',
+            href: 'firefly/visualization.html#selectregion',
             hidden: true,
         },
         {
             id: 'visualization.layers',
             title: 'Layers',
-            href: 'share/visualization.html#layers',
+            href: 'firefly/visualization.html#layers',
             hidden: true,
         },
         {
             id: 'visualization.ds9regions',
             title: 'ds9 Regions',
-            href: 'share/visualization.html#ds9regions',
+            href: 'firefly/visualization.html#ds9regions',
             hidden: true,
         },
         {
             id: 'visualization.fitsViewer',
             title: 'The FITS/HiPS viewer',
-            href: 'share/visualization.html#fitsViewer',
+            href: 'firefly/visualization.html#fitsViewer',
         },
         {
             id: 'visualization.imageinfo',
             title: 'Image Information',
-            href: 'share/visualization.html#imageinfo',
+            href: 'firefly/visualization.html#imageinfo',
         },
         {
             id: 'visualization.toolbar',
             title: 'Image Toolbar',
-            href: 'share/visualization.html#toolbar',
+            href: 'firefly/visualization.html#toolbar',
         },
         {
             id: 'visualization.stretches',
             title: 'Color Stretches',
-            href: 'share/visualization.html#stretches',
+            href: 'firefly/visualization.html#stretches',
         },
         {
             id: 'visualization.hipsViewer',
             title: 'Specific HiPS Features',
-            href: 'share/visualization.html#hipsViewer',
+            href: 'firefly/visualization.html#hipsViewer',
         },
         {
             id: 'visualization.footprints',
             title: 'Footprints',
-            href: 'share/visualization.html#footprints',
+            href: 'firefly/visualization.html#footprints',
         },
         {
             id: 'visualization.breakingout',
             title: 'Breaking out of the pane',
-            href: 'share/visualization.html#breakingout',
+            href: 'firefly/visualization.html#breakingout',
         },
         {
             id: 'visualization.loaded-images',
             title: 'Image Navigation',
-            href: 'share/visualization.html#imagenavigation',
+            href: 'firefly/visualization.html#imagenavigation',
              hidden: true,
         },
         {
             id: 'visualization.navigation',
             title: 'Image Navigation',
-            href: 'share/visualization.html#imagenavigation',
+            href: 'firefly/visualization.html#imagenavigation',
         },
         {
             id: 'visualization.wcs',
             title: 'WCS Alignment',
-            href: 'share/visualization.html#wcs',
+            href: 'firefly/visualization.html#wcs',
         },
         {
             id: 'visualization.coverage',
             title: 'Coverage Image',
-            href: 'share/visualization.html#coverage',
+            href: 'firefly/visualization.html#coverage',
         },
         {
             id: 'visualization.fitships',
             title: 'Automatic FITS-HiPS-Aitoff Transitions',
-            href: 'share/visualization.html#autozoom',
+            href: 'firefly/visualization.html#autozoom',
         },
         {
             id: 'visualization.changehips',
             title: 'Change HiPS',
-            href: 'share/visualization.html#changehips',
+            href: 'firefly/visualization.html#changehips',
               hidden: true,
        },
     ]
@@ -203,43 +135,43 @@ const toc_visualization = {
 export const toc_tables = {
     id: 'tables',
     title: 'Tables',
-    href: 'share/tables.html',
+    href: 'firefly/tables.html',
     items: [
         {
             id: 'tables.tableoptions',
             title: 'Table Options',
-            href: 'share/tables.html#tableoptions',
+            href: 'firefly/tables.html#tableoptions',
             hidden: true,
         },
         {
             id: 'tables.header',
             title: 'Table Header',
-            href: 'share/tables.html#header',
+            href: 'firefly/tables.html#header',
         },
         {
             id: 'tables.columns',
             title: 'Table Columns',
-            href: 'share/tables.html#columns',
+            href: 'firefly/tables.html#columns',
         },
         {
             id: 'tables.filters',
             title: 'Table Filters',
-            href: 'share/tables.html#filters',
+            href: 'firefly/tables.html#filters',
         },
         {
             id: 'tables.save',
             title: 'Saving Tables',
-            href: 'share/tables.html#save',
+            href: 'firefly/tables.html#save',
         },
         {
             id: 'tables.catalogs',
             title: 'Catalogs',
-            href: 'share/tables.html#catalogs',
+            href: 'firefly/tables.html#catalogs',
         },
         {
             id: 'basics.catalogs',
             title: 'Catalogs',
-            href: 'share/tables.html#catalogs',
+            href: 'firefly/tables.html#catalogs',
              hidden: true,
         },
     ]
@@ -249,52 +181,52 @@ export const toc_tables = {
 export const toc_plots = {
     id: 'plots',
     title: 'Plots',
-    href: 'share/plots.html',
+    href: 'firefly/plots.html',
     items: [
         {
             id: 'plots.default',
             title: 'Default Plot',
-            href: 'share/plots.html#default'
+            href: 'firefly/plots.html#default'
         },
         {
             id: 'plots.firstlook',
             title: 'Plot Format: A First Look',
-            href: 'share/plots.html#firstlook'
+            href: 'firefly/plots.html#firstlook'
         },
         {
             id: 'plots.linking',
             title: 'Plot Linking',
-            href: 'share/plots.html#linking'
+            href: 'firefly/plots.html#linking'
         },
         {
             id: 'plots.changing',
             title: 'Changing What is Plotted',
-            href: 'share/plots.html#changing'
+            href: 'firefly/plots.html#changing'
         },
         {
             id: 'plots.manipulating',
             title: 'Plotting Manipulated Columns',
-            href: 'share/plots.html#manipulating'
+            href: 'firefly/plots.html#manipulating'
         },
         {
             id: 'plots.restricting',
             title: 'Restricting What is Plotted',
-            href: 'share/plots.html#restricting'
+            href: 'firefly/plots.html#restricting'
         },
         {
             id: 'plots.saving',
             title: 'Saving Plots',
-            href: 'share/plots.html#saving'
+            href: 'firefly/plots.html#saving'
         },
         {
             id: 'plots.adding',
             title: 'Adding Plots',
-            href: 'share/plots.html#adding'
+            href: 'firefly/plots.html#adding'
         },
         {
             id: 'plots.example',
             title: 'Example Plots',
-            href: 'share/plots.html#example'
+            href: 'firefly/plots.html#example'
         },
     ]
 };
@@ -315,8 +247,3 @@ export const fireflyToc = [
     toc_user,
     toc_privacy
 ];
-
-
-
-// export it as toc
-export const toc = fireflyToc;
