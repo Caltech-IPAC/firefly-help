@@ -47,8 +47,9 @@ task loadConfig {
         project.ext.appProps = new Properties()
 
         if (project.hasProperty("appConfig")) {
+            def env = findProperty("env") ? project.env : "local"
             def source = appConfig instanceof File ? appConfig.toURL() : new ClosureScript(closure: appConfig)
-            project.ext.appProps = new ConfigSlurper().parse(source).toProperties()
+            project.ext.appProps = new ConfigSlurper(env).parse(source).toProperties()
         }
 
         // generate version tag
@@ -59,7 +60,7 @@ task loadConfig {
         appProps.put('REACT_APP_app_name', findProperty('REACT_APP_app_name') ?: app_name)
 
         appProps.put('REACT_APP_VersionTag', "${app_name}_$major.$minor.${rev}")
-        appProps.put('REACT_APP_BuildCommit', getCommitHash())
+        appProps.put('REACT_APP_BuildCommit', getCommitHash(rootDir))
 
         appProps.put('REACT_APP_BuildTime', new Date().toString())
         appProps.put('REACT_APP_BuildDate',new Date().format("yyyy-MM-dd"))
@@ -190,5 +191,5 @@ ext.getCommitHash = { workDir="." ->
 //-------------------------
 zipHelp.mustRunAfter       generatePdf
 generatePdf.mustRunAfter   copyHtml
-generatePdf.mustRunAfter   buildPdfInput
+copyHtml.mustRunAfter      buildPdfInput
 buildPdfInput.mustRunAfter buildClient
