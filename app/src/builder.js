@@ -44,7 +44,7 @@ function build(outDir, toc) {
         .map( (l) => get(l.match(/href[ ]*=[ ]*'([^']+)'/i), [1], l))              // return all href with single quotes
         .map( (l) => l.split('#')[0]);          // return the portion before the hash... this should be the file path
 
-    const pdfInput = 'firefly/blank.gif _toc.html ' + uniq(files).join(' ');
+    const pdfInput = 'blank.gif _toc.html ' + uniq(files).join(' ');
     const pdfFname =  outDir + '/.pdf-input';
     fs.writeFile(pdfFname, pdfInput, function (err) {
         if (err) {

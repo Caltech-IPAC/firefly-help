@@ -10,7 +10,7 @@ class ClosureScript extends groovy.lang.Script {
 }
 
 ext.app_name =  findProperty("app_name") ?: name
-
+project.buildDir = findProperty('altBuildDir') ?: "${buildRoot}/${app_name}"            // allow for an alternate build directory
 
 task clean {
     delete buildDir
@@ -66,6 +66,7 @@ task loadConfig {
 
 task copyHtml(type: Copy, dependsOn: loadConfig) {
     from "${rootDir}/html"
+    include "*.*"
     include "${app_name}/**"
     into buildDir
 }

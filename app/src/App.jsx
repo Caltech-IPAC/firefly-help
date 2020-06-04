@@ -13,6 +13,7 @@ import previousIco from './images/previous.png';
 import nextIco from './images/next.png';
 import openIco from './images/open.png';
 import closeIco from './images/close.png';
+import pdfIco from './images/pdf.png';
 
 
 export function App({tableOfContent, showHidden=false}) {
@@ -26,6 +27,7 @@ export function App({tableOfContent, showHidden=false}) {
     const selectedKeys = [selNode.key];
     const pkey = selNode?.parent?.key;
     const defaultExpandedKeys = pkey ? [pkey] : undefined;
+    const title = process.env.REACT_APP_Title;
 
     if (pkey && expandedKeys.findIndex((s) => s === pkey) < 0 ) {
         setExpandedKeys([...expandedKeys, pkey]);
@@ -33,14 +35,13 @@ export function App({tableOfContent, showHidden=false}) {
 
     return (
         <div className = 'App'>
-            <div className='App-header'>
-                <div style={{fontSize: 'x-large'}}>
-                    {document.title}
+            {title &&
+                <div className='App-header'>
+                    <div style={{fontSize: 'x-large'}}>
+                        {title}
+                    </div>
                 </div>
-                <div>
-                    <a href='help.pdf' target='help_pdf'>View PDF</a>
-                </div>
-            </div>
+            }
 
             <div className='App-main'>
 
@@ -108,8 +109,9 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
                     <div style={{display: 'inline-flex'}}>
                         <div className='button' onClick={() => expandAll(true)}><img alt='' title='Expand All' src={expandIco}/></div>
                         <div className='button' onClick={() => expandAll(false)}><img alt='' title='Collapse All' src={collapseIco}/></div>
-                        <div className='button' onClick={previous} style={{marginLeft: 20}}><img alt='' title='Previous' src={previousIco}/></div>
+                        <div className='button' onClick={previous} style={{marginLeft: 10}}><img alt='' title='Previous' src={previousIco}/></div>
                         <div className='button' onClick={next}><img alt='' title='Next' src={nextIco}/></div>
+                        <div className='button' onClick={() => false} style={{margin: '0 10px'}}><a href='help.pdf' target='help_pdf'><img alt='' title='View PDF' src={pdfIco}/></a></div>
                     </div>
                     <div className='button' onClick={() => setOpen(false)}><img alt='' title='Close Navigator' src={closeIco}/></div>
                 </div>
@@ -125,6 +127,7 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
                     <div className='button' onClick={() => setOpen(true)}><img alt='' title='Open' src={openIco}/></div>
                     <div className='button' onClick={previous}><img alt='' title='Previous' src={previousIco}/></div>
                     <div className='button' onClick={next}><img alt='' title='Next' src={nextIco}/></div>
+                    <div className='button' onClick={() => false} style={{marginTop: 10, border: 'none'}}><a href='help.pdf' target='help_pdf'><img alt='' title='View PDF' src={pdfIco}/></a></div>
                 </div>
             </div>
         );

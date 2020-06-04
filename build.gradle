@@ -2,21 +2,20 @@ ext.buildRoot = "${rootDir}/build"
 ext.appRoot = "${rootDir}/app"
 
 project(':firefly') {
-    project.buildDir = "${buildRoot}/firefly/"
+
+/* uncomment this section to include a title section in the app
     ext.appConfig = {
-        REACT_APP_TITLE = "Firefly Help"
+        REACT_APP_Title = "Firefly Help"
     }
+*/
+
     apply from: "${rootDir}/buildScript/help.gincl"
 }
 
 /*
 // Example of how to create multiple help pages from this repository
-// Add project name into settings.gradle's include line
+// Need to also add 'example' into settings.gradle's include line
 project(':example') {
-    project.buildDir = "${buildRoot}/example/"
-    ext.appConfig = {
-        REACT_APP_TITLE = "Example Help"
-    }
     apply from: "${rootDir}/buildScript/help.gincl"
 
     // to include firefly's content for reuse
