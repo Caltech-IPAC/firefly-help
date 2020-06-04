@@ -56,6 +56,8 @@ task loadConfig {
         def minor = appProps.get('BuildMinor', '0')
         def rev = appProps.get('BuildRev', '0')
 
+        appProps.put('REACT_APP_app_name', findProperty('REACT_APP_app_name') ?: app_name)
+
         appProps.put('REACT_APP_VersionTag', "${app_name}_$major.$minor.${rev}")
         appProps.put('REACT_APP_BuildCommit', getCommitHash())
 
