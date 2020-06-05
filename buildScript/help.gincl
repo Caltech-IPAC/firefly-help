@@ -45,6 +45,8 @@ task generatePdf (type: Exec) {
 task loadConfig {
     doLast {
         project.ext.appProps = new Properties()
+        appProps.putAll(project.ext.properties)
+        appProps.putAll(System.getenv())
 
         if (project.hasProperty("appConfig")) {
             def env = findProperty("env") ? project.env : "local"
@@ -127,26 +129,25 @@ task run(dependsOn: build) {
 }
 
 task install(dependsOn: build) {
-    description= 'Sub project level.  Deploy onlinehelp onto a web server.  Requires property or environment CM_BASE_APP_DIR to be set.  Made for IRSA env.'
+    description= 'Install help to a web server.  Requires property or environment install_dir to be set.'
 
     doFirst {
-        def irsaDir = appProps.get("CM_BASE_APP_DIR")
-        if (irsaDir == null) {
-            irsaDir = System.getenv('CM_BASE_APP_DIR')
+        def installDir = appProps.get("install_dir")
+        if (installDir == null && appProps.containsKey('CM_BASE_APP_DIR')) {
+            installDir = appProps.get('CM_BASE_APP_DIR') + '/web/html/onlinehelp'      // IRSA's specific
         }
-        if (irsaDir == null) {
-            throw ProjectConfigurationException("CM_BASE_APP_DIR is not set.  install aborted.")
+        if (installDir == null) {
+            throw ProjectConfigurationException("install_dir is not set.  install aborted.")
         }
-        if (!file("$irsaDir/web/html/").exists()) {
-            throw ProjectConfigurationException("$irsaDir/web/html/ not found.  install aborted.")
+        def outdir = file(installDir);
+        if (!outdir.exists()) {
+            throw ProjectConfigurationException("${outdir.getPath()} not found.  install aborted.")
         }
-        def outputDir = file("$irsaDir/web/html/onlinehelp")
-        mkdir(outputDir)
         def zips = fileTree(dir: "${buildRoot}/dist", include: '*.zip')
         zips.each { File zipFile ->
             copy {
                 from zipTree(zipFile)
-                into outputDir
+                into outdir
             }
         }
     }
