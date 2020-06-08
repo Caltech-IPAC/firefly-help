@@ -56,7 +56,19 @@
 */
 
 
+/**
+ * @typedef [HelpItem] TOC
+ */
 
+/**
+ * @typedef {object} HelpItem
+ * @prop {string}   id      unique ID of the help item
+ * @prop {string}   title   title of this item
+ * @prop {string}   href    link to html content for this help item
+ * @prop {string}   hidden  default true.  When true, entry will not be shown in the navigation tree.
+ * @prop {object}   style   additional style to apply to this item
+ * @prop [HelpItem] items   array of help items.  This is used to build the table of contents
+ */
 
 
 
