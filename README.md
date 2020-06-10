@@ -1,10 +1,15 @@
 ## About Firefly Help
 
-Firefly Help is an open source template for creating help content.  It's used by [Firefly](https://github.com/Caltech-IPAC/firefly-help/)
+Firefly Help is an open source template for creating help content.  It's used by [Firefly](https://github.com/Caltech-IPAC/firefly/)
 and other Firefly-based applications.
 
+#### What's in this template?
 
-#### Prerequisites
+- Reusable help content for Firefly UI components.
+- Source code, dependencies, and scripts needed to creates a single page application for viewing the help content.
+- Dynamically generate a PDF from the HTML pages used.
+
+#### Dev Dependencies
  -  [Gradle 4.x] (https://gradle.org/downloads)
     Gradle is an open source build automation system.
 
@@ -20,23 +25,25 @@ and other Firefly-based applications.
 This template is designed for multiple projects.  However, `firefly-help` has only one project.  
 To list the projects, run `gradle projects`.
 
+#### `git clone https://github.com/Caltech-IPAC/firefly-help`
 
+Clone this repository into `firefly-help` directory.  
 In the root directory, you can run:
 
-### `gradle build`
+#### `gradle build`
 
 Builds the help application(s) to the `build` directory.
 The artifact is a zip file in `build/dist` directory.  
 Zip files are named in the format `${project}_help.zip`, one for each project.
 
 
-### `gradle run`
+#### `gradle run`
 
 Builds and launch the help application in the default browser.  
 If you have multiple projects, prepend `run` with the project's name, like this: `gradle firefly:run`
 
 
-### `gradle install`
+#### `gradle install`
 
 Builds and installs the help application to an existing web server.  This requires setting `install_dir` either via environment or
 as a property set on the command line, like this:  `gradle -Pinstall_dir=/var/www/html install`
@@ -63,13 +70,6 @@ as a property set on the command line, like this:  `gradle -Pinstall_dir=/var/ww
 
 `html` directory contains help content.  It is further divided into subdirectory to allow multiple projects.
 It is recommended to separate images into an `images` subdirectory
-
-
-### What's in this template?
-
-- Reusable help content for Firefly UI components and Firefly's API.
-- Source code, dependencies, and scripts needed to creates a single page application for viewing the help content.
-- Dynamically generate a PDF from the HTML pages used.
 
 
 ### Small changes to this template
