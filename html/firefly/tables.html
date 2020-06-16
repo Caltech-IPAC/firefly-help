@@ -57,7 +57,7 @@ src="img/tablehead.png"><br> which we now describe.<P>
 
 The first thing to notice is that only the first 50 rows of the
 retrieved catalog are displayed in the table. In the example here,
-there are 1358 sources that were retrieved as part of the search.  The
+there are ~28,000 sources that were retrieved in the search.  The
 left/right black arrows plus the page number allow you to navigate
 among these 'pages' of 50 sources each.  Note that the entire set of
 results (not just the 50 rows you are currently viewing) can be sorted
@@ -256,7 +256,7 @@ The second tab is the advanced filter interface:<br>
 <img src="img/tablefilterpopup.png" width="50%"><br>
 Here, the columns are listed alphabetically on the left, the
 constraints you have imposed are in the "current constraints" box, and
-youe can apply additional SQL constraints via the free-form text box.
+you can apply additional SQL constraints via the free-form text box.
 Hints for syntax are given below the entry box. This window can be
 resized such that you can see the whole set of hints and imposed
 filters.<P>
@@ -369,31 +369,31 @@ position is pre-filled with its best guess as to what you want) and
 the search method (cone, elliptical, box, polygon, multi-object,
 all-sky), and the parameters that go with that search method (e.g.,
 the radius of the cone). The parameters for each of these searches
-change dynamically as you select search options, as follows:  <P>
+change dynamically as you select search options.  <P>
 
 <DL>
-<DT><strong>Caution</strong>: <DD>Pick your units from the pulldown first, and
-then enter a number; if you enter a number and then select from the
-pulldown, it will convert your number from the old units to the new
-units. There are both upper and lower limits to your search radius; it
-will tell you if you request something too big or too small. Note that
-these limits are survey-dependent.   <P>
+<DT><strong>Caution</strong>: <DD>Pick your units from the pulldown
+first, and then enter a number; if you enter a number and then select
+from the pulldown, it will convert your number from the old units to
+the new units. There are both upper and lower limits to your search
+radius; it will tell you if you request something too big or too
+small. Note that these limits are survey-dependent.   <P>
 
 <DT><strong>Cone search</strong>: <dd> <img
-src="img/catsearch-cone.png"> It has guessed what position you want,
+src="img/catsearch-cone.png"> <br> It has guessed what position you want,
 based on prior searches. You specify the cone radius.<P>
 
 <DT><strong>Elliptical search</strong>: <dd> <img
-src="img/catsearch-ellip.png"> It has guessed what position you want,
+src="img/catsearch-ellip.png"> <br> It has guessed what position you want,
 based on prior searches. You specify the search ellipse's semi-major
 axis, position ratio, and axial ratio.<P>
 
 <DT><strong>Box search</strong>: <dd> <img
-src="img/catsearch-box.png"> It has guessed what position you want,
+src="img/catsearch-box.png"> <br> It has guessed what position you want,
 based on prior searches. You specify the box's length on a side.<P>
 
 <DT><strong>Polygon search</strong>: <dd> <img
-src="img/catsearch-polygon.png"> Now, note that it no longer has a
+src="img/catsearch-polygon.png"> <br> Note that it no longer has a
 single target location. It has pre-filled the vertices of the position
 it thinks you want, based on prior searches.  You can select whether
 you want the catalog request to match the entire area of the image you
@@ -408,7 +408,7 @@ is a maximum of 5 degrees imposed on catalog searches to match HiPS
 images.<P>
 
 <DT><strong>Multi-Object search</strong>: <dd> <img
-src="img/catsearch-multiobj.png"> In this case, it has not attempted
+src="img/catsearch-multiobj.png"><br> In this case, it has not attempted
 to guess what position you want. You need to upload a file in <a
 href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
 target="_blank">IPAC table format <img src="img/jumpout.jpg"
@@ -433,7 +433,7 @@ the target that should be matched to the position you requested.<P>
 
 
 <DT><strong>All-sky search</strong>: <dd> <img
-src="img/catsearch-allsky.png"> Because this is an all-sky search, it
+src="img/catsearch-allsky.png"><br> Because this is an all-sky search, it
 does not have a single target entry box. In order to constrain this
 search, you need to impose constraints on the bottom of the screen
 (see below). <P>
@@ -454,10 +454,10 @@ that none of the catalog meets your criteria.<P>
 Click on "Search" to initiate the search. It will load the catalog
 into a tab of its own. The objects will also be overlaid on any images
 you have loaded, and a default x-y plot will be shown. (For more on
-the x-y plots, see <a href="#xyplots">below</A>.)  All of these
-representations are interlinked -- clicking on a row in the table
-shows it on the image and in the plot, and clicking on an object in
-the image shows it in the table and in the plot, and clicking on an
+the x-y plots, see <a href="plots.html">the plots section</A>.)  All
+of these representations are interlinked -- clicking on a row in the
+table shows it on the image and in the plot, and clicking on an object
+in the image shows it in the table and in the plot, and clicking on an
 object in the plot shows it in the table and on the image.<P>
 
 To close the catalog search window without searching for a catalog,
@@ -482,7 +482,7 @@ href="visualization.html">image with a WCS</A> loaded into your tool,
 then it will overlay the catalog on the image. If your catalog does
 not overlay, check to be sure your catalog has columns called "ra" and
 "dec" (all lower-case letters). If it does not work, experiment with
-"RA" and "Dec" or "DEC". <P>
+"RA" and "Dec" or "DEC". 
 
 <LI> If you overlay a large catalog, then turn around and <a
 href="visualization.html#fitsDownloadOptions">save a regions file from
