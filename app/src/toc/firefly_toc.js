@@ -78,6 +78,11 @@ const toc_visualization = {
             href: 'firefly/visualization.html#toolbar',
         },
         {
+            id: 'visualization.newimage',
+            title: 'New Image',
+            href: 'firefly/visualization.html#newimage',
+        },
+        {
             id: 'visualization.stretches',
             title: 'Color Stretches',
             href: 'firefly/visualization.html#stretches',

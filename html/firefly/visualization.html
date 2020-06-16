@@ -13,9 +13,15 @@
 <h2>Firefly: Visualization</h2>
 
 One primary component of the Firefly tools is the image visualization.
-You can view and interact with image files, both FITS and HiPS
-formats.  This section covers interacting with the images -- the
-visualization tools. <A href="tables.html">Tables</A> and <a href="plots.html">Plots</A> are in other sections.<P>
+You can view and interact with image files, both FITS and <a
+href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
+target="_blank">HiPS images <img src="images/jumpout.jpg"
+height="10"></A> (also see <a
+href="http://www.ivoa.net/documents/HiPS/" target="_blank">IVOA docs
+<img src="images/jumpout.jpg" height="10"></A>) formats.  This section
+covers interacting with the images -- the visualization tools. <A
+href="tables.html">Tables</A> and <a href="plots.html">Plots</A> are
+in other sections.<P>
 
 All of the interactive image visualization tools work the same basic
 way, and here we describe these basic options, in roughly the order
@@ -26,6 +32,7 @@ in which you might encounter them in the window.<P>
 +<A href="#fitsViewer">FITS/HiPS Viewer</a><br>
 +<A href="#imageinfo">Image Information</a><br>
 +<A href="#toolbar">Image Toolbar</a><br>
++<a href="#newimage">Information on Loading a New Image</A><br>
 +<a href="#stretches">Information on Color Stretches</A><br>
 +<a href="#hipsViewer">Information on HiPS features</A><br>
 +<a href="#footprints">Footprints</A><br>
@@ -140,10 +147,11 @@ We now discuss each icon in turn.<P>
 <dt><img src="images/save.png"> <em>Saving the image.</em>
 <dd>The diskette icon will allow you to save the current image.  You
 can save files to your local disk or to the  <a
-href="/docs/workspace/" target="_blank">IRSA Workspace <img src="images/jumpout.jpg" height="10"></A>.  Note that
-<b>you</b> control where the file is saved on your disk through your
-browser; your browser may be configured to
-store all downloads in a particular location on your disk.<P>
+href="/docs/workspace/" target="_blank">IRSA Workspace <img
+src="images/jumpout.jpg" height="10"></A>.  Note that <b>you</b>
+control where the file is saved on your disk through your browser;
+your browser may be configured to store all downloads in a particular
+location on your disk.<P>
 
 If the current image is a FITS file, you can save it as a FITS or PNG
 or regions file to your local disk. If it is a HiPS file, your only
@@ -154,8 +162,8 @@ have placed on the image, but will not include the underlying FITS
 image. Saved regions files will not save the underlying image, but
 will just save the overlays as a DS9 Regions file. See the <a
 href="http://ds9.si.edu/doc/ref/region.html" target="_blank">DS9
-website <img src="images/jumpout.jpg" height="10"></A> for more information on the syntax of these DS9 region
-files. <P>
+website <img src="images/jumpout.jpg" height="10"></A> for more
+information on the syntax of these DS9 region files. <P>
 
 Note that you can save the original or a cropped version of a FITS
 file; see the "select region" icon below to crop, then click on the
@@ -174,12 +182,12 @@ big version, make the desired image big on your screen (view
 one-at-a-time) before saving the PNG. <P>
 
 <dt><img src="images/selectnew.png"> <em>Selecting a new
-image.</em>   
-<dd>This icon does not always appear. Clicking on this icon is the
-same as selecting the blue "Images" tab. Click on this icon -- or the
-blue Images tab -- to add a new image through a new search, or to
-change the current image to a new image. To change a HiPS image, see
-discussion in <a href="#wcs">WCS section</A> below.<P>
+image.</em>    <dd>This icon does not always appear.  Click on this
+icon to add a new FITS image through a new search, or to change the
+current image to a new image. More information on this can be found <a
+href="#newimage">in the section on loading a new image below</A>. To
+change a HiPS image, see discussion in <a href="#wcs">WCS section</A>
+below.<P>
 
 <dt><img src="images/zoominout.png"> <em>Zooming in or out.</em>
 <dd>
@@ -394,14 +402,15 @@ e.g., Galactic coordinates) via the "layers" icon (described
 below).<P>
 
 
-<dt><img src="images/ds9icon.png"> <em>Read in a DS9 Regions file </em>
-<dd> When you click this icon, you get a pop-up window from which you
-can read in a DS9 regions file from your local disk. See the <a
-href="http://ds9.si.edu/doc/ref/region.html"
-target="_blank">DS9 website <img src="images/jumpout.jpg" height="10"></A> for more information on the syntax of
-these DS9 region files. The supported regions are text, circle, box,
-polygon, line, and annulus. To make this window go away without doing
-anything, click on the 'x' in the upper right of the pop-up. <P>
+<dt><img src="images/ds9icon.png"> <em>Read in a DS9 Regions file
+</em> <dd> When you click this icon, you get a pop-up window from
+which you can read in a DS9 regions file from your local disk. See the
+<a href="http://ds9.si.edu/doc/ref/region.html" target="_blank">DS9
+website <img src="images/jumpout.jpg" height="10"></A> for more
+information on the syntax of these DS9 region files. The supported
+regions are text, circle, box, polygon, line, and annulus. To make
+this window go away without doing anything, click on the 'x' in the
+upper right of the pop-up. <P>
 
 
 <dt><img src="images/layers.png"> <em>Viewing/changing the layers on the
@@ -513,7 +522,219 @@ pane view.<P>
 
 
 
-<a name="stretches"><h3>Specific information on Color Stretches</h3></A>
+<a name="newimage"><h3>Specific Information on Loading a New Image</h3></A>
+
+<img src="img/selectnew.png"> If this icon appeas, you can change the
+FITS image being used.  Click on this icon to add a new image through
+a new search, or to change the current image to a new image. The
+window you obtain looks like this:<br>
+<img src="img/searchCST.png" width="80%"><br>
+Your first options are:
+<UL>
+<LI>View FITS Imges -- replace the image with another FITS image 
+<LI>Create a 3-color Composite -- replace the image with a composite of
+three FITS images 
+<LI>View HiPS images -- Replace the image with a HiPS image (see <a
+href="#changehips">below for more information on changing HiPS
+images).
+</UL>
+<P>
+
+<strong>Second</strong>, you select whether you want to pull an image
+from IRSA's archives ("Search"; see below), your own disk ("Use my
+image"), elsewhere on the web ("URL"), or the IRSA <a
+href="/docs/workspace/" target="_blank">Workspace <img
+src="img/jumpout.jpg" height="10"></A> ("Workspace"). Note that to use
+the Workspace (reading from or writing to it), you'll need to <a
+href="user.html">log in</A>. <P>
+
+In the cases other than "Search", nearly all of the additional options
+below this line vanish because they are no longer relevant. To
+<strong>select an image off of your local disk</strong>, select "Use
+my image", and then tell it where to find the image on your local
+disk. To load an <strong>image from the web</strong>, pick the "URL"
+option and enter the URL from which you want an image loaded.  To load
+an <strong>image from the IRSA Workspace</strong>, pick the
+"Workspace" option and find the file you want to load.<P>
+
+If you would like to load an image from IRSA's archives, select
+"Search" and go on to these subsequent additional search
+parameters.<P>
+
+<strong>Third</strong>, you select a target. You may enter a target
+name, and have either NED-then-Simbad  or Simbad-then-NED resolve the
+target name into coordinates.  Alternatively, you may enter
+coordinates directly. These coordinates can be in decimal degrees or
+in hh:mm:ss dd:mm:ss format. By default, it assumes you are working in
+J2000 coordinates; you can also specify galactic, ecliptic, or B1950
+coordinates as follows:
+<UL>
+<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic coordinates
+<LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
+<LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
+</UL>
+Examples are given below the text entry box before you start typing in
+the box.<P>
+
+As you are completing a valid coordinate entry, it echoes back to
+you what it thinks you are entering. Look right below the box in which
+you are typing the coordinates to see it dynamically change.  <P>
+
+Below the box where you enter the target, you can then specify the
+size of the images you want.  You may enter the cutout size in
+arcseconds, arcminutes, or degrees; just change the pulldown option
+accordingly. <strong>Caution:</strong> pick your units from the
+pulldown first, and then enter a number; if you enter a number and
+then select from the pulldown, it will convert your number from the
+old units to the new units. There are both upper and lower limits to
+your search size; it will tell you if you request something too big
+or too small. Note that these limits may be image-dependent; larger
+images may be available from certain surveys and smaller images may be
+available from other surveys. <strong>If you want the whole image
+tile</strong>, just leave the image size blank, then the closest image
+tile in its entirety will be returned. <P>
+
+
+
+<strong>Fourth</strong>, you select the data set. There are myriad
+choices, which you can filter in various ways to allow you to find
+what you need. Statistically, any one spot on the sky will only be
+found in a few of these data sets, so it makes sense to weed down the
+list, at least a little bit.<P>
+
+<em>On the left hand side</em>, you can filter by :
+<DL>
+<DT>Mission (or survey)
+<DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS, MSX,
+COSMOS, MUSYC.
+<DT>Project Type 
+<dd>All-sky, galactic, extragalactic, compilation (meaning, e.g., all
+the data available from a mission that was not an all-sky survey).
+<dt>Band 
+<dd>X-ray, UV, optical, near-IR, mid-IR, far-IR, mm, radio. (Yes, you
+can find data from non-IR missions/surveys here, depending on what
+projects have delivered back to IRSA.)
+</DL>
+To expand or contract the options
+below each of these broad categories, click on the black arrow on the
+left. To see all of the choices in each of these broad categories,
+click on the black arrow and then click "more" near the bottom of the
+list. To select any of the options, click on the checkbox on the left.
+In response to your selections, two things happen. (1) checked items
+appear in red italics above this part of the page, underneath "filter
+by"; (2) the list of programs for selection on the right hand side
+changes.<P>
+
+<em>On the right hand side</em>, you can select individual surveys and
+individual bands therein. To expand or contract the options below each
+of the categories, click on the black arrow on the left. To select any
+of the waveband options, click on the checkbox on the left of the
+individual survey or individual bands.<P>
+
+To find out more information about any given data set, click on the i
+in the circle. This takes you to a master list of all data sets
+available in IRSA Viewer, from which you can obtain standard
+information about the data sets (mission, wavlengths, links to more
+information about the program or delivery, and more). <P>
+
+To actually complete the task as requested, choose the "Search" button
+in the lower left.<P>
+
+<strong>Tips and Troubleshooting</strong>.
+<UL>
+<LI>You don't have to select something on the left side before
+selecting something on the right side. If you know exactly what you
+want, just jump in and select things on the right and click "search."
+<LI>If you select something on the left side, it will limit your
+choices accordingly on the right side. 
+<LI>If you clear filters on the left side, it doesn't affect
+selections you've made on the right. You must "clear filters" (on the
+left) and "clear selections" (on the right) to remove all filters and
+return to the initial state.
+<LI>If you want to expand all the choices on the right (to ease in
+band selection), click "expand all" to show all options, or "collapse
+all" to collapse them again.
+<LI>For more information on the data sets included in IRSA Viewer, see <a
+href="https://irsa.ipac.caltech.edu/docs/irsaviewer_datasets.html"
+target="_blank">this list <img src="img/jumpout.jpg" height="10"></A>.
+<LI>IRSA Viewer will NOT return not ALL the images for your specified
+combination of dataset+band+position; it returns the most centered
+science image it can find. This is usually but not always actually
+going to be the most useful to you, depending on what you're trying to
+do.  Some programs delivered PSFs, mosaics created with alternate
+algorithms, etc.  To find all the data at IRSA for a given target,
+enter the position in the big search box on the <a
+href="https://irsa.ipac.caltech.edu/" target="_blank">IRSA home page
+<img src="img/jumpout.jpg" height="10"></A> (this accesses a tool
+called Data Discovery), or navigate specifically to the page
+corresponding to your desired data set and search there by position
+(this accesses a tool called Atlas). 
+</UL>
+
+Example: I want all data covering M16. M16, the Eagle Nebula, is
+essentially in the galactic plane. Thus, I don't need to search really
+any of the extragalactic data sets. I select on the left hand side,
+under project type, compilation, galactic, and all-sky. I am still
+left with a long list of programs (though it is much shorter than it
+was before). However, I can omit some programs from consideration
+based on their names -- programs studying Taurus or Orion are unlikely
+to have any data on M16. I can then individually select the dozen or
+so data sets likely to cover M16.<P>
+
+
+<strong><A NAME="3-color">Making 3-color Images</A></strong><P>
+
+You can create 3-color images directly from the image search screen.
+Select "Create 3-Color Composite" from the top row of options. The
+rest of the pop-up changes to look like the following:<br>
+<img src="img/3colors.png" width="70%"><P>
+By default, you can select the red plane first; you then populate that
+color plane with all the same choices as you would have for a single
+channel image. To set the additional color planes, click on "green"
+and then "blue" to populate those planes accordingly.  <p>
+
+It assumes that you must want the same position for all three color
+planes.<P>
+
+Select your options individually for each color plane (red, green,
+blue), and click 'Search' in the lower left. Click 'Cancel' to
+cancel.<P>
+
+To change the color stretch of each color plane individually, click on
+the "Color Stretch" icon in the toolbox on the top of the IRSA Viewer
+window; see the <a href="visualization.html">Visualization
+section</A>. Much more detail about interacting with images can be
+found in the <a href="visualization.html">Visualization
+section</A>.<P>
+
+<strong>Tips and Troubleshooting.</strong> 
+<UL>
+<LI>You load all three images at once, e.g., you do NOT pick red,
+click search, then go back and pick green, click search, then go back
+and pick blue, click search. Instead, click red and define what you
+want for that image, then go to green and do the same, then go to blue
+and do the same. Don't click "search" until you have specified all
+three bands.
+<LI> The images will be downsampled to the resolution of the red
+image. If you, say, load an MSX image into the red plane, a WISE image
+into the green plane, and a 2MASS image into the blue plane, all of
+the images will have MSX-sized pixels. If you load a WISE image into
+the red and green planes, and a 2MASS image into the blue plane, the
+images will have WISE-sized pixels. 
+<LI>You have to set the size of the image separately on each color
+plane. It does not automatically assume you want the same size of
+sky covered. <P>
+</UL>
+
+
+
+
+&nbsp;<P>
+
+
+
+
+<a name="stretches"><h3>Specific Information on Color Stretches</h3></A>
 
 
 <img src="images/stretch.png"> This icon enables you to change the color
@@ -543,11 +764,12 @@ you can set the parameters in the stretch pop-up accordingly.<P>
 
 As described in <a
 href="https://ui.adsabs.harvard.edu/#abs/2004PASP..116..133L" 
-target="_blank">Lupton et al. (2004) <img src="images/jumpout.jpg" height="10"></A>, a different algorithm may be
-useful for creating 3-band color images. Select "Hue preserving
-stretch" to invoke this option. This stretch should be a
-brightness-independent color-preserving asinh stretch, though in
-practical terms, it seems to work best for optical images. <P>
+target="_blank">Lupton et al. (2004) <img src="images/jumpout.jpg"
+height="10"></A>, a different algorithm may be useful for creating
+3-band color images. Select "Hue preserving stretch" to invoke this
+option. This stretch should be a brightness-independent
+color-preserving asinh stretch, though in practical terms, it seems to
+work best for optical images. <P>
 
 <img src="images/luptonstretch.png"><P>
 
@@ -572,11 +794,12 @@ Follow-up ticket for scaling coefficients and help is https://jira.lsstcorp.org/
 
 <a
 href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
-target="_blank">HiPS <img src="images/jumpout.jpg" height="10"></A> (hierarchical progressive survey) images are
-different than FITS images, and as such, the choices of what you can
-do with the HiPS images are different than what you can do with the
-FITS images. Choices you can make for HiPS images are sometimes
-different than what you get for FITS images.<P>
+target="_blank">HiPS <img src="images/jumpout.jpg" height="10"></A>
+(hierarchical progressive survey) images are different than FITS
+images, and as such, the choices of what you can do with the HiPS
+images are different than what you can do with the FITS images.
+Choices you can make for HiPS images are sometimes different than what
+you get for FITS images.<P>
 
 The whole point of HiPS images is to provide on-demand resolution
 changes. Zoom out, and it loads large pixels. Zoom in, and it loads
@@ -587,7 +810,8 @@ type to use.<P>
 There are HiPS images from all over the world; the complete list of
 HiPS images available from the IRSA Viewer search page includes (once
 the "IRSA Featured" checkbox is unchecked) many HiPS images from <a
-href="http://cdsweb.u-strasbg.fr/" target="_blank">CDS <img src="images/jumpout.jpg" height="10"></A>. <P>
+href="http://cdsweb.u-strasbg.fr/" target="_blank">CDS <img
+src="images/jumpout.jpg" height="10"></A>. <P>
 
 HiPS images have the color and stretch set by the person who
 originally made them. Thus, you cannot change the color/stretch of
@@ -735,15 +959,17 @@ the layers pop-up.<P>
 You can overlay the whole focal plane footprint, shown here, or
 individual instrument footprints (FGS, MIRI, NIRCAM, NIS, and NIRSPEC).
 <P>
+
 <strong>Note that</strong> if you overlay the footprint on a very
 small image, nothing will appear to have happened. You need at least a
-30 arcmin image to comfortably see the entire JWST focal plane. Please consult the <a
-href="http://www.stsci.edu/jwst/">JWST documentation</A> for details
-about the footprints.  In all cases, if the footprint is 'active', a
-circle near the middle of the footprint will appear with four small
-circles ("handles") around it. Grab and drag the small circles to
-rotate it, or drag the big circle to move it. Change the color,
-delete, or add more copies of the footprints from the layers pop-up.<P>
+30 arcmin image to comfortably see the entire JWST focal plane. Please
+consult the <a href="http://www.stsci.edu/jwst/">JWST
+documentation</A> for details about the footprints.  In all cases, if
+the footprint is 'active', a circle near the middle of the footprint
+will appear with four small circles ("handles") around it. Grab and
+drag the small circles to rotate it, or drag the big circle to move
+it. Change the color, delete, or add more copies of the footprints
+from the layers pop-up.<P>
 
 <img src="images/wfirst.png"> <strong>WFIRST focal plane
 footprint.</strong> As above, the footprint can be moved or rotated.
@@ -824,9 +1050,11 @@ pane</A>). <P>
 <strong>Image List</strong><P>
 
 Depending on what tool you are using and what you have loaded, you may
-have an additional icon: <img src="images/imagelist.png"><BR> Clicking on
-this icon brings up a list of the images you have loaded, with some
-additional information on each one. This is another <a href="tables.html">Firefly table</A>, so you can interact with it using all of those same tools. <P>
+have an additional icon: <img src="images/imagelist.png"><BR> Clicking
+on this icon brings up a list of the images you have loaded, with some
+additional information on each one. This is another <a
+href="tables.html">Firefly table</A>, so you can interact with it
+using all of those same tools. <P>
 
 
 <strong>Paging through single image views</strong><P>
@@ -948,7 +1176,9 @@ picked on your behalf. This image is labeled "coverage" because it is
 meant to display on the sky the range of things (sources,
 observations, etc.) you have loaded into your tool. <P>
 
-This image could be FITS, HiPS, or Aitoff. Your tool may have the additional capability to dynamically change among them; see the next subsection.<P>
+This image could be FITS, HiPS, or Aitoff. Your tool may have the
+additional capability to dynamically change among them; see the next
+subsection.<P>
 
 
 &nbsp;<P>
@@ -1029,9 +1259,10 @@ Things to note:
 HiPS image you want, and click "Search" on the bottom left. 
 <LI>To cancel without selecting a new image, click "Cancel."
 <LI>This is a Firefly table, so all the <a
-href="tables.html#filters">filtering</A> and <a href="tables.html#columns">column manipulation</A>
-tools apply here too. You can filter down the columns to find the image
-you want to use.
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
 <LI>To learn more about each HiPS map, click on the i with the circle
 in the second column. It will spawn another window with standardized
 information about the HiPS map.
