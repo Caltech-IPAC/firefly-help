@@ -61,7 +61,7 @@ as a property set on the command line, like this:  `gradle -Pinstall_dir=/var/ww
            toc_creator.js        
     html/
       ${project}/
-        images/
+        img/
 
 
 `app` directory contains source code needed to create the Help application.  
@@ -69,7 +69,7 @@ as a property set on the command line, like this:  `gradle -Pinstall_dir=/var/ww
 `toc` stands for table of contents.  `toc_creator.js` is where you define your table of content.
 
 `html` directory contains help content.  It is further divided into subdirectory to allow multiple projects.
-It is recommended to separate images into an `images` subdirectory
+It is recommended to separate images into an `img` subdirectory
 
 
 ### Small changes to this template
