@@ -42,7 +42,7 @@ window.<P>
 
 To obtain a full-screen view of your plot, click on the expand icon in
 the upper right of the window pane when your mouse is in the window:
-<img src="images/expand-24x24.png">. To return to the prior view, click
+<img src="img/expand-24x24.png">. To return to the prior view, click
 the "Close" arrow in the upper left.<P>
 
 The plotting tool, by default, starts with RA and Dec plotted if it
@@ -55,8 +55,8 @@ If you have loaded a catalog with many (&gt; 15,000) points, you may
 have an RA/Dec plot that looks something like the one on the left
 here. If you have loded a catalog with few (&lt; 15,000) points, you
 will have an RA/Dec plot that looks more like the one on the right
-here.<br> <img src="images/defaultradecbinned.png" width="50%"><img
-        src="images/defaultradecunbinned.png" width="50%"><P>
+here.<br> <img src="img/defaultradecbinned.png" width="50%"><img
+        src="img/defaultradecunbinned.png" width="50%"><P>
 
 The difference between them is that, for larger catalogs (left), the
 plot is binned -- more points are encompassed in a black tile and
@@ -67,9 +67,9 @@ of this tool, this is called a <strong>scatter plot</strong>. <P>
 
 In either case, letting your mouse hover over a point tells you the
 values of the point under your cursor, and (if binned) how many points
-are represented:<br> <img src="images/morethanonepoint.png"> for binned
-plots, and <br> <img src="images/justonepoint.png"> for just one point.
-<br> <img src="images/morethanonepoint2.png"> Clicking (in an unbinned
+are represented:<br> <img src="img/morethanonepoint.png"> for binned
+plots, and <br> <img src="img/justonepoint.png"> for just one point.
+<br> <img src="img/morethanonepoint2.png"> Clicking (in an unbinned
 plot)  highlights that point, and it stays highlighted, though you
 must keep your mouse on the point in order to see the information
 about how many points it represents.<P>
@@ -103,11 +103,11 @@ or the catalog or the image.<P>
 <h3><a name="changing">Changing what is plotted</A></h3>
 
 To change what is plotted, click on the gears icon in the upper right
-of the plot window pane: <img src="images/xyplotoptions.png"
+of the plot window pane: <img src="img/xyplotoptions.png"
 align="center">. Configuration options then appear; the options are a
 little different depending on whether the points are binned or
-not:<br>  <img src="images/plotoptionspopup-decimated.png" width="30%"> &nbsp; &nbsp;
-<img src="images/plotoptionspopup.png" width="30%"><br> The left has the
+not:<br>  <img src="img/plotoptionspopup-decimated.png" width="30%"> &nbsp; &nbsp;
+<img src="img/plotoptionspopup.png" width="30%"><br> The left has the
 options for binned plots, and the right has the options for plots that
 have individual points shown.<P>
 
@@ -186,8 +186,8 @@ by clicking on the triangles below each entry box, and make the label
 "SNR in WISE-1" rather than the more cryptic column header "w1snr".
 Depending on your catalog, you may need to adjust the y axis range.
 Obtain this plot:<P>
-<img src="images/w1snrexample.png" width="70%"><img
-        src="images/w1snrexampleconfig.png" width="30%"><p>
+<img src="img/w1snrexample.png" width="70%"><img
+        src="img/w1snrexampleconfig.png" width="30%"><p>
 
 
 <h3><a name="manipulating">Plotting Manipulated Columns</A></h3>
@@ -199,12 +199,12 @@ For example, if you have loaded a WISE catalog, you can plot [W1]-[W2]
 vs. [W3]-[W4]. In terms of the names of the columns in the database,
 this is w1mpro-w2mpro vs. w3mpro-w4mpro.  <br>
 
-<img src="images/wisecolorexample.png" width="70%"><img
-        src="images/wisecolorexampleconfig.png" width="30%"><p>
+<img src="img/wisecolorexample.png" width="70%"><img
+        src="img/wisecolorexampleconfig.png" width="30%"><p>
 
 If you have few enough points that the plot is not binned, you can add
 errors, and you can also manipulate those:<br> <img
-src="images/plotoptionspopup2.png"><br>  In this case, the positions
+src="img/plotoptionspopup2.png"><br>  In this case, the positions
 in this catalog are in degrees, but the errors are in arcseconds.
 This plot request converts the errors to degrees
 before plotting. <P>
@@ -221,7 +221,7 @@ pop-up (discussed above).<P>
 However, and perhaps more powerfully, you can set limits from the plot
 itself using a rubber band zoom.  Click and drag in a sub-region of
 the plot. A new icon appears in the upper right of the plot: <img
-src="images/plotoptions.png">. This means "filter the catalog to leave
+src="img/plotoptions.png">. This means "filter the catalog to leave
 only those objects encompassed by the selection in the plot." If you
 click on the zoom icon, then the plot axes change to encompass just
 the sources you have selected. If you click on the filter icon, then
@@ -253,7 +253,7 @@ can also grab-and-drag the plot axes to change the plotting range.<P>
 
 <h3><a name="saving">Saving Plots</A> </h3>
 
-Click on the diskette icon (<img src="images/save.png">). Your plot will
+Click on the diskette icon (<img src="img/save.png">). Your plot will
 then be saved as a png file. 
 The saved PNG is the same size as it is on your screen. If you want a
 big version, make the desired plot big on your screen (expand the view
@@ -269,9 +269,9 @@ If you want to make additional plots, after you have a catalog loaded,
 click on the blue tab at the top labeled "Charts." This brings up a
 dialog from which you can choose to make another scatter plot (left
 below), a heatmap (center below), or a histogram (right below): <br>
-<img src="images/charts2.png" width="30%">&nbsp;&nbsp;<img
-        src="images/charts3.png" width="30%">&nbsp;&nbsp;<img
-        src="images/charts.png" width="30%"><br>  The options for these plots
+<img src="img/charts2.png" width="30%">&nbsp;&nbsp;<img
+        src="img/charts3.png" width="30%">&nbsp;&nbsp;<img
+        src="img/charts.png" width="30%"><br>  The options for these plots
 here are the same as they are when you click on the gears in one of
 these plots. You can change what is plotted after plotting once by
 clicking on the gears. <P>
@@ -302,7 +302,7 @@ order to fit in a whole bin. <P>
 
 You can view these plots all at once or one at a time by clicking on
 the corresponding icons above the plots (just as when you have
-multiple images loaded): <img src="images/singlegrid.png">. If you are
+multiple images loaded): <img src="img/singlegrid.png">. If you are
 viewing one at a time and have more than one plot loaded, you can
 scroll between them by clicking on the arrows (just as when you have
 multiple images loaded).<P>
@@ -312,13 +312,13 @@ multiple images loaded).<P>
 
 Here are several more examples of plots made with Firefly tools.<P>
 
-<img src="images/timeseriesplot.png" width="25%">
+<img src="img/timeseriesplot.png" width="25%">
 
-<img src="images/ex2-imgcst.png" width="25%"><P>
+<img src="img/ex2-imgcst.png" width="25%"><P>
 
-<img src="images/histo.png" width="25%">
+<img src="img/histo.png" width="25%">
 
-<img src="images/scatterwitherr.png" width="25%"><P>
+<img src="img/scatterwitherr.png" width="25%"><P>
 
 </BODY>
 </HTML>
