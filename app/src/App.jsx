@@ -18,7 +18,7 @@ import pdfIco from './images/pdf.png';
 
 export function App({tableOfContent, showHidden=false}) {
 
-    const [helpId, setHelpId] = useState(window.location.hash.substr(1));     // using a useState hook
+    const [helpId, setHelpId] = useState(window.location.hash.substr(1).replace('id=',''));     // using a useState hook
     const [expandedKeys=[], setExpandedKeys] = useState();
 
     const treeRoot = convertToTreeNode('0', tableOfContent, showHidden);
