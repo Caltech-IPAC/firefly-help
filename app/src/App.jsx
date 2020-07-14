@@ -18,12 +18,20 @@ import pdfIco from './images/pdf.png';
 
 export function App({tableOfContent, showHidden=false}) {
 
-    const [helpId, setHelpId] = useState(window.location.hash.substr(1).replace('id=',''));     // using a useState hook
+    const idFromUrl = () => window.location.hash.substr(1).replace('id=','');
+
+    const [helpId, setHelpId] = useState(idFromUrl());     // using a useState hook
     const [expandedKeys=[], setExpandedKeys] = useState();
+
+    useEffect(() => {
+        window.onpopstate = (ev) => {
+            setHelpId(idFromUrl());
+        }
+    });
 
     const treeRoot = convertToTreeNode('0', tableOfContent, showHidden);
     const treeMap = flattenTree({items: tableOfContent});
-    const selNode = treeMap[helpId] || get(tableOfContent, '0');
+    const selNode = getSelNode(helpId, treeMap);
     const selectedKeys = [selNode.key];
     const pkey = selNode?.parent?.key;
     const defaultExpandedKeys = pkey ? [pkey] : undefined;
@@ -61,13 +69,7 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
     const [open, setOpen] = useState(true);
 
     const gotoId = (helpId) => {
-        const helpItems = Object.values(treeMap);
-        const item = helpItems.find((el) => el.id === helpId);
-        if (item) {
-            setHelpId(helpId);
-            const url = window.location.href.replace(window.location.hash, '');
-            window.history.pushState(undefined, window.title, `${url}#${helpId}`);
-        }
+        window.location.hash = helpId;
     };
 
     const onSelect = (p, e) => {
@@ -76,15 +78,11 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
     };
 
     const next = () => {
-        const keys = Object.keys(treeMap);
-        const cidx = keys.findIndex((k) => selNode.id === k);
-        gotoId(keys[cidx+1]);
+        gotoId(getNextNode(selNode.id, treeMap).id);
     };
 
     const previous = () => {
-        const keys = Object.keys(treeMap);
-        const cidx = keys.findIndex((k) => selNode.id === k);
-        gotoId(keys[cidx-1]);
+        gotoId(getPrevNode(selNode.id, treeMap).id);
     };
 
     const expandAll = (flg) => {
@@ -181,17 +179,15 @@ function convertToTreeNode(key, node, showHidden) {
     }
 };
 
-function flattenTree(node={}, map={}, showHidden) {
+function flattenTree(node={}, map={}) {
 
     if (node.id) map[node.id] = node;
 
-    const items = showHidden ? node.items : node.items && node.items.filter((node) => !node.hidden);
-    if (get(items, 'length') > 0) {
-        items.forEach( (n) => {
-            const mnode = {...n, parent: node};
-            flattenTree(mnode, map, showHidden);
-        });
-    }
+    const items = node.items || [];
+    items.length > 0 && items.forEach( (n) => {
+        const mnode = {...n, parent: node};
+        flattenTree(mnode, map);
+    });
     return map;
 }
 
@@ -208,4 +204,33 @@ function VersionPopup ({vTag, vCommit, buildTime, hideVersionPopup}) {
             <div className='verLine'><div>Build On: </div><div className='verValue'>{buildTime}</div></div>
         </div>
     );
+}
+
+function getSelNode(helpId, treeMap) {
+    let snode = treeMap[helpId];
+    if (snode?.hidden) {
+        snode = Object.values(treeMap).find((n) => !n.hidden && n.href === snode.href)
+        snode = snode || getPrevNode(helpId, treeMap);
+    }
+    return snode || Object.values(treeMap)[0];
+}
+
+function getPrevNode(helpId, treeMap) {
+    let snode;
+    const allNodes = Object.values(treeMap);
+    const idx = allNodes.findIndex((n) => n.id === helpId);
+    if (idx > 0) {
+        snode = allNodes.slice(0, idx).reverse().find((n) => !n.hidden);
+    }
+    return snode || allNodes[0];
+}
+
+function getNextNode(helpId, treeMap) {
+    let snode;
+    const allNodes = Object.values(treeMap);
+    const idx = allNodes.findIndex((n) => n.id === helpId);
+    if (idx >= 0 && idx < allNodes.length -2 ) {
+        snode = allNodes.slice(idx+1).find((n) => !n.hidden);
+    }
+    return snode || allNodes[0];
 }
