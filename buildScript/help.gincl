@@ -51,7 +51,7 @@ task loadConfig {
         if (project.hasProperty("appConfig")) {
             def env = findProperty("env") ? project.env : "local"
             def source = appConfig instanceof File ? appConfig.toURL() : new ClosureScript(closure: appConfig)
-            project.ext.appProps = new ConfigSlurper(env).parse(source).toProperties()
+            appProps.putAll( new ConfigSlurper(env).parse(source).toProperties() )
         }
 
         // generate version tag
