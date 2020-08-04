@@ -3,6 +3,32 @@
 import {get, uniq} from 'lodash';
 import {create} from './toc/toc_creator';
 
+
+const htmlStart = `
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Table of Contents" -->
+    <title>--TITLE--</title>
+<HEAD>
+</HEAD>
+<BODY BGCOLOR="white" >
+<div id="toc">
+
+    <ul> <b>Table of Contents</b>
+`;
+
+
+const htmlEnd = `
+
+<!--end of page    -->
+    </ul>
+</div>
+</BODY>
+</HTML>
+`;
+
+
 const appName = process.argv[2] || './build';
 const buildDir = process.argv[3] || './build';
 const {toc} = create(appName);
@@ -23,11 +49,18 @@ function build(outDir, toc) {
         fs.mkdirSync(outDir, {recursive: true} );
     }
 
+    const tocSection = '<ul> <b>Table of Contents</b>' +
+                        toc.map((n) => toHtml(n)).join('\n') +
+                        '</ul>';
+
+    const tocHtml =   fs.readFileSync('./public/index.html', {encoding:'utf8', flag:'r'})
+                        .replace('<div id="app-root"></div>', tocSection)
+                        .replace('%REACT_APP_page_title%', process.env.REACT_APP_page_title);
+
     // generate table of contents
     // produce a _toc.html file based on the given toc(table of content) array
     // this file will be used by PDF generator to mimic the look of
     // the dynamically generated navigation tree panel
-    const tocHtml = htmlStart + toc.map((n) => toHtml(n)).join('\n') + htmlEnd;
     const tocFname =  outDir + '/_toc.html';
     fs.writeFile(tocFname, tocHtml, function (err) {
         if (err) {
@@ -38,7 +71,7 @@ function build(outDir, toc) {
 
 
     // generate .pdf-input file based on the given toc
-    const files = tocHtml.split('\n')
+    const files = tocSection.split('\n')
         .filter(( (l) => l.toUpperCase().includes('HREF')))
         .map( (l) => get(l.match(/href[ ]*=[ ]*"([^"]+)"/i), [1], l))      // return all href with double quotes
         .map( (l) => get(l.match(/href[ ]*=[ ]*'([^']+)'/i), [1], l))              // return all href with single quotes
@@ -67,28 +100,3 @@ function toHtml(node) {
             ${children} 
         </li>`;
 }
-
-
-
-const htmlStart = `
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--NewPage-->
-<HTML>
-<!-- FOOTER LEFT "Table of Contents" -->
-<HEAD>
-</HEAD>
-<BODY BGCOLOR="white" >
-<div id="toc">
-
-    <ul> <b>Table of Contents</b>
-`;
-
-
-const htmlEnd = `
-
-<!--end of page    -->
-    </ul>
-</div>
-</BODY>
-</HTML>
-`;

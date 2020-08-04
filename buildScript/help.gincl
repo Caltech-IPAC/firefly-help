@@ -88,6 +88,13 @@ task zipHelp(type: Zip) {
 task buildPdfInput(type:Exec) {
     workingDir = appRoot
     commandLine "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/builder.js ${app_name} ${buildDir}".split(" ")
+    doFirst {
+        for (String key : appProps.keySet()) {
+            if (key.startsWith('REACT_APP_')) {
+                environment (key, appProps[key])
+            }
+        }
+    }
 }
 
 task buildClient(dependsOn: loadConfig) {
