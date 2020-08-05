@@ -34,7 +34,7 @@ task generatePdf (type: Exec) {
 
         def pdfFile = 'help.pdf'
         String inputs = new File("$buildDir/.pdf-input").text.trim()
-        args "--left", ".7in", "--right", ".7in", "--linkcolor", "blue", "--webpage", "-f", "$buildDir/$pdfFile", "--titleimage"
+        args "--compression=9", "--left", ".7in", "--right", ".7in", "--linkcolor", "blue", "--webpage", "-f", "$buildDir/$pdfFile", "--titleimage"
         args inputs.split()
 
         println ">> generatePdf: $commandLine"
