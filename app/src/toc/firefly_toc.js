@@ -164,6 +164,11 @@ export const toc_tables = {
             href: 'firefly/tables.html#filters',
         },
         {
+            id: 'tables.cells',
+            title: 'Table Cells',
+            href: 'firefly/tables.html#cells',
+        },
+        {
             id: 'tables.save',
             title: 'Saving Tables',
             href: 'firefly/tables.html#save',

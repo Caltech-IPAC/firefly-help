@@ -312,6 +312,23 @@ cancel filters icon (which also appears after you impose filters):
 <img src="img/cancelfilters.png">.<P>
 
 
+<h3><A name="cells">Table Cells</A></h3>
+
+Some cell values may be too long for the cell space. If that is the
+case, an ellipsis ("...") will appear in the cell as you mouse over
+it: <br><img src="img/cellellipsis.png"><P>
+
+If you click on the ellipsis, you get a pull-down menu: <br><img
+src="img/cellmenu.png"> from which you can choose to copy the cell
+value or view it in a pop-up window.<P>
+
+If you view it in a pop-up window, it will come up with no special
+formatting:<br> <img src="img/cellpopup-noformatting.png"><br>  If the
+cell has a lot of information, it may help to impose simple
+formatting, which it attempts to do if you tick the box "View with
+formating":<br>  <img src="img/cellpopup-formatting.png"><P>
+
+
 <h3><A name="save">Saving Tables</A></h3>
 
 
@@ -326,22 +343,26 @@ You obtain this pop-up:<br>
 <img src="img/savetablepopup.png" width="500"><p>
 
 
-From here, you can save the table in a variety of formats:<br>
-<img src="img/savetableoptions.png"><br>
+From here, you can save the table in a variety of formats:<br> <img
+src="img/savetableoptions.png"><br>
 
 It defaults to saving it as an <a
 href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
-target="_blank">IPAC table file <img src="img/jumpout.jpg" height="10"></A>, which is basically ASCII text
-with headers explaining the type of data in  each column, separated by
-vertical bars. <P>
+target="_blank">IPAC table file <img src="img/jumpout.jpg"
+height="10"></A>, which is basically ASCII text with headers
+explaining the type of data in  each column, separated by vertical
+bars. <P>
 
-Other formats include comma-separated values (suitable for, e.g., Excel), tab-separated values, and four different versions of <A href="http://www.ivoa.net/documents/VOTable/">VO tables <img src="img/jumpout.jpg" height="10"></A>.<P>
+Other formats include comma-separated values (suitable for, e.g.,
+Excel), tab-separated values, and four different versions of <A
+href="http://www.ivoa.net/documents/VOTable/">VO tables <img
+src="img/jumpout.jpg" height="10"></A>.<P>
 
 The filename  may include the word "gator" because, under the hood,
 the software is talking to the <a
 href="https://irsa.ipac.caltech.edu/applications/Gator/"
-target="_blank">IRSA General Catalog Query Engine <img src="img/jumpout.jpg" height="10"></A>, powered by
-Gator.<P>
+target="_blank">IRSA General Catalog Query Engine <img
+src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
 
 
 
@@ -486,9 +507,10 @@ not overlay, check to be sure your catalog has columns called "ra" and
 
 <LI> If you overlay a large catalog, then turn around and <a
 href="visualization.html#fitsDownloadOptions">save a regions file from
-the catalog overlay</A>, then currently it is the case that only the
-first 499 sources in the full catalog will be saved to the regions
-file.
+the catalog overlay</A>, the full catalog may not be saved to the
+regions file. If you have &gt;15,000 sources, not every source will be
+overlaid on the image, even if you zoom in, and thus will not be in
+the regions file.
 
 <LI>If you have "pan by table row" turned on (see <a
 href="visualization.html#panbytablerow">Visualization chapter</A>),
