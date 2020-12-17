@@ -53,21 +53,28 @@ Features</A><br>
 You can interactively explore the image with the mouse. Move your
 mouse over any image that is loaded into the viewer. Details about the
 image and, specifically, the pixel beneath your mouse cursor, appear
-likely somewhere near the top of the window with a variety of useful
-items. Some information is updated in real time (such as coordinates);
-some information (such as flux densities) is updated when you stop
-moving your mouse for a second or two.  The image can be interactively
-investigated in this fashion.  Here is one example from one Firefly
-tool:<br> <img
-src="img/pixelreadout.png"><br> You can make it 'stick' on a
-particular place on the image -- tick the "Lock by click" box and then
-click on the image at your desired location. <P>
+along the top of the window with a variety of useful items. Some
+information is updated in real time (such as coordinates); some
+information (such as flux densities) is updated when you stop moving
+your mouse for a second or two.  The image can be interactively
+investigated in this fashion.  <br> <img src="img/pixelreadout.png"><p>
 
-The orientation of the image may also be given with a compass rose,
-next to a zoomed-in view of the image under your cursor. If you can't
-see all of these two displays, enlarge your browser window
-slightly, or the tool you're using may not have these features.<P> 
+To change the units of the readout, click on the name of the readout
+(in the example here, "Pixel Size" or "EQ-J2000" or "Image
+Pixel"):<br>
+<img src="img/pixelreadoutpopups.png"><br>
+You can change it to other values, as shown.<P>
 
+You can make it 'stick' on a particular place on the image -- tick the
+"Lock by click" box and then click on the image at your desired
+location. When this is clicked, small "clipboards" appear near the
+readout. Click on that icon to copy that position to your
+clipboard.<br> <img src="img/lockposition.png"><P>
+
+The orientation of the image is given with a compass rose on the
+right, next to a zoomed-in view of the image under your cursor. If you
+can't see all of these two displays, enlarge your browser window
+slightly.<P> 
 
 &nbsp;<P>
 
@@ -171,11 +178,12 @@ save icon. Be sure to save the cropped FITS image (see annotated
 figure). This feature is not available for HiPS images.<br> <img
 src="img/savecropped.png"> <P>
 
-Note that if you overlay a large catalog, then turn around and save a
-regions file from the catalog overlay, the full catalog may not be
-saved to the regions file. If you have &gt;15,000 sources, not every
-source will be overlaid on the image, even if you zoom in, and thus
-will not be in the regions file.<P>
+Note that if you <a href="catalogs.html">overlay a large catalog</A>,
+then turn around and save a regions file from the catalog overlay, the
+full catalog may not be saved to the regions file. If you have
+&gt;15,000 sources, enough that the accompanying plot is shown in
+shades of grey, not every source will be overlaid on the image, even
+if you zoom in, and thus will not be in the regions file.<P>
 
 The saved PNG is the same size as it is on your screen. If you want a
 big version, make the desired image big on your screen (view
@@ -607,11 +615,11 @@ list, at least a little bit.<P>
 <em>On the left hand side</em>, you can filter by :
 <DL>
 <DT>Mission (or survey)
-<DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS, MSX,
-COSMOS, MUSYC.
+<DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS,
+MSX, COSMOS, MUSYC, BLAST, IRTS, BOLOCAM.
 <DT>Project Type 
-<dd>All-sky, galactic, extragalactic, compilation (meaning, e.g., all
-the data available from a mission that was not an all-sky survey).
+<dd>Compilation (meaning, e.g., all the data available from a mission
+that was not an all-sky survey), extragalactic, galactic, or all-sky.
 <dt>Band 
 <dd>X-ray, UV, optical, near-IR, mid-IR, far-IR, mm, radio. (Yes, you
 can find data from non-IR missions/surveys here, depending on what

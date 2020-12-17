@@ -55,9 +55,9 @@ tab.<P>
 Immediately below the tab name, there are several symbols:<br> <img
 src="img/tablehead.png"><br> which we now describe.<P>
 
-The first thing to notice is that only the first 50 rows of the
+The first thing to notice is that only the first 100 rows of the
 retrieved catalog are displayed in the table. In the example here,
-there are ~28,000 sources that were retrieved in the search.  The
+there are ~7,700 sources that were retrieved in the search.  The
 left/right black arrows plus the page number allow you to navigate
 among these 'pages' of 50 sources each.  Note that the entire set of
 results (not just the 50 rows you are currently viewing) can be sorted
@@ -76,21 +76,25 @@ to <img src="img/table.png"> -- click this again to return to the
 default table view.<P>
 
 The next icon is <img src="img/savetable.png"> which is "Save" -- this
-is how you may save the catalog. It has its <a href="#save">own section below</A>.<P>
+is how you may save the catalog. It has its <a href="#save">own
+section below</A>.<P>
 
+You may or may not see the next icon: <img src="img/infolink.png">
+This is an "information" button and, if it exists, it may provide
+addtional information about the table.<P>
 
 The next option on the top of the catalog tab is this: <img
 src="img/tableoptions.png">.  Clicking on this icon brings up options
 for the table, e.g., how many rows are displayed per page, which
 columns are shown, whether units and data types are shown at the top
-of the column, shown here:<br> <img src="img/toptableoptions.png" width="50%"><br>
-By default, all columns are shown. The default page size is 100 rows. 
-Note that expanding the page size to numbers much greater than 100 may
-result in a substantial performance degradation (e.g., your browser
-will appear to freeze or not appear to be doing anything while it
-manages and renders the large table). See the <a
-href="#filters">Filters section below</A> for more things to do from
-the table options pop-up. <P>
+of the column, shown here:<br> <img src="img/toptableoptions.png"
+width="50%"><br> By default, it is often but not always the case that
+all columns are shown. The default page size is 100 rows.  Note that
+expanding the page size to numbers much greater than 100 may result in
+a substantial performance degradation (e.g., your browser will appear
+to freeze or not appear to be doing anything while it manages and
+renders the large table). See the <a href="#filters">Filters section
+below</A> for more things to do from the table options pop-up. <P>
 
 This is one of the last options on the top of the catalog tab: <img
 src="img/expand-24x24.png">. Clicking on this expands the catalog
@@ -223,6 +227,7 @@ resembles the text that you type in the box.
 string: !=''
 <LI> Retain rows for which a certain parameter is not NULL and is
 larger than 1.234: &gt; 1.234 and IS NOT NULL
+<LI> Retain rows that have values between -0.5 and 1.25: &gt; -05 and &lt; 1.25
 <LI> Retain rows with a parameter greater than one value or exactly
 equal to another value: &gt; 12345 or != 3000 
 <LI>Retain rows with a parameter equal to one of the values in a list:
@@ -259,7 +264,8 @@ constraints you have imposed are in the "current constraints" box, and
 you can apply additional SQL constraints via the free-form text box.
 Hints for syntax are given below the entry box. This window can be
 resized such that you can see the whole set of hints and imposed
-filters.<P>
+filters. Note that in this interface, column headers must be enclosed
+within double quotes.<P>
 
 The third tab is just the table metadata:<br>
 <img src="img/tablemetadata.png" width="25%"><P>
