@@ -173,20 +173,101 @@ export const toc_tables = {
             title: 'Saving Tables',
             href: 'firefly/tables.html#save',
         },
-        {
-            id: 'tables.catalogs',
-            title: 'Catalogs',
-            href: 'firefly/tables.html#catalogs',
-        },
+    ]
+};
+
+const toc_catalogs = {
+    id: 'catalogs',
+    title: 'Catalogs',
+    href: 'firefly/catalogs.html',
+    items: [
         {
             id: 'basics.catalogs',
             title: 'Catalogs',
             href: 'firefly/tables.html#catalogs',
              hidden: true,
         },
+        {
+            id: 'catalogs.catalogs',
+            title: 'IRSA Catalogs',
+            href: 'firefly/catalogs.html#catalogs',
+             hidden: true,
+        },
+        {
+            id: 'catalogs.irsacatalogs',
+            title: 'IRSA Catalogs',
+            href: 'firefly/catalogs.html#irsacatalogs',
+        },
+        {
+            id: 'catalogs.nedcatalogs',
+            title: 'NED Catalogs',
+            href: 'firefly/catalogs.html#nedcatalogs',
+        },
+        {
+            id: 'catalogs.owncatalogs',
+            title: 'Your Own Catalogs',
+            href: 'firefly/catalogs.html#owncatalogs',
+        },
+        {
+            id: 'catalogs.votap',
+            title: 'VO TAP Search',
+            href: 'firefly/catalogs.html#votap',
+        },
+        {
+            id: 'catalogs.voscs',
+            title: 'VO SCS Search',
+            href: 'firefly/catalogs.html#voscs',
+        },
+        {
+            id: 'tapSearches.form',
+            title: 'VO TAP Search',
+            href: 'firefly/catalogs.html#tapSearches.form',
+             hidden: true,
+        },
+        {
+            id: 'tapSearches.tapService',
+            title: 'Select TAP Service',
+            href: 'firefly/catalogs.html#tapSearches.tapService',
+             hidden: true,
+        },
+        {
+            id: 'tapSearches.selectBy',
+            title: 'Select Query Type',
+            href: 'firefly/catalogs.html#tapSearches.selectBy',
+             hidden: true,
+        },
+         {
+            id: 'tapSearches.selectTable',
+            title: 'Select Table',
+            href: 'firefly/catalogs.html#tapSearches.selectTable',
+             hidden: true,
+        },
+         {
+            id: 'tapSearches.constraints',
+            title: 'Enter Constraints',
+            href: 'firefly/catalogs.html#tapSearches.constraints',
+             hidden: true,
+        },
+         {
+            id: 'tapSearches.spatial',
+            title: 'Spatial Constraints',
+            href: 'firefly/catalogs.html#tapSearches.spatial',
+             hidden: true,
+        },
+         {
+            id: 'tapSearches.temporal',
+            title: 'Temporal Constraints',
+            href: 'firefly/catalogs.html#tapSearches.temporal',
+             hidden: true,
+        },
+         {
+            id: 'tapSearches.adql',
+            title: 'ADQL',
+            href: 'firefly/catalogs.html#tapSearches.adql',
+             hidden: true,
+        },
     ]
 };
-
 
 export const toc_plots = {
     id: 'plots',
@@ -253,6 +334,7 @@ export const fireflyToc = [
     toc_about,
     toc_visualization,
     toc_tables,
+    toc_catalogs,
     toc_plots,
     toc_user,
     toc_privacy

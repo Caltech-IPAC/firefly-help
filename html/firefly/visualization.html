@@ -63,7 +63,7 @@ To change the units of the readout, click on the name of the readout
 (in the example here, "Pixel Size" or "EQ-J2000" or "Image
 Pixel"):<br>
 <img src="img/pixelreadoutpopups.png"><br>
-You can change it to other values, as shown.<P>
+You can change it to several other coordinate systems, as shown.<P>
 
 You can make it 'stick' on a particular place on the image -- tick the
 "Lock by click" box and then click on the image at your desired
@@ -178,12 +178,14 @@ save icon. Be sure to save the cropped FITS image (see annotated
 figure). This feature is not available for HiPS images.<br> <img
 src="img/savecropped.png"> <P>
 
-Note that if you <a href="catalogs.html">overlay a large catalog</A>,
+
+Note that if you overlay a large catalog,
 then turn around and save a regions file from the catalog overlay, the
 full catalog may not be saved to the regions file. If you have
 &gt;15,000 sources, enough that the accompanying plot is shown in
-shades of grey, not every source will be overlaid on the image, even
-if you zoom in, and thus will not be in the regions file.<P>
+shades of grey, <strong>not every source will be overlaid on the
+image</strong>, even if you zoom in, and thus will not be in the
+regions file.<P>
 
 The saved PNG is the same size as it is on your screen. If you want a
 big version, make the desired image big on your screen (view
@@ -208,6 +210,9 @@ you to more rapidly select the zoom level (field of view) you want.
 Select the desired level, or click on the 'x' in the upper right to
 make the window go away. Here is an example: <br><img
 src="img/zoomlevel.png"><P>
+
+You can alternatively zoom using the mouse wheel (or drag forward
+and backward on a touchpad or magic mouse).<P>
 
 Note that there is a maximum (or minimum) allowed zoom level, and they
 are different for FITS and HiPS images. A notification will appear
@@ -252,11 +257,18 @@ might not be what you want to do. <P>
 
 <dt><img src="img/colortable.png"> <em>Changing the color table.</em>
 <dd>This icon enables you to change the color table of the
-displayed image. (This option is only available for FITS, not HiPS,
+displayed image. (This option is available for FITS and HiPS
 images.)  When you click the button, a pull-down menu appears
 with a wide variety of color table choices. Select your new color
 table from the options shown:<br>
 <img src="img/colortableoptions.png"><P>
+The arrow in the upper right creates a pop-up window out of this
+pulldown menu so that you can leave the choices up while settling on
+the best option. Click to select the color table you want.
+Alternatively, you can use the "color bar" slider to move among the
+color tables. Below the color bar slider, there are sliders
+controlling the bias and contrast. Click or drag the slider to change
+the image display.<P>
 
 <dt><img src="img/stretch.png"> <em>Changing the color stretch.</em>
 <dd>This icon enables you to change the color stretch of the
@@ -820,9 +832,10 @@ href="http://cdsweb.u-strasbg.fr/" target="_blank">CDS <img
         src="img/jumpout.jpg" height="10"></A>. <P>
 
 HiPS images have the color and stretch set by the person who
-originally made them. Thus, you cannot change the color/stretch of
-HiPS images from within IRSA Viewer. This is why there may be multiple
-versions of some data sets in the list of HiPS images.<P>
+originally made them. The color table can be remapped within this
+tool. But, you cannot change the stretch of HiPS images from within
+IRSA Viewer. This is why there may be multiple versions of some data
+sets in the list of HiPS images.<P>
 
 You can't save HiPS images from within Firefly tools. To download your
 own copy, you will have to track down the original source of the
@@ -863,10 +876,10 @@ seconds, they vanish.<P>
 <LI>Some of these footprints are <em>large</em>. If you have a small
 image, some of these footprints will be larger than your image. Zoom
 out to see it, or find a larger image to use. If you overlay, say, a
-Nancy Grace Roman Space Telescope (WFIRST) footprint on a 2MASS image,
-you may need to zoom out a considerable amount before you can see the
-Roman footprint. You will see the center indicator of the marker
-before you will see the Roman footprint itself. 
+Nancy Grace Roman Space Telescope (formerly WFIRST) footprint on a
+2MASS image, you may need to zoom out a considerable amount before you
+can see the Roman footprint. You will see the center indicator of the
+marker before you will see the Roman footprint itself. 
 <LI>You can add multiple copies of the same marker using the layers
 pop-up (described generally above).  From the layers pop-up, there is
 a link right under the 'angle' option that says "Add [marker type]" --
@@ -978,8 +991,8 @@ rotate it, or drag the big circle to move it. Change the color,
 delete, or add more copies of the footprints from the layers
 pop-up.<P>
 
-<img src="img/wfirst.png"> <strong>Nancy Grace Roman Space Telescope
-(WFIRST) focal plane footprint.</strong> As above, the footprint can
+<img src="img/wfirst.png"> <strong>Nancy Grace Roman Space Telescope 
+focal plane footprint.</strong> As above, the footprint can
 be moved or rotated. Click and drag the boresight (the cross hairs),
 which appears by default to the upper right of the array of squares. 
 A circle appears, centered on the boresight, with four small circles
@@ -989,10 +1002,10 @@ overlay the footprint on a very small image, nothing will appear to
 have happened. You need at least a 60 arcmin image to comfortably see
 the footprint, and even then you will probably have to click and drag
 to see the entire footprint. Consult the <a
-href="https://wfirst.ipac.caltech.edu/" target="_blank">WFIRST
+href="https://wfirst.ipac.caltech.edu/" target="_blank">Roman
 documentation <img src="img/jumpout.jpg" height="10"></A> for
 specifics on the apertures. Change the color, delete, or add more
-copies of the WFIRST footprint from the layers pop-up.<P> 
+copies of the Roman footprint from the layers pop-up.<P> 
 
 
 
