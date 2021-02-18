@@ -26,7 +26,6 @@ plots of your table.<P>
 +<A href="#columns">Table Columns</A>  <br>
 +<A href="#filters">Table Filters</A>  <br>
 +<A href="#save">Saving Tables</A>  <br>
-+<A href="#catalogs">Catalogs</A>  <br>
 <P>&nbsp;<P>
 
 
@@ -369,163 +368,10 @@ href="https://irsa.ipac.caltech.edu/applications/Gator/"
 target="_blank">IRSA General Catalog Query Engine <img
 src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
 
-
-
-
-
 <h3><a name="catalogs">Catalogs</A></h3>
 
 One specific application of Firefly tables is astronomical catalogs.
-You may have have the ability to search catalogs, and you may have
-this kind of a catalog search window.  <P>
-
-<img src="img/catalogsearch.png" width="100%"><P>
-
-The upper left of this window is where you specify which catalog you
-want to search.  To change catalogs, first select the "project" under
-which they are housed at IRSA, such as 2MASS, IRAS, WISE, MSX, etc. 
-The available choices under the "category" and the specific clickable
-catalog change according to the project you have selected.  A short
-description is provided for each of the catalogs, with links for more
-information (including definitions of the sometimes cryptic column
-names); an example is here:<br> <img src="img/catalogcoldef.png"><P>
-
-The upper right of this window is where you specify the target (the
-position is pre-filled with its best guess as to what you want) and
-the search method (cone, elliptical, box, polygon, multi-object,
-all-sky), and the parameters that go with that search method (e.g.,
-the radius of the cone). The parameters for each of these searches
-change dynamically as you select search options.  <P>
-
-<DL>
-<DT><strong>Caution</strong>: <DD>Pick your units from the pulldown
-first, and then enter a number; if you enter a number and then select
-from the pulldown, it will convert your number from the old units to
-the new units. There are both upper and lower limits to your search
-radius; it will tell you if you request something too big or too
-small. Note that these limits are survey-dependent.   <P>
-
-<DT><strong>Cone search</strong>: <dd> <img
-src="img/catsearch-cone.png"> <br> It has guessed what position you want,
-based on prior searches. You specify the cone radius.<P>
-
-<DT><strong>Elliptical search</strong>: <dd> <img
-src="img/catsearch-ellip.png"> <br> It has guessed what position you want,
-based on prior searches. You specify the search ellipse's semi-major
-axis, position ratio, and axial ratio.<P>
-
-<DT><strong>Box search</strong>: <dd> <img
-src="img/catsearch-box.png"> <br> It has guessed what position you want,
-based on prior searches. You specify the box's length on a side.<P>
-
-<DT><strong>Polygon search</strong>: <dd> <img
-src="img/catsearch-polygon.png"> <br> Note that it no longer has a
-single target location. It has pre-filled the vertices of the position
-it thinks you want, based on prior searches.  You can select whether
-you want the catalog request to match the entire area of the image you
-have selected ("image"), or just the portion of the image you can see
-in the current view ("visible"), or your own ("custom") area. The list
-of vertices in the coordinates box are in decimal RA and Dec in
-degrees. You must enter at least 3 and at most 15 vertices, separated
-by a comma. Note that, for overlaying catalogs on HiPS images, you
-cannot select "image", because HiPS images are generally very, very
-large, so this would result in too many points being returned. There
-is a maximum of 5 degrees imposed on catalog searches to match HiPS
-images.<P>
-
-<DT><strong>Multi-Object search</strong>: <dd> <img
-src="img/catsearch-multiobj.png"><br> In this case, it has not attempted
-to guess what position you want. You need to upload a file in <a
-href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
-target="_blank">IPAC table format <img src="img/jumpout.jpg"
-height="10"></A>, which is a varietal of plain text. (IRSA has a <a
-href="https://irsa.ipac.caltech.edu/applications/TblValidator/"
-target="_blank">table reformatting and validation service <img
-src="img/jumpout.jpg" height="10"></A> which may be helpful.) Note
-that you also have to specify the radius over which to search for each
-of the targets in your list.<P>
-
-When you do a multi-position search on catalogs, three new columns are
-added to the catalog as it is returned to you. These columns are :
-<UL>
-<LI>cntr_01 - the target position you requested
-<LI>dist_x - the distance between the target position you requested
-and the object it found
-<LI>pang_x - the position angle between the target position you requested
-and the object it found
-</UL>
-These additional columns can help you assess if the target it found is
-the target that should be matched to the position you requested.<P>
-
-
-<DT><strong>All-sky search</strong>: <dd> <img
-src="img/catsearch-allsky.png"><br> Because this is an all-sky search, it
-does not have a single target entry box. In order to constrain this
-search, you need to impose constraints on the bottom of the screen
-(see below). <P>
-
-</dl>
-
-The bottom of this window allows you to set restrictions on specific
-columns. It gives you a list of all the available column names in the
-corresponding catalog. (Most catalogs have identical "standard" and
-"long form" but some have more columns available in "long form".) From
-here, you can choose what to display (tickboxes on the left), and
-filter what is returned ("constraints" column). For example, only
-return objects with values in column y that are greater than x. If you
-add more than one restriction, they are combined logically using an
-"AND" operators; be careful, because you can thus restrict data such
-that none of the catalog meets your criteria.<P>
-
-Click on "Search" to initiate the search. It will load the catalog
-into a tab of its own. The objects will also be overlaid on any images
-you have loaded, and a default x-y plot will be shown. (For more on
-the x-y plots, see <a href="plots.html">the plots section</A>.)  All
-of these representations are interlinked -- clicking on a row in the
-table shows it on the image and in the plot, and clicking on an object
-in the image shows it in the table and in the plot, and clicking on an
-object in the plot shows it in the table and on the image.<P>
-
-To close the catalog search window without searching for a catalog,
-click on "Cancel".<P>
-
-<strong>Tips and Troubleshooting.</strong> 
-<UL>
-<LI>If the catalog search is successful quickly, it will promptly
-return the results in a tab of its own. 
-
-<LI>The search may take a long time to return, especially if you have
-asked for a large catalog, and you may think that nothing has
-happened, but be patient and eventually it will return a tab.
-
-<LI>Use large search radii with caution! Be sure you understand how
-many sources you are likely to retrieve. Searches that retrieve more
-rows will take longer. Searches that retrieve tens of thousands of
-rows will take quite a while. 
-
-<LI>If your catalog has RA and Dec included in it, and you have an <a
-href="visualization.html">image with a WCS</A> loaded into your tool,
-then it will overlay the catalog on the image. If your catalog does
-not overlay, check to be sure your catalog has columns called "ra" and
-"dec" (all lower-case letters). If it does not work, experiment with
-"RA" and "Dec" or "DEC". 
-
-<LI> If you overlay a large catalog, then turn around and <a
-href="visualization.html#fitsDownloadOptions">save a regions file from
-the catalog overlay</A>, the full catalog may not be saved to the
-regions file. If you have &gt;15,000 sources, not every source will be
-overlaid on the image, even if you zoom in, and thus will not be in
-the regions file.
-
-<LI>If you have "pan by table row" turned on (see <a
-href="visualization.html#panbytablerow">Visualization chapter</A>),
-then it may be disconcerting to have the images "jump" right after the
-catalog loads. It is centering the selected catalog object (the first
-one upon catalog loading) in the viewer. If you don't like this, turn
-off "pan by table row".
-
-</ul><P>
-
+See the <a href="catalogs.html">catalogs section</A> <P>
 
 
 
