@@ -31,7 +31,7 @@ export function App({tableOfContent, showHidden=false}) {
 
     const treeRoot = convertToTreeNode('0', tableOfContent, showHidden);
     const treeMap = flattenTree({items: tableOfContent});
-    const selNode = getSelNode(helpId, treeMap);
+    const [selNode, href] = getSelNode(helpId, treeMap);
     const selectedKeys = [selNode.key];
     const pkey = selNode?.parent?.key;
     const defaultExpandedKeys = pkey ? [pkey] : undefined;
@@ -56,7 +56,7 @@ export function App({tableOfContent, showHidden=false}) {
                 <Navigator {...{selNode, treeRoot, selectedKeys, defaultExpandedKeys, treeMap, tableOfContent, showHidden, expandedKeys, setExpandedKeys, setHelpId}}/>
 
                 <div className='TOC-view'>
-                    <iframe title='HelpFrame' className='HelpFrame' src={selNode.href}/>
+                    <iframe title='HelpFrame' className='HelpFrame' src={href}/>
                 </div>
             </div>
             <VersionInfo/>
@@ -207,12 +207,14 @@ function VersionPopup ({vTag, vCommit, buildTime, hideVersionPopup}) {
 }
 
 function getSelNode(helpId, treeMap) {
+    const root = Object.values(treeMap)[0];
     let snode = treeMap[helpId];
+    let href = snode?.href || root.href;
     if (snode?.hidden) {
         snode = Object.values(treeMap).find((n) => !n.hidden && n.href === snode.href)
         snode = snode || getPrevNode(helpId, treeMap);
     }
-    return snode || Object.values(treeMap)[0];
+    return [snode || root, href];
 }
 
 function getPrevNode(helpId, treeMap) {
