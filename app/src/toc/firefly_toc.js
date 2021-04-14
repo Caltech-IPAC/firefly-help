@@ -27,6 +27,51 @@ export const toc_privacy = {
     href: 'firefly/privacy.html'
 };
 
+const toc_basics = {
+    id: 'basics',
+    title: 'Basic Features and Functions',
+    href: 'firefly/basics.html',
+    items: [
+        {
+            id: 'basics.catalog',
+            title: 'Retrieving and Using Catalogs',
+            href: 'firefly/basics.html#irsacatalogs',
+            hidden: true,
+        },
+        {
+            id: 'basics.loadcatalog',
+            title: 'Upload Your Own Catalogs',
+            href: 'firefly/basics.html#owncatalogs',
+            hidden: true,
+        },
+        {
+            id: 'basics.searching',
+            title: 'Searching for Images',
+            href: 'firefly/basics.html#searching',
+        },
+        {
+            id: 'basics.images',
+            title: 'Interacting with Images',
+            href: 'firefly/basics.html#images',
+        },
+        {
+            id: 'basics.tables',
+            title: 'Interacting with Tables',
+            href: 'firefly/basics.html#tables',
+        },
+        {
+            id: 'basics.charts',
+            title: 'Creating Plots',
+            href: 'firefly/basics.html#charts',
+        },
+        {
+            id: 'basics.bgmon',
+            title: 'Background Monitor',
+            href: 'firefly/basics.html#bgmon',
+        },
+    ]
+};
+
 const toc_visualization = {
     id: 'visualization',
     title: 'Visualization',
@@ -39,7 +84,7 @@ const toc_visualization = {
             hidden: true,
         },
         {
-            id: 'visualization.Rotate',
+            id: 'visualization.rotate',
             title: 'Rotation',
             href: 'firefly/visualization.html#rotateImage',
             hidden: true,
@@ -60,6 +105,24 @@ const toc_visualization = {
             id: 'visualization.ds9regions',
             title: 'ds9 Regions',
             href: 'firefly/visualization.html#ds9regions',
+            hidden: true,
+        },
+        {
+            id: 'visualization.saveimage',
+            title: 'Save Image',
+            href: 'firefly/visualization.html#saveimage',
+            hidden: true,
+        },
+        {
+            id: 'visualization.zoomin',
+            title: 'zoomin',
+            href: 'firefly/visualization.html#zoomin',
+            hidden: true,
+        },
+        {
+            id: 'visualization.colortable',
+            title: 'Color Table',
+            href: 'firefly/visualization.html#colortable',
             hidden: true,
         },
         {
@@ -132,8 +195,13 @@ const toc_visualization = {
             id: 'visualization.changehips',
             title: 'Change HiPS',
             href: 'firefly/visualization.html#changehips',
-              hidden: true,
-       },
+            hidden: true,
+        },
+        {
+            id: 'visualization.catalogload',
+            title: 'Catalog loading',
+            href: 'firefly/visualization.html#catalogload',
+        },
     ]
 };
 
@@ -332,6 +400,7 @@ export const toc_plots = {
  */
 export const fireflyToc = [
     toc_about,
+    toc_basics,
     toc_visualization,
     toc_tables,
     toc_catalogs,
