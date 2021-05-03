@@ -205,6 +205,11 @@ catalog loads. It is centering the selected catalog object (the first
 one upon catalog loading) in the viewer. If you don't like this, turn
 off "pan by table row".
 
+<LI>By default, it may show you fewer columns than are available in
+the full catalog. By selecting "long form" (above the list of
+columns), you can access the full range of available columns. In some
+cases, there are literally hundreds of columns that you can access!
+
 </ul><P>
 
 
@@ -435,21 +440,21 @@ interface even has RA/Dec or, if it does, it may not be searchable via
 positions. Make sure that you have selected a table that contains what
 you need before proceeding past this step.<P>
 
-<dt><a name="tapSearches.spatial"><a name="tapSearches.temporal"></A></A>
-<a name="tapSearches.constraints"><strong>Enter Constraints</strong></A><P>
+
+<dt><a name="tapSearches.constraints"><strong>Enter Constraints</strong></A><P>
 
 <dd>There are two sections to this step. <P>
 
-On the left, you can impose spatial or temporal constraints. In
-addition to selecting the tickbox indicating that you wish to impose a
-particular kind of constraints, you need to specify which columns have
-position or time, and then specify the constraints you want -- the
-location of the target and the cone or polygon parameters for the
-position search, or the date and time range for a temporal search.<P>
+On the <strong>left</strong>, you can impose a variety of constraints.
+In addition to selecting the tickbox indicating that you wish to
+impose a particular kind of constraints, you need to specify which
+columns should be used for those constraints. <a
+href="#moreconstraints">More information  on these constraints is
+below.</A> <P>
 
-On the right is a list of the columns in the selected table, with
-tickboxes to indicate which columns will be returned. You can also set
-constraints on the columns from here, following the <a
+On the <strong>right</strong> is a list of the columns in the selected
+table, with tickboxes to indicate which columns will be returned. You
+can also set constraints on the columns from here, following the <a
 href="tables.html#filters">same filter rules as for any tables
 here</A>. Above this section of the screen, there is an indication of
 which columns are selected (e.g., 45 of 298 columns). You can reset
@@ -491,7 +496,132 @@ from the "Populate and edit ADQL" button, this is a one-way trip --
 any changes you make to the ADQL here are NOT transmitted
 automatically back to the "Single Table (UI Assisted)" query page.<P>
 
-</dl>
+</dl><P>
+
+
+<strong><a name="moreconstraints">More information about
+constraints</A></strong><P>
+
+You can have several different ways of constraining your search
+depending on the options you have selected before the "Enter
+Constraints" section, and the options depend on what kind of service
+is available at the TAP service you have selected. If the options do
+not appear initially, click on the black triangle to "unfold" the
+options.<P>
+
+<dl>
+<dt><strong><a name="tapSearches.spatial">Enter Constraints:
+Spatial</A></strong>
+<dd>
+This part of the interface allows you to specify which columns of the
+catalog are to be used for coordinates, and to impose a cone search on
+a given target, or a polygon search.<P>
+
+This is what it looks like when you do a cone search; note that you
+have the same name resolution options as in a <a
+href="basics.html#searching">simpler search</A>:<br>
+<img src="img/enterconstraints-spatial1.png" width=40%"><P>
+
+And, this is what it looks like when you do a polygon search.<br>
+<img src="img/enterconstraints-spatial2.png" width=40%">
+
+
+<dt><strong><a name="tapSearches.temporal">Enter Constraints:
+Temporal</A></strong>
+<dd>
+This part of the interface allows you to specify which column of the
+catalog is to be used for timing, and allows you to constrain the date
+in two different systems.<P>
+
+<table>
+<tr><td width="25%">This is what the panel looks like initially, where you
+specify the column with the time and then the dates:
+</td><td><img src="img/enterconstraints-temporal1.png"
+width=50%"></td></tr>
+
+<tr><td width="25%">If you click
+on the calendar icon at the far right of the entry box, you get a
+pop-up from which you can specify the date, shown here.</td><td>
+<img src="img/enterconstraints-temporal2.png" width=50%"> </td></tr>
+
+<tr><td width="25%">Click on the
+time below the calendar pop-up to select a time of day, if necessary.
+Click on the date at the top of the pop-up to go back to the month
+view.</td><td>
+<img src="img/enterconstraints-temporal3.png" width=50%"> </td></tr>
+
+<tr><td width="25%">
+If you would
+like to work in MJD instead of ISO dates, select the "MJD" radio
+button. Note that it echoes below the box what it thinks you've
+entered in twoo different systems (UTC and MJD) to verify what you
+have entered.</td><td><img src="img/enterconstraints-temporal4.png"
+width=50%"> </td></tr>
+</table>
+<P>
+
+<dt><strong><a name="tapSearches.obsCore">Enter Constraints:
+Observation Type and Source</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-obstype.png"></td>
+<td>This panel provides a way to constrain the:
+<UL>
+<LI>Calibration level - 0 is the least processed and 4 is the most
+processed, and not all instruments provide all levels
+<LI>Data product type - image, cube, spectrum, SED, time series,
+visibility, event, measurement, or none specified. You can select more
+than one of these at a time by using a right mouse click.
+<LI>Instrument name - must match exactly, wild cards not accepted
+<LI>Collection - must match exactly, wild cards not accepted
+</UL>
+</td>
+</tr></table>
+
+<dt><strong><a name="tapSearches.location">Enter Constraints: Location</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-location1.png"></td>
+<td>This panel provides a way to constrain the location of your
+search. You can specify via the pull-down the type of your query:
+"observation boundary contains point", "observation boundary contains
+shape" (default), "observation boundary is contained by shape",
+"observation boundary intersects shape", and "central point (s_ra,
+s_dec) is contained by shape." The latter refers to the columns "s_ra"
+and "s_dec" in the ObsTAP table.
+</td>
+</tr></table>
+<dt><strong><a name="tapSearches.exposure">Enter Constraints: Timing</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-timing1.png"></td>
+<td>This panel provides a way to constrain the observation time of your
+search. This is the default option, where you want data
+completed in the last x hours.
+</td></tr>
+<tr><td><img
+src="img/enterconstraints-timing1.png"></td>
+<td>This is the alternate option, where you want data
+overlapping a specified date range, where you can specify UTC or MJD
+times.
+</td></tr></table>
+
+<dt><strong><a name="tapSearches.wavelength">Enter Constraints:
+Spectral Coverage</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-spectral1.png"></td>
+<td>This panel provides a way to constrain the spectral coverage of your
+search. This is the default option, where you want data
+containing a given wavelength.
+</td></tr>
+<tr><td><img
+src="img/enterconstraints-spectral2.png"></td>
+<td>This is the alternate option, where you want data
+overlapping a specified wavelength range.
+</td></tr></table>
+
+</dl><P>
 
 
 

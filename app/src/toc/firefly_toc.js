@@ -341,6 +341,30 @@ const toc_catalogs = {
              hidden: true,
         },
          {
+            id: 'tapSearches.obsCore',
+            title: 'Observation Type and Source',
+            href: 'firefly/catalogs.html#tapSearches.obsCore',
+            hidden: true,
+         },
+         {
+            id: 'tapSearches.location',
+            title: 'Location',
+            href: 'firefly/catalogs.html#tapSearches.location',
+            hidden: true,
+         },
+         {
+            id: 'tapSearches.exposure',
+            title: 'Timing',
+            href: 'firefly/catalogs.html#tapSearches.exposure',
+            hidden: true,
+         },
+         {
+            id: 'tapSearches.wavelength',
+            title: 'Spectral Coverage',
+            href: 'firefly/catalogs.html#tapSearches.wavelength',
+            hidden: true,
+         },
+         {
             id: 'tapSearches.adql',
             title: 'ADQL',
             href: 'firefly/catalogs.html#tapSearches.adql',
