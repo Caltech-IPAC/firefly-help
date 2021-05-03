@@ -272,6 +272,12 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#nedcatalogs',
         },
         {
+            id: 'catalogs.ned',
+            title: 'NED Catalogs',
+            href: 'firefly/catalogs.html#nedcatalogs',
+             hidden: true,
+        },
+        {
             id: 'catalogs.owncatalogs',
             title: 'Your Own Catalogs',
             href: 'firefly/catalogs.html#owncatalogs',
@@ -285,6 +291,12 @@ const toc_catalogs = {
             id: 'catalogs.voscs',
             title: 'VO SCS Search',
             href: 'firefly/catalogs.html#voscs',
+        },
+        {
+            id: 'catalogs.vo',
+            title: 'VO SCS Search',
+            href: 'firefly/catalogs.html#voscs',
+             hidden: true,
         },
         {
             id: 'tapSearches.form',
