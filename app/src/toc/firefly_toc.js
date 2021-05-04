@@ -126,6 +126,18 @@ const toc_visualization = {
             hidden: true,
         },
         {
+            id: 'visualization.colorpicker',
+            title: 'Color Picker',
+            href: 'firefly/visualization.html#colorpicker',
+            hidden: true,
+        },
+        {
+            id: 'visualization.symbolpicker',
+            title: 'Symbol Picker',
+            href: 'firefly/visualization.html#symbolpicker',
+            hidden: true,
+        },
+        {
             id: 'visualization.fitsViewer',
             title: 'The FITS/HiPS viewer',
             href: 'firefly/visualization.html#fitsViewer',

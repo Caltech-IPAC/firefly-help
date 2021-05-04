@@ -336,36 +336,36 @@ You can make a new box right away by holding down the shift key and
 clicking and dragging to select a new box.  When you have selected a
 region of the image, additional icons appear above the image, and
 exactly which icons you see is a function of whether you are working
-on a FITS or HiPS image: <img
-src="img/selectoptions.png"> These icons will allow you to (from left
-to right):
+on a FITS or HiPS image, and whether or not you have a catalog
+overlaid: <img src="img/selectoptions.png"> These icons
+will allow you to (from left to right):
 <UL>
-<LI>(FITS only) crop the image to the selected region (then you can save the
-cropped FITS image via the save icon described above);
-<LI>(FITS only) obtain statistics from the image on the region;
-<LI>select the catalog sources overlaid on the image within
-the region (highlights the sources in the list and plot, if there is a
-catalog overlaid);
-<LI>filter the overlaid catalog down to the sources within the enclosed
-area (if there is a catalog overlaid);
-<LI>zoom the image to fit the selected area;
-<LI>recenter the images on the selected area.
+<LI>(FITS only) Crop the image to the selected region (then you can
+save the cropped FITS image via the save icon described above).
+<LI>(Only if catalog overlaid) Select the catalog sources overlaid on
+the image within the region (highlights the sources in the list and
+plot).
+<LI>(Only if catalog overlaid) Filter the overlaid catalog down to the
+sources within the enclosed area.
+<LI>Zoom the image to fit the selected area.
+<LI>Recenter the images on the selected area.
+<LI>(FITS only) Obtain statistics from the image on the region.
 </UL>
 You can save the cropped FITS image via the save icon (described
-above).  The statistics option results in a pop-up that
-looks something like this:<br><img src="img/imagestatistics.png"> <br>
-Note that it calculates the location of the minimum and maximum
-fluxes, and the aperture and flux-weighted centroids. If you put your
-mouse over the row of the table in the pop-up, that location appears
-as an 'x' on the image.  If you have a catalog overlaid, selecting
-sources with this tool highlights them in the catalog list. You can
-choose to impose a filter via this selection mechanism; the filters
-icon changes above the catalog to indicate that there is a filter
-applied (<img src="img/filtersapplied.png">). To clear the filters,
-click on the cancel filters icon (which also appears after you impose
-filters): <img src="img/cancelfilters.png">. There is much more on <a
-href="tables.html#filters">filters</A> in the tables
-section.<P>
+above).  The statistics option results in a pop-up that looks
+something like this:<br><img src="img/imagestatistics.png"> <br> Note
+that it calculates the location of the minimum and maximum fluxes, and
+the aperture and flux-weighted centroids; the flux values given are in
+the same units as the FITS file. If you put your mouse over the row of
+the table in the pop-up, that location appears as an 'x' on the
+image.  If you have a catalog overlaid, selecting sources with this
+tool highlights them in the catalog list. You can choose to impose a
+filter via this selection mechanism; the filters icon changes above
+the catalog to indicate that there is a filter applied (<img
+src="img/filtersapplied.png">). To clear the filters, click on the
+cancel filters icon (which also appears after you impose filters):
+<img src="img/cancelfilters.png">. There is much more on <a
+href="tables.html#filters">filters</A> in the tables section.<P>
 
 <strong>Note that</strong>, if you have a rotated FITS image such that
 a crop would have to bisect pixels, it will show you the region that
@@ -453,17 +453,31 @@ you need to go to other options within the toolbar. Here is an example
 of a well-populated layers pop-up. <br><img
 src="img/layerspopup.png"><br>
 Note the target description:<img src="img/targetrowofpopup.png">
-This reminds you
-of the target on which you searched -- here, it was M16, where the
-coordinates were resolved by NED (as opposed to Simbad). The two icons
-next in that row indicate, respectively, "copy this location to the
-clipboard" and "center image on this position." The tickbox here means
-"show this target" (as opposed to the tickbox at the left, which means
-"show this image").<P>
+This reminds you of the target on which you searched -- here, it was
+M16, where the coordinates were resolved by NED (as opposed to
+Simbad). The two icons next in that row indicate, respectively, "copy
+this location to the clipboard" and "center image on this position."
+The tickbox here means "show this target" (as opposed to the tickbox
+at the left, which means "show this image").<P>
 
+<a name="colorpicker"></A>
 Where it's possible to change colors of a layer, click on
 the 'colors' link to be taken to a new pop-up from which you can
-select a new color. For catalogs or the search target, you can also
+select a new color. <br>
+<img src="img/colorpickerviz.png"><br> 
+From here, you can click on your desired color in the top colorful
+box. Immediately below that box, you can change the color and
+saturation of the top box so that you can select from a different
+range of colors. Below that, you can enter numerical Hex codes or RGBA
+values (where the value for A is in units of percent, e.g., 50 =
+50%).  Finally, you can also select from a pre-defined set of 15
+colors by clicking on the small box. Note ha the numerical codes
+update as you select different colors. Click "OK" to implement your
+color choice, or click 'x' in the upper right to close the window
+without changing the color.<P>
+
+<a name="symbolpicker"></A>
+For catalogs or the search target, you can also
 select the symbol shape and size:<br>
 <img src="img/symbolpicker.png"><br> To adjust the size, type in the symbol
 size in pixels or use the up/down arrow keys to change the size by one
@@ -771,14 +785,21 @@ pick the first one, "color stretch", you can customize the stretch. A
 pop-up window appears with a histogram of the values in the image, and
 you can change the stretch type and range. <br><img
 src="img/customstretch.png"> <BR> If you pick a color stretch from the
-pre-defined options, the pop-up window reflects this change. 
+pre-defined options, the pop-up window reflects this change. If you
+change the color stretch in the pop-up window, the pull-down menu
+changes correspondingly.<P>
 
-Example: pick 'Linear stretch to 99%'. Go back to "color stretch".
-Note that it has filled out the stretch type and ranges to reflect the
-current choice. Then -- either with the pop-up window still up or not
--- go back and pick a different pre-defined stretch from the standard
-options. Note that the values in the pop-up change to reflect this
-current choice.<P>
+Example: Display the pop-up for color stretch. From the main
+pull-down, pick 'Linear stretch to 99%'. Go back to the color stretch
+pop-up. Note that it has filled out the stretch type and ranges to
+reflect the current choice. Then -- either with the pop-up window
+still up or not -- go back and pick a different pre-defined stretch
+from the standard options. Note that the values in the pop-up change
+to reflect this current choice. From the pop-up, pick a different
+stretch type -- try "histogram equalization." Select "refresh" to
+update the images. Go back to the pulldown menu. The last 7 items have
+changed to be based on histogram equalization, as opposed to the
+"linear" default.  <P>
 
 
 If you have a 3-color image, you can change the stretch in each color
@@ -1099,6 +1120,12 @@ each of the loaded images.
 <P>
 
 
+<strong>Removing things:</strong>  To remove an image (or catalog)
+entirely, click on the small 'x' in the upper right of the image in
+the tiled view, or on the small 'x' in the corner of the catalog tab
+in the window pane view. Closing the upper-right image leaves your
+mouse on or near the x for the next image that fills that corner,
+allowing multiple images to be closed with minimal mouse movement.<P>
 
 
 
