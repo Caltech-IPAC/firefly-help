@@ -403,26 +403,96 @@ src="img/wisecmdselectionconfig.png" width="40%"><p>
 
 <h3><a name="overplotting">Overplotting</A> </h3>
 
+<em>(As of this writing, this is an "alpha" release of this capability,
+and the plan is to continue development.)</em><P>
+
+At the top of the pop-up that you get when you click on the gears, you
+have three radio buttons: <img src="img/overplot1.png" align="center">
+They are "Add New Chart" (see <a href="#adding">next section</A>),
+"Overplot New Trace" (this section), and "Modify Trace" (see above
+sections). In this section, we will cover overplotting. This is
+sometimes called "multi-trace," meaning that more than one thing is
+plotted. <P>
+
+When you select "Overplot New Trace," you get a new interface that is
+very similar to the original interface where you selected what to
+plot:<br>
+<img src="img/overplot2.png"><P>
+
+As before, you need to :
+<UL>
+<LI>select a plot type (scatter, heatmap, histogram);
+<LI>tell it what column(s) you want for x, y, and associated errors;
+<LI>select the trace style (points, connected points, lines);
+<LI>set any trace options;
+<LI>set any chart options.
+</UL>
+
+Right now, the overplotting can only work from the same catalog --
+that is, you cannot plot [W1] vs. [W1]-[W4] from one catalog and
+overplot [W1] vs. [W1]-[W4] from another catalog.<P>
+
+You can easily get yourself into a physically nonsensical situation,
+say, by overplotting a histogram onto a scatter plot. If you find
+yourself in a hopeless mess, click on the "undo" icon to reset
+everything  <img src="img/plotnav-undo.png" align="center"> and try
+again.<P>
+
+The best way to explain how to use this feature is probably via an
+example.  We have a plot of [W1] vs. [W1-W4] from above. Now  add on
+top of it a plot of [W2] vs. [W1-W4]. Click on the gears to bring up
+the pop-up. Select "Overplot New Trace." Enter "w1mpro-w4mpro" for x
+and "w2mpro" for y. Expand "Chart Options." Note that it has preserved
+the overall chart title from before, but has erased the X and Y labels
+(and lost the reversal of the y axis) because the overplot could
+literally be anything, and need not be the same columns or even the
+same units as what is already plotted. Type them in again. This is the
+configuration window right before clicking "ok", and the resultant
+plot. <br> <img src="img/overplot3.png" width="40%"><img
+src="img/overplot4.png" width="60%"><p> Note that there is now a
+pulldown at the top of the plot -- from here, you select which is the
+"active" trace, i.e., which one is in the top layer and therefore
+affected by changes you make. There is a legend on the plot specifying
+which color corresponds to which trace. In this example, the plot has
+appeared using a blue and green color scheme, which may be too hard to
+differentiate. To change the second plot points' color, click on the gears,
+ensure "Modify Trace" is selected, select "trace 1" (as opposed to
+"trace 0", the first one you loaded), go down and expand the "Trace
+Options" and pick a different color. You can also change the legend
+name from "Trace 1" to, in this case, "W2." Click "apply"
+to apply the changes to the plot:<br> 
+<img src="img/overplot5.png"><P>
+
+Note that once you change the trace name, the relevant pull-down menus
+and legends update accordingly:<br>
+<img src="img/overplot7.png"><P>
+
+
+Note that the pop-up spawned by clicking the gears now has additional
+options at the top: "Add New Chart", "Overplot New Trace", "Modify
+Trace", and "Remove Active Trace." From here, you can modify a trace
+you have already plotted (as described above), overplot another trace
+(also as described above), or remove the selected trace:<br> <img
+src="img/overplot6.png"><P>
+
+
 
 
 
 <h3><a name="adding">Adding Plots</A> </h3>
 
-If you want to make additional plots, after you have a catalog loaded,
-click on the blue tab at the top labeled "Charts." This brings up a
-dialog from which you can choose to make another scatter plot (left
-below), a heatmap (center below), or a histogram (right below): <br>
-<img src="img/charts2.png" width="30%">&nbsp;&nbsp;<img
+To make additional plots from a loaded catalog, there are two ways to
+do it: the blue "charts" tab on the top, or the plot's gears
+pop-up.<P>
+
+First, from the blue "charts" tab on the top.  This brings up a dialog
+from which you can choose to make another scatter plot (left below), a
+heatmap (center below), or a histogram (right below): <br> <img
+src="img/charts2.png" width="30%">&nbsp;&nbsp;<img
 src="img/charts3.png" width="30%">&nbsp;&nbsp;<img
 src="img/charts.png" width="30%"><br>  The options for these plots
-here are the same as they are when you click on the gears in one of
-these plots. You can change what is plotted after plotting once by
-clicking on the gears. <P>
-
-Using this "charts" tab, you can have as many  plots up at the same
-time as you need. Note that many plots of a large catalog may make
-your browser run slowly; it will refuse to make a scatter plot for
-catalogs with &gt;15,000 points.  <P>
+here are very similar to what is described above. You can specify
+which columns to plot or manipulate and plot, specify labels, etc. <P>
 
 <strong>Scatter plots</strong> allow you to choose points, connected
 points, or lines; you can add errors to each point. There is a maximum
@@ -432,36 +502,58 @@ of 15,000 points for scatter plots.<P>
 choose what color scale and how many bins to use. <P>
 
 <strong>Histogram plots</strong> allow you to choose how many bins or
-the bin width. <P>
+the bin width.  Note that, if you provide a minimum number, the
+binning starts at the minimum value you provide, and may exceed the
+maximum you entered in order to fit in a whole bin. <P>
 
-All of them allow you to reverse axes and change labels. You can plot
-single columns or mathematical manipulations of columns.<P>
+You can change what is plotted after plotting by
+clicking on the gears. <P>
 
-Note that, if you provide a minimum number, the binning starts at the
-minimum value you provide, and may exceed the maximum you entered in
-order to fit in a whole bin. <P>
+Using this "charts" tab, you can have as many  plots up at the same
+time as you need. Note that many plots of a large catalog may make
+your browser run slowly; it will refuse to make a scatter plot for
+catalogs with &gt;15,000 points.  <P>
 
-<P>
-
-You can view these plots all at once or one at a time by clicking on
+You can view multiple plots all at once or one at a time by clicking on
 the corresponding icons above the plots (just as when you have
 multiple images loaded): <img src="img/singlegrid.png">. If you are
 viewing one at a time and have more than one plot loaded, you can
 scroll between them by clicking on the arrows (just as when you have
 multiple images loaded).<P>
 
+You can also create a new plot from the gears pop-up. Select "Add New
+Chart", and set what should be plotted as above.<br> <img
+src="img/charts4.png" width="30%">&nbsp;&nbsp;<img
+src="img/charts5.png" width="30%">&nbsp;&nbsp;<img
+src="img/charts6.png" width="30%"><p>  
+
 
 <h3><a name="example">Example plots</A></h3>
 
-Here are several more examples of plots made with Firefly tools.<P>
+Here are several more examples of plots made with IRSA tools.<P>
 
-<img src="img/timeseriesplot.png" width="25%">
+Phase-folded light curve from K2 data: <br>
+<img src="img/demo1.png"><P>
 
-<img src="img/ex2-imgcst.png" width="25%"><P>
 
-<img src="img/histo.png" width="25%">
+Plot on the sky of stars where the color of the point is scaled to
+brightness in WISE-4: <br> <img src="img/demo2.png"><p>
 
-<img src="img/scatterwitherr.png" width="25%"><P>
+Gaia distance (in kpc, from Bailer-Jones et al. 2018), with asymmetric
+errors, as a function of Gaia G magnitude, with colors of the point
+scaled to brightness in WISE-4: <br> <img src="img/demo3.png"
+width="100%"><p>
+
+[W1] light curve of Neptune over
+several years, with colors of the point scaled to heliocentric
+distance: <br> <img src="img/demo4.png"><P>
+
+Absolute Gaia color-magnitude diagram of candidate members of a
+star-forming region (note some background giants still in the list),
+where point size is scaled by WISE-4 brightness: <br> <img
+src="img/demo5.png"><P>
+
+
 
 </BODY>
 </HTML>
