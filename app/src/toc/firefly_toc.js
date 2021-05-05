@@ -401,6 +401,11 @@ export const toc_plots = {
             href: 'firefly/plots.html#firstlook'
         },
         {
+            id: 'plots.navigation',
+            title: 'Plot Navigation',
+            href: 'firefly/plots.html#navigation'
+        },
+        {
             id: 'plots.linking',
             title: 'Plot Linking',
             href: 'firefly/plots.html#linking'
@@ -423,7 +428,13 @@ export const toc_plots = {
         {
             id: 'plots.saving',
             title: 'Saving Plots',
-            href: 'firefly/plots.html#saving'
+            href: 'firefly/plots.html#saving',
+            hidden: true,
+        },
+        {
+            id: 'plots.overplotting',
+            title: 'Overplotting',
+            href: 'firefly/plots.html#overplotting'
         },
         {
             id: 'plots.adding',

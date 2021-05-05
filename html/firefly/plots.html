@@ -24,11 +24,12 @@ your table has RA and Dec in it, you can overlay it on images. <P>
 <em>Contents of page/chapter:</em><br>
 +<a href="#default">Default Plot</A><br>
 +<a href="#firstlook">Plot Format: A First Look</A><br>
++<a href="#navigation">Plot Navigation</A><br>
 +<a href="#linking">Plot Linking</A><br>
 +<a href="#changing">Changing What is Plotted</A><br>
 +<a href="#manipulating">Plotting Manipulated Columns</A><br>
 +<a href="#restricting">Restricting What is Plotted</A><br>
-+<a href="#saving">Saving Plots</A><br>
++<a href="#overplotting">Overplotting</A><br>
 +<a href="#adding">Adding Plots</A><br>
 +<a href="#example">Example Plots</A><br>
 <P>&nbsp;<P>
@@ -93,6 +94,77 @@ need to filter or otherwise restrict the catalog to have fewer points
 (see below).<P>
 
 
+
+
+<h3><a name="navigation">Plot Navigation</A></h3>
+
+The top right of the plot window has a row of icons: 
+<img src="img/plotnav.png" align="center"> which we now describe.<P>
+
+<DL>
+<DT><img src="img/plotnav-zoom.png"> <em>Zoom in plot</em>
+<DD>When you click on this icon, it becomes "active", e.g., it is
+underlined in red. Then, when you click and drag in the plot, the plot
+is zoomed to the region you have selected. You can also zoom using
+your scroll feature on your mouse. To return to the original
+view, click on <img src="img/plotnav-1x.png" align="center">. <P>
+
+<DT><img src="img/plotnav-pan.png"> <em>Pan across plot</em> 
+<DD>When you click on this icon, it becomes "active", e.g., it is
+underlined in red. Then, when you click and drag in the plot, it moves
+around in response to where you drag. To return to the original view,
+click on <img src="img/plotnav-1x.png" align="center">. <P>
+
+<DT><img src="img/plotnav-select.png"> <em>Select within plot</em>  
+<DD>When you click on this icon, it becomes "active", e.g., it is
+underlined in red. Then, when you click and drag in the plot, you are
+given additional options : <img src="img/plotnav-filter.png"
+align="center"> The checkmark means "select" and the funnel means
+"filter." The difference is that filtering (temporarily) limits what
+is shown in the plot, catalog, and image (see <a
+href="tables.html#filters">general information on filters</A>), and
+selecting just highlights the points enclosed within your selection.
+<P>
+
+<DT><img src="img/plotnav-1x.png"> <em>Re-scale plot</em>  
+<DD> Return to the view that optimizes the range of x and y to show
+the currently displayed points. <P>
+
+<DT><a name="saving"><img src="img/plotnav-save.png"> <em>Save
+plot</em></A>
+<DD>Save the plot. It will save as a png file, whereever your browser
+is configured to save files.The saved PNG is the same size as it is on
+your screen. If you want a big version, make the desired plot big on
+your screen (expand the view to take up as much space as possible)
+before saving the PNG. <P>
+
+<DT><img src="img/plotnav-undo.png"> <em>Undo</em>  
+<DD> Restore everything to the defaults. If you've played a lot with
+the plot, you may want to undo everything you've done. Click this icon
+to restore everything back to the defaults.  <P>
+
+<DT><img src="img/plotnav-filter2.png"> <em>Filter from plot</em>  
+<DD> Pull up interactive filters.  This button brings up filters for
+the displayed catalog in an interface <a href="tables.html">like all
+the other tables here</A>, except you don't see the values in the
+catalog themselves; you can enter filters here in the same way you can
+everywhere else in this tool (see <a
+href="tables.html#filters">general information on filters</A>). <P>
+
+<DT><img src="img/xyplotoptions.png"> <em>Configure plot</em>  
+<DD> Click on this icon to <a href="#changing">change what is
+plotted</A> (much more on this below).<P>
+<P>
+
+<DT><img src="img/expand-24x24.png"> <em>Expand plot</em>  
+<DD> Click on the this icon to make the
+plot take up the whole browser window. To return to the prior view,
+click the "Close" arrow in the upper left.<P>
+</dl>
+
+
+
+
 <h3><a name="linking">Plot Linking:</A> Plots are linked to catalog and image(s)</h3>
 
 If you move your mouse over any of the points in the plot, you will
@@ -104,37 +176,64 @@ This works the other way too - click on a row in the catalog, or an
 object in the images, and the object will be highlighted in the plot
 or the catalog or the image.<P>
 
+
+
 <h3><a name="changing">Changing what is plotted</A></h3>
 
 To change what is plotted, click on the gears icon in the upper right
 of the plot window pane: <img src="img/xyplotoptions.png"
 align="center">. Configuration options then appear; the options are a
 little different depending on whether the points are binned or
-not:<br>  <img src="img/plotoptionspopup-decimated.png" width="30%">
-&nbsp; &nbsp; <img src="img/plotoptionspopup.png" width="30%"><br> The
-left has the options for binned plots, and the right has the options
-for plots that have individual points shown.<P>
+not:<br>  <img src="img/plotoptionspopup-decimated.png" width="30%"> &nbsp; &nbsp;
+<img src="img/plotoptionspopup.png" width="30%"><br> The left has the
+options for binned plots, and the right has the options for plots that
+have individual points shown. <P>
+
+This section describes how to change
+what is plotted, e.g., the "Modify Trace" option at the top of both of
+these pop-ups. Both <a href="#overplotting">overplotting</A> and <a
+href="#adding">addding plots</A> are covered in more detail below. <P>
 
 <DL><dt><strong>Both kinds of plots have the following
 options.</strong>
-<dd>
-In either case, you can specify what should be plotted on each
-axis. The magnifying glass is a link that brings up a table that lists
-all of the available columns in the catalog. Alternatively, you can
-just start typing, and viable options appear below the box. Whatever
-you put in the box must match the column name as shown in the catalog
-<em>exactly</em>. <P>
 
-Click on the triangle to open additional options for the layout. <P>
+<dd> In either case, you can <strong>specify what should be plotted on
+each axis</strong>. The magnifying glass is a link that brings up a
+table that lists all of the available columns in the catalog.
+Alternatively, you can just start typing, and viable options appear
+below the box. Whatever you put in the box must match the column name
+as shown in the catalog <em>exactly</em>. <P>
+
+Click on the black triangle to reveal additional options. <P>
 
 In both of the examples above, RA is plotted on the x-axis. It has
 pulled the column name for the label; in this table, the column is
 "ra" rather than "RA". It has copied over the units ("deg") from the
-catalog. You can change what column is plotted, as well as what label
-and units are shown in the plot. <P>
+catalog, and plotted the x-axis increasing to the left as per
+astronomical convention. You can change what column is plotted, and
+whether or not errors are shown.
+
+Under "<strong>Chart Options</strong>", you can specify:
+<UL>
+<LI>title of the plot;
+<LI>labels on the x and y-axis;
+<LI>whether or not there is a grid;
+<LI>whether or not the axis is reversed (as for ra in the examples
+above);
+<LI>whether the x-axis is on the top or bottom and the y-axis is on
+the left or right;
+<LI>whether or not the axis is logarithmic;
+<LI>the maximum and minimum values of the plot range;
+<LI>the aspect ratio of the plot (e.g., square or rectangular).
+</UL> <P>
+
+By default, the boundaries of the plot are set to encompass the full
+data range. Here you can change the boundaries to specific numbers.
+(This can also be set via filtering from the plot; see below.)<P>
 
 You can enter <strong>simple mathematical relations</strong> in these
-boxes too, such as "w1mpro-w4mpro" to put [W1]-[W4] on one axis.
+boxes too, such as (for a WISE catalog) "w1mpro-w4mpro" to put
+[W1]-[W4] on one axis.
 Supported operators:
 <UL>
 <LI>+,-,*,/
@@ -146,17 +245,6 @@ characters) should be quoted in expressions.
 </UL>
 <P>
 
-In both kinds of plots (scatter or heatmap [binned]), you can enter
-the label for the axes, and choose whether or not a grid is included
-on that axis, and whether or not the axis is reversed -- in this case,
-because it's plotting RA, the x-axis is reversed. <P>
-
-By default, the boundaries of the plot are set to encompass the full
-data range. Here you can change the boundaries to specific numbers.
-(This can also be set via filtering from the plot; see below.)<P>
-
-If you want a square or rectangular plot, you can change the x/y ratio
-as displayed.<P>
 
 Click "Apply" to apply, and "Close" to return to the plot without
 making changes.<P>
@@ -167,31 +255,86 @@ From the pop-up, you can control the color table that is used
 (greyscale is the default; there are many other choices in the
 pulldown menu), as well as the number of bins in the x and y
 directions.   If you change the number of bins but then want to go
-back to the original values, leave the "Number of bins" boxes
+back to the original default values, leave the "Number of bins" boxes
 blank.<P>
 
 
 <dt><strong>Options found only in plots showing individual points</strong>
-<dd>In these plots, at the top of the plot options pop-up,  you can
-control whether the points are shown as individual points, connected
-points, or just a line. <P>
-
-You can specify an error (either a column in the catalog, or
+<dd>You can specify an error (either a column in the catalog, or
 calculated from a column in the catalog). Those errors can be
-symmetric or asymmetric (see pulldown menu). <P>
+symmetric or asymmetric (select from the pulldown menu).<P>
 
-You can also change either axis to be logarithmically scaled.
+Right below where you specify the columns for the x and y axis, under
+"<strong>Trace Style</strong>,"  you can control whether the points
+are shown as individual points, connected points, or just lines
+connecting the points. <P>
+
+Under <strong>Trace Options</strong>, you have many choices. 
+<UL>
+<LI>Choose the <strong>symbol type</strong>: circle (default), open
+circle, square, open square, diamond, open diamond, cross, x,
+upward-pointing triangle, hexagon, or star. <P>
+<LI><A name="colorpicker">Choose the <strong>color</strong>. By
+default, the point color is a mid-range blue that is darker where more
+points. This is specified by the rgba vector shown in the example
+above (31, 119, 180, 0.5) where the last number is a unit of fraction
+of 1, so 50% in this example.  Click on the magnifying glass to bring
+up a color picker window:<br><img src="img/colorpickerplot.png"><br>
+From here, you can click on your desired color in the top colorful
+box. Immediately below that box, you can change the color and
+saturation of the top box so that you can select from a different
+range of colors. Below that, you can enter numerical Hex codes or RGBA
+values (where the value for RGB is between 0 and 255, and A is in
+units of percent, e.g., 50 = 50%).  Finally, you can also select from
+a pre-defined set of 15 colors by clicking on the small box. Note ha
+the numerical codes update as you select different colors. Click "OK"
+to implement your color choice, or click 'x' in the upper right to
+close the window without changing the color.<P>
+<strong>Tip:</strong> Don't like the transparency feature of the
+points that makes them darker when there are more points? Set the last
+value of the vector (A) to 1. Don't like the blue? Pick a diferent
+color entirely. Want the faintest point to be brighter than it is by
+default? Set the last element of the color vector ("A") to be 0.7 or
+0.8.<P>
+<LI>Choose the <strong>color map</strong>. By default, all of the
+points are the same color, but darker where there are more points. You
+can change this such that the color scale of the points is tied to a
+column value, such as w1snr (WISE-1 signal-to-noise ratio) in a WISE
+catalog. If you select this option, you can also change the color
+scale to any of 18 options (see the pulldown). Simple mathematical
+relations (as above) are also permitted in this box.<P>
+<LI>Choose the <strong>size map</strong>. By default, all of the
+points are the same size. You can change this such that the color
+scale of the points is tied to a column value, such as w1snr (WISE-1
+signal-to-noise ratio) in a WISE catalog. Simple mathematical
+relations (as above) are also permitted in this box.<P>
+</UL> 
+<P>
 <P>
 </dl>
 
 
-Example: Load a WISE catalog. Plot w1snr vs. w1mpro. Change the labels
-by clicking on the triangles below each entry box, and make the label
-"SNR in WISE-1" rather than the more cryptic column header "w1snr".
+Example: Load a large WISE catalog. Plot w1snr (WISE-1 signal-to-noise
+ratio) vs. w1mpro (WISE-1 profile fitted magnitude). It defaults to a
+heatmap. Change the labels by clicking on the triangles below each
+entry box, and make the y-axis label "WISE-1 SNR" rather than the more
+cryptic column header "w1snr". Change the x-axis label to "[W1]."
 Depending on your catalog, you may need to adjust the y axis range.
-Obtain this plot:<P>
-<img src="img/w1snrexample.png" width="70%"><img
-        src="img/w1snrexampleconfig.png" width="30%"><p>
+Obtain this plot:<P> <img src="img/w1snrexample.png" width="60%"><img
+src="img/w1snrexampleconfig.png" width="40%"><p>
+
+
+Example: Load either a smaller WISE catalog, or the same large WISE
+catalog, but <a href="tables.html#filters">filter</A> it down such
+that w1snr, w2snr, and w3snr are all greater than 10, which limits the
+number of points to be &lt;15,000. Plot w1snr vs. w1mpro. It shows the
+points individually Change the labels.  Change the point color map to
+scale with w2mpro (WISE-2 profile fitted magnitude). Change the point
+size map to scale with w4snr (WISE-4 signal-to-noise). Obtain this
+plot:<P> <img src="img/w1snrexample2.png" width="60%"><img
+src="img/w1snrexample2config.png" width="40%"><p>
+
+
 
 
 <h3><a name="manipulating">Plotting Manipulated Columns</A></h3>
@@ -203,67 +346,62 @@ For example, if you have loaded a WISE catalog, you can plot [W1]-[W2]
 vs. [W3]-[W4]. In terms of the names of the columns in the database,
 this is w1mpro-w2mpro vs. w3mpro-w4mpro.  <br>
 
-<img src="img/wisecolorexample.png" width="70%"><img
-src="img/wisecolorexampleconfig.png" width="30%"><p>
+<img src="img/wisecolorexample.png" width="60%"><img
+src="img/wisecolorexampleconfig.png" width="40%"><p>
+
 
 If you have few enough points that the plot is not binned, you can add
-errors, and you can also manipulate those:<br> <img
-src="img/plotoptionspopup2.png"><br>  In this case, the positions
-in this catalog are in degrees, but the errors are in arcseconds.
-This plot request converts the errors to degrees
-before plotting. <P>
+errors, and you can also manipulate those.  Here, the expression for the
+x-axis errors is sqrt(power(w1sigmpro,2)+power(w2sigmpro,2)) and for
+the y-axis errors, it is sqrt(power(w3sigmpro,2)+power(w4sigmpro,2)). <br> 
+<img src="img/plotoptionspopup2-plot.png" width="60%"><img
+src="img/plotoptionspopup2.png" width="40%"> <P>
 
-<h3><a name="restricting">Restricting What is Plotted</A></h3>
+
+
+
+
+
+<h3><a name="restricting">Restricting What is Plotted (from the plot)</A></h3>
+
 
 You can also restrict what data are plotted in any of several
 different ways. <P>
+
+You can <a href="tables.html#filters">filter the catalog</A> from the
+table itself (discussed in another section).<P> 
 
 You can set axis limits on the plot itself from the plot options
 pop-up (discussed above).<P>
 
 However, and perhaps more powerfully, you can set limits from the plot
-itself using a rubber band zoom.  Click and drag in a sub-region of
-the plot. A new icon appears in the upper right of the plot: <img
-src="img/plotoptions.png">. This means "filter the catalog to leave
-only those points encompassed by the selection in the plot." If you
-click on the zoom icon, then the plot axes change to encompass just
-the sources you have selected. If you click on the filter icon, then
-the catalog view is filtered down, restricted to just those sources
-you have selected, and the plot is zoomed in; the filter notes just
-above the plot (and the above the table, as applicable) change to
-remind you that you have a filter applied. Only those data points that
-pass the filter are shown in the plot, in the table, and/or overlaid
-on the image(s). (This is the behavior of 'filter', as opposed to
-'select'; the former restricts what is shown, the latter just
-highlights the points.) For more on filters, see <a
-href="tables.html#filters">the filtering dicussion in the tables
-section</A>.<P>
+itself using a rubber band zoom.  Click on the select icon in the plot
+(<img src="img/plotnav-select.png" align="center">) Click and drag in
+a sub-region of the plot. New icons appear: <img
+src="img/plotnav-filter.png" align="center"> If you click on the
+funnel icon, only those data points that pass the filter are shown in
+the plot, in the table, and/or overlaid on the image(s). (This is the
+behavior of 'filter', as opposed to 'select'; the former restricts
+what is shown, the latter just highlights the points.) For more on
+filters, see <a href="tables.html#filters">the filtering dicussion in
+the tables section</A>.<P>
 
-<!-- If you have a big catalog, zooming or filtering may reduce the number
-of plotted points to below 15,000, which means
-that then individual points can be shown, rather than binned
-points.<P> -->
+Example: Obtain a WISE catalog of a star-forming region, say IC1396.
+Filter down the catalog to only have WISE-1 and WISE-4 detections
+(limits have undefined errors, so ask the catalog to filter down such
+that w1sigmpro&gt;0, w2sigmpro&gt;0, w3sigmpro&gt;0, and
+w4sigmpro&gt;0. Plot w1mpro-w4mpro on the x-axis, and w1mpro on the
+y-axis. Reverse the y-axis to put bright objects at the top. Click and
+drag in the plot to select the bright and red objects, and filter them
+down to get a subset of bright and red sources. For clarity, the
+screenshot here has the sources selected, not filtered.<br>
 
-If you move your mouse over any of the points, you will get a pop-up
-telling you the values corresponding to the point under your cursor.
-If you click on any of the points, the object(s) corresponding to that
-point will be highlighted in the overlays in the images shown, and
-highlighted in the catalog table.  This works the other way too -
-click on a row in the catalog, or an object in the images, and the
-object will be highlighted in the plot or the catalog or the image.<P>
+<img src="img/wisecmdselection.png" width="60%"><img
+src="img/wisecmdselectionconfig.png" width="40%"><p>
 
-You can also zoom with your mouse on the plot -- do whatever you would
-do with your mouse to scroll but with your mouse over the plot. You
-can also grab-and-drag the plot axes to change the plotting range.<P>
 
-<h3><a name="saving">Saving Plots</A> </h3>
 
-Click on the diskette icon (<img src="img/save.png">). Your plot will
-then be saved as a png file. 
-The saved PNG is the same size as it is on your screen. If you want a
-big version, make the desired plot big on your screen (expand the view
-to take up as much space as possible) before saving the PNG. <P>
- <P>
+<h3><a name="overplotting">Overplotting</A> </h3>
 
 
 
