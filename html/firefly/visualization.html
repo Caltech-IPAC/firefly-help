@@ -608,13 +608,18 @@ parameters.<P>
 name, and have either NED-then-Simbad  or Simbad-then-NED resolve the
 target name into coordinates.  Alternatively, you may enter
 coordinates directly. These coordinates can be in decimal degrees or
-in hh:mm:ss dd:mm:ss format. By default, it assumes you are working in
-J2000 coordinates; you can also specify galactic, ecliptic, or B1950
-coordinates as follows:
+in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
+assumes you are working in J2000 coordinates; you can also specify
+galactic, ecliptic, or B1950 coordinates as follows:
 <UL>
-<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic coordinates
+<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic
+coordinates 
 <LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
 <LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
+<LI>a source name like 'J140320.67+542028.6' is parsed as 14h03m20.67s
++54d20m28.6s.
+<LI>a source name like 'G102.0360+59.7715' is parsed as 102.0360
++59.7715 in galactic coordinates
 </UL>
 Examples are given below the text entry box before you start typing in
 the box.<P>
