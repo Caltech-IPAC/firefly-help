@@ -20,7 +20,7 @@ COPY build.gradle settings.gradle ./
 COPY --from=deps /app/node_modules ./app/node_modules
 
 ENV GRADLE_USER_HOME=/work \
-    GRADLE_OPTS="-Dorg.gradle.daemon=false"
+    GRADLE_OPTS="-Dorg.gradle.daemon=false -Dorg.gradle.internal.launcher.welcomeMessageEnabled=false"
 
 
 ENTRYPOINT []
