@@ -10,15 +10,18 @@ and other Firefly-based applications.
 - Dynamically generate a PDF from the HTML pages used.
 
 #### Dev Dependencies
- -  [Gradle 4.x] (https://gradle.org/downloads)
+ -  [Gradle 4.x](https://gradle.org/downloads)
     Gradle is an open source build automation system.
 
- -  [Node v12+] (https://nodejs.org/) 
+ -  [Node v12+](https://nodejs.org/) 
     Javascript interpreter for command line environment, used for development tools
 
- -  [HTMLDoc] (https://www.msweet.org/htmldoc/)
+ -  [HTMLDoc](https://www.msweet.org/htmldoc/)
     HTML to PDF generator. 
  
+**Note:**  To avoid setting up a local development environment, you can use Docker.  Instructions for 
+Docker is here [README-docker.md](./README-docker.md)  
+
 
 ## Quick Start
 
