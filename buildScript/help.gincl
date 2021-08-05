@@ -85,6 +85,17 @@ task zipHelp(type: Zip) {
     into app_name
 }
 
+task dockerCopySrc(type: Copy) {
+    from "/src"
+    exclude "**/node_modules", ".git*", "build", ".gradle"
+    into rootDir
+}
+
+task dockerCopyArtifacts(type: Copy) {
+    from buildRoot
+    into "/src/build"
+}
+
 task buildPdfInput(type:Exec) {
     workingDir = appRoot
     commandLine "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/builder.js ${app_name} ${buildDir}".split(" ")
@@ -193,6 +204,11 @@ ext.getCommitHash = { workDir="." ->
     }
 }
 
+task dockerBuild {
+    dependsOn 'dockerCopySrc'
+    dependsOn 'build'
+    dependsOn 'dockerCopyArtifacts'
+}
 
 //-------------------------
 // define task order
@@ -201,3 +217,6 @@ zipHelp.mustRunAfter       generatePdf
 generatePdf.mustRunAfter   copyHtml
 copyHtml.mustRunAfter      buildPdfInput
 buildPdfInput.mustRunAfter buildClient
+
+build.mustRunAfter                  dockerCopySrc
+dockerCopyArtifacts.mustRunAfter    build

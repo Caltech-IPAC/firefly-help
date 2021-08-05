@@ -19,6 +19,9 @@ and other Firefly-based applications.
  -  [HTMLDoc] (https://www.msweet.org/htmldoc/)
     HTML to PDF generator. 
  
+**Note:**  To avoid setting up a local development environment, you can use Docker.  Instructions for 
+Docker is [here] (./README-docker.md)  
+
 
 ## Quick Start
 
