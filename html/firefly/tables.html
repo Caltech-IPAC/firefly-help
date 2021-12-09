@@ -18,7 +18,9 @@ being the ability to sort and filter. If you also have <a
 href="visualization.html">Visualization</A> capability installed, you
 can overlay catalogs on images. If you also have <a
 href="plots.html">plotting</A> capability installed, you can make
-plots of your table.<P>
+plots of your table.  One specific application of Firefly tables is
+astronomical catalogs; see the <a href="catalogs.html">catalogs
+section</A>. <P>
 
 
 <em>Contents of page/chapter:</em><br>
@@ -26,6 +28,7 @@ plots of your table.<P>
 +<A href="#columns">Table Columns</A>  <br>
 +<A href="#filters">Table Filters</A>  <br>
 +<A href="#save">Saving Tables</A>  <br>
++<a href="#navigation">Table Navigation</A> <br>
 <P>&nbsp;<P>
 
 
@@ -80,7 +83,16 @@ section below</A>.<P>
 
 You may or may not see the next icon: <img src="img/infolink.png">
 This is an "information" button and, if it exists, it may provide
-addtional information about the table.<P>
+addtional information about the table. It could have information about
+the job that was used to retrieve it:<br>
+<img src="img/tableinfo-jobinfo.png"><br>
+where the direct link to the job is given there (and can be copied by
+clicking on the clipboard, ready to be pasted into a helpdesk query,
+for example), with a job id as shown. It could also just have
+information about the table metadata:<br>
+<img src="img/tableinfo-metadata.png"><br>
+where the information about this table includes information about the
+query that produced it.<P>
 
 The next option on the top of the catalog tab is this: <img
 src="img/tableoptions.png">.  Clicking on this icon brings up options
@@ -100,7 +112,9 @@ src="img/expand-24x24.png">. Clicking on this expands the catalog
 window pane to take up the entire browser window. To return to the
 prior view, click on "Close" in the upper left.<P>
 
-The last option on the top of the catalog tab may be a context-sensitive help marker <img src="img/help.png">, which should bring you to this online help.<P>
+The last option on the top of the catalog tab may be a
+context-sensitive help marker <img src="img/help.png">, which should
+bring you to this online help.<P>
 
 
 <h3><A name="columns">Table Columns</A></h3>
@@ -265,13 +279,10 @@ resized such that you can see the whole set of hints and imposed
 filters. Note that in this interface, column headers must be enclosed
 within double quotes.<P>
 
-The third tab is just the table metadata:<br>
-<img src="img/tablemetadata.png" width="25%"><P>
 
 
 
-
-<strong>Tips and Troubleshooting</strong>:
+<strong>Tips and Troubleshooting</strong>
 
 <UL>
 <LI>If you impose logically inconsistent restrictions such as
@@ -368,10 +379,37 @@ href="https://irsa.ipac.caltech.edu/applications/Gator/"
 target="_blank">IRSA General Catalog Query Engine <img
 src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
 
-<h3><a name="catalogs">Catalogs</A></h3>
 
-One specific application of Firefly tables is astronomical catalogs.
-See the <a href="catalogs.html">catalogs section</A> <P>
+
+<h3><A name="navigation">Table Navigation</A></h3>
+
+With the ability to <a href="visualization.html#extraction">extract
+data</A> from images comes the ability to rather quickly drown in
+tables. There is a way to navigate among a lot of table tabs that have
+accumulated.<P>
+
+This is probably best explained via an example. Here, I have tabs
+showing that I have <a
+href="visualization.html#extraction">extracted</A> several lines,
+drills, and points from my images:<br>
+<img src="img/tabnav1.png" height="30"><br>
+On the far right, I have a downward pointing arrow. When I click on
+this, I get a pulldown:<br>
+<img src="img/tabnav2.png"><br>
+This pulldown shows that the tab marked "Points 14" is in the
+foreground (it is shaded yellow) and it has a filter box at the top.
+That filter box at the top works just like the filters discussed <a
+href="#filters">above</A>, so if I want to find the tabs with the
+extracted lines, I can type "line" in the box, and it will filter down
+the list, leaving only those tabs with "line" in the name:<br>
+<img src="img/tabnav3.png"><br>
+Then, from there, I can select the tab I want to bring to the
+foreground. (When I select a tab to bring to the foreground, that tab
+is also in the foreground for plotting.)<P>
+
+In this fashion, you can navigate among many tabs that are open at the
+same time.<P>
+
 
 
 

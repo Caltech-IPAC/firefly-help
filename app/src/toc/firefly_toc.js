@@ -253,6 +253,11 @@ export const toc_tables = {
             title: 'Saving Tables',
             href: 'firefly/tables.html#save',
         },
+        {
+            id: 'tables.navigation',
+            title: 'Table Navigation',
+            href: 'firefly/tables.html#navigation',
+        },
     ]
 };
 
