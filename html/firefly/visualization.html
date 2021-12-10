@@ -498,39 +498,16 @@ selecting a box or an ellipse on the image.  This region can be
 resized by grabbing and dragging the corners of the box or the pixels
 delineating the corners of a box around your ellipse. If you need to
 move the image underneath, you can hold the shift key and click and
-drag.  When you have selected a region of the image, additional icons
+drag.  <P>
+When you have selected a region of the image, additional icons
 appear above the image, and exactly which icons you see is a function
 of whether you are working on a FITS or HiPS image, and whether or not
 you have a catalog overlaid: <img src="img/selectoptions.png"> These
-icons will allow you to (from left to right):
-<UL>
-<LI>(FITS only) Crop the image to the selected region (then you can
-save the cropped FITS image via the save icon described above).
-<LI>(Only if catalog overlaid) Select the catalog sources overlaid on
-the image within the region (highlights the sources in the list and
-plot).
-<LI>(Only if catalog overlaid) Filter the overlaid catalog down to the
-sources within the enclosed area.
-<LI>Zoom the image to fit the selected area.
-<LI>Recenter the images on the selected area.
-<LI>(FITS only) Obtain statistics from the image on the region.
-</UL>
-You can save the cropped FITS image via the save icon (described
-above).  The statistics option results in a pop-up that looks
-something like this:<br><img src="img/imagestatistics.png"> <br> Note
-that it calculates the location of the minimum and maximum fluxes, and
-the aperture and flux-weighted centroids; the flux values given are in
-the same units as the FITS file. If you put your mouse over the row of
-the table in the pop-up, that location appears as an 'x' on the
-image.  If you have a catalog overlaid, selecting sources with this
-tool highlights them in the catalog list. You can choose to impose a
-filter via this selection mechanism; the filters icon changes above
-the catalog to indicate that there is a filter applied (<img
-src="img/filtersapplied.png">). To clear the filters, click on the
-cancel filters icon (which also appears after you impose filters):
-<img src="img/cancelfilters.png">. There is much more on <a
-href="tables.html#filters">filters</A> in the Tables section.<P>
-
+icons will allow you to do several things:
+<DL>
+<dt><img src="img/crop-small.png"> <em>Crop the image</em>
+<dd>(FITS only) Crop the image to the selected region. Then you can
+save the cropped FITS image via the save icon described above.<P>
 <strong>Note that</strong>, if you have a rotated FITS image such that
 a crop would have to bisect pixels, it will show you the region that
 encompasses your selection. If you crop at that point, then, it will
@@ -539,6 +516,35 @@ figure below -- in the original image, north is up. This has been
 rotated 45 degrees. The selected region is in white. The yellow
 dash-dot line is the crop in pixel space that encompasses the selected
 region. <br> <img src="img/cropregion.png"><p>
+<dt><img src="img/checkmark-small.png"><em>Select sources</em>
+<dd>(Only if a catalog is overlaid) Select the catalog sources overlaid on
+the image within the region. Selecting highlights the sources in the 
+list and plot with a different color row or symbol.<P>
+<dt><img src="img/filter-small.png"><em>Filter sources</em>
+<dd>(Only if a catalog is overlaid) Filter the overlaid catalog down to the
+sources within the enclosed area. When you choose to impose a
+filter via this selection mechanism; the filters icon changes above
+the catalog to indicate that there is a filter applied (<img
+src="img/filtersapplied.png">). To clear the filters, click on the
+cancel filters icon (which also appears after you impose filters):
+<img src="img/cancelfilters.png">. There is much more on <a
+href="tables.html#filters">filters</A> in the Tables section.<P>
+<dt><img src="img/zoom-small.png"><em>Zoom the image</em>
+<dd>Zoom the image to fit the selected area into your field of
+view.<P>
+<dt><img src="img/recenter-small.png"><em>Recenter the image</em>
+<dd>Recenter the image on the selected area.<P>
+<dt><img src="img/stats-small.png"><em>Obtain statistics</em>
+<dd>(FITS only) Obtain statistics from the image on the region.
+The statistics option results in a pop-up that looks
+something like this:<br><img src="img/imagestatistics.png"> <br> Note
+that it calculates the location of the minimum and maximum fluxes, and
+the aperture and flux-weighted centroids; the flux values given are in
+the same units as the FITS file. If you put your mouse over the row of
+the table in the pop-up, that location appears as an 'x' on the
+image.  <P>
+</dl>
+
 
 When you are working with the selection tool, a red <img
 src="img/endselect.png"> appears next to the image toolbar to remind
