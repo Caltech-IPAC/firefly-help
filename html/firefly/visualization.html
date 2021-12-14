@@ -355,14 +355,18 @@ href="#extraction">extraction section below</A>. <P>
 <dt><img src="img/line.png"> <em>Draw a line in the image</em>
 <dd>When this tool is activated, you can draw a line in your FITS
 image with your mouse, and it will extract for you the pixel values
-along that line. For more information on saving the information, see
+along that line. If you have more than one image loaded and visible,
+you can shift-click in another image to see the same line in another
+image. For more information on saving the information, see
 the <a href="#extraction">extraction section below</A>. <P>
 
 <dt><img src="img/points.png"> <em>Make points in the image</em>
 <dd>When this tool is activated, you can click in your FITS image with
 your mouse, and it will extract for you the pixel values at the
-location of your click, creating a catalog for you as you click. For
-more information on saving the information, see the <a
+location of your click, creating a catalog for you as you click.  If
+you have more than one image loaded and visible, you can shift-click
+in another image to extract points from another image. For more
+information on saving the information, see the <a
 href="#extraction">extraction section below</A>. <P>
 
 </dl>
@@ -885,9 +889,10 @@ click, given the WCS information in the header of the image. The point
 extraction is given in image x coordinates, but can be changed to be
 in image y coordinates. <P>
 
-Note that for the line, you can click on a new image to see the same
-line on a new image. And, for the points, you can shift-click to
-change images without extracting points.<P>
+Note that for the line, if you have more than one image loaded and
+visiblke, you can shift-click on a new image to see the same line on a
+new image. And, for the points, you can shift-click to change images
+without extracting points.<P>
 
 Once you have an extraction that you like, you can retain the
 extraction for further analysis, in any of three ways. "<strong>Pin
