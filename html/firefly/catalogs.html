@@ -25,17 +25,17 @@ for you and overlay the catalog on that image. Once you've loaded a
 catalog, you can <a href="plots.html">make plots</A>. <P>
 
 <em>Contents of page/chapter:</em><br>
-+<A href="#irsacatalogs">IRSA Catalogs</A> -- Overlaying catalogs
-from IRSA<br>
-+<A href="#nedcatalogs">NED Objects</A> <br>
-+<A href="#owncatalogs">Catalogs from Disk</A> <br>
-+<A href="#votap">VO TAP Search</A><br>
-+<A href="#voscs">VO SCS Search</A> <br>
++<A href="#irsacatalogs">IRSA Catalogs</A> -- Searching for catalogs from IRSA<br>
++<A href="#nedcatalogs">NED Objects</A> -- Searching for NED objects <br>
++<A href="#owncatalogs">Catalogs from Disk</A> -- Loading catalogs from disk <br>
++<A href="#votap">VO TAP Search</A> -- Searching for catalogs via VO TAP services <br>
++<A href="#voscs">VO SCS Search</A> -- Searching for catalogs via VO SCS services <br>
++<A href="#interacting">Interacting</A> -- Interacting with catalogs<br>
 <P>&nbsp;<P>
 
 
 
-<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A></h3>
+<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A> -- Searching for catalogs from IRSA</h3>
 
 By clicking on the blue "Catalog" tab (which also looks like a
 button), a window appears with several options, as follows. By
@@ -212,9 +212,12 @@ cases, there are literally hundreds of columns that you can access!
 
 </ul><P>
 
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
-<h3><A name="nedcatalogs">NED Objects</A> -- Overlaying
-objects obtained from NED</h3>
+
+<h3><A name="nedcatalogs">NED Objects</A> -- Searching for NED objects</h3>
 
 (NED= <A href="http://ned.ipac.caltech.edu/" target="_blank">NASA
 Extragalactic Database <img src="img/jumpout.jpg" height="10"></A>.)<P>
@@ -222,14 +225,16 @@ Extragalactic Database <img src="img/jumpout.jpg" height="10"></A>.)<P>
 By clicking on the blue "Catalogs" tab, you are by default dropped
 into the interface for searching for catalogs at IRSA. However, you
 can pick another tab, "NED", to search for and load objects from
-NED.<P>
+a cone search at NED.<P>
 
 <img src="img/nedcat.png" width="75%"><P>
 
-
 As for the other catalog searches, the tool pre-fills the target
-position with its best guess o the coordinates of the target with
-which you have been working. In this case, you are limited to a cone
+position with its best guess of the coordinates of the target with
+which you have been working. You can use an object name in place of
+coordinates. Note that although NED is used for name resolution, the
+actual search is then performed using coordinates, as opposed to name.
+In this case, you are limited to a cone
 search, so the next option is the cone search radius. Pick your units
 from the pulldown first, and then enter a number; if you enter a
 number and then select from the pulldown, it will convert your number
@@ -237,12 +242,20 @@ from the old units to the new units. There are both upper and lower
 limits to your search radius; it will tell you if you request
 something too big or too small. <P>
 
+From the NED results, you have one-click access to the fully detailed
+information from NED on any object returned from such a search.
+The search results will generally include a column "Details", though
+you may have to scroll to the right to see it. Clicking on a link in
+this column takes you directly to the full NED information display for
+the selected object in a new window.
+<P>
 
-The search results are then shown (and interacted with) in the same
-way as the other catalogs described here.<P>
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
 
-<h3><a name="owncatalogs">Loading your own catalogs</A></h3><P>
+<h3><a name="owncatalogs">Loading your own catalogs from disk</A></h3><P>
 
 By clicking on the blue "Catalogs" tab, you are by default dropped
 into the interface for searching for catalogs at IRSA. However, you
@@ -385,10 +398,16 @@ will still let you plot columns from the file after you've loaded it.
 then come back to the the "Load catalog file" tab to pick another HDU
 without having to upload it again.
 </UL>
+<P>
+
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
+
 
 
 <a name="tapSearches.form"></A>
-<h3><A name="votap">VO TAP Search</A></h3>
+<h3><A name="votap">VO TAP Search</A> -- Searching for catalogs via VO TAP services</h3>
 
 (VO= <A href="http://www.virtualobservatory.org/"
 target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
@@ -623,10 +642,15 @@ overlapping a specified wavelength range.
 
 </dl><P>
 
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
 
 
-<h3><A name="voscs">VO SCS Search</A></h3>
+
+
+<h3><A name="voscs">VO SCS Search</A> -- Searching for catalogs via VO SCS services</h3>
 
 
 (VO= <A href="http://www.virtualobservatory.org/" target="_blank">Virtual
@@ -702,9 +726,35 @@ via the IRSA tools).
 
 </UL><P>
 
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
-</BODY>
-</HTML>
+
+
+<h3><A name="interacting">Interacting with catalogs</A></h3>
+
+When you load a catalog, the tools may create a table, a plot, and/or,
+if your catalog has position information (e.g., RA and dec), it
+overlays the catalog on an image. All three of these ways of
+displaying the catalog are interlinked and interactive.<P>
+
+Catalogs are a special case of <a href="tables.html">tables</A>; the
+basic functionality of tables is covered in the <a
+href="tables.html">Tables section</A>. You can sort and filter the
+table.<P>
+
+<A href="plots.html">Plots</A> are also covered in a different
+section. You can make scatter plots, heat maps, and histograms. You
+can plot columns from your catalog, including simple mathematical
+manipulations of catalog columns.<P>
+
+If your catalog has positions included and your tool has an image
+display, your catalog will also be overlaid on an image. The <a
+href="visualization.html">Visualization section</A> includes
+information about that. Each catalog that you load is overlaid on
+the image using different, customizable symbols and colors. <P>
+
 
 
 

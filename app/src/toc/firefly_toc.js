@@ -387,6 +387,11 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#tapSearches.adql',
              hidden: true,
         },
+        {
+            id: 'catalogs.interacting',
+            title: 'Interacting',
+            href: 'firefly/catalogs.html#interacting',
+        },
     ]
 };
 
