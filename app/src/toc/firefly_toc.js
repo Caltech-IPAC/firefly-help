@@ -285,7 +285,7 @@ const toc_catalogs = {
         },
         {
             id: 'catalogs.nedcatalogs',
-            title: 'NED Catalogs',
+            title: 'NED Objects',
             href: 'firefly/catalogs.html#nedcatalogs',
         },
         {
