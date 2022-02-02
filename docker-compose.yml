@@ -1,7 +1,8 @@
 version: '3'
 services:
   firefly:
+    image: ipac/irsa-onlinehelp:${BUILD_TAG:-latest}
     build: .
-    volumes:
-      - ./:/src:delegated
-    command: ["/bin/bash", "-c", "gradle fi:dockerBuild"]
+    restart: always
+    ports:
+      - "3000:80"

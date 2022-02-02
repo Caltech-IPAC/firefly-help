@@ -133,7 +133,7 @@ task buildClient(dependsOn: loadConfig) {
 }
 
 
-task build(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf, zipHelp])
+task build(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf])
 
 task run(dependsOn: build) {
     doLast {

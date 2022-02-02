@@ -1,6 +1,6 @@
 
 FROM node:12.22.4-slim AS deps
-WORKDIR "/app"
+WORKDIR "/work"
 COPY ./app/package.json ./app/yarn.lock ./
 RUN yarn install --frozen-lockfile
 
@@ -15,14 +15,20 @@ RUN apt-get update \
     && mkdir -p /work
 
 WORKDIR "/work"
-COPY ./buildScript ./buildScript
-COPY build.gradle settings.gradle ./
-COPY --from=deps /app/node_modules ./app/node_modules
+COPY . .
+COPY --from=deps /work/node_modules ./app/node_modules
 
 ENV GRADLE_USER_HOME=/work \
     GRADLE_OPTS="-Dorg.gradle.daemon=false -Dorg.gradle.internal.launcher.welcomeMessageEnabled=false"
 
+ARG target=build
+ARG env=dev
 
-ENTRYPOINT []
-CMD ["gradle", "tasks"]
-#CMD ["sleep", "30m"]
+RUN gradle -Penv=${env} ${target}
+
+
+FROM httpd:2.4-alpine
+
+RUN rm /usr/local/apache2/htdocs/index.html
+
+COPY --from=builder /work/build/ /usr/local/apache2/htdocs/
