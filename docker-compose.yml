@@ -1,7 +1,7 @@
 version: '3'
 services:
   firefly:
-    image: ipac/irsa-onlinehelp:${BUILD_TAG:-latest}
+    image: ipac/firefly-help:${BUILD_TAG:-latest}
     build: .
     restart: always
     ports:
