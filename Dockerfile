@@ -29,6 +29,6 @@ RUN gradle -Penv=${env} ${target}
 
 FROM httpd:2.4-alpine
 
-RUN rm /usr/local/apache2/htdocs/index.html
+RUN rm /usr/local/apache2/htdocs/index.html && mkdir /usr/local/apache2/htdocs/onlinehelp
 
-COPY --from=builder /work/build/ /usr/local/apache2/htdocs/
+COPY --from=builder /work/build/ /usr/local/apache2/htdocs/onlinehelp/
