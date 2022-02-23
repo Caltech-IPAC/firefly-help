@@ -3,6 +3,5 @@ services:
   firefly:
     image: ipac/firefly-help:${BUILD_TAG:-latest}
     build: .
-    restart: always
     ports:
       - "3000:80"
