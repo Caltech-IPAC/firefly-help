@@ -134,6 +134,7 @@ task buildClient(dependsOn: loadConfig) {
 
 
 task build(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf])
+task buildWithZip(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf, zipHelp])
 
 task run(dependsOn: build) {
     doLast {
