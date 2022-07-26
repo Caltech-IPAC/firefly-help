@@ -31,6 +31,7 @@ your table has RA and Dec in it, you can overlay it on images. <P>
 +<a href="#restricting">Restricting What is Plotted</A><br>
 +<a href="#overplotting">Overplotting</A><br>
 +<a href="#adding">Adding Plots</A><br>
++<a href="#pinning">Pinning Plots</A><br>
 +<a href="#example">Example Plots</A><br>
 <P>&nbsp;<P>
 
@@ -526,6 +527,74 @@ Chart", and set what should be plotted as above.<br> <img
 src="img/charts4.png" width="30%">&nbsp;&nbsp;<img
 src="img/charts5.png" width="30%">&nbsp;&nbsp;<img
 src="img/charts6.png" width="30%"><p>  
+
+
+
+
+<h3><a name="pinning">Pinning Plots</A> </h3>
+
+
+The idea behind "pinning plots" (or "pinning charts") is that you can
+retain a plot within the tool. Within this tool, "pinning" just means
+"hold on to this item within this tool." It doesn't mean "save this
+plot to disk", nor does it mean "download the data behind this"; it
+means "retain this item in this tool for now." For example, you could
+make the same color-magnitiude diagram from two catalogs of two
+different regions, pin one or both, and in that fashion, compare them
+side-by-side. <P>
+
+When you make a plot that you want to retain, click on "pin chart" <img
+src="img/pinchartbutton.png"> and it will make a copy of that chart on
+the far right of your plot area. <P>
+
+<table><tr><td><img src="img/chartdivider.png"></td><td>By default,
+the pinned plot(s) takes up a relatively small fraction of your
+browser screeen area. To change the relative areas of the image (if
+present) and the plots, put your mouse over the boundary between plots
+(or plot and image) and click-and-drag the boundary when it changes to
+look like this.</td></tr></table><P>
+
+By default, it shows your pinned plot next to your current plot. if
+you would like to view them as tabs instead, click on "as tabs" <img
+src="img/astabs.png">. To go back to the side-by-side view, click on
+"side-by-side" <img src="img/sidebyside.png">.<P>
+
+Examples of plots viewed as a grid:<br>
+<img src="img/activepinnedcharts-grid.png"><P>
+and as tabs:<br>
+<img src="img/activepinnedcharts-tabs.png"><P>
+
+<strong>Tips and Troubleshooting</strong>
+<UL>
+<LI>When you pin a plot, and then filter its parent catalog, the plot
+updates correspondingly, because it is still linked to its parent
+catalog.
+<LI>When you have multiple catalogs loaded, if you want to bring to
+the foreground the catalog tab corresponding to a pinned plot, click
+on "show table" <img src="img/showtable.png">, and it will bring the
+corresponding catalog to the foreground.
+<LI>If you click on a source in the image (or catalog or plot), the
+same source is highlighted in the catalog (or image or plot). 
+<LI>To change a pinned plot, click on the plot to bring it to the
+foreground, then click on the gears in the the corresponding plot
+area, and change what is plotted as described <a
+href="#changing">above</A>.
+<LI>In side-by-side view, you can view the plots one a time or in a
+grid by clicking on the icon for one-at-a-time (left) or tiled
+(right): <img src="img/imagetiles.png">
+<LI>There is a maxium of 12 charts that you can pin at one time.
+<LI>The margins of the plots are not currently configurable. When many
+plots are pinned, especially on a small screen, the plots will appear
+to be mostly margin, less data. It helps if you view the plots as tabs
+and/or as one at a time in this case.
+<LI>To remove a pinned plot, click on the blue 'x' in the upper right
+corner of the plot.
+<LI>If you remove a catalog by clicking on the 'x' in the
+corresponding catalog tab, the pinned plot will be removed as well.
+</UL>
+
+
+
 
 
 <h3><a name="example">Example plots</A></h3>
