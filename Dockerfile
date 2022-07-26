@@ -1,18 +1,20 @@
 
-FROM node:12.22.4-slim AS deps
+FROM gradle:7.4-jdk17 AS deps
+
+RUN apt-get update \
+    && apt-get install -y htmldoc unzip wget \
+# use node v18.x. may not be available via apt-get
+    && curl -sL https://deb.nodesource.com/setup_18.x | bash -  \
+    && apt-get install -y nodejs \
+    && npm install yarn -g  \
+# cleanup
+    && rm -rf /var/lib/apt/lists/*;
+
 WORKDIR "/work"
 COPY ./app/package.json ./app/yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-FROM gradle:4.10-jre-slim AS builder
-USER root
-RUN apt-get update \
-    && apt-get install -y curl htmldoc \
-    && curl -sL https://deb.nodesource.com/setup_12.x | bash -  \
-    && apt-get install -y nodejs \
-    && npm install yarn -g  \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /work
+FROM deps AS builder
 
 WORKDIR "/work"
 COPY . .
