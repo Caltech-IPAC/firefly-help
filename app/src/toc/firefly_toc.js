@@ -310,6 +310,12 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#votap',
         },
         {
+            id: 'hips.VisualSelection',
+            title: 'VO TAP Search',
+            href: 'firefly/catalogs.html#hips.visualselection',
+            hidden: true,
+        },
+        {
             id: 'catalogs.voscs',
             title: 'VO SCS Search',
             href: 'firefly/catalogs.html#voscs',
