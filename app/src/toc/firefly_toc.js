@@ -65,6 +65,11 @@ const toc_basics = {
             href: 'firefly/basics.html#charts',
         },
         {
+            id: 'basics.pinning',
+            title: 'Pinning',
+            href: 'firefly/basics.html#pinning',
+        },
+        {
             id: 'basics.bgmon',
             title: 'Background Monitor',
             href: 'firefly/basics.html#bgmon',
@@ -305,6 +310,12 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#votap',
         },
         {
+            id: 'hips.VisualSelection',
+            title: 'VO TAP Search',
+            href: 'firefly/catalogs.html#hips.visualselection',
+            hidden: true,
+        },
+        {
             id: 'catalogs.voscs',
             title: 'VO SCS Search',
             href: 'firefly/catalogs.html#voscs',
@@ -450,6 +461,17 @@ export const toc_plots = {
             id: 'plots.adding',
             title: 'Adding Plots',
             href: 'firefly/plots.html#adding'
+        },
+        {
+            id: 'plots.pinning',
+            title: 'Pinnning Plots',
+            href: 'firefly/plots.html#pinning'
+        },
+        {
+            id: 'chartarea.info',
+            hidden: true,
+            title: 'Pinnning Plots',
+            href: 'firefly/plots.html#pinning'
         },
         {
             id: 'plots.example',
