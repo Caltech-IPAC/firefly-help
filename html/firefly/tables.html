@@ -97,15 +97,16 @@ query that produced it.<P>
 The next option on the top of the catalog tab is this: <img
 src="img/tableoptions.png">.  Clicking on this icon brings up options
 for the table, e.g., how many rows are displayed per page, which
-columns are shown, whether units and data types are shown at the top
-of the column, shown here:<br> <img src="img/toptableoptions.png"
-width="50%"><br> By default, it is often but not always the case that
-all columns are shown. The default page size is 100 rows.  Note that
-expanding the page size to numbers much greater than 100 may result in
-a substantial performance degradation (e.g., your browser will appear
-to freeze or not appear to be doing anything while it manages and
-renders the large table). See the <a href="#filters">Filters section
-below</A> for more things to do from the table options pop-up. <P>
+columns are shown, metadata about each column if available, whether
+units and data types are shown at the top of the column, shown
+here:<br> <img src="img/toptableoptions.png" width="50%"><br> By
+default, it is often but not always the case that all columns are
+shown. The default page size is 100 rows.  Note that expanding the
+page size to numbers much greater than 100 may result in a substantial
+performance degradation (e.g., your browser will appear to freeze or
+not appear to be doing anything while it manages and renders the large
+table). See the <a href="#filters">Filters section below</A> for more
+things to do from the table options pop-up. <P>
 
 This is one of the last options on the top of the catalog tab: <img
 src="img/expand-24x24.png">. Clicking on this expands the catalog
@@ -242,7 +243,7 @@ string: !=''
 larger than 1.234: &gt; 1.234 and IS NOT NULL
 <LI> Retain rows that have values between -0.5 and 1.25: &gt; -05 and &lt; 1.25
 <LI> Retain rows with a parameter greater than one value or exactly
-equal to another value: &gt; 12345 or != 3000 
+not equal to another value: &gt; 12345 or != 3000 
 <LI>Retain rows with a parameter equal to one of the values in a list:
  IN a,b,c,d
 </UL>
