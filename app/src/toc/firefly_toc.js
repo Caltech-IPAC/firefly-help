@@ -102,6 +102,12 @@ const toc_visualization = {
             hidden: true,
         },
         {
+            id: 'visualization.layerPanel',
+            title: 'Layers',
+            href: 'firefly/visualization.html#layers',
+            hidden: true,
+        },
+        {
             id: 'visualization.ds9regions',
             title: 'ds9 Regions',
             href: 'firefly/visualization.html#ds9regions',
@@ -229,6 +235,18 @@ export const toc_tables = {
             hidden: true,
         },
         {
+            id: 'tables.options',
+            title: 'Table Options',
+            href: 'firefly/tables.html#tableoptions',
+            hidden: true,
+        },
+        {
+            id: 'tables.info',
+            title: 'Table Info',
+            href: 'firefly/tables.html#tableinfo',
+            hidden: true,
+        },
+        {
             id: 'tables.header',
             title: 'Table Header',
             href: 'firefly/tables.html#header',
@@ -285,7 +303,7 @@ const toc_catalogs = {
         },
         {
             id: 'catalogs.nedcatalogs',
-            title: 'NED Catalogs',
+            title: 'NED Objects',
             href: 'firefly/catalogs.html#nedcatalogs',
         },
         {
@@ -387,6 +405,11 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#tapSearches.adql',
              hidden: true,
         },
+        {
+            id: 'catalogs.interacting',
+            title: 'Interacting',
+            href: 'firefly/catalogs.html#interacting',
+        },
     ]
 };
 
@@ -437,6 +460,24 @@ export const toc_plots = {
             hidden: true,
         },
         {
+            id: 'charts.saving',
+            title: 'Saving Plots',
+            href: 'firefly/plots.html#saving',
+            hidden: true,
+        },
+        {
+            id: 'charts.save',
+            title: 'Saving Plots',
+            href: 'firefly/plots.html#saving',
+            hidden: true,
+        },
+        {
+            id: 'plots.filter',
+            title: 'Filtering from Plots',
+            href: 'firefly/plots.html#filterfromplot',
+            hidden: true,
+        },
+        {
             id: 'plots.overplotting',
             title: 'Overplotting',
             href: 'firefly/plots.html#overplotting'
@@ -445,6 +486,17 @@ export const toc_plots = {
             id: 'plots.adding',
             title: 'Adding Plots',
             href: 'firefly/plots.html#adding'
+        },
+        {
+            id: 'plots.pinning',
+            title: 'Pinning Plots',
+            href: 'firefly/plots.html#pinning'
+        },
+        {
+            id: 'chartarea.info',
+            hidden: true,
+            title: 'Pinning Plots',
+            href: 'firefly/plots.html#pinning'
         },
         {
             id: 'plots.example',

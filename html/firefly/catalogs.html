@@ -25,17 +25,17 @@ for you and overlay the catalog on that image. Once you've loaded a
 catalog, you can <a href="plots.html">make plots</A>. <P>
 
 <em>Contents of page/chapter:</em><br>
-+<A href="#irsacatalogs">IRSA Catalogs</A> -- Overlaying catalogs
-from IRSA<br>
-+<A href="#nedcatalogs">NED Catalogs</A> <br>
-+<A href="#owncatalogs">Catalogs from Disk</A> <br>
-+<A href="#votap">VO TAP Search</A><br>
-+<A href="#voscs">VO SCS Search</A> <br>
++<A href="#irsacatalogs">IRSA Catalogs</A> -- Searching for catalogs from IRSA<br>
++<A href="#nedcatalogs">NED Objects</A> -- Searching for NED objects <br>
++<A href="#owncatalogs">Catalogs from Disk</A> -- Loading catalogs from disk <br>
++<A href="#votap">VO TAP Search</A> -- Searching for catalogs via VO TAP services <br>
++<A href="#voscs">VO SCS Search</A> -- Searching for catalogs via VO SCS services <br>
++<A href="#interacting">Interacting</A> -- Interacting with catalogs<br>
 <P>&nbsp;<P>
 
 
 
-<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A></h3>
+<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A> -- Searching for catalogs from IRSA</h3>
 
 By clicking on the blue "Catalog" tab (which also looks like a
 button), a window appears with several options, as follows. By
@@ -99,6 +99,11 @@ select "image", because HiPS images are generally very, very large, so
 this would result in too many points being returned. There is a
 maximum of 5 degrees imposed on catalog searches to match HiPS
 images.<P>
+If you <a href="visualization.html#selectregion">select a 
+rectangular region</A> of your image (if relevant) and then select a polygon
+catalog search, you will have a fourth radio button above, "selection",
+which matches the corners of your selected image region.<P>
+
 
 <DT><strong>Multi-Object search</strong>: <dd> <img
 src="img/catsearch-multiobj.png"><br> 
@@ -212,24 +217,29 @@ cases, there are literally hundreds of columns that you can access!
 
 </ul><P>
 
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
-<h3><A name="nedcatalogs">NED Catalogs</A> -- Overlaying
-catalogs obtained from NED</h3>
+
+<h3><A name="nedcatalogs">NED Objects</A> -- Searching for NED objects</h3>
 
 (NED= <A href="http://ned.ipac.caltech.edu/" target="_blank">NASA
 Extragalactic Database <img src="img/jumpout.jpg" height="10"></A>.)<P>
 
 By clicking on the blue "Catalogs" tab, you are by default dropped
 into the interface for searching for catalogs at IRSA. However, you
-can pick another tab, "NED", to search for and load a catalog from
-NED.<P>
+can pick another tab, "NED", to search for and load objects from
+a cone search at NED.<P>
 
 <img src="img/nedcat.png" width="75%"><P>
 
-
 As for the other catalog searches, the tool pre-fills the target
-position with its best guess o the coordinates of the target with
-which you have been working. In this case, you are limited to a cone
+position with its best guess of the coordinates of the target with
+which you have been working. You can use an object name in place of
+coordinates. Note that although NED is used for name resolution, the
+actual search is then performed using coordinates, as opposed to name.
+In this case, you are limited to a cone
 search, so the next option is the cone search radius. Pick your units
 from the pulldown first, and then enter a number; if you enter a
 number and then select from the pulldown, it will convert your number
@@ -237,12 +247,20 @@ from the old units to the new units. There are both upper and lower
 limits to your search radius; it will tell you if you request
 something too big or too small. <P>
 
+From the NED results, you have one-click access to the fully detailed
+information from NED on any object returned from such a search.
+The search results will generally include a column "Details", though
+you may have to scroll to the right to see it. Clicking on a link in
+this column takes you directly to the full NED information display for
+the selected object in a new window.
+<P>
 
-The search results are then shown (and interacted with) in the same
-way as the other catalogs described here.<P>
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
 
-<h3><a name="owncatalogs">Loading your own catalogs</A></h3><P>
+<h3><a name="owncatalogs">Loading your own catalogs from disk</A></h3><P>
 
 By clicking on the blue "Catalogs" tab, you are by default dropped
 into the interface for searching for catalogs at IRSA. However, you
@@ -327,7 +345,7 @@ For more information on loading images this way, see <a
 href="visualization.html#catalogload">this section</A>.<P>
 
 <DT><strong>Region files (*reg)</strong>
-<DD>Region files are plain text overlays originally used in<a
+<DD>Region files are plain text overlays originally used in <a
 href="http://ds9.si.edu/doc/ref/region.html" target="_blank">ds9 <img
 src="img/jumpout.jpg" height="10"></A>. Regions files can be overlaid
 on images (see <a href="visualization.html#ds9regions">here</A>), but
@@ -385,10 +403,16 @@ will still let you plot columns from the file after you've loaded it.
 then come back to the the "Load catalog file" tab to pick another HDU
 without having to upload it again.
 </UL>
+<P>
+
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
+
 
 
 <a name="tapSearches.form"></A>
-<h3><A name="votap">VO TAP Search</A></h3>
+<h3><A name="votap">VO TAP Search</A> -- Searching for catalogs via VO TAP services</h3>
 
 (VO= <A href="http://www.virtualobservatory.org/"
 target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
@@ -523,7 +547,42 @@ href="basics.html#searching">simpler search</A>:<br>
 <img src="img/enterconstraints-spatial1.png" width=40%"><P>
 
 And, this is what it looks like when you do a polygon search.<br>
-<img src="img/enterconstraints-spatial2.png" width=40%">
+<img src="img/enterconstraints-spatial2.png" width=40%"><P>
+
+<a name="hips.visualselection"> </A>
+For both of these spatial searches, you can <strong>adjust the search via
+clicking on a HiPS map</strong>. Click on this icon: <img
+src="img/clicktosearch.png"> to bring up a window:<P>
+<table><tr><td><img src="img/clicktosearch1.png" width="500"></td><td>
+If you have entered a target already, the window arrives already
+centered on the target. If not, it is centered on the galactic center,
+zoomed out. If you have entered a cone search radius already, then the
+circle drawn on the image is that cone size. You can manipulate this
+image with the same basic tools as in the <a
+href="visualization.html">visualization tools</A>.
+</td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch2.png" width="500"></td><td>
+To change the search region interactively, choose the selection
+tools and draw a shape on the image.<P>
+<strong>Note that</strong> if you have selected a cone search on the
+left, no matter what you select on the right, it will give you a cone
+search. If you change the cone position or radius in the yellow boxes
+after you change the selection, it will update the region in the
+image. </td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch3.png" width="500"></td><td>
+If you want to quit out of the selection without changing, click on
+"end selection" (the red text near the top of the image). 
+ </td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch4.png" width="500"></td><td>
+If you select polygon on the left, and you use the selection tool for
+"elliptical selection" on the right, you will get a spherical polygon
+(a polygon where the line segments are on a sphere).
+ </td></tr></table>
+<P>
+When you are done with this pop-up window, click on the 'x' in the
+upper right of the window. Then you can continue to enter constraints,
+or just search from this point.<P>
+
 
 
 <dt><strong><a name="tapSearches.temporal">Enter Constraints:
@@ -623,10 +682,15 @@ overlapping a specified wavelength range.
 
 </dl><P>
 
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
 
 
-<h3><A name="voscs">VO SCS Search</A></h3>
+
+
+<h3><A name="voscs">VO SCS Search</A> -- Searching for catalogs via VO SCS services</h3>
 
 
 (VO= <A href="http://www.virtualobservatory.org/" target="_blank">Virtual
@@ -702,9 +766,35 @@ via the IRSA tools).
 
 </UL><P>
 
+The search results are then shown and <a
+href="#interacting">interacted with</A> in the same way as the other
+catalogs described here.<P>
 
-</BODY>
-</HTML>
+
+
+<h3><A name="interacting">Interacting with catalogs</A></h3>
+
+When you load a catalog, the tools may create a table, a plot, and/or,
+if your catalog has position information (e.g., RA and dec), it
+overlays the catalog on an image. All three of these ways of
+displaying the catalog are interlinked and interactive.<P>
+
+Catalogs are a special case of <a href="tables.html">tables</A>; the
+basic functionality of tables is covered in the <a
+href="tables.html">Tables section</A>. You can sort and filter the
+table.<P>
+
+<A href="plots.html">Plots</A> are also covered in a different
+section. You can make scatter plots, heat maps, and histograms. You
+can plot columns from your catalog, including simple mathematical
+manipulations of catalog columns.<P>
+
+If the catalog has positions included and the tool has an image
+display, the catalog will also be overlaid on an image. The <a
+href="visualization.html">Visualization section</A> includes
+information about that. Each catalog that you load is overlaid on
+the image using different, customizable symbols and colors. <P>
+
 
 
 

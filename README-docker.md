@@ -20,16 +20,14 @@ For this reason, you will see slightly slower performance when running on MacOS
 
 ## Quick Start
 
-#### Build
+    git clone https://github.com/Caltech-IPAC/firefly-help
+    cd firefly-help
+    docker compose up [--build]
 
-To build the application, run this command in the project root's directory.    
+The above commands will create firefly-help repository with the latest changes then 
+build and run it locally on port 3000.  To test, point browser to http://localhost:3000/
 
-     docker compose run <project-name>
+By default, docker-compose will build the image if one does not exists.  Once image is built, it will use
+the existing image and will not attempt to build again.  Use **--build** to force a build before starting 
+the container.  This is needed when you're made changes to the source and wanted to rebuild before starting.
 
-The predefined projects are listed in `docker-compose.yml` under `services`.  
-In this case, there is only `firefly`.
-
-#### Run
-
-Firefly help is a web application.  To run it, point your web browser to the built `index.html`.  
-You can find this under the `./build/${project-name}/index.html`, i.e. `./build/firefly/index.html`
