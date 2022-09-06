@@ -241,6 +241,12 @@ Supported operators:
 <LI>abs(x), acos(x), asin(x), atan(x), atan2(x), ceil(x), cos(x),
 exp(x), floor(x), lg(x), ln(x), log10(x), log(x), power(x,y),
 round(x), sin(x), sqrt(x), tan(x)
+<LI>degree(x) and radians(x) are also supported -- these are the same
+functions as in ADQL and convert radians to degrees or degrees to
+radians. For small astrometric offsets, you could make a scatterplot
+of dec2-dec1 vs. (ra2-ra1)*cos(radians(dec1)) instead of typing
+cos(dec1*pi()/180). (NB: pi() is also a supported function you can
+use, instead of typing 3.14159.)
 <LI>Non-alphanumeric column names (e.g., those with - or + or similar
 characters) should be quoted in expressions.
 </UL>
