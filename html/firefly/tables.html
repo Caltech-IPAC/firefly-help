@@ -26,8 +26,11 @@ section</A>. <P>
 <em>Contents of page/chapter:</em><br>
 +<A href="#header">Table Header</A> <br>
 +<A href="#columns">Table Columns</A>  <br>
++<A href="#addColumn">Adding Columns</A>  <br>
 +<A href="#filters">Table Filters</A>  <br>
++<A href="#cells">Table Cells</A>  <br>
 +<A href="#save">Saving Tables</A>  <br>
++<a href="#tableactions">Table Actions</A><br>
 +<a href="#navigation">Table Navigation</A> <br>
 <P>&nbsp;<P>
 
@@ -54,68 +57,82 @@ The tab (and table) name itself likely indicates its origin.  To
 remove the tab, it is likely that you can click on the "X" on the
 tab.<P>
 
-Immediately below the tab name, there are several symbols:<br> <img
-src="img/tablehead.png"><br> which we now describe.<P>
+Immediately below the tab name, there can be several symbols:<br> <img
+src="img/tablehead.png"><br> which we now describe, 
+going from left to right along the top of the catalog tab.<P>
 
-The first thing to notice is that only the first 100 rows of the
+<DL>
+<dt><img src="img/table-pagenav.png"> Table navigation
+<dd>The first thing to notice is that only the first 100 rows of the
 retrieved catalog are displayed in the table. In the example here,
-there are ~7,700 sources that were retrieved in the search.  The
-left/right black arrows plus the page number allow you to navigate
-among these 'pages' of 50 sources each.  Note that the entire set of
-results (not just the 50 rows you are currently viewing) can be sorted
+there are 416 sources that were retrieved as a result of the search. 
+The left/right black arrows plus the page number allow you to navigate
+among these 'pages' of 100 sources each.  Note that the entire set of
+results (not just the 100 rows you are currently viewing) can be sorted
 by clicking on any column's name. <P>
 
+<dt><img src="img/binoc.png"> Table action: Searches
+<dd> This launches a new search, and as such, it has its 
+<a href="#tableactions">own section
+below</A>.<P>
 
-Going from left to right along the top of the catalog tab, the next
-icon represents a filter: <img src="img/filter.png">  Filters are
-complex and powerful enough that they are covered in a <a
-href="#filters">separate section below</A>.<P>
+<dt><img src="img/filter.png"> Filter
+<dd>Filters are complex and powerful enough that they are covered in a
+<a href="#filters">separate section below</A>.<P>
+
+<dt><img src="img/texttable.png"> Table as text
+<dd>Clicking on this changes the table display into a text display.
+The icon then changes to <img src="img/table.png"> -- click this again
+to return to the default table view.<P>
+
+<dt><img src="img/savetable.png"> Save table 
+<dd>This is how you can save the catalog. It has its <a
+href="#save">own section below</A>. <P>
+
+<dt><img src="img/table-addcol.png"> Add a column 
+<dd>This icon adds a new column to the table. This has its <a
+href="#addColumn">own section below</A>.<P>
 
 
-The next icon is <img src="img/texttable.png"> -- clicking on this
-changes the table display into a text display. The icon then changes
-to <img src="img/table.png"> -- click this again to return to the
-default table view.<P>
+<a name="tableinfo">
+<dt><img src="img/infolink.png"> Info link </A>
+<dd>You may or may not see this icon. This is an "information" button
+and, if it exists, it may provide addtional information about the
+table. It could have information about the job that was used to
+retrieve it:<br> <img src="img/tableinfo-jobinfo.png"><br> where the
+direct link to the job is given there (and can be copied by clicking
+on the clipboard, ready to be pasted into a helpdesk query, for
+example), with a job id as shown. It could also just have information
+about the table metadata:<br> <img
+src="img/tableinfo-metadata.png"><br> where the information about this
+table includes information about the query that produced it.<P>
 
-The next icon is <img src="img/savetable.png"> which is "Save" -- this
-is how you may save the catalog. It has its <a href="#save">own
-section below</A>.<P>
+<a name="tableoptions">
+<dt><img src="img/tableoptions.png"> Table options </A>
+<dd>Clicking on this icon brings up options for the table, e.g., how
+many rows are displayed per page, which columns are shown, metadata
+about each column if available, whether units and data types are shown
+at the top of the column, shown here:<br> <img
+src="img/toptableoptions.png" width="50%"><br> By default, it is often
+but not always the case that all columns are shown. The default page
+size is 100 rows.  Note that expanding the page size to numbers much
+greater than 100 may result in a substantial performance degradation
+(e.g., your browser will appear to freeze or not appear to be doing
+anything while it manages and renders the large table). See the <a
+href="#filters">Filters section below</A> for more things to do from
+the table options pop-up. <P>
 
-You may or may not see the next icon: <img src="img/infolink.png">
-This is an "information" button and, if it exists, it may provide
-addtional information about the table. It could have information about
-the job that was used to retrieve it:<br>
-<img src="img/tableinfo-jobinfo.png"><br>
-where the direct link to the job is given there (and can be copied by
-clicking on the clipboard, ready to be pasted into a helpdesk query,
-for example), with a job id as shown. It could also just have
-information about the table metadata:<br>
-<img src="img/tableinfo-metadata.png"><br>
-where the information about this table includes information about the
-query that produced it.<P>
+<dt><img src="img/expand-24x24.png"> Expand 
+<dd>Clicking on this expands the catalog window pane to take up the
+entire browser window. To return to the prior view, click on "Close"
+in the upper left.<P>
 
-The next option on the top of the catalog tab is this: <img
-src="img/tableoptions.png">.  Clicking on this icon brings up options
-for the table, e.g., how many rows are displayed per page, which
-columns are shown, metadata about each column if available, whether
-units and data types are shown at the top of the column, shown
-here:<br> <img src="img/toptableoptions.png" width="50%"><br> By
-default, it is often but not always the case that all columns are
-shown. The default page size is 100 rows.  Note that expanding the
-page size to numbers much greater than 100 may result in a substantial
-performance degradation (e.g., your browser will appear to freeze or
-not appear to be doing anything while it manages and renders the large
-table). See the <a href="#filters">Filters section below</A> for more
-things to do from the table options pop-up. <P>
+<dt><img src="img/help.png"> Help 
+<dd>The last option on the top of the catalog tab may be a
+context-sensitive help marker, which should bring you to this online
+help.<P>
 
-This is one of the last options on the top of the catalog tab: <img
-src="img/expand-24x24.png">. Clicking on this expands the catalog
-window pane to take up the entire browser window. To return to the
-prior view, click on "Close" in the upper left.<P>
-
-The last option on the top of the catalog tab may be a
-context-sensitive help marker <img src="img/help.png">, which should
-bring you to this online help.<P>
+</DL>
 
 
 <h3><A name="columns">Table Columns</A></h3>
@@ -123,19 +140,13 @@ bring you to this online help.<P>
 The table is shown exactly as it appears in the corresponding database
 (or as it appeared on your disk), with all columns as defined for that
 catalog. To understand what each column is, please see the
-documentation associated with that catalog. (For IRSA catalogs, this
-documentation is available via the catalog searching popup window, see
-figure below, or by navigating through the IRSA website.)<br> <img
-src="img/catalogcoldef.png"><P>
+documentation associated with that catalog. <P>
 
 Depending on what you did to display a table, the columns that are
 shown may be in easily-human-readable form, or may reflect column
 names used within the individual catalog. Please consult the detailed
 documentation associated with your specific archive if the headers are
 not clear to you.<P>
-
-There may be flexibility to display or hide columns, as described in
-the <a href="#header">headers section above</A>.<P>
 
 Clicking on the column names sorts the table by that column; clicking
 once sorts in ascending order, clicking a second time sorts in
@@ -172,6 +183,88 @@ have an option for "one-to-one matching". If that is selected, tne
 line (and only one line) of output is included for each line of input.
 It chooses the closest source within the radius you specify, or if
 there is no match, it adds a line indicating no match.  <P>
+
+
+<strong>Tips and Troubleshooting</strong>
+
+<UL>
+<LI>You can hide or display columns; click on the gears (<img
+src="img/tableoptions.png">) to get to the table options, and tick the
+box corresponding to the row you want to hide or show.
+<LI>If you are constructing your own catalog, the tool tries to guess
+the formatting of the column based on the first row's values.
+Therefore, if you have a value in the first row that happens to be a
+string like "null" where the rest of the column isn't like that, or
+happens to have only one decimal place where the rest of the column
+has 2 or more, it will guess incorrectly and format the other rows
+just like the first one. Try editing your catalog file to put the most
+general case as the first row.
+</UL>
+<P>
+
+
+
+<h3><A name="addColumn">Adding Columns</A></h3>
+
+This icon <img src="img/table-addcol.png"> allows you to add a new
+column to your catalog. When you click on it, it brings up this pop-up
+window:<br>
+<img src="img/addcolpopup.png"><br>
+This window asks for:
+<UL>
+<LI><em>Name</em> of the column (required) -- it cannot have special characters
+like a minus sign or a percent symbol; you can only use letters,
+numbers, and underscores.
+<LI><em>Expression</em> (required) -- using basic SQL operators, you can
+manipulate columns to create the new column. (See more on this
+immediately below.)
+<LI><em>Data Type</em> -- specify if your new column is a double
+precision floating point ("double"), a long integer ("long"), or a
+string ("char").
+<LI><em>Precision</em> -- if you have selected "double" for data type,
+select how many decimal places your new column should display. For
+example, if you want the numbers to display as 1.23, enter "F2".
+<LI><em>Units</em> -- specify the units of your new column.
+<LI><em>Description</em> -- add a description for your new column.
+<LI><em>UCD</em>, or unified content descriptor -- for VO compliance,
+add this for your new column.
+</UL>
+
+In order to construct the expression for your new column, your input 
+should follow the syntax of an SQL expression. If you click on the
+magnifying glass next to the form input, you get a pop-up window that
+can help you construct an expression; click "apply" to apply the
+expression.<P>
+
+ You need to use the column names
+exactly as they appear in your catalog. 
+Supported operators are:  +, -, *, /, =, &gt;, &lt;, &gt;=, &lt;=, !=,
+LIKE, IN, IS NULL, IS NOT NULL.
+You may use functions as well; for a list of all available functions, 
+<a href="http://hsqldb.org/doc/2.0/guide/builtinfunctions-chapt.html" <img src="img/jumpout.jpg"
+height="10">see here</A>. Some examples include:
+<UL>
+<LI>"w3mpro" - "w4mpro"
+<LI>sqrt(power("w3sigmpro",2) + power("w4sigmpro",2))
+<LI>("ra"-82.0158188)*cos(radians("dec"))
+<LI>"phot_g_mean_mag"-(5*log10(1000/"parallax") - 5)
+</UL>
+
+<strong>Tips and Troubleshooting</strong>
+
+<UL>
+<LI>You can't delete columns as of this release, but you can hide
+columns; click on the gears (<img
+src="img/tableoptions.png">) to get to the table options, and tick the
+box corresponding to the row you want to hide or show.
+<LI>When you create a new column, the header of the new column is red
+to let you know that the column is not present in the original
+catalog.
+<LI>When you save the catalog, the header of the saved catalog
+indicates that you have added a column. When you load the catalog back
+into the tool, the header of the new column is still red.
+</UL>
+
 
 
 
@@ -358,12 +451,15 @@ formating":<br>  <img src="img/cellpopup-formatting.png"><P>
 <h3><A name="save">Saving Tables</A></h3>
 
 
-Click on the diskette icon (<img src="img/save.png">), if
+Click on the diskette icon (<img src="img/save.png" align="center">), if
 available, to save the table. <P>
 
 If you have filtered the catalog down, it will save the filtered
 catalog (though as of this writing,  the total number of rows
 retrieved in the table header will still be the original number). <P>
+
+If you have added columns, it will save the catalog with the added
+columns, and the header will reflect that. <P>
 
 You obtain this pop-up:<br>
 <img src="img/savetablepopup.png" width="500"><p>
@@ -389,6 +485,33 @@ the software is talking to the <a
 href="https://irsa.ipac.caltech.edu/applications/Gator/"
 target="_blank">IRSA General Catalog Query Engine <img
 src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
+
+
+<h3><A name="tableactions">Table Actions</A></h3>
+
+
+<img src="img/binoc.png"> This icon implements a new search, an
+'action', on the currently selected row of the table. When you click
+on it, it reveals a pulldown:<br>
+<img src="img/tableactionspulldown.png"><br>
+For this example, the selected row is 81.978065, 34.448582 in J2000
+decimal degrees. From this pulldown, you can launch:
+<UL>
+<LI>A TAP search at this position (<a href="catalogs.html#votap">more
+information about TAP searches</A>)
+<LI>A NED search at this position with a 5 arcsecond radius (<a
+href="catalogs.html#nedcatalogs">more
+information about NED searches</A>)
+<LI>A Simbad search at this position with a 5 arcsecond radius, and
+put the results in a table here in the tool
+<LI>A Simbad search at this position with a 5 arcsecond radius, but
+launch another browser window or tab at Simbad with the results
+<LI>A FITS search at this position (at IRSA, via this tool)
+<LI>A HiPS search at this position (via this tool)
+</UL>
+Any of these searches (except the search that launches another browser
+window with the Simbad results) places the search results into this
+same tool.
 
 
 

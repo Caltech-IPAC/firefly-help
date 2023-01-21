@@ -257,6 +257,11 @@ export const toc_tables = {
             href: 'firefly/tables.html#columns',
         },
         {
+            id: 'tables.addColumn',
+            title: 'Adding Columns',
+            href: 'firefly/tables.html#addColumn',
+        },
+        {
             id: 'tables.filters',
             title: 'Table Filters',
             href: 'firefly/tables.html#filters',
@@ -270,6 +275,11 @@ export const toc_tables = {
             id: 'tables.save',
             title: 'Saving Tables',
             href: 'firefly/tables.html#save',
+        },
+        {
+            id: 'tables.tableactions',
+            title: 'Table Actions',
+            href: 'firefly/tables.html#tableactions',
         },
         {
             id: 'tables.navigation',
