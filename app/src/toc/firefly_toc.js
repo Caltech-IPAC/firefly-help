@@ -490,28 +490,28 @@ export const toc_plots = {
         {
             id: 'plots.overplotting',
             title: 'Overplotting',
-            href: 'firefly/plots.html#overplotting'
+            href: 'firefly/plots.html#overplotting',
         },
         {
             id: 'plots.adding',
             title: 'Adding Plots',
-            href: 'firefly/plots.html#adding'
+            href: 'firefly/plots.html#adding',
         },
         {
             id: 'plots.pinning',
             title: 'Pinning Plots',
-            href: 'firefly/plots.html#pinning'
+            href: 'firefly/plots.html#pinning',
         },
         {
             id: 'chartarea.info',
             title: 'Pinning Plots',
-            href: 'firefly/plots.html#pinning'
+            href: 'firefly/plots.html#pinning',
             hidden: true,
         },
         {
             id: 'plots.example',
             title: 'Example Plots',
-            href: 'firefly/plots.html#example'
+            href: 'firefly/plots.html#example',
         },
     ]
 };
