@@ -504,9 +504,9 @@ export const toc_plots = {
         },
         {
             id: 'chartarea.info',
-            hidden: true,
             title: 'Pinning Plots',
             href: 'firefly/plots.html#pinning'
+            hidden: true,
         },
         {
             id: 'plots.example',
