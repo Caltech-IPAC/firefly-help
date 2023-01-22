@@ -547,6 +547,40 @@ the aperture and flux-weighted centroids; the flux values given are in
 the same units as the FITS file. If you put your mouse over the row of
 the table in the pop-up, that location appears as an 'x' on the
 image.  <P>
+<dt><img src="img/binoc.png"><em>Search</em>
+<dd>This tool implements a new search, an "action", on the region
+you have selected. It results in this pull-down:
+<img src="img/imageactionpulldown.png" align="top"><br>
+where this example is based on a region centered on 82.029058,
+34.423400, J2000 decimal degrees, a cone, of radius 0.0160 degrees.
+From this pulldown, you can launch:
+<UL>
+<LI>A NED cone search at this position with the corresponding radius (<a
+href="catalogs.html#nedcatalogs">more
+information about NED searches</A>); results loaded into this tool.
+<LI>A Simbad cone search at this position with the corresponding
+radius; results loaded into this tool.
+<LI>A Simbad search at this position with the corresponding radius,
+but launch another browser window or tab at Simbad with the results.
+<LI>A TAP cone search at this position with the corresponding radius 
+(<a href="catalogs.html#votap">more information about TAP
+searches</A>); results loaded into this tool.
+<LI>A TAP polygon search at this position (<a
+href="catalogs.html#votap">more information about TAP searches</A>);
+results loaded into this tool.
+<LI>A FITS search at this position (via this tool); results
+loaded into this tool.
+<LI>A HiPS search at this position (via this tool); results loaded
+into this tool.
+<LI>Refine the search region
+</UL>
+The last option brings up another pop-up window that allows you to
+refine the search region iteratively by choosing a cone or polygon,
+setting the center, and setting the cone size or polygon vertices.<br>
+<img src="img/imageactionrefinesearch.png"><br>
+From here, choose the "Searches" pulldown in the lower left of the
+pop-up window to obtain the same action choices as originally
+provided.
 </dl>
 
 
