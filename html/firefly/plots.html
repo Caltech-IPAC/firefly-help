@@ -32,6 +32,7 @@ your table has RA and Dec in it, you can overlay it on images. <P>
 +<a href="#overplotting">Overplotting</A><br>
 +<a href="#adding">Adding Plots</A><br>
 +<a href="#pinning">Pinning Plots</A><br>
++<a href="#combining">Combining Plots</A><br>
 +<a href="#example">Example Plots</A><br>
 <P>&nbsp;<P>
 
@@ -598,6 +599,41 @@ corner of the plot.
 <LI>If you remove a catalog by clicking on the 'x' in the
 corresponding catalog tab, the pinned plot will be removed as well.
 </UL>
+
+
+
+
+<h3><a name="combining">Combining Plots</A> </h3>
+
+When you have more than one plot pinned, you have an additional option
+that appears: "Combine Chart" <img src="img/combinechart.png">.<P>
+
+This option may not make any physical sense when you have made two
+entirely different charts in two entirely different parameter spaces,
+but when you have <a
+href="visualization.html#extraction">extracted</A> several spectra
+from the same file or several lines covering the same RA and Dec over
+several images from the same telescope, it does make physical sense 
+to put them on the same plot. <P>
+
+To start this process, click on "Combine Chart." You get this
+pop-up:<br>
+<img src="img/combinechartpopup.png"><br>
+All of the pinned charts appear as a list at the top, and once you
+select them via the tickboxes on the left, they appear as options on
+the bottom. For this example, I extracted the observed fluxes for a
+line on the sky from all four WISE bands. I have renamed them here
+from the default "Trace &lt;n&gt;" to "From WISE-&lt;n&gt;". Clicking
+OK from this pop-up yields a plot where all four contributing plots
+are shown on the same chart. In this case, I had to change the y-axis 
+to a logarithmic scale to see all four traces properly. <br>
+<img src="img/combinechartexample.png"><br>
+The pulldown at the top of the plot controls which trace is in the
+'foreground' for changing plot parameters or selecting points, but you
+can also simply click on points in the plot, much as with plots that
+aren't created from combining plots.<P>
+
+
 
 
 
