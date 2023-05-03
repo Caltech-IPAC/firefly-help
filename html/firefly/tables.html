@@ -215,19 +215,35 @@ This window asks for:
 <LI><em>Name</em> of the column (required) -- it cannot have special characters
 like a minus sign or a percent symbol; you can only use letters,
 numbers, and underscores.
+<LI><em>Mode</em> "Enter expression" or "Use preset function" --
+options immediately below this point correspond to "Enter expression"
+options; the preset function options are lower below. 
 <LI><em>Expression</em> (required) -- using basic SQL operators, you can
 manipulate columns to create the new column. (See more on this
-immediately below.)
+below.)
 <LI><em>Data Type</em> -- specify if your new column is a double
 precision floating point ("double"), a long integer ("long"), or a
 string ("char").
 <LI><em>Precision</em> -- if you have selected "double" for data type,
 select how many decimal places your new column should display. For
 example, if you want the numbers to display as 1.23, enter "F2".
-<LI><em>Units</em> -- specify the units of your new column.
-<LI><em>Description</em> -- add a description for your new column.
+<LI><em>Units</em> -- specify the units of your new column. For more
+information, see <a href="https://ivoa.net/documents/VOUnits/"
+target="_blank">IVOA
+documentation <img src="img/jumpout.jpg" height="10"> </A>
 <LI><em>UCD</em>, or unified content descriptor -- for VO compliance,
-add this for your new column.
+add this for your new column. For more
+information, see <a href="https://ivoa.net/documents/UCD1+/"
+target="_blank">IVOA
+documentation <img src="img/jumpout.jpg" height="10"> </A>
+<LI><em>Description</em> -- add a description for your new column.
+(This option appears for both modes.)
+<LI><em>Select a preset</em> -- if you select "Use preset function",
+you can choose (a) "set filtered rows to 'true' and the rest to 'false'", 
+(b) "set selected rows to 'true' and the rest to 'false'", or (c)
+"number rows in current sort order". These options are useful for
+tagging items you have selected in myriad ways (from plots, images,
+complicated filters), or ordered in complicated ways. 
 </UL>
 
 In order to construct the expression for your new column, your input 
@@ -236,12 +252,13 @@ magnifying glass next to the form input, you get a pop-up window that
 can help you construct an expression; click "apply" to apply the
 expression.<P>
 
- You need to use the column names
+You need to use the column names
 exactly as they appear in your catalog. 
 Supported operators are:  +, -, *, /, =, &gt;, &lt;, &gt;=, &lt;=, !=,
 LIKE, IN, IS NULL, IS NOT NULL.
 You may use functions as well; for a list of all available functions, 
-<a href="http://hsqldb.org/doc/2.0/guide/builtinfunctions-chapt.html" <img src="img/jumpout.jpg"
+<a href="http://hsqldb.org/doc/2.0/guide/builtinfunctions-chapt.html"
+target="_blank"> <img src="img/jumpout.jpg"
 height="10">see here</A>. Some examples include:
 <UL>
 <LI>"w3mpro" - "w4mpro"
@@ -253,6 +270,10 @@ height="10">see here</A>. Some examples include:
 <strong>Tips and Troubleshooting</strong>
 
 <UL>
+<LI>When you create a new column that is calculated from other
+columns, it is created statically. That is, it is not dynamically 
+updated like a spreadsheet, but calculated once and left alone after
+that. 
 <LI>You can't delete columns as of this release, but you can hide
 columns; click on the gears (<img
 src="img/tableoptions.png">) to get to the table options, and tick the
@@ -454,19 +475,15 @@ formating":<br>  <img src="img/cellpopup-formatting.png"><P>
 Click on the diskette icon (<img src="img/save.png" align="center">), if
 available, to save the table. <P>
 
-If you have filtered the catalog down, it will save the filtered
-catalog (though as of this writing,  the total number of rows
-retrieved in the table header will still be the original number). <P>
-
-If you have added columns, it will save the catalog with the added
-columns, and the header will reflect that. <P>
-
 You obtain this pop-up:<br>
 <img src="img/savetablepopup.png" width="500"><p>
 
+You have several choices to make. In order, they are:
 
-From here, you can save the table in a variety of formats:<br> <img
-src="img/savetableoptions.png"><br>
+<DL>
+<DT>File format
+<dd>You can save the table in a variety of formats:<br>
+<img src="img/savetableoptions.png" height="200"><br>
 
 It defaults to saving it as an <a
 href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
@@ -475,16 +492,33 @@ height="10"></A>, which is basically ASCII text with headers
 explaining the type of data in  each column, separated by vertical
 bars. <P>
 
-Other formats include comma-separated values (suitable for, e.g.,
-Excel), tab-separated values, and four different versions of <A
-href="http://www.ivoa.net/documents/VOTable/">VO tables <img
+Other formats include comma-separated values (csv, suitable for, e.g.,
+Excel), tab-separated values (tsv), and three different versions of <A
+href="http://www.ivoa.net/documents/VOTable/"
+target="_blank">VO tables <img
 src="img/jumpout.jpg" height="10"></A>.<P>
 
-The filename  may include the word "gator" because, under the hood,
-the software is talking to the <a
-href="https://irsa.ipac.caltech.edu/applications/Gator/"
-target="_blank">IRSA General Catalog Query Engine <img
-src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
+<dt>File name
+<dd>The tool tries to make a guess at a sensible filename. Feel free
+to change it to something that makes sense to you.<P>
+
+<dt>File location
+<dd>You may save your file to a local file (on your disk) or, if oyu
+are <a href="user.html">logged in</A>, in the <a
+href="/docs/workspace/" target="_blank">IRSA Workspace <img
+src="img/jumpout.jpg" height="10"></A>.<P>
+
+<dt>Modifications to the table
+<dd>Depending on what you have been doing to the table at this point,
+you may have <a href="#filters">filtered</A> or <a
+href="addColumn">added columns</A>. If you want to save the table as
+it is currently displayed, with all filters as imposed and any columns
+hidden, and any added columns as shown, select "Save table as
+displayed." If you want to save the original table, with all rows and
+the original columns intact, choose "Save table as originally
+retrieved."<P>
+
+</DL>
 
 
 <h3><A name="tableactions">Table Actions</A></h3>
@@ -493,21 +527,22 @@ src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
 <img src="img/binoc.png"> This icon implements a new search, an
 'action', on the currently selected row of the table. When you click
 on it, it reveals a pulldown:<br>
-<img src="img/tableactionspulldown.png"><br>
-For this example, the selected row is 81.978065, 34.448582 in J2000
-decimal degrees. From this pulldown, you can launch:
+<img src="img/tableactionspulldown.png" height="250"><br>
+For this example, the selected row is 214.566030, +52.611039 in J2000
+decimal degrees. From this pulldown, you can:
 <UL>
-<LI>A TAP search at this position (<a href="catalogs.html#votap">more
+<LI>Send the entire table to a TAP search
+<LI>Launch a TAP cone search at this position (<a href="catalogs.html#votap">more
 information about TAP searches</A>)
-<LI>A NED search at this position with a 5 arcsecond radius (<a
+<LI>Launch a NED search at this position with a 5 arcsecond radius (<a
 href="catalogs.html#nedcatalogs">more
 information about NED searches</A>)
-<LI>A Simbad search at this position with a 5 arcsecond radius, and
+<LI>Launch a Simbad search at this position with a 5 arcsecond radius, and
 put the results in a table here in the tool
-<LI>A Simbad search at this position with a 5 arcsecond radius, but
-launch another browser window or tab at Simbad with the results
-<LI>A FITS search at this position (at IRSA, via this tool)
-<LI>A HiPS search at this position (via this tool)
+<LI>Launch a Simbad search at this position with a 5 arcsecond radius, but
+start another browser window or tab at Simbad with the results
+<LI>Launch a FITS search at this position (at IRSA, via this tool)
+<LI>Launch a HiPS search at this position (via this tool)
 </UL>
 Any of these searches (except the search that launches another browser
 window with the Simbad results) places the search results into this

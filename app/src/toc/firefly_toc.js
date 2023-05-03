@@ -69,6 +69,11 @@ const toc_basics = {
             title: 'Background Monitor',
             href: 'firefly/basics.html#bgmon',
         },
+        {
+            id: 'basics.rearranging',
+            title: 'Rearranging Panes',
+            href: 'firefly/basics.html#rearranging',
+        },
     ]
 };
 
@@ -331,6 +336,11 @@ const toc_catalogs = {
             id: 'catalogs.votap',
             title: 'VO TAP Search',
             href: 'firefly/catalogs.html#votap',
+        },
+        {
+            id: 'catalogs.moreconstraints',
+            title: 'VO TAP: More about constraints',
+            href: 'firefly/catalogs.html#moreconstraints',
         },
         {
             id: 'catalogs.voscs',

@@ -561,14 +561,8 @@ present) and the plots, put your mouse over the boundary between plots
 (or plot and image) and click-and-drag the boundary when it changes to
 look like this.</td></tr></table><P>
 
-By default, it shows your pinned plot next to your current plot. if
-you would like to view them as tabs instead, click on "as tabs" <img
-src="img/astabs.png">. To go back to the side-by-side view, click on
-"side-by-side" <img src="img/sidebyside.png">.<P>
-
-Examples of plots viewed as a grid:<br>
-<img src="img/activepinnedcharts-grid.png"><P>
-and as tabs:<br>
+It shows your pinned plot in a different tab than your current plot.
+To change between them, just click on the tab <br>
 <img src="img/activepinnedcharts-tabs.png"><P>
 
 <strong>Tips and Troubleshooting</strong>
@@ -586,14 +580,13 @@ same source is highlighted in the catalog (or image or plot).
 foreground, then click on the gears in the the corresponding plot
 area, and change what is plotted as described <a
 href="#changing">above</A>.
-<LI>In side-by-side view, you can view the plots one a time or in a
+<LI>You can view the plots one a time or in a
 grid by clicking on the icon for one-at-a-time (left) or tiled
 (right): <img src="img/imagetiles.png">
 <LI>There is a maxium of 12 charts that you can pin at one time.
-<LI>The margins of the plots are not currently configurable. When many
-plots are pinned, especially on a small screen, the plots will appear
-to be mostly margin, less data. It helps if you view the plots as tabs
-and/or as one at a time in this case.
+<LI>When many plots are pinned, the margins on the plots will shrink
+down to make the data more visible. To view the plots with more
+reasonable margins, view the plots one at a time.
 <LI>To remove a pinned plot, click on the blue 'x' in the upper right
 corner of the plot.
 <LI>If you remove a catalog by clicking on the 'x' in the
@@ -606,34 +599,31 @@ corresponding catalog tab, the pinned plot will be removed as well.
 <h3><a name="combining">Combining Plots</A> </h3>
 
 
-When you have more than one plot pinned, you have an additional option
-that appears: "Combine Chart" <img src="img/combinechart.png">.<P>
+When you have more than one plot of a spectrum pinned, you have an
+additional option that appears: "Combine Chart" <img
+src="img/combinechart.png">.<P>
 
-This option may not make any physical sense when you have made two
-entirely different charts in two entirely different parameter spaces,
-but when you have <a
+This option is not available unless you have <a
 href="visualization.html#extraction">extracted</A> several spectra
-from the same file or several lines covering the same RA and Dec over
-several images from the same telescope, it does make physical sense 
-to put them on the same plot. <P>
+from the same file or have loaded in several spectra from a file. <P>
 
 To start this process, click to select the first chart you want to
 combine, then click on "Combine Chart." You get this
 pop-up:<br>
-<img src="img/combinechartpopup.png"><br>
-All of the remaining pinned charts appear as a list at the top, and once you
-select them via the tickboxes on the left, they appear as options on
-the bottom. For this example, I extracted the observed fluxes for a
-line on the sky from all four WISE bands. I have renamed them here
-from the default "Trace &lt;n&gt;" to "From WISE-&lt;n&gt;". Clicking
+<img src="img/combinechartpopup.png" width="500"><br>
+All of the remaining pinned charts that can be combined appear as a
+list at the top, and once you select them via the tickboxes on the
+left, they appear as options on the bottom. For this example, I
+extracted the observed spectra from a SOFIA data cube at several sky
+positions. The extractions are the default "Trace &lt;n&gt;". Clicking
 OK from this pop-up yields a plot where all four contributing plots
 are shown on the same chart. In this case, I had to change the y-axis 
-to a logarithmic scale to see all four traces properly. <br>
-<img src="img/combinechartexample.png"><br>
-The pulldown at the top of the plot controls which trace is in the
-'foreground' for changing plot parameters or selecting points, but you
-can also simply click on points in the plot, much as with plots that
-aren't created from combining plots.<P>
+to a logarithmic scale to see all four traces properly. <br> <img
+src="img/combinechartexample.png" width="500"><br> The pulldown at the
+top of the plot controls which trace is in the 'foreground' for
+changing plot parameters or selecting points, but you can also simply
+click on points in the plot, much as with plots that aren't created
+from combining plots.<P>
 
 
 <strong>Tips and Troubleshooting</strong>
@@ -644,6 +634,8 @@ select with a tickbox in the pop-up.
 <LI>If you have loaded spectral files with multiple orders, each order
 appears as a separate color in the plot. You can change the order
 labels before or after combining.
+<LI>At this time, you can't combine charts that the tool doesn't
+recognize as spectra, even if they are in the same parameter space.
 </UL>
 
 

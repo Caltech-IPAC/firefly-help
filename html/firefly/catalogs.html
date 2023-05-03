@@ -29,6 +29,7 @@ catalog, you can <a href="plots.html">make plots</A>. <P>
 +<A href="#nedcatalogs">NED Objects</A> -- Searching for NED objects <br>
 +<A href="#owncatalogs">Catalogs from Disk</A> -- Loading catalogs from disk <br>
 +<A href="#votap">VO TAP Search</A> -- Searching for catalogs via VO TAP services <br>
++<a href="#moreconstraints">VO TAP: More about constraints</A><br>
 +<A href="#voscs">VO SCS Search</A> -- Searching for catalogs via VO SCS services <br>
 +<A href="#interacting">Interacting</A> -- Interacting with catalogs<br>
 <P>&nbsp;<P>
@@ -421,61 +422,31 @@ href="https://www.ivoa.net/documents/TAP/" target="_blank">table
 access protocol <img src="img/jumpout.jpg" height="10"></A>.) TAP
 services enable complex queries of tables using astronomical data
 query language (<a href="https://www.ivoa.net/documents/ADQL/"
-target="_blank">ADQL <img src="img/jumpout.jpg" height="10"></A>).<P>
-
+target="_blank">ADQL <img src="img/jumpout.jpg" height="10"></A>).
 There are myriad places on the web to learn more about TAP queries and
 ADQL. We just provide a brief overview here in the context of this
 tool. This is what the search screen looks like by default:<P>
 
 <img src="img/votapsearch.png" width="75%"><P>
 
-<DL>
-<DT>
-<a name="tapSearches.tapService"><strong>Select TAP
-Service</strong></A><P>
+<dL>
+<dt><strong>Just do it: a quick start</strong><P>
 
-<DD>There are many TAP services available, worldwide. By default, this
-tool uses IRSA's TAP service, but you can choose others via
-the pulldown menu, or just start typing in your TAP URL.<P>
+<dd>
+<a name="tapSearches.selectTable"><strong>Select Table</strong></A>: 
+It comes up ready to search on <em>IRSA Tables</em> (in the IRSA TAP
+service). Then you first need to select the "project" (sometimes
+called "Table Collection" or "Schema" in other contexts). Then, having
+selected that, the pull-down menu on the right changes to reflect the
+tables available under that schema.<P>
 
-<DT><a name="tapSearches.selectBy"><strong>Select Query Type</strong></A><P>
-
-<dd>You can choose to have a UI-assisted single table query, or edit the
-ADQL directly. By using the "Single Table (UI assisted)" option, you
-can select pre-defined options and have the interface construct the
-query in ADQL. Alternatively, if you are already fluent in ADQL, you
-can select the second option, "Edit ADQL", to construct even more
-complext queries. <P>
-
-We first describe the rest of the screen for the "Single Table (UI
-assisted)" option (as seen in the screenshot above), and then the rest
-of the screen for the "Edit ADQL (advanced)" option.<P>
-
-<dt><a name="tapSearches.selectTable"><strong>Select Table</strong></A><P>
-
-<dd>You first need to select the Table Collection (Schema), which in the
-case of IRSA's TAP service is the same as "project" in an
-IRSA-exclusive search. Then, having selected that, the pull-down menu
-on the right changes to reflect the tables available under that
-schema. <P>
-
-<strong>Tips and Troubleshooting</strong>: Not every table available via this
-interface even has RA/Dec or, if it does, it may not be searchable via
-positions. Make sure that you have selected a table that contains what
-you need before proceeding past this step.<P>
-
-
-<dt><a name="tapSearches.constraints"><strong>Enter Constraints</strong></A><P>
-
-<dd>There are two sections to this step. <P>
-
+Then <a name="tapSearches.constraints"><strong>Enter Constraints</strong></A>:
 On the <strong>left</strong>, you can impose a variety of constraints.
 In addition to selecting the tickbox indicating that you wish to
 impose a particular kind of constraints, you need to specify which
 columns should be used for those constraints. <a
-href="#moreconstraints">More information  on these constraints is
-below.</A> <P>
-
+href="#moreconstraints">More information on these constraints is
+below.</A> 
 On the <strong>right</strong> is a list of the columns in the selected
 table, with tickboxes to indicate which columns will be returned. You
 can also set constraints on the columns from here, following the <a
@@ -484,10 +455,41 @@ here</A>. Above this section of the screen, there is an indication of
 which columns are selected (e.g., 45 of 298 columns). You can reset
 the column selection via the button here as well.<P>
 
-<dt><strong>Actually doing it</strong>
-<dd>To initiate the search, click "Search." To cancel it, click
-"Cancel." You can impose a constraint on the number of returned rows
-here. Finally, the "Populate and edit ADQL" button takes the
+Then to <strong>actually do it</strong>, click "Search."<P>
+
+
+<dt><strong>Getting more out of it: Taking advantage of additional
+options</strong><P>
+
+<dd>On the far right of the top row, there are two sets of buttons:<br>
+<img src="img/tapchoices.png" width="300"><br>
+
+<DL>
+<DT><a name="tapSearches.tapService"><strong>Selecting a TAP
+Service</strong></A><P>
+
+<DD>Next to "TAP Services", if you click on "show", you get this new
+choice appearing at the top:<br>
+<img src="img/selecttap2.png" width="100%"><br>
+
+There are many TAP services available, worldwide. By default, this
+tool uses IRSA's TAP service, but you can choose others via
+the pulldown menu, or just start typing in your TAP URL. <P>
+
+Once you choose a different TAP service, the tables available to select
+(further down on the page) change accordingly.<P>
+
+<DT><a name="tapSearches.selectBy"><strong>Selecting a Query Type</strong></A><P>
+
+<DD>The second option in the upper right is "UI-assisted" or "Edit
+ADQL". Especially when starting out, UI-assisted is easier.  By using
+the UI assisted" option, you can select pre-defined options and have
+the interface construct the query in ADQL. Alternatively, if you are
+already fluent in ADQL, you can select the second option, "Edit ADQL",
+to construct even more complext queries. <P>
+
+After populating the search parameters using the UI, you can click the
+button on the bottom, "Populate and edit ADQL" -- this takes the
 parameters you have entered, creates the ADQL, and launches the "Edit
 ADQL (advanced)" interface.<P>
 
@@ -508,23 +510,38 @@ column name inserts fully-qualified column names at your cursor
 location in the box. <P>
 
 You can type the ADQL directly into the box. If you configured a
-search on the "Single Table (UI assisted)" page, this box is already
-pre-filled with the ADQL version of your search, and you can proceed
-to edit it further. <P>
+search on the "UI assisted" page, this box is already pre-filled with
+the ADQL version of your search, and you can proceed to edit it
+further. <P>
 
 Examples of useful functions and queries are given on the lower
-right.<P>
+right of this window; you may need to scroll down.<P>
 
-<strong>Tips and Troubleshooting</strong>: If you have arrived at this page
-from the "Populate and edit ADQL" button, this is a one-way trip --
-any changes you make to the ADQL here are NOT transmitted
-automatically back to the "Single Table (UI Assisted)" query page.<P>
+</dl>
 
-</dl><P>
+</dl>
+
+<strong>Tips and Troubleshooting</strong> 
+<UL>
+<LI>All the pulldowns near the top are searchable. This is very useful
+if you are trying to find a particular table or service that you can't
+quite recall. Click in the pulldown area, start typing a string, and it
+will try to find the matching values.
+<LI> Not every table available via this interface even has RA/Dec or,
+if it does, it may not be searchable via positions. If you have
+selected a table that doesn't have positions, it will not yield
+results if you try to search by position. 
+<LI>There is a maximum number of returned rows at the bottom. If you
+are anticipating more than this number of rows, increase this number!
+<LI>If you arrive at the advanced ADQL page from the "Populate and
+edit ADQL" button, this is a one-way trip -- any changes you make to
+the ADQL here are NOT transmitted automatically back to the "UI 
+Assisted" query page.
+</ul><P>
 
 
-<strong><a name="moreconstraints">More information about
-constraints</A></strong><P>
+<h3><a name="moreconstraints">VO TAP Searches: More information about
+constraints</A></h3><P>
 
 You can have several different ways of constraining your search
 depending on the options you have selected before the "Enter
@@ -537,17 +554,24 @@ options.<P>
 <dt><strong><a name="tapSearches.spatial">Enter Constraints:
 Spatial</A></strong>
 <dd>
-This part of the interface allows you to specify which columns of the
-catalog are to be used for coordinates, and to impose a cone search on
-a given target, or a polygon search.<P>
+This part of the interface allows you to specify the details of a
+spatial search. You need to specify both what kind of search you want
+to do and which columns of the catalog are to be used for
+coordinates.<P>
 
-This is what it looks like when you do a cone search; note that you
-have the same name resolution options as in a <a
-href="basics.html#searching">simpler search</A>:<br>
-<img src="img/enterconstraints-spatial1.png" width=40%"><P>
+<table><tr><td>
+<img
+src="img/enterconstraints-spatial1.png" width="500">
+</td><td>This is what it looks like when you do a <strong>single
+target cone search</strong>; note that you have the same name
+resolution options as in a <a href="basics.html#searching">simpler
+search</A>.</td></tr></table>
 
-And, this is what it looks like when you do a polygon search.<br>
-<img src="img/enterconstraints-spatial2.png" width=40%"><P>
+<table><tr><td>
+<img src="img/enterconstraints-spatial2.png" width="500">
+</td><td>
+And, this is what it looks like when you do a <strong>single target polygon
+search</strong>.</td></tr></table><P>
 
 <a name="hips.visualselection"> </A>
 For both of these spatial searches, you can <strong>adjust the search via
@@ -575,7 +599,7 @@ If you want to quit out of the selection without changing, click on
  </td></tr></table><P>
 <table><tr><td><img src="img/clicktosearch4.png" width="500"></td><td>
 If you select polygon on the left, and you use the selection tool for
-"elliptical selection" on the right, you will get a spherical polygon
+"cone selection" on the right, you will get a spherical polygon
 (a polygon where the line segments are on a sphere).
  </td></tr></table>
 <P>
@@ -583,6 +607,33 @@ When you are done with this pop-up window, click on the 'x' in the
 upper right of the window. Then you can continue to enter constraints,
 or just search from this point.<P>
 
+<table><tr><td><img src="img/clicktosearch5.png" width="500"></td><td>
+If you want to perform a <strong>multi-target search</strong>, click
+on "multi-object", which automatically brings up this pop-up, from
+which you can load a table from disk ("Upload tables" tab) or select
+one of the tables you have already loaded into the tool (click on the
+"Loaded tables" tab).  Your uploaded catalog has to follow all the
+same rules as normal <A href="#owncatalogs">catalogs from disk</A>. 
+</td></tr></table><P>
+
+<table><tr><td><img src="img/clicktosearch6.png" width="500"></td><td>
+After you select a file and upload it, the tool attempts to guess
+which two columns are the position columns. In this example, it has
+(correctly) guessed that the position columns are "ra" and "dec". If
+it guesses wrong, or can't figure it out, you can help it along by
+clicking on the black triangle to 'expand' that part of the panel and
+help it by selecting the two coordinate columns to use. 
+</td></tr></table><P>
+
+<table><tr><td><img src="img/clicktosearch7.png" width="500"></td><td>
+Regardless of what configuration you use, the last thing to check is
+which columns the tool has assumed are the position columns in the
+catalog to be matched to your position, region, or list of positions.
+Again, it attempts to make an educated guess as to the right columns,
+but if it guesses wrong, you can help it along by clicking on the
+black triangle to 'expand' that part of the panel and help it by
+selecting the two coordinate columns to use. 
+</td></tr></table><P>
 
 
 <dt><strong><a name="tapSearches.temporal">Enter Constraints:

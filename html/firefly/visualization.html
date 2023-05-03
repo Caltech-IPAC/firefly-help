@@ -51,7 +51,6 @@ Features</A><br>
 
 <h3><A NAME="fitsViewer">FITS/HiPS Image Viewer</A></h3>
 
-
 You can interactively explore the image with the mouse. Move your
 mouse over any image that is loaded into the viewer. Details about the
 image and, specifically, the pixel beneath your mouse cursor, appear
@@ -79,7 +78,6 @@ In the pop-up window, the orientation of the image is given with a
 compass rose on the right, next to a zoomed-in view of the image under
 your cursor.<P> 
 
-
 &nbsp;<P>
 
 <H3><A NAME="imageinfo">Image Information</A></H3>
@@ -88,7 +86,8 @@ The label of the image, typically on the upper left of the loaded
 image, tells you basic things about the image you are viewing. The
 telescope and/or instrument and/or channel and/or data release is in
 black. The field of view is in green font; this corresponds to the
-(horizontal) width of the image window.<P>
+(horizontal) width of the image window.The current image is outlined
+in orange; other images are outlined in blue.<P>
 
 <img src="img/iraclabel.png"> <img src="img/uvlabel.png"> Two examples
 of image labels. The former is from Spitzer Enhanced Imaging Products
@@ -99,7 +98,6 @@ is far-ultraviolet (FUV) data delivered by the Local Volume Legacy
 <img src="img/multiplanelabel.png"> Images can have multiple planes;
 the blue arrows shown here allow you to page through the planes. (This
 is from the HerMES project and is Herschel SPIRE 350 micron data.)<P>
-
 
 For HiPS images, the FOV is is the angular size of the width of the HiPS
 viewer. Even if the image as displayed is smaller than the window, the
@@ -152,8 +150,6 @@ We now discuss each icon in the order in which they appear.<P>
 
 <DL>
 
-<!-- this needs to stay because it is part of gator's
-implementation -->
 <dt><img src="img/selectnew.png"> <em>Selecting a new
 image</em>   
 <dd>This icon does not always appear. Clicking on this icon is the
@@ -264,13 +260,11 @@ pop-up.<P>
 
 <dt><img src="img/northup.png"> <em>Rotating the image so that North is
 up</em>  
-<dd>Images retrieved from the IRSA Viewer are commonly already
-oriented such that North is up, or close to it. However, when
-interactively investigating images, or loading images from other
-sources, you could find yourself in a situation where North is not
-necessarily up. Clicking this icon will orient the selected image so
-that North is up.  (This option is only available for FITS, not HiPS,
-images.) <P>
+<dd>Images are commonly already oriented such that North is up, or
+close to it. However, you could find yourself in a situation where
+North is not necessarily up. Clicking this icon will orient the
+selected image so that North is up.  (This option is only available
+for FITS, not HiPS, images.) <P>
 
 <dt><img src="img/flip.png"> <em>Flipping the image on the y-axis</em>  
 <dd>Clicking on this icon flips the image on the y-axis. (This option
@@ -550,25 +544,27 @@ image.  <P>
 <dt><img src="img/binoc.png"><em>Search</em>
 <dd>This tool implements a new search, an "action", on the region
 you have selected. It results in this pull-down:
-<img src="img/imageactionpulldown.png" align="top"><br>
-where this example is based on a region centered on 82.029058,
-34.423400, J2000 decimal degrees, a cone, of radius 0.0160 degrees.
+<img src="img/imageactionpulldown.png" align="top" width="350"><br>
+where this example is based on a region centered on
+216.984130, +52.835172, J2000 decimal degrees, over a 4-cornered polygon.
+(You can also use the region tool to define a cone; this example is a
+rectangle.)
 From this pulldown, you can launch:
 <UL>
-<LI>A NED cone search at this position with the corresponding radius (<a
-href="catalogs.html#nedcatalogs">more
+<LI>A TAP polygon search over this region (<a href="catalogs.html#votap">more
+information about TAP searches</A>)
+<LI>A NED cone search at this position with a radius attempting to
+correspond to this polygon (<a href="catalogs.html#nedcatalogs">more
 information about NED searches</A>); results loaded into this tool.
-<LI>A Simbad cone search at this position with the corresponding
-radius; results loaded into this tool.
-<LI>A Simbad search at this position with the corresponding radius,
-but launch another browser window or tab at Simbad with the results.
-<LI>A TAP cone search at this position with the corresponding radius 
-(<a href="catalogs.html#votap">more information about TAP
-searches</A>); results loaded into this tool.
-<LI>A TAP polygon search at this position (<a
-href="catalogs.html#votap">more information about TAP searches</A>);
-results loaded into this tool.
-<LI>A FITS search at this position (via this tool); results
+<LI>A Simbad cone search at this position with a radius attempting to
+correspond to this polygon; results loaded into this tool.
+<LI>A Simbad cone search at this position with a radius attempting to
+correspond to this polygon, but launch another browser window or tab 
+at Simbad with the results.
+<LI>A TAP cone search at this position with a radius attempting to
+correspond to this polygon (<a href="catalogs.html#votap">more
+information about TAP searches</A>); results loaded into this tool.
+<LI>A FITS search at this position (at IRSA, via this tool); results
 loaded into this tool.
 <LI>A HiPS search at this position (via this tool); results loaded
 into this tool.
@@ -577,17 +573,19 @@ into this tool.
 The last option brings up another pop-up window that allows you to
 refine the search region iteratively by choosing a cone or polygon,
 setting the center, and setting the cone size or polygon vertices.<br>
-<img src="img/imageactionrefinesearch.png"><br>
-From here, choose the "Searches" pulldown in the lower left of the
-pop-up window to obtain the same action choices as originally
-provided.
+<img src="img/imageactionrefinesearch.png" width="350"><br>
+From here, you can change the kind of search, refine the positions,
+select from the image again, and launch searches from your refined
+position.
 </dl>
 
 
 When you are working with the selection tool, a red <img
-src="img/endselect.png"> appears next to the image toolbar to remind
-you that you are in that mode. When you are done with the selection
-tool, click on that red text to turn it off.<P>
+src="img/endselect.png" width="70"> appears next to the image toolbar
+to remind you that you are in that mode. If you are refining positions
+for a search, it will be <img src="img/endsearchmarker.png"
+width="120">. Either way, when you are done with the selection tool,
+click on that red text to turn it off.<P>
 
 <a name="layers">
 <dt><img src="img/layers.png"> <em>Viewing/changing the layers on the
@@ -1567,15 +1565,17 @@ image tile.<br>
 
 <A NAME="coverage"><h3>Coverage Image</h3></A></A>
 
-If you have launched IRSA Viewer by initially doing a catalog search
+If you have launched the tool by initially doing a catalog search
 (as opposed to an image search), when the catalog is loaded, it will
 pick an image on your behalf, called a coverage image. <P>
 
-If you have launched IRSA Viewer with images and then do a catalog
+If you have launched the tool with images and then do a catalog
 search, it will generate the coverage image for you and create a new
 tab under your loaded images. <P>
 
-The next subsection covers more details about the coverage image.<P>
+The next subsection covers more details about the coverage image,
+specifically how it automatically changes to accomodate your zoom 
+level.<P>
 
 
 
@@ -1584,8 +1584,6 @@ The next subsection covers more details about the coverage image.<P>
 
 
 <A NAME="autozoom"><A NAME="changing"><h3>Automatic FITS-HiPS-Aitoff Transitions</h3></A></A>
-
-<!-- should remove aitoff ultimately because plain irsa viewer doesn't need it. !-->
 
 <img src="img/coveragechoices1.png"><img
 src="img/coveragechoices.png"> Coverage images can have many choices;
