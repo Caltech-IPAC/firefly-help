@@ -430,6 +430,11 @@ const toc_catalogs = {
             title: 'Interacting',
             href: 'firefly/catalogs.html#interacting',
         },
+        {
+            id: 'catalogs.details',
+            title: 'Details Tab',
+            href: 'firefly/catalogs.html#details',
+        },
     ]
 };
 
