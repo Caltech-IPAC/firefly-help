@@ -625,7 +625,7 @@ which two columns are the position columns. In this example, it has
 (correctly) guessed that the position columns are "ra" and "dec". If
 it guesses wrong, or can't figure it out, you can help it along by
 clicking on the black triangle to 'expand' that part of the panel and
-help it by selecting the two coordinate columns to use. 
+selecting the two coordinate columns to use. 
 </td></tr></table><P>
 
 <table><tr><td><img src="img/clicktosearch7.png" width="500"></td><td>
@@ -634,7 +634,7 @@ which columns the tool has assumed are the position columns in the
 catalog to be matched to your position, region, or list of positions.
 Again, it attempts to make an educated guess as to the right columns,
 but if it guesses wrong, you can help it along by clicking on the
-black triangle to 'expand' that part of the panel and help it by
+black triangle to 'expand' that part of the panel and 
 selecting the two coordinate columns to use. 
 </td></tr></table><P>
 
@@ -672,6 +672,37 @@ have entered.</td><td><img src="img/enterconstraints-temporal4.png"
 width=50%"> </td></tr>
 </table>
 <P>
+
+<dt><strong><a name="tapSearches.objid">Enter Constraints:
+Object ID</A></strong>
+<dd>
+This part of the interface allows you to match object IDs.<P>
+
+<table>
+<tr><td width="25%">This is what the panel looks like initially:
+</td><td><img src="img/enterconstraints-objid.png"
+width=50%"></td></tr>
+
+<tr><td width="25%">This is what the panel looks like after you have
+selected your uploaded list of IDs (in this case, a file called
+"gaiaids.tbl", which consists of an IPAC table file that is just the
+list of Gaia IDs, in a column called "gaiaid"), and it is being
+matched against the Gaia DR3 main catalog, where the relevant catalog
+is "source_id".
+</td><td><img src="img/enterconstraints-objid2.png"
+width=50%"></td></tr>
+</table>
+
+<P>
+
+<strong>Tips and Troubleshooting</strong>
+<UL>
+<LI>The names have to match exactly, so in the case of this example,
+since the Gaia column source_id is a long, the IPAC table file must
+also cast the Gaia ID as a long. 
+<LI>If the catalog to which you are matching is not indexed by the
+name column you are using, the search may take a long time.
+</UL><P>
 
 <dt><strong><a name="tapSearches.obsCore">Enter Constraints:
 Observation Type and Source</A> </strong>
