@@ -702,6 +702,9 @@ since the Gaia column source_id is a long, the IPAC table file must
 also cast the Gaia ID as a long. 
 <LI>If the catalog to which you are matching is not indexed by the
 name column you are using, the search may take a long time.
+<LI>If you are doing an object ID search, you need to turn off the
+position search, otherwise it doesn't understand what you want it to
+do.
 </UL><P>
 
 <dt><strong><a name="tapSearches.obsCore">Enter Constraints:
