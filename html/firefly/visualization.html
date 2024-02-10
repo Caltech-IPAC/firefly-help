@@ -53,30 +53,78 @@ Features</A><br>
 
 You can interactively explore the image with the mouse. Move your
 mouse over any image that is loaded into the viewer. Details about the
-image and, specifically, the pixel beneath your mouse cursor, appear
+image, specifically, the pixel beneath your mouse cursor, appear
 along the bottom left of the image window. Some information is updated
 in real time (coordinates); some information (pixel value) is updated
 when you stop moving your mouse for a second or two.  The image can be
 interactively investigated in this fashion.  <br> <img
 src="img/pixelreadout.png"><p>
 
-To get more information or to change the units of the readout, click
-on icon on the far left to "pop out" a window with additional
-information:<br> <img src="img/pixelreadoutpopups.png"><br> In this
-example, by clicking on the words "Pixel size", "EQ-J2000", or "Image
-Pixel", you can get these options in additional pop-up windows to
-change the units of what is shown. <P>
+You can change the units of what is being read out, in terms of
+coordinates or pixel values.   <br>
+
+<table><tr><td><img src="img/changecoord.png"></td><td> If you click
+on the label of the coordinates, "EQ-J2000" in the screenshot example
+above, you get this pop-up, from which you can choose the coordinates
+from among:
+<UL>
+<LI>Equatorial (RA/Dec) J2000 in hh:mm:ss ddd:mm:ss format
+<LI>Equatorial (RA/Dec) J2000 in decimal degrees
+<LI>Galactic in decimal degrees
+<LI>Equatorial B1950
+<LI>Ecliptic J2000
+<LI>Ecliptic B1950
+<LI>FITS Image Pixel
+<LI>Zero-based Image Pixel
+</UL></td></tr>
+</table>
+
+<table><tr><td><img src="img/changevalue.png"></td><td> If you have a
+FITS image loaded, you may have an additional readout. Click
+on the label of the readout, "Value" in the screenshot example above,
+you get this pop-up, from which you can choose the pixel readout from
+among:
+<UL>
+<LI>Integer data readout in decimal 
+<LI>Integer data readout in hexadecimal
+<LI>Floating point data readout in decimal
+<LI>Floating point data readout in hexadecimal
+</UL>
+If you choose the hexadecimal options, it will suppress all
+rescaling corrections found in the header, like BZERO or BSCALE. It
+will just show you the raw binary number in the file. (For example, if
+the value in decimals is 5.13795757, the binary value in the file is
+0x40a46a26; <a
+href="https://www.h-schmidt.net/FloatConverter/IEEE754.html"
+target="_blank">here</A> <img src="img/jumpout.jpg" height="10"> is a
+conversion tool between decimal and hex.)
+ </td></tr>
+</table><P>
+
+<table><tr><td>
+In the lower left of the images, if you click on this: <img
+src="img/popout.png">, you get this pop-up. If you have a FITS image
+loaded, at the top of this pop-up, it shows the whole image; the
+orientation of the image is given with a compass rose. There is also a
+zoom-in of the image at the location under your cursor. Underneath
+that in the pop-up, whether you have a FITS or HiPS image loaded, you
+can get a readout of the pixel size, a readout of location on the
+image in two different coordinate systems, and a readout of the pixel
+value. You can change the units of those values by clicking on the
+name of the field: "Pixel Size", "EQ-J2000", "Image Pixel", and
+"Value". Each results in a pop-up, as above.
+</td><td>
+<img src="img/pixelreadoutpopup.png">
+</td></tr>
+</table><P>
+
 
 You can make the cursor 'stick' on a particular place on the image --
 tick the "Lock by click" box (either in the pop-up or in the lower
 right of the image window), and then click on the image at your
 desired location. When this is clicked, small "clipboards" appear near
-the readout. Click on that icon to copy that position to your
+the position readout. Click on that icon to copy that position to your
 clipboard.<br> <img src="img/lockposition.png"><P>
-
-In the pop-up window, the orientation of the image is given with a
-compass rose on the right, next to a zoomed-in view of the image under
-your cursor.<P> 
 
 &nbsp;<P>
 

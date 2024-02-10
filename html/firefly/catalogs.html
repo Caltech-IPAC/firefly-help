@@ -152,7 +152,7 @@ corresponding catalog. (Most catalogs have identical "standard" and
 form".) From here, you can choose what to display (tickboxes on the
 left), and filter what is returned ("constraints" column). For
 example, only return objects with values in column y that are greater
-than x. If you add more than one restriction, they are combined
+than x. If yoncatou add more than one restriction, they are combined
 logically using an "AND" operators; be careful, because you can thus
 restrict data such that none of the catalog meets your criteria.<P>
 
@@ -277,6 +277,10 @@ You may upload a file from disk, from the web via a URL, or from the
 <a href="/docs/workspace/" target="_blank">IRSA Workspace <img
 src="img/jumpout.jpg" height="10"></A>.
 
+You can use the system browser to find your file (accessible by
+clicking "Browse"), or drag-and-drop your file into this part of the
+browser window.<P>
+
 The file can be in any of a number of formats, which we now briefly
 describe. <P>
 
@@ -293,7 +297,8 @@ can download just about any catalog you find through IRSA, and mimic
 that format.<P>
 
 Your table file MUST have RA and Dec values, and unless it is
-specified, it assumes J2000.<P>
+specified, it assumes J2000. (See also "<a href="#tabletips">tips and
+troubleshooting</A>", below.)<P>
 
 You can add a "SYMBOL" parameter to change the shape
 (X, SQUARE, CROSS, EMP_CROSS, DIAMOND, DOT) of catalog marks, e.g.:
@@ -365,6 +370,24 @@ might use this kind of file to describe the region over which a given
 survey has observations. These files can also be loaded into this
 tool.<P>
 
+<dt><strong>Data Link Table files</strong>
+<DD>A <A href="https://www.ivoa.net/documents/DataLink/"
+target="_blank">DataLink <img src="img/jumpout.jpg" height="10"></A>
+is a protocol developed by the International Virtual Observatory
+Alliance to specify more sophisticated linking of metadata and
+services to the data itself. You might use this kind of file to
+describe linkages to light curves or a light curve service from a
+single-epoch catalog. These kinds of files can also be loaded into
+this tool.<P>
+
+<dt><strong>UWS Table files</strong> 
+<DD>A <A href="https://www.ivoa.net/documents/UWS/"
+target="_blank">DataLink <img src="img/jumpout.jpg" height="10"></A>
+is a protocol developed by the International Virtual Observatory
+Alliance to manage asynchronous execution of jobs on a service.  These
+kinds of files can also be loaded into this tool.<P>
+
+
 </dl>
 
 
@@ -380,7 +403,8 @@ Uploading an IPAC table file with minimal columns:<br>
 Uploading a multi-HDU FITS file containing a mixture of tables and
 images. (Note that in this case, all planes are selected and the lower
 left gives a choice for loading all the images into one window or one
-extension per window.)<br>
+extension per window. Note also that it has the option of attempting
+to interpret tables as <a href="spectra.html">spectra</A>.)<br>
 <img src="img/catuploadex3.png" width="100%"><P>
 
 Uploading a FITS file with multiple image planes where only one plane
@@ -393,7 +417,7 @@ the file into the tool.<P>
 
 
 
-<strong>Tips and Troubleshooting</strong> 
+<strong><a name="tabletips">Tips and Troubleshooting</A></strong> 
 <UL>
 <LI>If you would like to have your catalog overlaid on an image,
 it needs to have RA and Dec columns. If the tool doesn't seem to
