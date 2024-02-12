@@ -1186,21 +1186,44 @@ the image you are.<P>
 <a name="hipsmoc"><strong>HiPS MOC</strong></A><P>
 <dd>To turn on these choices, click the checkbox to the left of "MOC". <P>
 
+
 A <A href="https://ivoa.net/documents/MOC/"
 target="_blank">multi-order coverage map (MOC) <img
 src="img/jumpout.jpg" height="10"></A> is  a format developed by the
 International Virtual Observatory Alliance to specify sky regions.
 In this context, a MOC tells you via a simple boolean yes/no, is there
 sky coverage from this data set in this region. You can ask for the
-MOC to be displayed via this layers dialog via tile outlines or filled
-tiles. <P> 
+MOC to be displayed via the <a href="#layers">layers dialog</A> and
+selecting: 
+<UL>
+<LI>Outline - an attempt to outline the entire region covered by the
+data; it still sometimes struggles near the edges of coverage, so zoom
+in to get a better sense of the coverage edges.  
+<LI>Fill - filled regions, where you can control the opacity of the
+overlay by going to the <a href="#layers">layers icon</A>, pulling up
+the corresponding pop-up, and going to the <a
+href="#colorpicker">color picker</A>; you control the opacity by
+changing the number above the "A". 
+<LI>MOC Tile Outline - individual tile outlines, where the tiles are
+set by the MOC tiles themselves (as opposed to tiles created by the
+mosaic tiles that make up the data set).
+<P> 
 
-<strong>Tips and Troubleshooting</strong>: Depending on how you
-display a MOC, you may see two shades of color in the MOC, but the
-information it is displaying does not included depth of coverage,
+<strong>Tips and Troubleshooting</strong>: 
+<UL>
+<LI>The entire concept of a MOC is built upon the "tiles" that are
+inherent to the HiPS concept. As a result, those tiles are imprinted
+on how the MOC is rendered, especially near edges or corners of
+coverage. Strange behavior may result; you can always zoom in to get a
+better sense of the coverage. For authoritative information, download
+the actual data.
+<LI>For the "fill" option for a MOC, depending on how you
+display a MOC, you may see two shades of color in the MOC. It is
+important to note, though, that the
+information it is displaying does not include depth of coverage,
 merely boolean "is there data there or not." Why is it displaying
 shading? Well, it's rounding. For example, a given WISE MOC might be
-generated at order 13. At this irder there are 805,306,368 HEALPixels
+generated at order 13. At this order, there are 805,306,368 HEALPixels
 on the sky, and they are about 26 arcseconds across. When zoomed out
 far, there is no point in trying to show each of these pixels, so the
 application "rounds up" the MOC to an order in which there are roughly
@@ -1208,8 +1231,8 @@ application "rounds up" the MOC to an order in which there are roughly
 When it does this, it flags the rounded up polygons with the paler
 color. So the boundaries of a coverage region in the MOC all get a
 paler color. If you zoom in far enough on a MOC, the two-tone colors
-go away. <P>
-
+go away. 
+</UL>
 </dl>
 
 <a name="changehips"><strong>HiPS/MOC</strong></A><P>
