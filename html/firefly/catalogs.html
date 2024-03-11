@@ -909,6 +909,33 @@ href="visualization.html">Visualization section</A> includes
 information about that. Each catalog that you load is overlaid on
 the image using different, customizable symbols and colors. <P>
 
+<strong>&#x26A0; Tips and Troubleshooting</strong> 
+<UL>
+<LI>Note that if you overlay a large catalog <a
+href="visualization.html">on an image</A>, the <strong>full contents
+of the catalog may not be displayed in the overlay</strong>. Catalog
+overlays on images are statistically "thinned" to avoid overcrowding
+the display. This occurs when the number of catalog entries in an
+overlay exceeds 10,000. Currently, this thinning is not reversed even
+when zooming in to the image. However, if you select a catalog entry
+from its table, or from a point in an associated chart, the
+corresponding point in the image display overlay will be displayed
+even if that entry was originally "thinned out." Also, geometric
+selections on an image (using the rectangle or circle tools) will
+still select all the catalog entries in the selection region, even
+ones that have been "thinned out", or "decimated."<P>
+
+<LI>Because of the prior item, if you save the
+overlays from an image as a regions file. If you initiate that save
+from the image toobar, catalogs that have 
+been "thinned out" will not appear in their entirety in the resulting regions file.
+However, you can save the full contents of a single
+catalog as a regions file using the "save" (diskette) icon in
+the table toolbar, instead of the image toobar. <P>
+</UL>
+
+
+
 
 
 <h3><A name="details">Details Tab</A></h3>
