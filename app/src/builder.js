@@ -3,7 +3,6 @@
 import {get, uniq} from 'lodash';
 import {create} from './toc/toc_creator';
 
-
 const htmlStart = `
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <!--NewPage-->
@@ -72,7 +71,7 @@ function build(outDir, toc) {
 
     // generate .pdf-input file based on the given toc
     const files = tocSection.split('\n')
-        .filter(( (l) => l.toUpperCase().includes('HREF')))
+        .filter(( (l) => /href\s*:\s*'([^']+)'/.test(l.toLowerCase())))
         .map( (l) => get(l.match(/href[ ]*=[ ]*"([^"]+)"/i), [1], l))      // return all href with double quotes
         .map( (l) => get(l.match(/href[ ]*=[ ]*'([^']+)'/i), [1], l))              // return all href with single quotes
         .map( (l) => l.split('#')[0]);          // return the portion before the hash... this should be the file path
