@@ -272,6 +272,16 @@ export const toc_tables = {
             href: 'firefly/tables.html#filters',
         },
         {
+            id: 'tables.tableactions',
+            title: 'Table Actions',
+            href: 'firefly/tables.html#tableactions',
+        },
+        {
+            id: 'tables.rowdetails',
+            title: 'Row Details',
+            href: 'firefly/tables.html#rowdetails',
+        },
+        {
             id: 'tables.cells',
             title: 'Table Cells',
             href: 'firefly/tables.html#cells',
@@ -280,11 +290,6 @@ export const toc_tables = {
             id: 'tables.save',
             title: 'Saving Tables',
             href: 'firefly/tables.html#save',
-        },
-        {
-            id: 'tables.tableactions',
-            title: 'Table Actions',
-            href: 'firefly/tables.html#tableactions',
         },
         {
             id: 'tables.navigation',
@@ -531,6 +536,44 @@ export const toc_plots = {
     ]
 };
 
+export const toc_spectra = {
+    id: 'spectra',
+    title: 'Spectra',
+    href: 'irsaviewer/spectra.html',
+    items: [
+        {
+            id: 'spectra.loading',
+            title: 'Loading Spectra',
+            href: 'irsaviewer/spectra.html#loading',
+        },
+        {
+            id: 'spectra.extracting',
+            title: 'Extracting Spectra',
+            href: 'irsaviewer/spectra.html#extracting',
+        },
+        {
+            id: 'spectra.plotting',
+            title: 'Plotting Spectra',
+            href: 'irsaviewer/spectra.html#plotting',
+        },
+        {
+            id: 'spectra.redshifting',
+            title: 'Redshifting Spectra',
+            href: 'irsaviewer/spectra.html#redshifting',
+        },
+        {
+            id: 'spectra.overplotting',
+            title: 'Overplotting Spectra',
+            href: 'irsaviewer/spectra.html#overplotting',
+        },
+        {
+            id: 'spectra.combining',
+            title: 'Combining Spectra',
+            href: 'irsaviewer/spectra.html#combining',
+        },
+    ]
+};
+
 //-------------------------------------------------------------------------------------------------
 //  Below is a set of predefined table of contents.  Or, simply create one from the above topics.
 //-------------------------------------------------------------------------------------------------
@@ -546,6 +589,7 @@ export const fireflyToc = [
     toc_tables,
     toc_catalogs,
     toc_plots,
+    toc_spectra,
     toc_user,
     toc_privacy
 ];
