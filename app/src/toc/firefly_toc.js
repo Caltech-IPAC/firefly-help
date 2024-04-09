@@ -539,37 +539,37 @@ export const toc_plots = {
 export const toc_spectra = {
     id: 'spectra',
     title: 'Spectra',
-    href: 'irsaviewer/spectra.html',
+    href: 'firefly/spectra.html',
     items: [
         {
             id: 'spectra.loading',
             title: 'Loading Spectra',
-            href: 'irsaviewer/spectra.html#loading',
+            href: 'firefly/spectra.html#loading',
         },
         {
             id: 'spectra.extracting',
             title: 'Extracting Spectra',
-            href: 'irsaviewer/spectra.html#extracting',
+            href: 'firefly/spectra.html#extracting',
         },
         {
             id: 'spectra.plotting',
             title: 'Plotting Spectra',
-            href: 'irsaviewer/spectra.html#plotting',
+            href: 'firefly/spectra.html#plotting',
         },
         {
             id: 'spectra.redshifting',
             title: 'Redshifting Spectra',
-            href: 'irsaviewer/spectra.html#redshifting',
+            href: 'firefly/spectra.html#redshifting',
         },
         {
             id: 'spectra.overplotting',
             title: 'Overplotting Spectra',
-            href: 'irsaviewer/spectra.html#overplotting',
+            href: 'firefly/spectra.html#overplotting',
         },
         {
             id: 'spectra.combining',
             title: 'Combining Spectra',
-            href: 'irsaviewer/spectra.html#combining',
+            href: 'firefly/spectra.html#combining',
         },
     ]
 };
