@@ -13,12 +13,12 @@
 <h2>Firefly: Visualization</h2>
 
 One primary component of the Firefly tools is the image visualization.
-You can view and interact with image files, both FITS and <a
+You can view and interact with image files, both <a
+href="https://en.wikipedia.org/wiki/FITS" target="_blank">FITS <img
+src="img/jumpout.jpg" height="10"></A> and <a
 href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
-target="_blank">HiPS images <img src="img/jumpout.jpg"
-height="10"></A> (also see <a
-href="http://www.ivoa.net/documents/HiPS/" target="_blank">IVOA docs
-<img src="img/jumpout.jpg" height="10"></A>) formats.  This section
+target="_blank">HiPS <img src="img/jumpout.jpg"
+height="10"></A> formats.  This section
 covers interacting with the images -- the visualization tools. <A
 href="tables.html">Tables</A> and <a href="plots.html">Plots</A> are
 in other sections.<P>
@@ -31,24 +31,22 @@ in which you might encounter them in the window.<P>
 <em>Contents of page/chapter:</em><br>
 +<A href="#fitsViewer">FITS/HiPS Viewer</a><br>
 +<A href="#imageinfo">Image Information</a><br>
-+<A href="#toolbar">Image Toolbar</a><br>
-+<a href="#newimage">Information on Loading a New Image</A><br>
-+<a href="#extraction">Extraction Tools</A><br>
-+<a href="#stretches">Information on Color Stretches</A><br>
-+<a href="#hipsViewer">Information on HiPS features</A><br>
-+<a href="#footprints">Footprints</A><br>
-+<A href="#breakingout">Breaking out of the pane (and going back)</A><br>
++<A href="#breakingout">Breaking Out of the Pane (and Going Back)</A><br>
 +<A href="#imagenavigation">Image Navigation</A><br>
-+<a href="#wcs">World Coordinate System (WCS) Alignment and Related
-Features</A><br>
-+<a href="#coverage">Coverage Image</A><br>
-+<a href="#autozoom">Automatic FITS-HiPS-Aitoff Transitions</A><br>
-+<a href="#catalogload">"Catalog" loading</A><br>
++<A href="#toolbar">Image Toolbar</a><br>
++<a href="#stretches">Color Stretches</A><br>
++<a href="#hipsmenu">HiPS Menu</A><br>
++<a href="#layers">Image Layers: Viewing/Changing the Layers on the Image</A><br>
++<a href="#wcs">World Coordinate System (WCS) Alignment</A><br>
++<a href="#extraction">Extraction Tools</A><br>
++<a href="#selectregion">Region Selection</A><br>
++<a href="#footprints">Footprints</A><br>
 <P>&nbsp;<P>
 
 
 
 
+<hr width="50%">
 <h3><A NAME="fitsViewer">FITS/HiPS Image Viewer</A></h3>
 
 You can interactively explore the image with the mouse. Move your
@@ -63,7 +61,7 @@ src="img/pixelreadout.png"><p>
 You can change the units of what is being read out, in terms of
 coordinates or pixel values.   <br>
 
-<table><tr><td><img src="img/changecoord.png"></td><td> If you click
+<table><tr><td><img src="img/changecoord.png"  style="border:3px solid gray"></td><td> If you click
 on the label of the coordinates, "EQ-J2000" in the screenshot example
 above, you get this pop-up, from which you can choose the coordinates
 from among:
@@ -79,11 +77,11 @@ from among:
 </UL></td></tr>
 </table>
 
-<table><tr><td><img src="img/changevalue.png"></td><td> If you have a
-FITS image loaded, you may have an additional readout. Click
-on the label of the readout, "Value" in the screenshot example above,
-you get this pop-up, from which you can choose the pixel readout from
-among:
+<table><tr><td><img src="img/changevalue.png" style="border:3px solid
+gray"></td><td> If you have a FITS image loaded, you have an
+additional readout. Click on the label of the readout, "Value" in the
+screenshot example above, you get this pop-up, from which you can
+choose the pixel readout from among:
 <UL>
 <LI>Integer data readout in decimal 
 <LI>Integer data readout in hexadecimal
@@ -114,7 +112,7 @@ value. You can change the units of those values by clicking on the
 name of the field: "Pixel Size", "EQ-J2000", "Image Pixel", and
 "Value". Each results in a pop-up, as above.
 </td><td>
-<img src="img/pixelreadoutpopup.png">
+<img src="img/pixelreadoutpopup.png" style="border:3px solid gray">
 </td></tr>
 </table><P>
 
@@ -128,32 +126,38 @@ clipboard.<br> <img src="img/lockposition.png"><P>
 
 &nbsp;<P>
 
+<hr width="50%">
 <H3><A NAME="imageinfo">Image Information</A></H3>
 
-The label of the image, typically on the upper left of the loaded
-image, tells you basic things about the image you are viewing. The
-telescope and/or instrument and/or channel and/or data release is in
-black. The field of view is in green font; this corresponds to the
-(horizontal) width of the image window.The current image is outlined
-in orange; other images are outlined in blue.<P>
+The upper left corner of the loaded image has a label that tells you
+basic things about the image you are viewing. The telescope and/or
+instrument and/or channel and/or data release is first, in black. The
+field of view follows, in a paler font; this corresponds to the
+(horizontal) width of the image window. The currently selected image
+is outlined in brown; other images are outlined in grey.<P>
 
-<img src="img/iraclabel.png"> <img src="img/uvlabel.png"> Two examples
-of image labels. The former is from Spitzer Enhanced Imaging Products
-(SEIP), IRAC channel 2, and the field of view is 11 arcmin. The latter
-is far-ultraviolet (FUV) data delivered by the Local Volume Legacy
-(LVL) project, and the field of view is 6.8 arcmin.<P>
+<img src="img/iraclabel.png" align="middle">  <img
+src="img/mipslabel.png" align="middle"> <img src="img/uvlabel.png"
+align="middle"> Here are three examples of image labels. The first is
+from Spitzer Enhanced Imaging Products (SEIP), IRAC channel 4, which
+is 8 micron data, and the field of view is 12 arcmin. The second is
+from data delivered by the Local Volume Legacy (LVL) project, and it
+is from MIPS channel 3, which is 160 micron data; the field of view is
+1.5 degrees.  The third is also from the LVL project, but it is
+far-ultraviolet (FUV) data, and the field of view is 32 arcseconds.
+<P>
 
 <img src="img/multiplanelabel.png"> Images can have multiple planes;
-the blue arrows shown here allow you to page through the planes. (This
-is from the HerMES project and is Herschel SPIRE 350 micron data.)<P>
+the arrows allow you to page through the planes. (This is from the
+HerMES project and is Herschel SPIRE 250 micron data.)<P>
 
-For HiPS images, the FOV is the angular size of the width of the HiPS
-viewer. Even if the image as displayed is smaller than the window, the
-FOV readout is the width of the window, not the image.  If you shrink
-your browser screen, the FOV can get smaller because the viewer gets
-smaller. If you load more than one image, the FOV can get smaller
-because two viewers must fit in the same pane. As a result, the HiPS
-FOV requested in the search panel are approximate.<P>
+For HiPS images, the FOV is the angular size of the width of the
+HiPS viewer.  Even if the image as displayed is smaller than the
+window, the FOV readout is the width of the window, not the image.  If
+you shrink your browser screen, the FOV can get smaller because the
+viewer gets smaller. If you load more than one image, the FOV can get
+smaller because two viewers must fit in the same pane. As a result,
+the HiPS FOV requested in the search panel is approximate.  <P>
 
 For FITS images, the FOV label on FITS images works analogously to the
 FOV label on HiPS images. If you zoom out, the FOV will increase even
@@ -166,24 +170,163 @@ same as the FOV. <P>
 <table>
 <tr><td><img src="img/target.png"></td><td>
 The target on which you searched is overlaid on the main image with a
-cross-hair marker. You can remove this (or change its color) from the
-layers pop-up, described below.</td></tr></table><P>
+cross-hair marker, sometimes called a "reticle." You can remove this
+(or change its color) from the layers pop-up, described
+below.</td></tr></table><P>
 
 
 
 &nbsp;<P>
 
+<hr width="50%">
+<A NAME="breakingout"><h3>Breaking Out of the Pane (and Going Back)</h3></A>
+
+<strong>Panes</strong>: If you have both images and catalogs
+loaded into Firefly, the screen is broken up into panes - one
+for images, one for catalogs, and one for plots from the catalog. If
+you have more than one image loaded in, the image pane is further
+subdivided.<P>
+
+<strong>Make it big!</strong> For some purposes, it is useful to
+individually view just the table, or the images, or the plots, as
+large as possible. In any pane, this icon <img
+src="img/expand.png">  appears in the upper right of the pane. 
+Clicking on it will expand the pane into a larger window, as big as
+possible given your browser size. <P>
+
+<strong>Go back the way it was:</strong> <img src="img/close.png"> The
+large "Close" arrow at the upper left is always available in the
+expanded views, and enables you to return back to the pane view.<P> 
+
+<strong>Special case of images only:</strong> If you have only images
+loaded in, then the images are taking up all of your browser window,
+and it is already, by default, in this expanded mode. There's no
+'close' arrow in the upper left since there is nothing else loaded
+in.<P>
+
+<strong>Removing things:</strong>  To remove an image (or catalog)
+entirely, click on the small 'x' in the upper right of the image in
+the tiled view, or on the small 'x' in the corner of the catalog tab
+in the window pane view.<P>
+
+Note that you can also change the relative layout of <a
+href="overview.html#layout">the image, table, and plot panes</A> from
+the side menu.<P>
+
+Also see the next section on image navigation.<P>
+
+
+
+&nbsp;<P>
+
+<hr width="50%">
+<A NAME="imagenavigation"><h3>Image Navigation</h3></A>
+
+<DL>
+<dt><strong>Single or Tiled Images</strong><P>
+
+<DD>When you have many images loaded in, you can have icons like this:  
+<img src="img/imagetiles.png"> that portray (in icon form) the
+different views you can have of the images you have loaded.  The first
+icon (the big square) denotes "show one image at a time." The second
+icon (the cluster of four squares) denotes "show smaller images of all
+the images I have loaded at once," e.g., tiled images. Whether the
+images (tiled or not) take up all the space or not depends on whether
+you are viewing in panes or in the full-screen mode (see immediately
+above on <a href="#breakingout">Breaking out of the pane</A>). <P>
+
+<dt><strong>Image List</strong><P>
+
+<DD>Depending on what you have loaded, you may have an additional icon:
+<img src="img/imagelist.png"><BR> Clicking on this icon brings up a
+list of the images you have loaded, with some additional information
+on each one. This list is a <a href="tables.html">table like any
+other</A> in this tool. You can sort this table, and the images are
+sorted in response.  You can remove selected rows, or delete the
+failed images with one click; click on the corresponding button on the
+lower right of this window.<P>
+
+The power of this table is best demonstrated by an example. <P>
+
+Example: Load the tool. Search on M101, with the default image size. 
+Select all bands from the following data sets: SEIP, DUSTiNGS, LVL,
+MIPS_LG. Search. When the tool comes back, click on the image list
+icon above and obtain this pop-up:<br> <img
+src="img/imagelisttable.png" width="100%" style="border:3px solid gray"><br> This
+table shows that it found images of M101 from SEIP, and some LVL
+bands, but nothing in DUSTiNGS or MIPS_LG. You can use the table to
+omit the failed images all at once. You can click on "Delete Failed"
+on the bottom right, or you can do the following: click the down arrow
+at the top of the "Status" column, tick the box next to "Success" and
+then click "filter." The failed images are removed all at once from
+the table and your display. Now, click the top of the "Wavelength"
+column. The table is sorted by wavelength, and the images in your
+display are as well.<P>
+
+
+The "help" links in the far right of this table take you to a master
+list of all data sets available in Firefly, from which you can
+obtain standard information about the data sets (mission, wavelengths,
+links to more information about the program or delivery, and more).
+<P>
+
+
+<dt><strong>Paging through single image views</strong><P>
+
+<DD>If you have many images loaded in and click on the single big square
+to view one image at a time, you are provided with navigation aids in
+the upper right, like this:<br> <img src="img/paging.png"><br> The
+arrows allow you to scroll through your list of images, sorted as
+specified in the image table. The filled dot in the list of circles
+shows you where your currently displayed image is in the set of loaded
+images. The "auto play" tick box on the left triggers automatic
+scrolling through each of the loaded images.  <P>
+
+<dt><strong>Scrolling through multi-image views</strong><P>
+
+<DD>If you have several images loaded in and click on the cluster of four
+squares to view them all at once, you will also have this as a choice:
+<img src="img/scrollimagesoff.png"> <br>
+If you toggle this on: <img src="img/scrollimageson.png"> <br>
+then each image tile becomes bigger, and you can use your mouse to
+scroll through the collection of images. If you are on a Mac, your
+scrollbar may be hidden until you try to scroll. <P>
+
+<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
+<UL>
+<LI>If your mouse is in a currently active (selected) image (that is,
+highlighted in brown), then your image will zoom rather than scroll.
+Just move your mouse over to another image, and then your window will
+scroll rather than zoom. Or, find your scrollbar.
+</UL>
+<P>
+
+<dt><strong>Removing things</strong> <P>
+
+<DD>To remove an image (or anything else removable) entirely, click on the
+small 'x' in the upper right of the image in the tiled view. Closing
+the upper-right image leaves your mouse on or near the x for the next
+image that fills that corner, allowing multiple images to be closed
+with minimal mouse movement.<P>
+
+</DL>
+
+&nbsp;<P>
+
+<hr width="50%">
+<a name="imageoptions"> <!-- --> </A>
 <h3><a name="toolbar">Image Toolbar (FITS and HiPS)</A></h3>
 
 The image toolbox is always present as a row of tools associated with
-the images you have loaded, or that are loaded on your behalf. 
-Letting your mouse hover over any of these icons will result in a
-"tool tip" that appears in order to remind you what the icon does.
-Most items apply equally to FITS and HiPS images, but some only apply
-to FITS images. <P>
+the images you have loaded, or that are loaded on your behalf. They're
+generally located above the images you have loaded, with most of them
+on the upper right. Letting your mouse hover over any of these icons
+will result in a "tool tip" that appears in order to remind you what
+the icon does. Most items apply equally to FITS and HiPS images, but
+some only apply to FITS images. <P>
 
-This is the image toolbox when you have a FITS
-image loaded:<br>
+This is the image toolbox when you have clicked on a FITS image you
+have loaded:<br>
 <img src="img/toolbox.png" height="30"><p>
 And, this is the image toolbox when you have clicked on a HiPS image
 you have loaded:<br>
@@ -191,27 +334,20 @@ you have loaded:<br>
 
 The two toolbars are different, but if the same icon appears, it has
 the same effect on the image. Many of the icons have a downward pointing
-blue triangle, which means that there are additional options in a
+black triangle, which means that there are additional options in a
 drop-down menu that appear when you click on the icon. <P>
 
 We now discuss each icon in the order in which they appear.<P>
 
+
 <DL>
 
-<dt><img src="img/selectnew.png"> <em>Selecting a new
-image</em>   
-<dd>This icon does not always appear. Clicking on this icon is the
-same as selecting the blue "Images" tab (for a discussion of this, see
-<a href="basics.html#searching">here</A>). Click on this icon -- or
-the blue Images tab -- to add a new image through a new search, or to
-change the current image to a new image. To change a HiPS image, see
-discussion in <a href="#wcs">WCS section</A> below.<P>
 
 
 <dt><img src="img/toolsdropdown-small.png"> <em>Tools drop down</em>
 <dd> The choices here look like this:<br>
-<table><tr><td><img src="img/toolsdropdown.png"></td>
-<td>&nbsp;<P>
+<table><tr><td><img src="img/toolsdropdown.png" style="border:3px solid gray"></td>
+<td>&nbsp;<P>&nbsp;<P>
 <em><a href="#saveimage">jump to save</A></em><P>
 <em><a href="#rotateImage">jump to rotate</A></em><P>
 <em><a href="#compass">jump to layers</A></em><P>
@@ -227,8 +363,8 @@ discussion in <a href="#wcs">WCS section</A> below.<P>
 diskette icon will allow you to save the current image.  You can save
 files to your local disk or to the  <a href="/docs/workspace/"
 target="_blank">IRSA Workspace <img src="img/jumpout.jpg"
-height="10"></A>.  Note that <b>you</b> control where the file is
-saved on your disk through your browser; your browser may be
+height="10"></A>.  Note that <strong>you</strong> control where the
+file is saved on your disk through your browser; your browser may be
 configured to store all downloads in a particular location on your
 disk.<P>
 
@@ -248,19 +384,25 @@ Note that you can save the original or a cropped version of a FITS
 file; see the "select region" icon below to crop, then click on the
 save icon. Be sure to save the cropped FITS image (see annotated
 figure). This feature is not available for HiPS images.<br> <img
-src="img/savecropped.png"> <P>
+src="img/savecropped.png" style="border:3px solid gray"> <P>
 
 Note that if you <a href="catalogs.html">overlay a large catalog</A>
 on an image, then turn around and save a regions file from the 
-catalog overlay, the full catalog may not be saved to the regions file. 
-If you have &gt;10,000 sources, <strong>not every source will be overlaid on the
-image</strong>, even if you zoom in, and thus will not be in the
-regions file. If you want to save your entire catalog as a regions
-file, save the catalog from the <a href="tables.html">table pane</A>.<P>
+catalog overlay, the full catalog may not be saved to the regions
+file.  If you have &gt;5,000 sources, <strong>not every source will be
+overlaid on the image</strong>, even if you zoom in, and thus will not
+be in the regions file. If you want to save your entire catalog as a
+regions file, save the catalog from the <a href="tables.html">table
+pane</A>.<P>
 
 The saved PNG is the same size as it is on your screen. If you want a
 big version, make the desired image big on your screen (view
-one-at-a-time) before saving the PNG. <P>
+one-at-a-time; see <a href="#imagenavigation">here</A>) before saving
+the PNG. <P>
+
+You can't save HiPS images from within IRSA's tool. To download your
+own copy, you will have to track down the original source of the
+image.<P>
 
 <dt><img src="img/undoall.png"><em>Restoring everything to the
 defaults</em>
@@ -270,27 +412,25 @@ their original default values. Some layers may persist; remove them
 via the layers icon. <P>
 
 <a name="viewingfitsheader"></A>
-<dt><img src="img/fitsheader.png"> <em>Viewing the image header</em>
+<dt><img src="img/infolink.png"> <em>Viewing the image header</em>
 <dd>This icon displays a pop-up window with information about the
 image. If a FITS image is selected, it will show the FITS header of
 the image; if a HiPS image is selected, it will show the HiPS
-properties of the image. If you click on the columns in the pop-up, it
+properties of the image. These are Firefly tables like all the other
+<a href="tables.html">tables</A> in this tool, so they are sortable
+and filterable, etc. If you click on the columns in the pop-up, it
 will sort the keywords alphabetically by that column. This is useful
 for finding individual keywords in particularly densely populated FITS
 headers. Click the header again to sort in reverse-alphabetical order,
 and a third time to return to the default order. Below are examples of
 an original and sorted FITS header.   To make this window go away,
 click on the 'x' in the upper right of the pop-up, or click "close" on
-the bottom.<br><img
-src="img/unsortedfitsheader.png" width="40%"><img
-src="img/sortedfitsheader.png" width="40%"> <P>
-Further, you can click on the gears in the upper right of the window
-to bring up a dialog box via which you can filter down the header
-keywords (using the same syntax as other <a
-href="tables.html#filters">filters</A>):<br>
-<img src="img/fitsheaderoptions.png"><P>
-An example of the HiPS properties window is here:<br>
-<img src="img/hipsinfo.png"><P>
+the bottom left.<br><img
+src="img/unsortedfitsheader.png" width="40%" style="border:3px solid gray"><img
+src="img/sortedfitsheader.png" width="40%" style="border:3px solid gray"> <P>
+
+For comparison, an example of the HiPS properties window is here:<br>
+<img src="img/hipsinfo.png" style="border:3px solid gray"><P>
 
 <A NAME="rotateImage"><!-- --></A>
 <dt><img src="img/rotate.png"> <em>Rotating the image to any
@@ -299,42 +439,44 @@ angle </em>
 center of your image to any angle of your choice, in degrees. (This
 option is only available for FITS, not HiPS, images.) It will rotate
 the image counter-clockwise (to the left) East of North if the image
-has a WCS embedded in it. <br><img src="img/rotatepopup.png"><br> You
-can type a number in the "angle" box, or use the slider, to rotate the
-image. To bring it back to North-up, click on the "North up" icon in
-the pop-up or in the main image toolbar.  To exit the pop-up without
-making further changes, hit the 'x' in the upper right of the
-pop-up.<P>
+has a WCS embedded in it. <br><img src="img/rotatepopup.png"
+style="border:3px solid gray"><br> You can type a number in the
+"angle" box, or use the slider, to rotate the image. To bring it back
+to North-up, click on the "North up" icon in the pop-up or in the main
+image toolbar.  To exit the pop-up without making further changes, hit
+'Close' or the 'x' in the upper right of the pop-up.<P>
 
 <dt><img src="img/northup.png"> <em>Rotating the image so that North is
 up</em>  
-<dd>Images are commonly already oriented such that North is up, or
-close to it. However, you could find yourself in a situation where
-North is not necessarily up. Clicking this icon will orient the
-selected image so that North is up.  (This option is only available
-for FITS, not HiPS, images.) <P>
+<dd>Images are frequently (but not
+always!) already oriented such that North is up, or close to it.
+However, when interactively investigating images, or loading images
+from other sources, you could find yourself in a situation where North
+is not necessarily up. Clicking this icon will orient the selected
+image so that North is up. (This option is only available for FITS,
+not HiPS, images.) <P>
 
 <dt><img src="img/flip.png"> <em>Flipping the image on the y-axis</em>  
 <dd>Clicking on this icon flips the image on the y-axis. (This option
 is only available for FITS, not HiPS, images.) <P>
 
-
 <a name="compass"> 
 <dt><img src="img/compass.png"> <em>Add a compass rose</em> </A>
 <dd> When you click this icon, arrows appear on the image showing
 which direction is North and which is East. Clicking on this icon a
-second time removes the compass rose.   (You can also remove
+second time removes this compass rose.   (You can also remove
 this layer via the layers icon, described below.)<P>
 
 <dt><img src="img/coordinates.png"> <em>Add a coordinate grid</em>
 <dd>  Click on this icon to overlay a coordinate grid on the image.
 (Only available for FITS images, not HiPS, but see information on HiPS
-grid in the <a href="#wcs">WCS section</A> below.)
+grid in the <a href="#wcs">WCS section</A>.)
 Click it again to remove it. Customize the units of the grid (to,
 e.g., Galactic coordinates) via the "layers" icon (described
 below).<P>
 
-<dt><img src="img/ruler.png"> <em>Measuring a distance</em>
+<a name="distancetool">
+<dt><img src="img/ruler.png"> <em>Measuring a distance</em></A>
 <dd>When you click this icon, at first, nothing seems to happen. 
 However, you can now click and drag to draw a line on the image, and
 the length of the line is displayed (in the middle of the line).   The
@@ -346,7 +488,7 @@ tick the "offset calculation" box. When it displays the offset
 calculation, it will give you the angle in degrees in one corner, and
 the length of the line segment in the RA and Dec directions, in the
 units you have specified. When you are done with the distance tool,
-you can click on the red <img src="img/enddistance.png"> that appears
+you can click on the <img src="img/enddistance.png"> that appears
 next to the image toolbar, or click on this icon a second time to remove
 the distance tool. (You can also remove this layer via the layers
 icon.) <P>
@@ -362,27 +504,30 @@ regions are text, circle, box, polygon, line, and annulus. To make
 this window go away without doing anything, click on the 'x' in the
 upper right of the pop-up. <P>
 
-<dt><img src="img/marker.png"> <em>Put a marker on the image</em>
-<dd> When you click this icon, a drop-down menu appears with several
-possible options:<br><img src="img/markeroptions.png"><br> The first
-overlay choice (simply called 'marker') is a red circle. Initially, it
-appears in the center of the images, and is meant to be moved to
-wherever you first click in the image. It looks like this:<br> <img
-src="img/circlemarker.png">. The dash-dot line around it means that it
-is 'active', so you can move (click and drag the marker) or resize it
-(click and drag the dash-dot boundary).   You can change the color of
-the marker (and change the label) via the "layers" icon (described
-below). You can also remove this layer via the layers icon. There are
-several additional options in the drop-down, enough that they have
-their own <a href="#footprints">section below</A>.<P>
+<strong><font color="orange">&#x26A0;</font> Tips and
+Troubleshooting</strong>: If you overlay a list of sources you created
+in ds9 regions format from your disk, it will only be overlaid on the
+current image, not all of the images you have loaded. If you want to
+have it overlaid on all the images you have loaded, create a catalog
+from your source list and overlay it as a <a
+href="upload.html#catalogs">catalog</A>. Then it will appear on
+all of the images you have loaded, provided that the positions overlap
+on the sky.<P>
 
-Note that if you load both FITS and HiPS images at the same time, it
-will include a region on the HiPS image that is the footprint of the
-FITS images you have loaded. A label appears at the center of that
-footprint, which may be disconcerting if you are not zoomed out enough
-to see the region itself. Here is an example, zoomed out so it is
-clear what is going on:<br>
-<img src="img/hipsregion.png" width="50%"> <P>
+<dt><img src="img/marker.png"> <em>Put a marker on the image</em> <dd>
+When you click this icon, a drop-down menu appears with several
+possible options:<br><img src="img/markeroptions.png"
+style="border:3px solid gray"><br> The first overlay choice (simply
+called 'marker') is a red circle. Initially, it appears in the center
+of the images, and is meant to be moved to wherever you first click in
+the image. It looks like this:<br> <img src="img/circlemarker.png">.
+The dash-dot line around it means that it is 'active', so you can move
+(click and drag the marker) or resize it (click and drag the dash-dot
+boundary).   You can change the color of the marker (and change the
+label) via the "layers" icon (described below). You can also remove
+this layer via the layers icon. There are several additional options
+in the drop-down, enough that they have their own <a
+href="#footprints">section below</A>.<P>
 
 <a name="extractshort">  
 <dt><img src="img/drill.png"> <em>Drill down through the image</em></A>
@@ -413,23 +558,21 @@ href="#extraction">extraction section below</A>. <P>
 
 </dl>
 
-<dt><img src="img/zoomdropdown-small.png"> <em>Zoom drop down</em>
-<dd> The choices here look like this:<br>
-<img src="img/zoomdropdown.png"><br>
-Four of these also appear in the upper left of each image when your
-mouse cursor is in the image.
+<dt><img src="img/zoom.png"> <em>Zoom</em>
+<dd> When your mouse is in an image, these options appear in the upper 
+left of the image.
 <dl>
 <dt><a name="zoomin"><img src="img/zoominout.png"> <em>Zooming in or out</em></A>  
 <dd>
 Clicking on these magnifying glass icons zooms in or out of the image.
 The readout of the net effect of your zooming on the displayed field
-of view (FOV) appears at the top left of each image, in green.  <P>
+of view (FOV) appears at the top left of each image.  <P>
 
 If you click zoom in or out rapidly, a pop-up window appears to allow
 you to more rapidly select the zoom level (field of view) you want.
 Select the desired level, or click on the 'x' in the upper right to
 make the window go away. Here is an example: <br><img
-src="img/zoomlevel.png"><P>
+src="img/zoomlevel.png" style="border:3px solid gray"><P>
 
 You can alternatively zoom using the mouse wheel (or drag forward
 and backward on a touchpad or magic mouse).<P>
@@ -444,26 +587,21 @@ so if you need a big area, use HiPS. If you want to zoom in close
 enough to see individual original pixels, your best choice is FITS.
 <P>
 
-See also the section below on <a href="#changing">changing coverage
-images</A>, specifically that on automatic transitions while
-zooming</A>. <P>
-
-<dt><img src="img/zoomoriginalsize.png"> <em>Zooming to a 1-to-1 size</em>  
-<dd> Clicking this icon will zoom the image such that one pixel in the
-image is one pixel on your screen. This option is only available with
-FITS images; HiPS images by their nature have pixels of varying sizes,
-so this button has no meaning in this case.  <P>
+See also the section in the Images chapter on <a
+href="images.html#changing">changing coverage images</A>, specifically
+that on automatic transitions while zooming</A>. <P>
 
 <dt><img src="img/fitandfill.png"> <em>Fit image to screen or fill
 screen</em>  
 <dd>
 These two icons are designed to maximize the available space in your
 browser window. The first one automatically picks a zoom level such
-that the image entirely fits within the available space. The second
-one automatically picks a zoom level such that the image fills as much
-of the available space as possible (e.g., it is zoomed such that short
-axis of the window is filled with the image, whether that short axis
-is left-right or up-down). <P>
+that the image entirely fits within the available space (which could
+be your whole browser window, or just the portion of it where that
+image is loaded). The second one automatically picks a zoom level such
+that the image fills as much of the available space as possible (e.g.,
+it is zoomed such that short axis of the window is filled with the
+image, whether that short axis is left-right or up-down). <P>
 
 By default, the images that are returned are frequently but not always
 centered on your search target. Clicking on these icons let you see
@@ -475,23 +613,49 @@ images retrieved from IRSA using this tool are typically square, and
 HiPS images cover the sky, so fitting the image to the screen
 might not be what you want to do. <P>
 
+<dt><img src="img/zoomoriginalsize.png"> <em>Zooming to a 1-to-1 size</em>  
+<dd> Clicking this icon will zoom the image such that one pixel in the
+image is one pixel on your screen. This option is only available with
+FITS images; HiPS images by their nature have pixels of varying sizes,
+so this button would have no meaning in this case.  <P>
+
+
+
 </dl>
 
 <A NAME="colortable"><!-- --></A>
 <dt><img src="img/colortable.png"> <em>Color table drop down</em>
 <dd>This icon enables you to change the color table of the
 displayed image. (This option is available for FITS and HiPS
-images.)  When you click the button, a drop-down menu appears
-with a wide variety of color table choices. Select your new color
-table from the options shown:<br>
-<img src="img/colortableoptions.png"><P>
-The arrow in the upper right creates a pop-up window out of this
+images.)  When you click the button, a drop-down menu appears. 
+<table><tr><td width="20%"><img src="img/colortableoptions.png" style="border:3px solid
+gray"></td><td>
+<UL>
+<LI>The top of the menu says "Lock color and overlays" -- by default,
+all of the (FITS) images that you have loaded are locked together for
+color and overlays. What that means is if you change the color table
+(via this menu), then the color table for all the (FITS) images are
+changed. (Or, if you add a layer to one image, then the layer is added
+to all the images; see below.) If you don't want this to happen, select
+"Lock color and overlays" to unlock it. Select it again to lock it
+again.<P>
+
+<LI>The arrow in the upper right creates a pop-up window out of this
 drop-down menu so that you can leave the choices up while settling on
-the best option. Click to select the color table you want.
-Alternatively, you can use the "color bar" slider to move among the
-color tables. Below the color bar slider, there are sliders
-controlling the bias and contrast. Click or drag the slider to change
-the image display. <P>
+the best option.<P>
+
+<LI>The next portion of the menu has a wide variety of color table
+choices. Select your new color table from the options shown.<P>
+
+<LI>Alternatively, you can use the "color bar" slider to move among the
+color tables by number. These numbers correspond to the color bar
+number used in the Python implementation of the Firefly tools. <P>
+
+<LI> Below the color bar slider, there are sliders controlling the
+bias and contrast. Click or drag the slider to change the image
+display. <P>
+</UL>
+</td></tr></table>
 
 <dt><img src="img/stretch.png"> <em>Color stretch drop down</em> 
 <dd>This icon enables you to change the color stretch of the displayed
@@ -499,413 +663,461 @@ image. (This option is only available for FITS, not HiPS, images.)
 Because this is complicated, for much more information, please <a
 href="#stretches">see below</A>.<P>
 
-
 <dt><a name="panbytablerow"><img src="img/recenter.png">
 </A><em>Re-center the image drop down
 </em>
 <dd> Clicking this icon produces a drop-down menu:<br>
-<img src="img/recenterpulldown.png"><br>
-By default, "Pan by table row" is turned on, but, depending on how you
-have loaded your images, or whether you have catalogs loaded, it may
-not seem to do very much. If you have a catalog loaded and are zoomed
-in on your images, as you scroll through your catalog, the
-FITS image underneath will move as needed when you have selected an
-observation in a different part of the sky than was originally shown.<p>
+<img src="img/recenterpulldown.png" style="border:3px solid
+gray"><br>
+By default, "Pan by table row" is turned on (checked), but, depending
+on how you have loaded your images, or whether you have catalogs
+loaded, it may not seem to do very much. However, if you have a
+catalog loaded and are zoomed in on your images, as you scroll through
+your catalog, the FITS image underneath will move as needed when you
+have selected an observation in a different part of the sky than was
+originally shown.<p>
 
 <strong>Example of "Pan by table row" functionality:</strong> Load the
 tool. Search on M101, and ask for all SEIP channels (4 IRAC, 1 MIPS).
 When it returns, search on catalogs. Select a WISE/AllWISE catalog,
 and ask it for a polygon search covering the image that is loaded.
 When the catalog loads, go up to the image toolbox and be sure to
-select Align and Lock by WCS (see lock image discussion below for more
-information). Sort the catalog by RA by clicking on the top of the RA
-column. Note that the images are all now slewed to center the first
-object (the furthest east) in the catalog. Click on a source in the
-plot near the west edge of the image. Note that the images are all now
-slewed to center that newly selected source.  <P>
+select Align and Lock by WCS (see <a href="#wcs">lock image wcs</A>
+below for more information). Sort the catalog by RA by clicking on the
+top of the RA column. Note that the images are all now slewed to
+center the first object (the furthest east) in the catalog. Click on a
+source in the plot near the west edge of the image. Note that the
+images are all now slewed to center that newly selected source.  <P>
 
 Other choices are to center on the target of the observation, center
 the image in the window, or center on a target of your choice. For the
 last of those, you can simply center on that target, or center and
 leave a marker on the image at that location.<P>
 
-The last option may or may not appear, depending on what you have been
+That last option may or may not appear, depending on what you have been
 doing before getting to this screen. If it can, it gives you a choice
-to center on recent positions. Move your mouse over to the black
-arrow to select from a list.<P>
+to center on recent positions. Move your mouse over to the arrow to
+select from a list.<P>
 
-<a name="selectregion">
 <dt><img src="img/selectregion.png"> <em>Selecting a region drop down</em></a>
-<dd>When you click this icon, you are given a choice of a
-rectangular selection or an elliptical selection:<br>
-<img src="img/selectiondropdown.png"><br> 
-After you make that choice, you can click and drag in the image,
-selecting a box or an ellipse on the image.  This region can be
-resized by grabbing and dragging the corners of the box or the pixels
-delineating the corners of a box around your ellipse. If you need to
-move the image underneath, you can hold the shift key and click and
-drag.  <P>
-When you have selected a region of the image, additional icons
-appear above the image, and exactly which icons you see is a function
-of whether you are working on a FITS or HiPS image, and whether or not
-you have a catalog overlaid: <img src="img/selectoptions.png"> These
-icons will allow you to do several things:
-<DL>
-<dt><img src="img/crop-small.png"> <em>Crop the image</em>
-<dd>(FITS only) Crop the image to the selected region. Then you can
-save the cropped FITS image via the save icon described above.<P>
-<strong>Note that</strong>, if you have a rotated FITS image such that
-a crop would have to bisect pixels, it will show you the region that
-encompasses your selection. If you crop at that point, then, it will
-crop in image space (such that pixels are not bisected). See the
-figure below -- in the original image, north is up. This has been
-rotated 45 degrees. The selected region is in white. The yellow
-dash-dot line is the crop in pixel space that encompasses the selected
-region. <br> <img src="img/cropregion.png"><p>
-<dt><img src="img/checkmark-small.png"><em>Select sources</em>
-<dd>(Only if a catalog is overlaid) Select the catalog sources overlaid on
-the image within the region. Selecting highlights the sources in the 
-list and plot with a different color row or symbol.<P>
-<dt><img src="img/filter-small.png"><em>Filter sources</em>
-<dd>(Only if a catalog is overlaid) Filter the overlaid catalog down to the
-sources within the enclosed area. When you choose to impose a
-filter via this selection mechanism; the filters icon changes above
-the catalog to indicate that there is a filter applied (<img
-src="img/filtersapplied.png">). To clear the filters, click on the
-cancel filters icon (which also appears after you impose filters):
-<img src="img/cancelfilters.png">. There is much more on <a
-href="tables.html#filters">filters</A> in the Tables section.<P>
-<dt><img src="img/zoom-small.png"><em>Zoom the image</em>
-<dd>Zoom the image to fit the selected area into your field of
-view.<P>
-<dt><img src="img/recenter-small.png"><em>Recenter the image</em>
-<dd>Recenter the image on the selected area.<P>
-<dt><img src="img/stats-small.png"><em>Obtain statistics</em>
-<dd>(FITS only) Obtain statistics from the image on the region.
-The statistics option results in a pop-up that looks
-something like this:<br><img src="img/imagestatistics.png"> <br> Note
-that it calculates the location of the minimum and maximum fluxes, and
-the aperture and flux-weighted centroids; the flux values given are in
-the same units as the FITS file. If you put your mouse over the row of
-the table in the pop-up, that location appears as an 'x' on the
-image.  <P>
-<dt><img src="img/binoc.png"><em>Search</em>
-<dd>This tool implements a new search, an "action", on the region
-you have selected. It results in this drop-down:
-<img src="img/imageactionpulldown.png" align="top" width="350"><br>
-where this example is based on a region centered on
-216.984130, +52.835172, J2000 decimal degrees, over a 4-cornered polygon.
-(You can also use the region tool to define a cone; this example is a
-rectangle.)
-From this drop-down, you can launch:
-<UL>
-<LI>A TAP polygon search over this region (<a href="catalogs.html#votap">more
-information about TAP searches</A>)
-<LI>A NED cone search at this position with a radius attempting to
-correspond to this polygon (<a href="catalogs.html#nedcatalogs">more
-information about NED searches</A>); results loaded into this tool.
-<LI>A Simbad cone search at this position with a radius attempting to
-correspond to this polygon; results loaded into this tool.
-<LI>A Simbad cone search at this position with a radius attempting to
-correspond to this polygon, but launch another browser window or tab 
-at Simbad with the results.
-<LI>A TAP cone search at this position with a radius attempting to
-correspond to this polygon (<a href="catalogs.html#votap">more
-information about TAP searches</A>); results loaded into this tool.
-<LI>A FITS search at this position (at IRSA, via this tool); results
-loaded into this tool.
-<LI>A HiPS search at this position (via this tool); results loaded
-into this tool.
-<LI>Refine the search region
-</UL>
-The last option brings up another pop-up window that allows you to
-refine the search region iteratively by choosing a cone or polygon,
-setting the center, and setting the cone size or polygon vertices.<br>
-<img src="img/imageactionrefinesearch.png" width="350"><br>
-From here, you can change the kind of search, refine the positions,
-select from the image again, and launch searches from your refined
-position.
-</dl>
+<dd>When you click this icon, you can select a region of the image for
+further actions. Because this is complicated, for much more information, 
+please <a href="selectregion">see below</A>.<P>
 
 
-When you are working with the selection tool, a red <img
-src="img/endselect.png" width="70"> appears next to the image toolbar
-to remind you that you are in that mode. If you are refining positions
-for a search, it will be <img src="img/endsearchmarker.png"
-width="120">. Either way, when you are done with the selection tool,
-click on that red text to turn it off.<P>
 
-<a name="layers">
-<dt><img src="img/layers.png"> <em>Viewing/changing the layers on the
-image</em></A> 
-<dd>If you've been following along by trying these various options,
-you now have an image with a lot of annotations on it. The number that
-appears in blue over the layers icon tells you at any given time how
-many layers you have on the currently selected image (the image
-outlined in orange). If you click
-this layers icon, you will get a pop-up window with a list of all the layers
-you have on top of the image. From the pop-up, you can turn layers off
-and on, at minimum, but you can often also change exactly what is
-displayed and what colors get used for it. To add new things, though,
-you need to go to other options within the toolbar. Here is an example
-of a well-populated layers pop-up. <br><img
-src="img/layerspopup.png"><br> 
-Note the target description:<img src="img/targetrowofpopup.png">
-This reminds you
-of the target on which you searched -- here, it was M16, where the
-coordinates were resolved by NED (as opposed to Simbad). The two icons
-next in that row indicate, respectively, "copy this location to the
-clipboard" and "center image on this position." The tickbox here means
-"show this target" (as opposed to the tickbox at the left, which means
-"show this image").<P>
+<dt><img src="img/layers.png"> <em>Image Layers: Viewing/Changing the
+Layers on the Image</em>
+<dd>Every time you add something new to the image, you add a 'layer'
+to the image. This is complex, so please <a href="#layers">see
+below</A> for much more information. <P>
 
-<a name="colorpicker"></A>
-Where it's possible to change colors of a layer, click on
-the 'colors' link to be taken to a new pop-up from which you can
-select a new color. <br>
-<img src="img/colorpickerviz.png"><br> 
-From here, you can click on your desired color in the top colorful
-box. Immediately below that box, you can change the color and
-saturation of the top box so that you can select from a different
-range of colors. Below that, you can enter numerical Hex codes or RGBA
-values (where the value for RGB is between 0 and 255, and A is in
-units of percent, e.g., 50 = 50%).  Finally, you can also select from
-a pre-defined set of 15 colors by clicking on the small box. Note ha
-the numerical codes update as you select different colors. Click "OK"
-to implement your color choice, or click 'x' in the upper right to
-close the window without changing the color.<P>
 
-<a name="symbolpicker"></A>
-For catalogs or the search target, you can also
-select the symbol shape and size:<br>
-<img src="img/symbolpicker.png"><br> To adjust the size, type in the symbol
-size in pixels or use the up/down arrow keys to change the size by one
-pixel at a time. Click OK to implement your choices. <P>
 
-To delete a layer, click on "delete." Some layers do not have that
-option; to remove that layer, click on the corresponding icon from
-which you added that feature. Alternatively, you can "show all" or
-"hide all" with the buttons on the lower left of the pop-up window. 
-To make this pop-up window go away, click on the 'x' in the upper
-right of the pop-up. <P>
 
-<dt><img src="img/lockedimages.png"><em>Lock/unlock image color tables
-and overlays</em> 
-<dd>When this is set to "lock", all the images that you have loaded
-are linked together for color tables and overlays. This image lock is
-turned on by default.  You can click on this icon to turn off this
-linkage among the images, enabling you to change images on an
-individual basis. Click it again to re-enable it. <P>
 
-<dt><img src="img/lockimages.png"><em>Lock/unlock images</em>
-<dd>Depending on what you've done to this point, and what view you
-have of the images you've loaded, you may have this "lock images" icon
-appear in your toolbar. The main purpose of this icon is to lock all
-the images you have loaded for zooming, scrolling, etc. You need to
-specify how it locks and for how long. Clicking it produces this
-drop-down menu:<br>
-<img src="img/lockimagespulldown.png"><br>
-The first set of options aligns the images only once; the second set
-of options makes the alignment persist ("lock") when you move the
-images. You can align by the images' WCS (e.g., RA and Dec), by the
-target, by the pixels according to the origin of the coordinate system
-in the image header, or by the pixel at the image center. The most
-common choice is likely the WCS align and lock. You can align FITS and
-HiPS images to each other. This is discussed in more detail in
-the <a href="#wcs">WCS section</A> below.
+<dt><img src="img/lockimages.png"><img src="img/unlockimages.png"><em>Lock/unlock images</em>
+<dd>You may have this "lock images" icon appear in your toolbar; it
+will appear as the first icon if they are locked and the second icon
+if they are unlocked. The
+main purpose of this icon is to lock all the images you have loaded
+for zooming, scrolling, etc. You need to specify how it locks and for
+how long. Clicking it produces this drop-down menu:<br>
+<img src="img/lockimagespulldown.png" style="border:3px solid gray"><br>
+The first set of options aligns the images only once, temporarily; the
+second set of options makes the alignment persist ("lock") when you
+move the images (that is, when you move one, they all move). You can
+align by the images' WCS (e.g., RA and Dec), by the target, by the
+pixels according to the origin of the coordinate system in the image
+header, or by the pixel at the image center. The most common choice is
+likely the WCS align and lock. You can align FITS and HiPS images to
+each other. This is discussed in more detail in the <a href="#wcs">WCS
+section</A>.
 <P>
+
+<a name="pinning">
+<dt><img src="img/pinchartbutton.png"> <em>Pin image</em> </A>
+<dd>This icon does not always appear. If you do have this icon, you
+can "pin" the image. Within this tool, "pinning" just means "hold on
+to this item within this tool." It doesn't mean "save this data to
+disk", nor does it mean "download all the data that goes with this";
+it means "retain this item in this tool for now." Think of it as if
+you have a metaphorical bulletin board behind your computer monitor
+and you want to put an image you see on that bulletin board
+temporarily (with a pushpin!) to remember it while you continue to
+look through other images. In many cases, Firefly will treat
+images as already pinned for you. In other cases, you have to actually
+pin them before it will create a pinned images tab.<P>
 
 <dt><img src="img/help.png"> <em>Getting help</em>
 <dd>  Clicking on this icon takes you to this help page.<P>
 
 </dl>
 
-To remove an image (or catalog) entirely, click on the small 'x'
-in the upper right of the image in the tiled view, or on the small
-'x' in the corner of the image (or catalog) tab in the window
+To remove an image (or anything else removable) entirely, click on the
+small 'x' in the upper right of the image in the tiled view, or on the
+small 'x' in the corner of the image (or catalog) tab in the window
 pane view.<P>
 
 
 &nbsp;<P>
 
+<hr width="50%">
+<a name="stretches"><h3>Color Stretches</h3></A>
 
-<a name="newimage"><h3>Specific Information on Loading a New Image</h3></A>
 
-<img src="img/selectnew.png"> If this icon appears, you can change the
-FITS image being used.  Click on this icon to add a new image through
-a new search, or to change the current image to a new image. The
-window you obtain looks like this:<br>
-<img src="img/searchCST.png" width="80%"><p>
+<img src="img/stretch.png"> This icon enables you to change the color
+stretch of the displayed image. (This option is only available for
+FITS, not HiPS, images.) When you click the button, a drop-down menu
+appears with a variety of choices. You can choose from a set of
+pre-selected options:<br><img src="img/stretchoptions.png"
+style="border:3px solid gray"><br> If you pick the first one, "color
+stretch", you can customize the stretch. A pop-up window appears with
+a histogram of the values in the image, and you can change the stretch
+type and range. <br><img src="img/customstretch.png" style="border:3px
+solid gray"> <BR> If you pick a color stretch from the pre-defined
+options, the pop-up window reflects this change. If you change the
+color stretch in the pop-up window, the drop-down menu changes
+correspondingly.<P>
 
-Your first options are:
+<strong>Example:</strong> Display the pop-up for color stretch. From
+the main drop-down, pick 'Linear stretch to 99%'. Go back to the color
+stretch pop-up. Note that it has filled out the stretch type and
+ranges to reflect the current choice. Then -- either with the pop-up
+window still up or not -- go back and pick a different pre-defined
+stretch from the standard options. Note that the values in the pop-up
+change to reflect this current choice. From the pop-up, pick a
+different stretch type -- try "histogram equalization." Select
+"refresh" to update the images. Go back to the drop-down menu. The
+last 7 items have changed to be based on histogram equalization, as
+opposed to the "linear" default.  <P>
+
+
+If you have a 3-color image, you can change the stretch in each color
+plane separately; select the tab at the top accordingly for red,
+green, or blue.  By default, it stretches each band independently, and
+you can set the parameters in the stretch pop-up accordingly.<P>
+<img src="img/3colorstretch.png" style="border:3px solid gray"><P>
+
+As described in <a
+href="https://ui.adsabs.harvard.edu/#abs/2004PASP..116..133L" 
+target="_blank">Lupton et al. (2004) <img src="img/jumpout.jpg"
+height="10"></A>, a different algorithm may be useful for creating
+3-band color images. Select "Hue preserving stretch" to invoke this
+option. This stretch should be a brightness-independent
+color-preserving asinh stretch, though in practical terms, it seems to
+work best for optical images. <P>
+
+<img src="img/luptonstretch.png" style="border:3px solid gray"><P>
+
+It may be useful to scale individual channels; sliders allow you to do
+so. The Q parameter has another slider. For a linear stretch, Q=0;
+increase Q to change what features are emphasized. Pedestal values can
+also be set to allow the level assigned to "black" to change.<P> 
+
+<!-- The original ticket is https://jira.lsstcorp.org/browse/DM-14799
+Paper: https://arxiv.org/pdf/astro-ph/0312483.pdf
+Astropy implementation (not sure it is helpful):
+https://github.com/astropy/astropy/blob/master/astropy/visualization/lupton_rgb.py
+Follow-up ticket for scaling coefficients and help is https://jira.lsstcorp.org/browse/DM-15725
+-->
+
+
+
+&nbsp; <P>
+<hr width="50%">
+<a name="hipsViewer">
+<a name="changehips">
+<a name="hipsmenu"><h3>HiPS Menu</h3></A></A></A>
+
+
+At the top of the HiPS image, there is a pull-down menu with some
+choices: <br>
+<img src="img/hipsmenu.png" style="border:3px solid gray"><P>
+
+This menu allows you to do two things: Change the HiPS Image, and add
+MOC overlays.<P>
+
+<DL>
+<DT><strong>Changing HiPS images</strong>
+<DD>The choices made by any given creator of a HiPS image may result
+in any particular region being saturated or too faint to see.  Color
+stretches are set by the creator of the HiPS map and cannot be
+changed; color tables can be somewhat changed by this tool, but that
+may be insufficient for your needs. If the HiPS map as shown does not
+suit your needs and you wish to change the HiPS image, click on the
+"HiPS/MOC" menu, and then click "Change HiPS". It brings up this
+pop-up:<br> <img src="img/changehips.png" width="100%" style="border:3px solid gray"> <p>
+Things to note:
 <UL>
-<LI>View FITS Images -- replace the image with another FITS image 
-<LI>Create a 3-color Composite -- replace the image with a composite of
-three FITS images (see <a
-href="#3-color">below</A> for more information on 3-color
-images)
-<LI>View HiPS images -- Replace the image with a HiPS image (see <a
-href="#changehips">below</A> for more information on changing HiPS
-images)
+<LI>To select a new image, click on the row corresponding to the new
+HiPS image you want, and click "Change HiPS" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>To learn more about each HiPS map, click on the i with the circle
+in the second column. It will spawn another window with standardized
+information about the HiPS map.
+<LI>By default, it shows HiPS maps corresponding to IRSA data
+collections. To see a more comprehensive list, unclick the box marked
+"IRSA Featured."
 </UL>
 <P>
 
-<strong>Second</strong>, you select whether you want to pull an image
-from IRSA's archives ("Search"; see below), your own disk ("Use my
-image"), elsewhere on the web ("URL"), or the IRSA <a
-href="/docs/workspace/" target="_blank">Workspace <img
-src="img/jumpout.jpg" height="10"></A> ("Workspace"). Note that to use
-the Workspace (reading from or writing to it), you'll need to <a
-href="user.html">log in</A>. <P>
-
-In the cases other than "Search", nearly all of the additional options
-below this line vanish because they are no longer relevant. To
-<strong>select an image off of your local disk</strong>, select "Use
-my image", and then tell it where to find the image on your local
-disk. To load an <strong>image from the web</strong>, pick the "URL"
-option and enter the URL from which you want an image loaded.  To load
-an <strong>image from the IRSA Workspace</strong>, pick the
-"Workspace" option and find the file you want to load.<P>
-
-If you would like to load an image from IRSA's archives, select
-"Search" and go on to these subsequent additional search
-parameters.<P>
-
-<strong>Third</strong>, you select a target. You may enter a target
-name, and have either NED-then-Simbad  or Simbad-then-NED resolve the
-target name into coordinates.  Alternatively, you may enter
-coordinates directly. These coordinates can be in decimal degrees or
-in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
-assumes you are working in J2000 coordinates; you can also specify
-galactic, ecliptic, or B1950 coordinates as follows:
+<dt><strong>Adding a MOC Overlay</strong>
+<dd>It is often useful to see what other data are available. Looking
+at a Herschel/PACS far-IR HiPS map? Overlay a Chandra MOC to see what
+X-ray data might be available to go with your IR data. Click on the
+"HiPS/MOC" menu, and then click "Add MOC Layer." It brings up this pop-up:<br> <img
+src="img/addmoclayer.png" width="100%" style="border:3px solid gray"> <p>
+Things to note:
 <UL>
-<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic
-coordinates 
-<LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
-<LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
-<LI>a source name like 'J140320.67+542028.6' is parsed as 14h03m20.67s
-+54d20m28.6s.
-<LI>a source name like 'G102.0360+59.7715' is parsed as 102.0360
-+59.7715 in galactic coordinates
+<LI>Coverage (the first column) is the fraction of the sky covered by
+that MOC.
+<LI>To select a new MOC, click on the row corresponding to the new
+MOC you want, and click "Add MOC" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>By default, it shows MOCs likely to be most interesting for IRSA
+users. To see a more comprehensive list, unclick the box at the
+top left.
+<LI>If you have your own MOC FITS file, you may upload it via the
+"Use my MOC" tab on the top center.
+<LI>If you try to upload a MOC FITS file via the <a
+href="upload.html">upload tab</A>, it will behave as if you have
+uploaded it here.
 </UL>
-Examples are given below the text entry box before you start typing in
-the box.<P>
-
-As you are completing a valid coordinate entry, it echoes back to
-you what it thinks you are entering. Look right below the box in which
-you are typing the coordinates to see it dynamically change.  <P>
-
-Below the box where you enter the target, you can then specify the
-size of the images you want.  You may enter the cutout size in
-arcseconds, arcminutes, or degrees; just change the drop-down option
-accordingly. <strong>Caution:</strong> pick your units from the
-drop-down first, and then enter a number; if you enter a number and
-then select from the drop-down, it will convert your number from the
-old units to the new units. There are both upper and lower limits to
-your search size; it will tell you if you request something too big
-or too small. Note that these limits may be image-dependent; larger
-images may be available from certain surveys and smaller images may be
-available from other surveys. <strong>If you want the whole image
-tile</strong>, just leave the image size blank, then the closest image
-tile in its entirety will be returned. <P>
+</dl>
 
 
 
-<strong>Fourth</strong>, you select the data set. There are myriad
-choices, which you can filter in various ways to allow you to find
-what you need. Statistically, any one spot on the sky will only be
-found in a few of these data sets, so it makes sense to weed down the
-list, at least a little bit.<P>
+&nbsp;<P>
 
-<em>On the left hand side</em>, you can filter by :
-<DL>
-<DT>Mission (or survey)
-<DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS,
-MSX, COSMOS, MUSYC, BLAST, IRTS, BOLOCAM, HERON.
-<DT>Project Type 
-<dd>Compilation (meaning, e.g., all the data available from a mission
-that was not an all-sky survey), extragalactic, galactic, or all-sky.
-<dt>Band 
-<dd>X-ray, UV, optical, near-IR, mid-IR, far-IR, mm, radio. (Yes, you
-can find data from non-IR missions/surveys here, depending on what
-projects have delivered back to IRSA.)
-</DL>
-To expand or contract the options
-below each of these broad categories, click on the black arrow on the
-left. To see all of the choices in each of these broad categories,
-click on the black arrow and then click "more" near the bottom of the
-list. To select any of the options, click on the checkbox on the left.
-In response to your selections, two things happen. (1) checked items
-appear in red italics above this part of the page, underneath "filter
-by"; (2) the list of programs for selection on the right hand side
-changes.<P>
+<hr width="50%">
+<a name="layers"><h3>Viewing/changing the layers on the image</h3></A>
 
-<em>On the right hand side</em>, you can select individual surveys and
-individual bands therein. To expand or contract the options below each
-of the categories, click on the black arrow on the left. To select any
-of the waveband options, click on the checkbox on the left of the
-individual survey or individual bands.<P>
+Every time you add something new to the image, you add a 'layer'
+to the image. You can have an image with a lot of annotations on
+it.<P>
 
-To find out more information about any given data set, click on the i
-in the circle. This takes you to a master list of all data sets
-available in IRSA Viewer, from which you can obtain standard
-information about the data sets (mission, wavlengths, links to more
-information about the program or delivery, and more). <P>
+<img src="img/layers.png"> The number that appears circled in blue
+over the layers icon tells you at any given time how many layers you
+have on the currently selected image (the image outlined in brown). 
+<P>
 
-To actually complete the task as requested, choose the "Search" button
-in the lower left.<P>
 
-<strong>&#x26A0; Tips and Troubleshooting</strong>
+<table><tr><td>If you click this layers icon, you will get a pop-up
+window with a list of all the layers you have on top of the image. 
+Here (on the right) is an example of a well-populated layers pop-up;
+in real life, this is scrollable to see several more layers). From
+this pop-up, you can:
 <UL>
-<LI>You don't have to select something on the left side before
-selecting something on the right side. If you know exactly what you
-want, just jump in and select things on the right and click "search."
-<LI>If you select something on the left side, it will limit your
-choices accordingly on the right side. 
-<LI>If you clear filters on the left side, it doesn't affect
-selections you've made on the right. You must "clear filters" (on the
-left) and "clear selections" (on the right) to remove all filters and
-return to the initial state.
-<LI>If you want to expand all the choices on the right (to ease in
-band selection), click "expand all" to show all options, or "collapse
-all" to collapse them again.
-<LI>For more information on the data sets included in IRSA Viewer, see <a
-href="https://irsa.ipac.caltech.edu/docs/irsaviewer_datasets.html"
-target="_blank">this list <img src="img/jumpout.jpg" height="10"></A>.
-<LI>IRSA Viewer will NOT return not ALL the images for your specified
-combination of dataset+band+position; it returns the most centered
-science image it can find. This is usually but not always actually
-going to be the most useful to you, depending on what you're trying to
-do.  Some programs delivered PSFs, mosaics created with alternate
-algorithms, etc.  To find all the data at IRSA for a given target,
-enter the position in the big search box on the <a
-href="https://irsa.ipac.caltech.edu/" target="_blank">IRSA home page
-<img src="img/jumpout.jpg" height="10"></A> (this accesses a tool
-called Data Discovery), or navigate specifically to the page
-corresponding to your desired data set and search there by position
-(this accesses a tool called Atlas). 
+<LI>turn layers off and on (click on the switch on the left of the
+corresponding row);
+<LI>remove layers entirely (click on the 'x' on the right of the
+corresponding row); 
+<LI>change colors of overlays (see below);
+<LI>change symbol shapes and sizes (for <a href="catalogs.html">overlaid catalogs</A>); 
+<LI>change annnotations (for markers);
+<LI>or change units (for the coordinate grid or the <a href="#distancetool">distance tool</A>).
 </UL>
+To add entirely new layers, though, you need to go to other
+options within the toolbar.<P>
 
-Example: I want all data covering M16. M16, the Eagle Nebula, is
-essentially in the galactic plane. Thus, I don't need to search really
-any of the extragalactic data sets. I select on the left hand side,
-under project type, compilation, galactic, and all-sky. I am still
-left with a long list of programs (though it is much shorter than it
-was before). However, I can omit some programs from consideration
-based on their names -- programs studying Taurus or Orion are unlikely
-to have any data on M16. I can then individually select the dozen or
-so data sets likely to cover M16.<P>
+You can "show all" or "hide all" with the buttons on
+the lower left of the pop-up window.  To make this pop-up window go
+away, click on the 'x' in the upper right of the pop-up. <P>
+
+Note the target description:<img src="img/targetrowofpopup.png"
+style="border:3px solid gray" width="350"> This reminds you of the target on which
+you searched -- here, it was M101, where the coordinates were resolved
+by NED (as opposed to Simbad). The two icons next in that row
+indicate, respectively, "copy this location to the clipboard" and
+"center image on this position." 
+ </td><td><img src="img/layerspopup.png" style="border:3px solid
+gray"> </td></tr></table> <P>
+
+<a name="colorpicker"></A>
+<table><tr><td width="50%">Where it's possible to change colors of a
+layer, click on the 'colors' link to be taken to a new pop-up from
+which you can select a new color. <P> From here, you can click on your
+desired color in the top colorful box. Immediately below that box, you
+can change the color and saturation of the top box so that you can
+select from a different range of colors. Below that, you can enter
+numerical hex codes or RGBA values (where the value for RGB is between
+0 and 255, and A is in units of percent, e.g., 50 = 50%).  Finally,
+you can also select from a pre-defined set of 15 colors by clicking on
+any of the small boxes. Note that the numerical codes update as you
+select different colors. Your choices are implemented as soon as you
+select them.  Click 'Close' to close the window, or click 'x' in the
+upper right.
+</td><td>
+<img src="img/colorpickerviz.png" style="border:3px solid
+gray"></td></tr></table> 
+<P>
+
+<a name="symbolpicker"></A>
+<table><tr><td width="50%">For catalogs or the search target, you can
+also select the symbol shape and size. To adjust the size, type in the
+symbol size in pixels or use the up/down arrow keys to change the size
+by one pixel at a time. Your choices are implemented as soon as you
+select them. Click 'Close' to close the window, or click 'x' in the
+upper right. <P>
+</td><td>
+<img src="img/symbolpicker.png" style="border:3px solid gray"></td></tr></table> 
+<P>
+
+Note that if you load both FITS and HiPS images at the same time, it
+can include a marked layer on the HiPS image that is the footprint of
+the FITS images you have loaded. A label appears at the center of that
+footprint, which may be disconcerting if you are not zoomed out enough
+to see the region itself. Here is an example, zoomed out so it is
+clear what is going on:<br> <img src="img/hipsregion.png" width="50%"
+style="border:3px solid gray"> <P>
 
 
+Once you have loaded a HiPS image into Firefly, if you select
+the HiPS image and click on the layers icon (<img src="img/layers.png"
+align="center">), you will have new, HiPS-specific choices in the
+layers:<br> <img src="img/hipslayers.png" style="border:3px solid
+gray"><P>
+
+<dl>
+
+<dt>
+<a name="hipsgrid"><strong>HEALPix (HiPS) Grid</strong></A><P>
+
+<dd>To turn on these choices, toggle the switch to the left of "HEALPix
+(HiPS) Grid". (See <a href="images.html#hips">here</A> for more
+information on HiPS images in general.) <P>
+
+<strong>Auto</strong>: This option overlays a position grid, with the
+tile numbers marked in the center of each box. As you continue to zoom
+in, when smaller tiles are needed, they are drawn, with the new tile
+numbers marked. You may not zoom beyond HiPS Norder level 14 tiles.
+The numbers after the "/" is in the "NESTED" (as opposed to RING or
+NUNIQ) numbering system; see <a
+href="http://www.ivoa.net/documents/HiPS/" target="_blank">the IVOA
+standards document <img src="img/jumpout.jpg" height="10"></A> for
+more information.<P>
+
+<strong>Grid Match Image Depth</strong>:  If you select this option,
+the grid will adjust to a new level when you zoom in and a new level
+of HiPS image both exists and is used for the display.<P> 
+
+<strong>Grid Level Lock</strong>: Selecting this option yields an
+additional numerical drop-down menu. The higher number you pick, the
+smaller the grid boxes are that are drawn. When this option is
+selected, the boxes stay the same size regardless of how zoomed-in on
+the image you are.<P>
+
+<dt>
+<a name="hipsmoc"><strong>HiPS MOC</strong></A><P>
+<dd>To turn on these choices, toggle the switch to the left of "MOC". <P>
+(See <a href="images.html#hips">here</A> for more
+information on MOCs in general.)
+
+A MOC tells you via a simple boolean yes/no, is there
+sky coverage from this data set in this region. The choices here are: 
+<UL>
+<LI>Outline - an attempt to outline the entire region covered by the
+data; it still sometimes struggles near the edges of coverage, so zoom
+in to get a better sense of the coverage edges.  
+<LI>Fill - filled regions, where you can control the opacity of the
+overlay by going to the <a href="#colorpicker">color picker</A>; you
+control the opacity by changing the number above the "A". 
+<LI>MOC Tile Outline - individual tile outlines, where the tiles are
+set by the MOC tiles themselves (as opposed to tiles created by the
+mosaic tiles that make up the data set).
+<P>
+</UL>
+</dl> 
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>: 
+<UL>
+<LI>The entire concept of a MOC is built upon the "tiles" that are
+inherent to the HiPS concept. As a result, those tiles are imprinted
+on how the MOC is rendered, especially near edges or corners of
+coverage. Strange behavior may result; you can always zoom in to get a
+better sense of the coverage. For authoritative information, download
+the actual data for the region you are concerned about.
+<LI>For the "fill" option for a MOC, depending on how you
+display a MOC, you may see two shades of color in the MOC. It is
+important to note, though, that the
+information it is displaying does not include depth of coverage,
+merely boolean "is there data there or not." Why is it displaying
+shading? Well, it's rounding. For example, a given WISE MOC might be
+generated at order 13. At this order, there are 805,306,368 HEALPixels
+on the sky, and they are about 26 arcseconds across. When zoomed out
+far, there is no point in trying to show each of these pixels, so the
+application "rounds up" the MOC to an order in which there are roughly
+100-200 displayed HEALPixel polygons horizontally across the image.
+When it does this, it flags the rounded up polygons with the paler
+color. So the boundaries of a coverage region in the MOC all get a
+paler color. If you zoom in far enough on a MOC, the two-tone colors
+go away. 
+</UL>
 
 
 
 
 
 &nbsp;<P>
+<hr width="50%">
+
+<A NAME="wcs"><h3>World Coordinate System (WCS) Alignment</h3></A>
+
+As described above, there is a way to lock/unlock images to each
+other <img src="img/lockimages.png"><img src="img/unlockimages.png">
+for position matching. This section describes
+the image locking in more detail.<P>
+
+When aligning images, you can specify how the images align and for
+how long. Clicking the lock images icon produces this drop-down
+menu:<br> <img src="img/lockimagespulldown.png" style="border:3px solid gray"><P>
+
+The first set of options aligns the images only once; the second set
+of options makes the alignment persist ("lock") when you move (zoom,
+etc.) the images. <P>
+
+You can align by the images' WCS (world coordinate system,
+e.g., RA and Dec), by the target (align by target on the screen,
+regardless of position in the sky), by the pixels according to the
+origin of the coordinate system in the image header, or by the pixel
+at the image center. The most common choice is likely the WCS align
+and lock.<P>
+
+Here are examples of different alignments, in this order: align by
+WCS, by pixel origin, and by pixel at image centers.<br>
+<img src="img/alignbywcs.png" width="100%" style="border:3px solid gray">
+<img src="img/alignbypxorigin.png" width="100%"  style="border:3px solid gray">
+<img src="img/alignbyimgcenter.png" width="100%" style="border:3px solid gray">
+<P>
+Note that aligning by WCS puts North up, and aligned so that each
+image has the same angular scale.  <P> In contrast, here is an align
+by target - six different  galaxies, but the target used for each
+image is in the center of each image tile.<br>
+<img src="img/alignbytarget.png" width="100%"  style="border:3px solid gray"><P>
 
 
-<a name="extraction"><h3>Specific information on Extraction Tools</h3></A>
+
+Aligning images by position on the sky is likely to be the most common
+use of locking. You can align FITS and HiPS images to each other. <P>
+
+
+
+
+
+&nbsp;<P>
+<hr width="50%">
+<a name="extraction"><h3>Extraction Tools</h3></A>
 
 Several tools allow you to extract information from images or image
 planes, but only for FITS (not HiPS) files.
@@ -934,40 +1146,40 @@ Here, we cover the basic approach, with specifics of each
 tool integrated as we go along.<P>
 
 When you click on one of these icons, you enter into the extraction
-mode. Red text appears next to the image toolbar to remind you that
+mode. Text appears next to the image toolbar to remind you that
 you are in this mode: <img src="img/endextraction.png"> When you are
-done, to end this mode, click on this red "end extraction."<P>
+done, to end this mode, click on this "end extraction."<P>
 
 When starting out, the pop-up window that you get depends on the tool
 you pick.
 <table>
 <tr><td> For the drill:</td><td>for the line:</td><td>and for the points:</td></tr>
-<td><img src="img/drillinit.png" width="85%"></td>
-<td><img src="img/lineinit.png" width="85%"></td>
-<td><img src="img/pointsinit.png" width="85%"></td>
+<td><img src="img/drillinit.png" width="300" style="border:3px solid gray"> </td>
+<td><img src="img/lineinit.png" width="300" style="border:3px solid gray"></td>
+<td><img src="img/pointsinit.png" width="300" style="border:3px solid gray"></td>
 </table>
 
 In all three cases, the top center of the extract pop-up window has a
 drop-down from which you can select the aperture value. You can choose,
-in pixels, 1x1, 3x3, 5x5, or 7x7. Values will be averaged. <P>
+in pixels, 1x1, 3x3, 5x5, or 7x7. Values can be summed or averaged. <P>
 
 From this point, you can click on your image, or click and drag for
 the line tool. The pop-up then contains a plot of your extraction. 
 <table>
 <tr><td> For the drill:</td><td>for the line:</td><td>and for the points:</td></tr>
-<td><img src="img/drillextract.png" width="85%"></td>
-<td><img src="img/lineextract.png" width="85%"></td>
-<td><img src="img/pointextract.png" width="85%"></td>
+<td><img src="img/drillextract.png" width="300"  style="border:3px solid gray"></td>
+<td><img src="img/lineextract.png" width="300" style="border:3px solid gray"></td>
+<td><img src="img/pointextract.png" width="300"  style="border:3px solid gray"></td>
 </table>
 
-In each of these cases, it does the best that it can to label the
-axes accordingly. The cube that is used for the drill example here
-follows the spectral data model so that it is recognized as a
-spectrum, and it plots against wavelength. The line extraction is a
-7x7 average and plots the offset in arcseconds from the initial mouse
-click, given the WCS information in the header of the image. The point
-extraction is given in image x coordinates, but can be changed to be
-in image y coordinates. <P>
+In each of these cases, it does the best that it can to label the axes
+accordingly. The cube that is used for the drill example here follows
+the spectral data model so that it is recognized as a spectrum, and it
+plots against wavelength. The line extraction is a 7x7 average and
+plots the offset in arcseconds from the initial mouse click, given the
+WCS information in the header of the image. The point extraction is a
+3x3 sum, and plotted in image x coordinates, but can be changed to
+show image y coordinates. <P>
 
 Note that for the line, if you have more than one image loaded and
 visible, you can shift-click on a new image to see the same line on a
@@ -976,16 +1188,16 @@ without extracting points.<P>
 
 Once you have an extraction that you like, you can retain the
 extraction for further analysis, in any of three ways. "<strong>Pin
-table</strong>"
-extracts the information as a <a href="tables.html">table</A>, just
-like any of the other tables in this tool, with an accompanying <a
-href="plots.html">plot</A>. You can then manipulate the table/plot just
-like any other table or plot in this tool. If the tool recognizes
-the extraction as a <a href="spectra.html">spectrum</A>, you may have
-additional capabilities. <strong>Download as Table</strong> saves the
-table to your local disk <a href="tables.html#save">with all the same
-options as a regular table</A>. <strong>Download Chart</strong> saves
-the plot as shown, as a png file.<P>
+chart/table</strong>" extracts the information as a <a
+href="tables.html">table</A>, just like any of the other tables in
+this tool, with an accompanying <a href="plots.html">plot</A>. You can
+then manipulate the table/plot just like any other table or plot in
+this tool. If the tool recognizes the extraction as a <a
+href="spectra.html">spectrum</A>, you may have additional
+capabilities. <strong>Download as Table</strong> saves the table to
+your local disk <a href="tables.html#save">with all the same options
+as a regular table</A>. <strong>Download Chart</strong> saves the plot
+as shown, as a png file.<P>
 
 Once you pin or save your extraction, the tool leaves a "footprint" of
 your extraction on the image so that you can remember what the
@@ -1004,306 +1216,166 @@ result in new tabs with the corresponding table at the bottom of the
 screen. There are navigation aids within the <a
 href="tables.html#navigation">tables section</A> that may help.<P>
 
-<strong><A NAME="3-color">Making 3-color Images</A></strong><P>
-
-You can create 3-color images directly from the image search screen.
-Select "Create 3-Color Composite" from the top row of options. The
-rest of the pop-up changes to look like the following:<br>
-<img src="img/3colors.png" width="70%"><P>
-By default, you can select the red plane first; you then populate that
-color plane with all the same choices as you would have for a single
-channel image. To set the additional color planes, click on "green"
-and then "blue" to populate those planes accordingly.  <p>
-
-It assumes that you must want the same position for all three color
-planes.<P>
-
-Select your options individually for each color plane (red, green,
-blue), and click 'Search' in the lower left. Click 'Cancel' to
-cancel.<P>
-
-To change the color stretch of each color plane individually, click on
-the "<a href="#stretches">Color Stretch</A>" icon in the toolbox.<P>
-
-<strong>&#x26A0; Tips and Troubleshooting</strong> 
-<UL>
-<LI>You load all three images at once, e.g., you do NOT pick red,
-click search, then go back and pick green, click search, then go back
-and pick blue, click search. Instead, click red and define what you
-want for that image, then go to green and do the same, then go to blue
-and do the same. Don't click "search" until you have specified all
-three bands.
-<LI> The images will be downsampled to the resolution of the red
-image. If you, say, load an MSX image into the red plane, a WISE image
-into the green plane, and a 2MASS image into the blue plane, all of
-the images will have MSX-sized pixels. If you load a WISE image into
-the red and green planes, and a 2MASS image into the blue plane, the
-images will have WISE-sized pixels. 
-<LI>You have to set the size of the image separately on each color
-plane. It does not automatically assume you want the same size of
-sky covered. <P>
-</UL>
-
-&nbsp;<P>
-
-<a name="stretches"><h3>Specific information on Color Stretches</h3></A>
-
-
-<img src="img/stretch.png"> This icon enables you to change the color
-stretch of the displayed image. (This option is only available for
-FITS, not HiPS, images.) When you click the button, a drop-down menu
-appears with a variety of choices. You can choose from a set of
-pre-selected options:<br><img src="img/stretchoptions.png"><br> If you
-pick the first one, "color stretch", you can customize the stretch. A
-pop-up window appears with a histogram of the values in the image, and
-you can change the stretch type and range. <br><img
-src="img/customstretch.png"> <BR> If you pick a color stretch from the
-pre-defined options, the pop-up window reflects this change. If you
-change the color stretch in the pop-up window, the drop-down menu
-changes correspondingly.<P>
-
-Example: Display the pop-up for color stretch. From the main
-drop-down, pick 'Linear stretch to 99%'. Go back to the color stretch
-pop-up. Note that it has filled out the stretch type and ranges to
-reflect the current choice. Then -- either with the pop-up window
-still up or not -- go back and pick a different pre-defined stretch
-from the standard options. Note that the values in the pop-up change
-to reflect this current choice. From the pop-up, pick a different
-stretch type -- try "histogram equalization." Select "refresh" to
-update the images. Go back to the drop-down menu. The last 7 items have
-changed to be based on histogram equalization, as opposed to the
-"linear" default.  <P>
-
-
-If you have a 3-color image, you can change the stretch in each color
-plane separately; select the tab at the top accordingly for red,
-green, or blue.  By default, it stretches each band independently, and
-you can set the parameters in the stretch pop-up accordingly.<P>
-<img src="img/3colorstretch.png"><P>
-
-As described in <a
-href="https://ui.adsabs.harvard.edu/#abs/2004PASP..116..133L" 
-target="_blank">Lupton et al. (2004) <img src="img/jumpout.jpg"
-height="10"></A>, a different algorithm may be useful for creating
-3-band color images. Select "Hue preserving stretch" to invoke this
-option. This stretch should be a brightness-independent
-color-preserving asinh stretch, though in practical terms, it seems to
-work best for optical images. <P>
-
-<img src="img/luptonstretch.png"><P>
-
-It may be useful to scale individual channels; sliders allow you to do
-so. The Q parameter has another slider. For a linear stretch, Q=0;
-increase Q to change what features are emphasized. Pedestal values can
-also be set to allow the level assigned to "black" to change.<P> 
-
-<!-- The original ticket is https://jira.lsstcorp.org/browse/DM-14799
-Paper: https://arxiv.org/pdf/astro-ph/0312483.pdf
-Astropy implementation (not sure it is helpful):
-https://github.com/astropy/astropy/blob/master/astropy/visualization/lupton_rgb.py
-Follow-up ticket for scaling coefficients and help is https://jira.lsstcorp.org/browse/DM-15725
--->
 
 
 &nbsp;<P>
 
+<hr width="50%">
+<a name="selectregion"><h3>Region Selection</h3></A>
+
+<img src="img/selectregion.png"> When you click this icon, you can
+select a region of the image, from which then you can do a whole host
+of things to the image and to the catalog you may have overlaid upon
+it. <P>
+
+<table><tr><td>First, from the drop-down, you are given a choice of a
+rectangular selection or an elliptical selection:</td><td>
+<img src="img/selectiondropdown.png" style="border:3px solid
+gray"></td></tr></table>
+
+After you make that choice, you can click and drag in the image,
+selecting a box or a circle on the image.  For the circle, your click
+is the center of the circle and the drag is the radius of the circle;
+for the box, your first click is one corner of the rectangle, and the
+drag is the opposite corner of the rectangle. This region can be
+resized by grabbing and dragging the corners of the box or the pixels
+delineating the corners of a box around your code. If you need to
+move the image underneath, you can hold the shift key and click and
+drag.  <P>
 
 
-<a name="hipsViewer"><h3>Specific Information on HiPS Features</h3></A>
-
-<strong>General Information</strong><P>
-
-<a
-href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
-target="_blank">HiPS</A> (hierarchical progressive survey) images are
-different than FITS images, and as such, the choices of what you can
-do with the HiPS images are different than what you can do with the
-FITS images. Choices you can make for HiPS images are sometimes
-different than what you get for FITS images.<P>
-
-The whole point of HiPS images is to provide on-demand resolution
-changes. Zoom out, and it loads large pixels. Zoom in, and it loads
-smaller pixels.  HiPS images are designed to cover large areas of sky
-efficiently. If you need to visualize many degrees, this is the image
-type to use.<P>
-
-There are HiPS images from all over the world; the complete list of
-HiPS images available from the IRSA Viewer search page includes (once
-the "IRSA Featured" checkbox is unchecked) many HiPS images from <a
-href="http://cdsweb.u-strasbg.fr/" target="_blank">CDS <img
-src="img/jumpout.jpg" height="10"></A>. <P>
-
-HiPS images have the color and stretch set by the person who
-originally made them. The color table can be remapped within this
-tool. But, you cannot change the stretch of HiPS images from within
-IRSA Viewer. This is why there may be multiple versions of some data
-sets in the list of HiPS images.<P>
-
-You can't save HiPS images from within IRSA's tool. To download your
-own copy, you will have to track down the original source of the
-image.<P>
-
-<strong>Overlays on HiPS Images</strong><P>
-
-Catalog searches (see <a href="catalogs.html">Catalogs section</A>) on
-top of HiPS images are limited to a maximum of 5 degrees. <P>
-
-Once you have loaded a HiPS image into the IRSA Viewer, if you click
-on the layers icon (<img src="img/layers.png" align="center">), you will have
-new, HiPS-specific choices in the layers:<br>
-<img src="img/hipslayers.png"><br>
-
-<dl>
-
-<dt>
-<a name="hipsgrid"><strong>HiPS Grid</strong></A><P>
-
-<dd>To turn on these choices, click the checkbox to the left of "HEALPix
-(HiPS) Grid". <P>
-
-<strong>Auto</strong>: This option overlays a position grid, with the
-tile numbers marked in the center of each box. As you continue to zoom
-in, when smaller tiles are needed, they are drawn, with the new tile
-numbers marked. You may not zoom beyond HiPS Norder level 14 tiles.
-The numbers after the "/" is in the "NESTED" (as opposed to RING or
-NUNIQ) numbering system; see <a
-href="http://www.ivoa.net/documents/HiPS/" target="_blank">the IVOA
-standards document <img src="img/jumpout.jpg" height="10"></A> for
-more information.<P>
-
-<strong>Grid Match Image Depth</strong>:  If you select this option,
-the grid will adjust to a new level when you zoom in and a new level
-of HiPS image both exists and is used for the display.<P> 
-
-<strong>Grid Level Lock</strong>: Selecting this option yields an
-additional numerical drop-down menu. The higher number you pick, the
-smaller the grid boxes are that are drawn. When this option is
-selected, the boxes stay the same size regardless of how zoomed-in on
-the image you are.<P>
-
-<dt>
-<a name="hipsmoc"><strong>HiPS MOC</strong></A><P>
-<dd>To turn on these choices, click the checkbox to the left of "MOC". <P>
-
-
-A <A href="https://ivoa.net/documents/MOC/"
-target="_blank">multi-order coverage map (MOC) <img
-src="img/jumpout.jpg" height="10"></A> is  a format developed by the
-International Virtual Observatory Alliance to specify sky regions.
-In this context, a MOC tells you via a simple boolean yes/no, is there
-sky coverage from this data set in this region. You can ask for the
-MOC to be displayed via the <a href="#layers">layers dialog</A> and
-selecting: 
-<UL>
-<LI>Outline - an attempt to outline the entire region covered by the
-data; it still sometimes struggles near the edges of coverage, so zoom
-in to get a better sense of the coverage edges.  
-<LI>Fill - filled regions, where you can control the opacity of the
-overlay by going to the <a href="#layers">layers icon</A>, pulling up
-the corresponding pop-up, and going to the <a
-href="#colorpicker">color picker</A>; you control the opacity by
-changing the number above the "A". 
-<LI>MOC Tile Outline - individual tile outlines, where the tiles are
-set by the MOC tiles themselves (as opposed to tiles created by the
-mosaic tiles that make up the data set).
-<P> 
-
-<strong>&#x26A0; Tips and Troubleshooting</strong>: 
-<UL>
-<LI>The entire concept of a MOC is built upon the "tiles" that are
-inherent to the HiPS concept. As a result, those tiles are imprinted
-on how the MOC is rendered, especially near edges or corners of
-coverage. Strange behavior may result; you can always zoom in to get a
-better sense of the coverage. For authoritative information, download
-the actual data.
-<LI>For the "fill" option for a MOC, depending on how you
-display a MOC, you may see two shades of color in the MOC. It is
-important to note, though, that the
-information it is displaying does not include depth of coverage,
-merely boolean "is there data there or not." Why is it displaying
-shading? Well, it's rounding. For example, a given WISE MOC might be
-generated at order 13. At this order, there are 805,306,368 HEALPixels
-on the sky, and they are about 26 arcseconds across. When zoomed out
-far, there is no point in trying to show each of these pixels, so the
-application "rounds up" the MOC to an order in which there are roughly
-100-200 displayed HEALPixel polygons horizontally across the image.
-When it does this, it flags the rounded up polygons with the paler
-color. So the boundaries of a coverage region in the MOC all get a
-paler color. If you zoom in far enough on a MOC, the two-tone colors
-go away. 
-</UL>
-</dl>
-
-<a name="changehips"><strong>HiPS/MOC</strong></A><P>
-
-This menu allows you to do two things: Change the HiPS Image, and add
-MOC overlays.<P>
-
+When you have selected a region of the image, additional icons
+appear above the image, and exactly which icons you see is a function
+of whether you are working on a FITS or HiPS image, and whether or not
+you have a catalog overlaid: <img src="img/selectoptions.png"> These
+icons allow you to do several things:
 <DL>
-<DT><strong>Changing HiPS images</strong>
-<DD>The choices made by any given creator of a HiPS image may result
-in any given region being saturated.  Color stretches are set by the
-creator of the HiPS map and cannot be changed; color tables can be
-changed by this tool. If the HiPS map as shown does not suit your
-needs and you wish to change the HiPS image, click on the "HiPS/MOC"
-menu, and then click "Change HiPS". It brings up this pop-up:<br> <img
-src="img/changehips.png"> <p>
-Things to note:
+<dt><img src="img/crop-small.png"> <em>Crop the image</em>
+<dd>(FITS only) Crop the image to the selected region. Then you can
+save the cropped FITS image via the save icon described above.<P>
+<strong>Note that</strong>, if you have a rotated FITS image such that
+a crop would have to bisect pixels, it will show you the region that
+encompasses your selection. If you crop at that point, then, it will
+crop in image space (such that pixels are not bisected). See the
+figure below -- in the original image, north is up. This has been
+rotated 45 degrees. The selected region is in white. The yellow
+dash-dot line is the crop in pixel space that encompasses the selected
+region. <br> <img src="img/cropregion.png"><p>
+<dt><img src="img/checkmark-small.png"><img
+src="img/cancelselection.png"><em>Select sources</em> (and <em>cancel
+selection</em>)
+<dd>(Only if a catalog is overlaid) Select the catalog sources overlaid on
+the image within the region. Selecting highlights the sources in the 
+list and plot with a different color row or symbol. Once there are
+selections made, the second icon appears to give you an option to
+cancel the selection.<P>
+<dt><img src="img/filter.png"><em>Filter sources</em>
+<dd>(Only if a catalog is overlaid) Filter the overlaid catalog down to the
+sources within the enclosed area. When you choose to impose a
+filter via this selection mechanism; the filters icon changes above
+the catalog to indicate that there is a filter applied (<img
+src="img/filtersapplied.png">). To clear the filters, click on the
+cancel filters icon (which also appears after you impose filters):
+<img src="img/cancelfilters.png">. There is much more on <a
+href="tables.html#filters">filters</A> in the Tables section.<P>
+<dt><img src="img/zoom-small.png"><em>Zoom the image</em>
+<dd>Zoom the image to fit the selected area into your field of
+view.<P>
+<dt><img src="img/recenter-small.png"><em>Recenter the image</em>
+<dd>Recenter the image on the selected area.<P>
+<dt><img src="img/stats-small.png"><em>Obtain statistics</em>
+<dd>(FITS only) Obtain statistics from the image on the region.
+The statistics option results in a pop-up that looks
+something like this:<br><img src="img/imagestatistics.png" style="border:3px solid gray"> <br> Note
+that it calculates the location of the minimum and maximum fluxes, and
+the aperture and flux-weighted centroids; the flux values given are in
+the same units as the FITS file. If you put your mouse over the row of
+the table in the pop-up, that location appears as an 'x' on the
+image.  <P>
+<dt><img src="img/searchaction.png"><em>Search</em>
+<dd><table><tr><td>This tool implements a new search, an "action", on the region
+you have selected. It results in this drop-down (right).
+where this example is based on a region centered on
+84.036131, -69.224431, J2000 decimal degrees, over a 4-cornered polygon.
+(You can also use the region tool to define a cone; this example
+happends to be a rectangle.)
+From this drop-down, you can launch:
 <UL>
-<LI>To select a new image, click on the row corresponding to the new
-HiPS image you want, and click "Change HiPS" on the bottom left. 
-<LI>To cancel without selecting a new image, click "Cancel."
-<LI>This is an interactive table, so all the <a
-href="tables.html#filters">filtering</A> and <a
-href="tables.html#columns">column manipulation</A> tools apply here
-too. You can filter down the columns to find the image you want to
-use.
-<LI>To learn more about each HiPS map, click on the i with the circle
-in the second column. It will spawn another window with standardized
-information about the HiPS map.
-<LI>By default, it shows HiPS maps corresponding to IRSA data
-collections. To see a more comprehensive list, unclick the box marked
-"IRSA Featured."
+<LI>A TAP polygon search over this region (<a href="othersearches.html#generaltap">more
+information about TAP searches</A>)
+<LI>A NED cone search at this position with a radius attempting to
+correspond to this polygon (<a href="othersearches.html#nedcatalogs">more
+information about NED searches</A>); results loaded into this tool.
+<LI>A Simbad cone search at this position with a radius attempting to
+correspond to this polygon; results loaded into this tool.
+<LI>A Simbad cone search at this position with a radius attempting to
+correspond to this polygon, but launch another browser window or tab 
+at Simbad with the results.
+<LI>A TAP cone search at this position with a radius attempting to
+correspond to this polygon (<a href="othersearches.html#generaltap">more
+information about TAP searches</A>); results loaded into this tool.
+<LI>A FITS <a href="images.html">image search</A> at this position (at IRSA, via this tool); results
+loaded into this tool.
+<LI>A HiPS <a href="images.html">image search</A> at this position (via this tool); results loaded
+into this tool.
+<LI>A cone search of the SOFIA archive at this position with a radius
+attempting to correspond to this polygon; results loaded into the
+SOFIA tool.
+<LI>A cone search of the WISE Image Service at this position with a
+radius attempting to correspond to this polygon; results loaded into
+the WISE tool.
+<LI>Refine the search region
 </UL>
-<P>
 
-<dt><strong>Adding a MOC Overlay</strong>
-<dd>It is often useful to see what other data are available. Looking
-at a Herschel/PACS far-IR HiPS map? Overlay a Chandra MOC to see what
-X-ray data might be available to go with your IR data. Click on the
-"HiPS/MOC" menu, and then click "Add MOC Layer." It brings up this pop-up:<br> <img
-src="img/addmoclayer.png"> <p>
-Things to note:
-<UL>
-<LI>Coverage (the first column) is the fraction of the sky covered by
-that MOC.
-<LI>To select a new MOC, click on the row corresponding to the new
-MOC you want, and click "Add MOC" on the bottom left. 
-<LI>To cancel without selecting a new image, click "Cancel."
-<LI>This is an interactive table, so all the <a
-href="tables.html#filters">filtering</A> and <a
-href="tables.html#columns">column manipulation</A> tools apply here
-too. You can filter down the columns to find the image you want to
-use.
-<LI>By default, it shows MOCs likely to be most interesting for IRSA
-users. To see a more comprehensive list, unclick the box at the
-top left.
-<LI>If you have your own MOC FITS file, you may upload it via the
-"upload" button on the lower right.
-<LI>If you try to upload a MOC FITS file via the <a
-href="catalogs.html#owncatalogs">catalogs interface</A>, it will
-behave as if you have uploaded it here.
-</UL>
+</td><td>
+<img src="img/imageactionpulldown.png" align="top" width="350"
+style="border:3px solid gray"></td></tr></table>
+
+The last option brings up another pop-up window (similar to <a
+href="othersearches.html#interactivetarget">this</A>) that allows you
+to refine the search region iteratively by choosing a cone or polygon,
+setting the center, and setting the cone size or polygon vertices.<br>
+<img src="img/imageactionrefinesearch.png" width="350"
+style="border:3px solid gray"><br> From here, you can change the kind
+of search, refine the positions,  launch searches from your refined
+position (blue button on lower left), and select from the image again
+(drop-down on the lower right). 
+
 </dl>
+
+
+When you are working with the selection tool, this: <img
+src="img/endselect.png" width="70"> appears next to the image toolbar
+to remind you that you are in that mode. If you are refinifng
+positions for a search, it will be <img src="img/endsearchmarker.png"
+width="120">. Either way, when you are done with the selection tool,
+if your other actions don't turn off the selection tool, click on that
+text to turn it off.<P>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 &nbsp;<P>
 
-
-
+<hr width="50%">
 <a name="footprints"><h3>Footprints</h3></A>
 
 The marker icon (<img src="img/marker.png">) has a drop-down menu with
-several possible options:<br><img src="img/markeroptions.png"><br> Any
+several possible options:<br><img src="img/markeroptions.png" style="border:3px solid gray"><br> Any
 of the options with an arrow on the right can expand to additional
 subsidiary choices, e.g.,:<br> <img src="img/markeroptionsp1.png"><br>
 We now describe these various footprints here.<P>
@@ -1321,7 +1393,7 @@ marker, depending on the nature of the marker. These handles only
 appear when the marker is selected as active; if you wait a few
 seconds, they vanish.<P>
 
-<strong>&#x26A0; Tips and Troubleshooting</strong> 
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
 <LI>Some of these footprints are <em>large</em>. If you have a small
 image, some of these footprints will be larger than your image. Zoom
@@ -1330,24 +1402,24 @@ Nancy Grace Roman Space Telescope (formerly WFIRST) footprint on a
 2MASS image, you may need to zoom out a considerable amount before you
 can see the Roman footprint. You will see the center indicator of the
 marker before you will see the Roman footprint itself. 
-<LI>You can add multiple copies of the same marker using the layers
-pop-up (described generally above).  From the layers pop-up, there is
-a link right under the 'angle' option that says "Add [marker type]" --
-click on that to get an additional marker of the same type. You can
-also add a label to the marker from the layers pop-up, or change its
-color.
+<LI>You can add multiple copies of the same marker using the <a
+href="#layers">layers pop-up</A> (described generally above).  From
+the layers pop-up, there is a link right under the 'angle' option that
+says "Add another [marker type]" -- click on that to get an additional
+marker of the same type. You can also add a label to the marker from
+the layers pop-up, or change its color.
 <LI>If you have many footprints on the same image, you may have
 trouble grabbing and moving footprints lower in the stack of layers on
 the image. For example, overlay footprint 1, then footprint 2, and you
 might have a hard time grabbing and rotating footprint 1 after
 footprint 2 has been added. The only workaround here is to use the
-layers pop-up (described generally above) to hide footprint 2, then
-move footprint 1, then restore footprint 2.
-<LI>If you have images of very different resolutions loaded
-(e.g., IRAS and really anything else), sometimes it struggles to
-render the marker on each image. You may need to place markers on one
-image at a time. (Unclick the "lock overlays" button to place markers
-one image at a time.)
+layers pop-up (described generally above) to temporarily hide
+footprint 2, then move footprint 1, then restore footprint 2.
+<LI>If you have images of very different resolutions loaded (e.g.,
+IRAS and really anything else), sometimes it struggles to render the
+marker on each image. You may need to place markers on one image at a
+time. (Unclick the "lock color & overlays" option to place markers one
+image at a time.)
 </UL>
 
 
@@ -1459,302 +1531,10 @@ copies of the Roman footprint from the layers pop-up.<P>
 
 
 
-&nbsp;<P>
 
 
-<A NAME="breakingout"><h3>Breaking out of the pane (and going back)</h3></A>
 
-<strong>Panes</strong>: If you have both images and catalogs
-loaded into the IRSA Viewer, the screen is broken up into panes - one
-for images, one for catalogs, and one for plots from the catalog. If
-you have more than one image loaded in, the image pane is further
-subdivided.<P>
-
-<strong>Make it big!</strong> For some purposes, it is useful to
-individually view just the table, or the images, or the plots, as
-large as possible. In any pane, this icon <img
-src="img/expand-24x24.png">  appears in the upper right of the pane. 
-Clicking on it will expand the pane into a larger window, as big as
-possible given your browser size. <P>
-
-<strong>Go back the way it was:</strong> <img src="img/close.png"> The
-large "Close" arrow at the upper left is always available in the
-expanded views, and enables you to return back to the pane view.<P> 
-
-<strong>Special case of images only:</strong> If you have only images
-loaded in, then the images are taking up all of your browser window,
-and it is already, by default, in this expanded mode. There's no
-'close' arrow in the upper left since there is nothing else loaded
-in.<P>
-
-<strong>Removing things:</strong>  To remove an image (or catalog)
-entirely, click on the small 'x' in the upper right of the image in
-the tiled view, or on the small 'x' in the corner of the catalog tab
-in the window pane view.<P>
-
-Also see the next section on image navigation.<P>
-
-
-
-
-&nbsp;<P>
-
-<A NAME="imagenavigation"><h3>Image Navigation</h3></A>
-
-<strong>Single or Tiled Images</strong><P>
-
-When you have many images loaded in, you can have icons like this:  
-<img src="img/imagetiles.png"> that portray (in icon form) the
-different views you can have of the images you have loaded.  The first
-icon (the big square) denotes "show one image at a time." The second
-icon (the cluster of four squares) denotes "show smaller images of all
-the images I have loaded at once," e.g., tiled images. Whether the
-images (tiled or not) take up all the space or not depends on whether
-you are viewing in panes or in the full-screen mode (see immediately
-above on <a href="#breakingout">Breaking out of the pane</A>). <P>
-
-<strong>Image List</strong><P>
-
-Depending on what you have loaded, you may have an additional icon:
-<img src="img/imagelist.png"><BR> Clicking on this icon brings up a
-list of the images you have loaded, with some additional information
-on each one. This list is a <a href="tables.html">table like any
-other</A> in this tool. The power of this table is best demonstrated
-by an example. <P>
-
-Example: Load the tool. Search on M101, with the default image size. 
-Select all bands from the following data sets: SEIP, DUSTiNGS, LVL,
-MIPS_LG. Search. When the tool comes back, click on the image list
-icon above and obtain this pop-up:<br> <img
-src="img/imagelisttable.png"><br> This table shows that it found
-images of M101 from SEIP, and some LVL bands, but nothing in DUSTiNGS
-or MIPS_LG. You can use the table to omit the failed images all at
-once: click the down arrow at the top of the "Status" column, tick the
-box next to "Success" and then click "filter." The failed images are
-removed all at once from the table and your display. Now, click the
-top of the "Wavelength" column. The table is sorted by wavelength, and
-the images in your display are as well.<P>
-
-You can remove selected rows, or delete the failed images with one
-click; click on the corresponding button on the lower right of this
-window.<P>
-
-The "help" links in the far right of this table take you to a master
-list of all data sets available in IRSA Viewer, from which you can
-obtain standard information about the data sets (mission, wavlengths,
-links to more information about the program or delivery, and more).
-<P>
-
-
-<strong>Paging through single image views</strong><P>
-
-If you have many images loaded in and click on the single big square
-to view one image at a time, you may be provided with navigation aids in
-the upper right, like this:<br>
-<img src="img/paging.png"><br>
-The arrows allow you to scroll through your list of images, sorted as
-specified in the image table. The green dot in the list of blue dots
-shows you where your currently displayed image is in the set of loaded
-images. The "auto play" tick box triggers automatic scrolling through
-each of the loaded images. 
-<P>
-
-<strong>Removing things:</strong>  To remove an image (or catalog)
-entirely, click on the small 'x' in the upper right of the image in
-the tiled view, or on the small 'x' in the corner of the catalog tab
-in the window pane view. Closing the upper-right image leaves your
-mouse on or near the x for the next image that fills that corner,
-allowing multiple images to be closed with minimal mouse movement.<P>
-
-&nbsp;<P>
-
-
-
-
-<A NAME="wcs"><h3>World Coordinate System (WCS) Alignment and Related
-Features</h3></A>
-
-As described above, there are two different lock buttons on the image
-toolbar, one (<img src="img/lockedimages.png">) for the color
-table/stretch/overlays, and another, different one (<img
-src="img/lockimages.png">) for WCS matching. This section describes
-the image locking in more detail.<P>
-
-The main purpose of having lock buttons at all is to make it easier to
-change color tables for everything at once, or to zoom/scroll all the
-images at once. <P>
-
-To use either of the locking buttons: Select an image by clicking on
-it; note that your selected image is outlined in orange. Lock by color
-and then change the color table in that selected image; all the images
-change color tables. Lock by position and all the images align
-to the same scale as your selected image.<P>
-
-Aligning images by position on the sky is likely to be the most common
-use of locking.  You can align FITS and HiPS images to each other.
-When you have locked the images, if you zoom, click-and-drag, etc.,
-then all the images move together. This option only makes sense if all
-of your loaded images are of the same region of sky. Unlike in other
-IRSA tools, it's quite possible in IRSA Viewer to have images loaded
-from many different targets or other situations where you likely you
-don't want all of the displayed bands to change together, which is why
-locking by position of any sort is an option distinct from locking
-color tables.<P>
-
-When aligning images, you can specify how the images align and for
-how long. Clicking the lock images icon produces this drop-down
-menu:<br> <img src="img/lockimagespulldown.png"><P>
-
-The first set of options aligns the images only once; the second set
-of options makes the alignment persist ("lock") when you move the
-images. <P>
-
-You can align by the images' WCS (world coordinate system,
-e.g., RA and Dec), by the target (align by target on the screen,
-regargless of position in the sky), by the pixels according to the
-origin of the coordinate system in the image header, or by the pixel
-at the image center. The most common choice is likely the WCS align
-and lock.<P>
-
-Here are examples of different alignments, left to right: align by
-WCS, by pixel origin, and by pixel at image centers.<br>
-<img src="img/alignbywcs.png" width="30%">
-<img src="img/alignbypxorigin.png" width="30%">
-<img src="img/alignbyimgcenter.png" width="30%">
-<P>
-Note that aligning by WCS puts North up, and aligned so that each
-image has the same angular scale. <P>
-In contrast, here is an align by target - several different spiral
-galaxies, but the target used for each image is in the center of each
-image tile.<br>
-<img src="img/alignbytarget.png" width="30%"><P>
-
-
-
-
-&nbsp;<P>
-
-<A NAME="coverage"><h3>Coverage Image</h3></A></A>
-
-If you have launched the tool by initially doing a catalog search
-(as opposed to an image search), when the catalog is loaded, it will
-pick an image on your behalf, called a coverage image. <P>
-
-If you have launched the tool with images and then do a catalog
-search, it will generate the coverage image for you and create a new
-tab under your loaded images. <P>
-
-The next subsection covers more details about the coverage image,
-specifically how it automatically changes to accomodate your zoom 
-level.<P>
-
-
-
-
-&nbsp;<P>
-
-
-<A NAME="autozoom"><A NAME="changing"><h3>Automatic FITS-HiPS-Aitoff Transitions</h3></A></A>
-
-<img src="img/coveragechoices1.png"><img
-src="img/coveragechoices.png"> Coverage images can have many choices;
-it could look something like either of these screen shots. In this
-section, we cover these choices from left to right.<P>
-
-<strong>Type of image.</strong><P>
-<UL>
-<LI>An Aitoff projection (selected in the first example, indicated with the
-darker grey) is an all-sky projection (in this case, a DIRBE 60 micron
-image). This is showing the results of an all-sky search; if you
-searched a smaller region, you may not have Aitoff as an option.
-<LI> A search over a large region might result in a HiPS image, or you
-can force it to give you a HiPS image by clicking on "HiPS" in the
-upper left of the coverage image. It will load a HiPS image
-corresponding to your current target. <a
-href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
-target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A> images are
-created specifically to enable fast, dynamic resolution changes; zoom
-in and find smaller pixels than if you zoom out.  HiPS images are
-designed to cover large areas of sky efficiently.  HiPS images are
-limited to the color and stretch set by the person who originally made
-them. Choices of what you can do and what you can manipulate with HiPS
-images can be different than your choices for FITS images.
-<LI> A search over a small area will result in a FITS image, or you
-can force it to give you a FITS image by clicking on "FITS" in the
-upper left of the coverage image. It will select a FITS image
-corresponding to your current target. 
-</UL>
-
-<strong>Automatic changes</strong><P>
-FITS images are best for small regions of the sky. HiPS images are
-best for large regions of sky. Aitoff projections are best for
-viewing the entire sky at once. If you tick the "Auto" box and then
-zoom in or out, the viewer will automatically toggle between image
-types as needed. Zoom in enough, and it will swap from HiPS to
-FITS. Zoom out again enough, and it will swap from FITS to HiPS.<P>
-
-Note that if you swap between HiPS and FITS and back again, it
-will include a region on the HiPS image that is the footprint of the
-FITS images you had just loaded. A label appears at the center of that
-footprint, which may be disconcerting if you are not zoomed out enough
-to see the region itself. Here is an example, zoomed out so it is
-clear what is going on:<br>
-<img src="img/lingeringfootprint.png"> <P>
-
-
-<strong>Coordinates</strong><P>
-
-The drop-down menu allows you to select between coordinate systems.
-Used in conjunction with the image readout and/or the coordinate
-layer button (both described above), you can change what coordinate
-system it uses.<P>
-
-
-
-&nbsp;<P>
-
-
-<A NAME="catalogload"><h3>"Catalog" loading</h3></A>
-
-As discussed in the <a href="catalogs.html#owncatalogs">catalogs
-section</A>, you can upload several different types of files into the
-tool, including files that have images, or mixtures of images and
-tables.<P>
-
-If you load in a regions file but have no images loaded, the tool will
-"hold onto" the regions file until you give it an image on which to
-overlay the regions.<P>
-
-If you load in a mixture of images and tables, it will load both the
-images and tables into different window panes.<P>
-
-If you select multiple images, you have the option of loading them all
-into diferent frames or all into the same frame, where you can page
-through the images.
-
-Uploading a multi-HDU FITS file containing a mixture of tables and
-images. (Note that in this case, all planes are selected and the lower
-left gives a choice for loading all the images into one window or one
-extension per window.)<br>
-<img src="img/catuploadex3.png" width="100%"><P>
-
-and the result after loading that (note blue arrows to scroll through
-image planes):<P>
-<img src="img/catuploadex3-result.png" width="100%"><P>
-
-Uploading a FITS file with multiple image planes where only one plane
-is selected:<br>
-<img src="img/catuploadex4.png" width="100%"><P>
-This simply loads the image as if you have loaded an image (not a
-catalog) from disk.
-
-
-&nbsp;<P>
-
-
-
-
-
+<hr width="50%">
 
 </BODY>
 </HTML>

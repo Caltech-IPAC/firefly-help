@@ -27,65 +27,245 @@ export const toc_privacy = {
     href: 'firefly/privacy.html'
 };
 
-const toc_basics = {
-    id: 'basics',
-    title: 'Basic Features and Functions',
-    href: 'firefly/basics.html',
+const toc_overview = {
+    id: 'overview',
+    title: 'Overview',
+    href: 'firefly/overview.html',
     items: [
         {
-            id: 'basics.catalog',
-            title: 'Retrieving and Using Catalogs',
-            href: 'firefly/basics.html#irsacatalogs',
+            id: 'overview.terminology',
+            title: 'Terminology',
+            href: 'firefly/overview.html#terminology',
+        },
+        {
+            id: 'overview.tools',
+            title: 'Tools Overview',
+            href: 'firefly/overview.html#tools',
+        },
+        {
+            id: 'overview.drawer',
+            title: 'Adding Tabs',
+            href: 'firefly/overview.html#drawer',
+        },
+        {
+            id: 'overview.layout',
+            title: 'Changing Layout',
+            href: 'firefly/overview.html#layout',
+        },
+        {
+            id: 'overview.login',
+            title: 'User Login',
+            href: 'firefly/overview.html#login',
+        },
+        {
+            id: 'overview.help',
+            title: 'Getting More Help',
+            href: 'firefly/overview.html#help',
+        },
+    ]
+};
+const toc_upload = {
+    id: 'upload',
+    title: 'Upload',
+    href: 'firefly/upload.html',
+    items: [
+        {
+            id: 'catalogs.owncatalogs',
+            title: 'Introduction',
+            href: 'firefly/upload.html#intro',
             hidden: true,
         },
         {
-            id: 'basics.loadcatalog',
-            title: 'Upload Your Own Catalogs',
-            href: 'firefly/basics.html#owncatalogs',
-            hidden: true,
+            id: 'upload.intro',
+            title: 'Introduction',
+            href: 'firefly/upload.html#intro',
         },
         {
-            id: 'basics.searching',
-            title: 'Searching for Images',
-            href: 'firefly/basics.html#searching',
+            id: 'upload.filelocation',
+            title: 'File Location',
+            href: 'firefly/upload.html#filelocation',
         },
         {
-            id: 'basics.images',
-            title: 'Interacting with Images',
-            href: 'firefly/basics.html#images',
+            id: 'upload.catalogs',
+            title: 'Catalogs',
+            href: 'firefly/upload.html#catalogs',
         },
         {
-            id: 'basics.tables',
-            title: 'Interacting with Tables',
-            href: 'firefly/basics.html#tables',
+            id: 'upload.region',
+            title: 'Region Files',
+            href: 'firefly/upload.html#region',
         },
         {
-            id: 'basics.charts',
-            title: 'Creating Plots',
-            href: 'firefly/basics.html#charts',
+            id: 'upload.images',
+            title: 'Images',
+            href: 'firefly/upload.html#images',
+        },
+        {
+            id: 'upload.spectra',
+            title: 'Spectra',
+            href: 'firefly/upload.html#spectra',
+        },
+        {
+            id: 'upload.moc',
+            title: 'MOC Files',
+            href: 'firefly/upload.html#moc',
+        },
+        {
+            id: 'upload.datalink',
+            title: 'Data Link Files',
+            href: 'firefly/upload.html#datalink',
+        },
+        {
+            id: 'upload.uws',
+            title: 'UWS Job Files',
+            href: 'firefly/upload.html#uws',
+        },
+    ]
+};
+
+const toc_download = {
+    id: 'download',
+    title: 'Download',
+    href: 'firefly/download.html',
+    items: [
+        {
+            id: 'download.intro',
+            title: 'Introduction',
+            href: 'firefly/download.html#intro',
+        },
+        {
+            id: 'download.images',
+            title: 'Images',
+            href: 'firefly/download.html#images',
+        },
+        {
+            id: 'download.tables',
+            title: 'Tables',
+            href: 'firefly/download.html#tables',
+        },
+        {
+            id: 'download.plots',
+            title: 'Plots',
+            href: 'firefly/download.html#plots',
+        },
+        {
+            id: 'download.preparedownload',
+            title: 'Prepare Download',
+            href: 'firefly/download.html#preparedownload',
+        },
+        {
+            id: 'download.filelocation',
+            title: 'File Location',
+            href: 'firefly/download.html#filelocation',
+        },
+        {
+            id: 'download.bgmon',
+            title: 'Background Monitor',
+            href: 'firefly/download.html#bgmon',
         },
         {
             id: 'basics.bgmon',
             title: 'Background Monitor',
-            href: 'firefly/basics.html#bgmon',
+            href: 'firefly/download.html#bgmon',
+            hidden: true,
         },
         {
-            id: 'basics.rearranging',
-            title: 'Rearranging Panes',
-            href: 'firefly/basics.html#rearranging',
+            id: 'basics.bgJobInfo',
+            title: 'Background Job Info',
+            href: 'firefly/download.html#bgmon',
+            hidden: true,
+        },
+    ]
+};
+
+const toc_images = {
+    id: 'images',
+    title: 'Images',
+    href: 'firefly/images.html',
+    items: [
+        {
+            id: 'basics.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/images.html#3-color',
+            hidden: true,
+        },
+        {
+            id: 'basics.hips',
+            title: 'HiPS Images',
+            href: 'firefly/images.html#hips',
+            hidden: true,
+        },
+        {
+            id: 'basics.searching',
+            title: 'Loading Images',
+            href: 'firefly/images.html#searching',
+            hidden: true,
+        },
+        {
+            id: 'images.loading',
+            title: 'Loading Images',
+            href: 'firefly/images.html#searching',
+        },
+        {
+            id: 'images.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/images.html#3-color',
+        },
+        {
+            id: 'images.hips',
+            title: 'HiPS Images: Information',
+            href: 'firefly/images.html#hips',
+        },
+        {
+            id: 'images.hipssearch',
+            title: 'Searching for HiPS Images',
+            href: 'firefly/images.html#hipssearch',
+        },
+        {
+            id: 'images.adding',
+            title: 'Adding new Images',
+            href: 'firefly/images.html#adding',
+        },
+        {
+            id: 'images.coverage',
+            title: 'Coverage Image',
+            href: 'firefly/images.html#coverage',
+        },
+        {
+            id: 'images.autozoom',
+            title: 'Automatic FITS-HiPS-Aitoff Transitions',
+            href: 'firefly/images.html#autozoom',
         },
     ]
 };
 
 const toc_visualization = {
     id: 'visualization',
-    title: 'Visualization',
+    title: 'Visualization Tools',
     href: 'firefly/visualization.html',
     items: [
-        {
+         {
             id: 'visualization.imageoptions',
             title: 'Image Toolbar',
             href: 'firefly/visualization.html#toolbar',
+            hidden: true,
+        },
+        {
+            id: 'visualization.fitsDownloadOptions',
+            title: 'Save Image',
+            href: 'firefly/visualization.html#fitsDownloadOptions',
+            hidden: true,
+        },
+        {
+            id: 'visualization.saveimage',
+            title: 'Save Image',
+            href: 'firefly/visualization.html#saveimage',
+            hidden: true,
+        },
+        {
+            id: 'visualization.zoomin',
+            title: 'zoomin',
+            href: 'firefly/visualization.html#zoomin',
             hidden: true,
         },
         {
@@ -119,19 +299,19 @@ const toc_visualization = {
             hidden: true,
         },
         {
-            id: 'visualization.saveimage',
-            title: 'Save Image',
-            href: 'firefly/visualization.html#saveimage',
-            hidden: true,
-        },
-        {
-            id: 'visualization.zoomin',
-            title: 'zoomin',
-            href: 'firefly/visualization.html#zoomin',
+            id: 'visualize.ds9.upload',
+            title: 'ds9 Regions',
+            href: 'firefly/visualization.html#ds9regions',
             hidden: true,
         },
         {
             id: 'visualization.colortable',
+            title: 'Color Table',
+            href: 'firefly/visualization.html#colortable',
+            hidden: true,
+        },
+        {
+            id: 'visualization.advanceColorPanel',
             title: 'Color Table',
             href: 'firefly/visualization.html#colortable',
             hidden: true,
@@ -143,6 +323,18 @@ const toc_visualization = {
             hidden: true,
         },
         {
+            id: 'visualization.modifyColorStretchSingleBand',
+            title: 'Color Stretches',
+            href: 'firefly/visualization.html#stretches',
+            hidden: true,
+        },
+        {
+            id: 'visualization.modifyColorStretch3C',
+            title: 'Color Stretches',
+            href: 'firefly/visualization.html#stretches',
+            hidden: true,
+        },
+        {
             id: 'visualization.symbolpicker',
             title: 'Symbol Picker',
             href: 'firefly/visualization.html#symbolpicker',
@@ -150,7 +342,7 @@ const toc_visualization = {
         },
         {
             id: 'visualization.fitsViewer',
-            title: 'The FITS/HiPS viewer',
+            title: 'The FITS/HiPS Viewer',
             href: 'firefly/visualization.html#fitsViewer',
         },
         {
@@ -159,40 +351,15 @@ const toc_visualization = {
             href: 'firefly/visualization.html#imageinfo',
         },
         {
-            id: 'visualization.toolbar',
-            title: 'Image Toolbar',
-            href: 'firefly/visualization.html#toolbar',
-        },
-        {
-            id: 'visualization.newimage',
-            title: 'New Image',
-            href: 'firefly/visualization.html#newimage',
-        },
-        {
-            id: 'visualization.stretches',
-            title: 'Color Stretches',
-            href: 'firefly/visualization.html#stretches',
-        },
-        {
-            id: 'visualization.hipsViewer',
-            title: 'Specific HiPS Features',
-            href: 'firefly/visualization.html#hipsViewer',
-        },
-        {
-            id: 'visualization.footprints',
-            title: 'Footprints',
-            href: 'firefly/visualization.html#footprints',
-        },
-        {
             id: 'visualization.breakingout',
-            title: 'Breaking out of the pane',
+            title: 'Breaking Out of the Pane',
             href: 'firefly/visualization.html#breakingout',
         },
         {
             id: 'visualization.loaded-images',
             title: 'Image Navigation',
             href: 'firefly/visualization.html#imagenavigation',
-             hidden: true,
+            hidden: true,
         },
         {
             id: 'visualization.navigation',
@@ -200,30 +367,56 @@ const toc_visualization = {
             href: 'firefly/visualization.html#imagenavigation',
         },
         {
+            id: 'visualization.toolbar',
+            title: 'Image Toolbar',
+            href: 'firefly/visualization.html#toolbar',
+        },
+        {
+            id: 'visualization.stretches',
+            title: 'Color Stretches',
+            href: 'firefly/visualization.html#stretches',
+        },
+        {
+            id: 'visualization.hipsmenu',
+            title: 'HiPS Menu',
+            href: 'firefly/visualization.html#hipsmenu',
+        },
+        {
+            id: 'visualization.layers',
+            title: 'Image Layers',
+            href: 'firefly/visualization.html#layers',
+        },
+        {
             id: 'visualization.wcs',
             title: 'WCS Alignment',
             href: 'firefly/visualization.html#wcs',
         },
         {
-            id: 'visualization.coverage',
-            title: 'Coverage Image',
-            href: 'firefly/visualization.html#coverage',
+            id: 'visualization.extraction',
+            title: 'Extraction Tools',
+            href: 'firefly/visualization.html#extraction',
         },
         {
-            id: 'visualization.fitships',
-            title: 'Automatic FITS-HiPS-Aitoff Transitions',
-            href: 'firefly/visualization.html#autozoom',
+            id: 'visualization.selectregion',
+            title: 'Region Selection',
+            href: 'firefly/visualization.html#selectregion',
+        },
+        {
+            id: 'visualization.hipsViewer',
+            title: 'Specific HiPS Features',
+            href: 'firefly/visualization.html#hipsViewer',
+            hidden: true,
+        },
+        {
+            id: 'visualization.footprints',
+            title: 'Footprints',
+            href: 'firefly/visualization.html#footprints',
         },
         {
             id: 'visualization.changehips',
             title: 'Change HiPS',
             href: 'firefly/visualization.html#changehips',
             hidden: true,
-        },
-        {
-            id: 'visualization.catalogload',
-            title: 'Catalog loading',
-            href: 'firefly/visualization.html#catalogload',
         },
     ]
 };
@@ -305,16 +498,15 @@ const toc_catalogs = {
     href: 'firefly/catalogs.html',
     items: [
         {
-            id: 'basics.catalogs',
-            title: 'Catalogs',
-            href: 'firefly/tables.html#catalogs',
-             hidden: true,
-        },
-        {
             id: 'catalogs.catalogs',
             title: 'IRSA Catalogs',
             href: 'firefly/catalogs.html#catalogs',
-             hidden: true,
+            hidden: true,
+        },
+        {
+            id: 'catalogs.intro',
+            title: 'Introduction',
+            href: 'firefly/catalogs.html#intro',
         },
         {
             id: 'catalogs.irsacatalogs',
@@ -322,117 +514,8 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#irsacatalogs',
         },
         {
-            id: 'catalogs.nedcatalogs',
-            title: 'NED Objects',
-            href: 'firefly/catalogs.html#nedcatalogs',
-        },
-        {
-            id: 'catalogs.ned',
-            title: 'NED Catalogs',
-            href: 'firefly/catalogs.html#nedcatalogs',
-             hidden: true,
-        },
-        {
-            id: 'catalogs.owncatalogs',
-            title: 'Your Own Catalogs',
-            href: 'firefly/catalogs.html#owncatalogs',
-        },
-        {
-            id: 'catalogs.votap',
-            title: 'VO TAP Search',
-            href: 'firefly/catalogs.html#votap',
-        },
-        {
-            id: 'catalogs.moreconstraints',
-            title: 'VO TAP: More about constraints',
-            href: 'firefly/catalogs.html#moreconstraints',
-        },
-        {
-            id: 'catalogs.voscs',
-            title: 'VO SCS Search',
-            href: 'firefly/catalogs.html#voscs',
-        },
-        {
-            id: 'catalogs.vo',
-            title: 'VO SCS Search',
-            href: 'firefly/catalogs.html#voscs',
-             hidden: true,
-        },
-        {
-            id: 'tapSearches.form',
-            title: 'VO TAP Search',
-            href: 'firefly/catalogs.html#tapSearches.form',
-             hidden: true,
-        },
-        {
-            id: 'tapSearches.tapService',
-            title: 'Select TAP Service',
-            href: 'firefly/catalogs.html#tapSearches.tapService',
-             hidden: true,
-        },
-        {
-            id: 'tapSearches.selectBy',
-            title: 'Select Query Type',
-            href: 'firefly/catalogs.html#tapSearches.selectBy',
-             hidden: true,
-        },
-         {
-            id: 'tapSearches.selectTable',
-            title: 'Select Table',
-            href: 'firefly/catalogs.html#tapSearches.selectTable',
-             hidden: true,
-        },
-         {
-            id: 'tapSearches.constraints',
-            title: 'Enter Constraints',
-            href: 'firefly/catalogs.html#tapSearches.constraints',
-             hidden: true,
-        },
-         {
-            id: 'tapSearches.spatial',
-            title: 'Spatial Constraints',
-            href: 'firefly/catalogs.html#tapSearches.spatial',
-             hidden: true,
-        },
-         {
-            id: 'tapSearches.temporal',
-            title: 'Temporal Constraints',
-            href: 'firefly/catalogs.html#tapSearches.temporal',
-             hidden: true,
-        },
-         {
-            id: 'tapSearches.obsCore',
-            title: 'Observation Type and Source',
-            href: 'firefly/catalogs.html#tapSearches.obsCore',
-            hidden: true,
-         },
-         {
-            id: 'tapSearches.location',
-            title: 'Location',
-            href: 'firefly/catalogs.html#tapSearches.location',
-            hidden: true,
-         },
-         {
-            id: 'tapSearches.exposure',
-            title: 'Timing',
-            href: 'firefly/catalogs.html#tapSearches.exposure',
-            hidden: true,
-         },
-         {
-            id: 'tapSearches.wavelength',
-            title: 'Spectral Coverage',
-            href: 'firefly/catalogs.html#tapSearches.wavelength',
-            hidden: true,
-         },
-         {
-            id: 'tapSearches.adql',
-            title: 'ADQL',
-            href: 'firefly/catalogs.html#tapSearches.adql',
-             hidden: true,
-        },
-        {
             id: 'catalogs.interacting',
-            title: 'Interacting',
+            title: 'Interacting with Catalogs',
             href: 'firefly/catalogs.html#interacting',
         },
         {
@@ -442,6 +525,162 @@ const toc_catalogs = {
         },
     ]
 };
+const toc_othersearches = {
+    id: 'othersearches',
+    title: 'Other Searches',
+    href: 'firefly/othersearches.html',
+    items: [
+        {
+            id: 'tapSearches.form',
+            title: 'VO TAP Search Form',
+            href: 'firefly/othersearches.html#tapSearches.form',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.tapService',
+            title: 'Select TAP Service',
+            href: 'firefly/othersearches.html#tapSearches.tapService',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.selectBy',
+            title: 'Select Query Type',
+            href: 'firefly/othersearches.html#tapSearches.selectBy',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.selectTable',
+            title: 'Select Table',
+            href: 'firefly/othersearches.html#tapSearches.selectTable',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.constraints',
+            title: 'Enter Constraints',
+            href: 'firefly/othersearches.html#tapSearches.constraints',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.spatial',
+            title: 'Spatial Constraints',
+            href: 'firefly/othersearches.html#tapSearches.spatial',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.temporal',
+            title: 'Temporal Constraints',
+            href: 'firefly/othersearches.html#tapSearches.temporal',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.obsCore',
+            title: 'Observation Type and Source',
+            href: 'firefly/othersearches.html#tapSearches.obsCore',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.location',
+            title: 'Location',
+            href: 'firefly/othersearches.html#tapSearches.location',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.exposure',
+            title: 'Timing',
+            href: 'firefly/othersearches.html#tapSearches.exposure',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.wavelength',
+            title: 'Spectral Coverage',
+            href: 'firefly/othersearches.html#tapSearches.wavelength',
+            hidden: true,
+        },
+        {
+            id: 'tapSearches.adql',
+            title: 'ADQL',
+            href: 'firefly/othersearches.html#tapSearches.adql',
+            hidden: true,
+        },
+        {
+            id: 'catalogs.ned',
+            title: 'NED Catalogs',
+            href: 'firefly/othersearches.html#nedcatalogs',
+            hidden: true,
+        },
+        {
+            id: 'catalogs.nedcatalogs',
+            title: 'NED Catalogs',
+            href: 'firefly/othersearches.html#nedcatalogs',
+            hidden: true,
+        },
+        {
+            id: 'SearchRefinementTool',
+            title: 'Interactive Target Refinement',
+            href: 'firefly/othersearches.html#interactivetarget',
+            hidden: true,
+        },
+        {
+            id: 'othersearches.intro',
+            title: 'Introduction',
+            href: 'firefly/othersearches.html#intro',
+        },
+        {
+            id: 'othersearches.interactivetarget',
+            title: 'Interactive Target Refinement',
+            href: 'firefly/othersearches.html#interactivetarget',
+        },
+        {
+            id: 'othersearches.moreconstraints',
+            title: 'VO TAP Constraints',
+            href: 'firefly/othersearches.html#moreconstraints',
+        },
+        {
+            id: 'othersearches.moreconstraints2',
+            title: 'VO ObsCore Constraints',
+            href: 'firefly/othersearches.html#moreconstraints2',
+        },
+        {
+            id: 'othersearches.irsavotap',
+            title: 'VO TAP Search',
+            href: 'firefly/othersearches.html#irsavotap',
+        },
+        {
+            id: 'othersearches.obscore',
+            title: 'ObsCore Search',
+            href: 'firefly/othersearches.html#obscore',
+        },
+        {
+            id: 'othersearches.nedcatalogs',
+            title: 'NED Objects',
+            href: 'firefly/othersearches.html#nedcatalogs',
+        },
+        {
+            id: 'othersearches.voscs',
+            title: 'VO SCS',
+            href: 'firefly/othersearches.html#voscs',
+        },
+        {
+            id: 'hips.VisualSelection',
+            title: 'VO TAP Search',
+            href: 'firefly/othersearches.html#hips.visualselection',
+            hidden: true,
+        },
+        {
+            id: 'catalogs.vo',
+            title: 'VO SCS Search',
+            href: 'firefly/othersearches.html#voscs',
+            hidden: true,
+        },
+        {
+            id: 'catalogs.voscs',
+            title: 'VO SCS Search',
+            href: 'firefly/othersearches.html#voscs',
+            hidden: true,
+        },
+    ]
+};
+
 
 export const toc_plots = {
     id: 'plots',
@@ -539,37 +778,37 @@ export const toc_plots = {
 export const toc_spectra = {
     id: 'spectra',
     title: 'Spectra',
-    href: 'irsaviewer/spectra.html',
+    href: 'firefly/spectra.html',
     items: [
         {
             id: 'spectra.loading',
             title: 'Loading Spectra',
-            href: 'irsaviewer/spectra.html#loading',
+            href: 'firefly/spectra.html#loading',
         },
         {
             id: 'spectra.extracting',
             title: 'Extracting Spectra',
-            href: 'irsaviewer/spectra.html#extracting',
+            href: 'firefly/spectra.html#extracting',
         },
         {
             id: 'spectra.plotting',
             title: 'Plotting Spectra',
-            href: 'irsaviewer/spectra.html#plotting',
+            href: 'firefly/spectra.html#plotting',
         },
         {
             id: 'spectra.redshifting',
             title: 'Redshifting Spectra',
-            href: 'irsaviewer/spectra.html#redshifting',
+            href: 'firefly/spectra.html#redshifting',
         },
         {
             id: 'spectra.overplotting',
             title: 'Overplotting Spectra',
-            href: 'irsaviewer/spectra.html#overplotting',
+            href: 'firefly/spectra.html#overplotting',
         },
         {
             id: 'spectra.combining',
             title: 'Combining Spectra',
-            href: 'irsaviewer/spectra.html#combining',
+            href: 'firefly/spectra.html#combining',
         },
     ]
 };
@@ -584,12 +823,15 @@ export const toc_spectra = {
  */
 export const fireflyToc = [
     toc_about,
-    toc_basics,
+    toc_overview,
+    toc_images,
     toc_visualization,
     toc_tables,
     toc_catalogs,
+    toc_othersearches,
     toc_plots,
     toc_spectra,
+    toc_download,
     toc_user,
     toc_privacy
 ];

@@ -1,0 +1,312 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Upload" -->
+<HEAD>
+<TITLE>Firefly: Upload
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: Upload</h2>
+
+You can upload images and tables and even other kinds of files (like
+ds9 region files and MOC files!) to Firefly. <P>
+
+<em>Contents of page/chapter:</em><br>
++<A href="#intro">Introduction</A><br>
++<A href="#filelocation">File Location</A><br>
++<A href="#catalogs">Catalogs</A> <br> 
++<a href="#region">Region Files</A><br>
++<a href="#images">Images</A><br>
++<a href="#spectra">Spectra</A><br>
++<a href="#moc">MOC Files</A><br>
++<a href="#datalink">Data Link Files</A><br>
++<a href="#uws">UWS Job Files</A><br>
+<P>&nbsp;<P>
+
+<hr width="50%">
+<h3><a name="intro">Introduction</A></h3>
+
+<img src="img/uploadtab.png"> The "Upload" tab is one of the tabs that
+can appear on the top of the screen. <P>
+
+When you click on that tab, you get this:<br>
+<img src="img/uploadscreen.png" width="100%" style="border:3px solid
+gray">
+ <P>
+
+
+<hr width="50%">
+<h3><a name="filelocation">File Location</A></h3>
+
+The file that you are uploading can come from your own disk, the web
+(type or paste in the URL), or from the <a href="/docs/workspace/"
+target="_blank">IRSA Workspace <img src="img/jumpout.jpg"
+height="10"></A>. (Note that you need to be <a href="user.html">logged
+in</A> to use the Workspace.)<p>
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</A></strong> 
+<UL>
+<LI>If you have multiple HDUs in your file, you can load a plane, and
+then come back to the the "Uploads" tab to pick another HDU
+without having to upload it again. Or, you can load all of them at
+once.
+</UL>
+
+
+
+<hr width="50%">
+<h3><a name="catalogs">Catalogs</A></h3>
+
+
+You may upload a file from disk (you can use the system browser to
+identify the file, or drag-and-drop them into this window), from the
+web via a URL You can use the system browser to find your file
+(accessible by clicking "Browse"), or drag-and-drop your file into
+this part of the browser window.<P>
+
+The file can be in any of a number of formats, which we now briefly
+describe. <P>
+
+<DL>
+<DT><strong>IPAC table format (*.tbl)</strong>
+<DD> <a
+href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
+target="_blank">IPAC table format <img src="img/jumpout.jpg"
+height="10"></A> is plain text with a particular formatting. IRSA has a
+<a href="https://irsa.ipac.caltech.edu/applications/TblValidator/"
+target="_blank">table reformatting and validation service <img
+src="img/jumpout.jpg" height="10"></A> which may be helpful, or you
+can download just about any catalog you find through IRSA, and mimic
+that format.<P>
+
+If you want it recognized as a catalog, your table file MUST have RA
+and Dec values, and unless it is specified, it assumes J2000. (See
+also "<a href="#tabletips">tips and troubleshooting</A>", below.)<P>
+
+You can add a "SYMBOL" parameter to change the shape
+(X, SQUARE, CROSS, EMP_CROSS, DIAMOND, DOT) of catalog marks, e.g.:
+<pre>
+\SYMBOL = X
+</pre>
+<P>
+
+You can add a "DEFAULT_COLOR" parameter to assign a CSS color name or
+a HEX value to catalog marks, e.g., either of these two:
+<pre>
+\DEFAULT_COLOR = lightcyan
+\DEFAULT_COLOR = #00FF00
+</pre>
+You can find the <a
+href="https://www.w3schools.com/cssref/css_colors.asp"
+target="_blank">CSS color code or the CSS color HEX values <img
+src="img/jumpout.jpg" height="10"></A> online.<P> 
+
+<DT><strong>Comma-separated values (CSV) format (*.csv)</strong>
+<DD> CSV format is often accepted by spreadsheet programs, and most
+spreadsheet programs can output CSV. It is plain text, with values for
+each column separated by commas.<P>
+
+<dt><strong>Tab-separated values (TSV) format (*.tsv)</strong>
+<DD> TSV format is sometimes accepted (or generated) by spreadsheet
+programs, and sometimes in tabular data downloaded from journal
+articles from the 90s. It is plain text, with values for each column
+separated by tab characters. <P>
+
+<dt><strong>VOTable (*.vot)</strong>
+<dd>Virtual Observatory (VO) tables are a special case of XML tables.
+(All VO Tables are XML but not all XML are VO Tables.)
+It is a format developed by the International Virtual Observatory
+Alliance (more information <a
+href="https://www.ivoa.net/documents/VOTable/20191021/index.html"
+target="_blank">here <img src="img/jumpout.jpg" height="10"></A>). XML
+tables initially look to the human eye like it might be HTML, but they
+are easier to parse with code. There are packages in astropy that
+handle VO Tables.<P>
+
+<DT><strong>FITS files (*.fits)</strong>
+<DD> FITS tables can be loaded
+into this tool. Note that this tool is flexible enough to handle
+multiple header data units (HDUs), so that you can upload a FITS file
+that has both images and tables. You can specify which HDU you would
+like to load, and if you choose more than one image, it will give you
+a choice of loading them into individual frames or all into one frame.
+For more information on loading images this way, see <a
+href="#images">below</A>; there is another chapter entirely on <a
+href="images.html">images</A> in this tool in general.<P>
+
+</dl>
+
+
+Nearly every file you load will result in a preview of the file you
+have uploaded. Here are some example previews of catalog uploads:<P>
+
+Uploading a CSV file:<br>
+<img src="img/catuploadex1.png" width="60%" style="border:3px solid gray"><P>
+
+Uploading an IPAC table file:<br>
+<img src="img/catuploadex2.png" width="60%" style="border:3px solid gray"><P>
+
+Uploading an xml file:<br>
+<img src="img/catuploadex2.5.png" width="100%" style="border:3px solid gray"><P>
+
+The <a href="tables.html">tables</A> are then shown and, if <a
+href="catalogs.html">catalogs</A>, interacted with in the same way as
+the other catalogs described here.<P>
+
+
+<strong><a name="tabletips"><font color="orange">&#x26A0;</font> Tips and Troubleshooting</A></strong> 
+<UL>
+<LI>If you would like to have your catalog overlaid on an image,
+it needs to have RA and Dec columns. If the tool doesn't seem to
+recognize your RA and Dec columns, check your formatting, or try
+headers of "ra" instead of "RA" and "dec" instead of "DEC" or "Dec".
+If you have columns like "_RA2000" and "_DE2000", it's going to be
+confused. 
+<LI>Unless specified, the tool assumes any coordinates you give it are
+J2000.
+<LI>If there are no discernible positions in the uploaded file, it
+will still let you plot columns from the file after you've loaded it;
+it just can't overlay things on images in that case.
+</UL>
+
+
+
+<hr width="50%">
+<h3><a name="region">Region Files</A></h3>
+
+<a href="http://ds9.si.edu/doc/ref/region.html" target="_blank">DS9
+<img src="img/jumpout.jpg" height="10"></A> is a popular program for
+visualizing FITS files. It uses a file format for storing image
+overlays called region files. IRSA Viewer can write and read DS9
+region files. Usually, you would read regions files from the <a
+href="visualization.html#ds9regions">image toolbar</A>, but you can
+also upload region files via this upload tab. <P>
+
+If you upload a region file here, the tool will just assume that you
+meant to upload it via the image toolbar and overlay it on your
+image(s). If you don't have an image loaded, it will warn you.<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>If you want to overlay sources from a catalog, it is generally better
+to actually create a catalog (as above) and upload/overlay that,
+rather than a region file; you have more flexibility with what you can
+do, how you can interact with a catalog, than you can with a region
+file.<P>
+</UL>
+
+
+
+<hr width="50%">
+<h3><a name="images">Images</A></h3>
+
+You can upload single- or multi-plane FITS files into the tool, as
+well as multi-HDU FITS files. Again, it will give you a preview of
+what it thinks you are uploading. For multi-plane or multi-HDU files,
+you can select what portion(s) to upload.<P>
+
+Uploading a simple FITS file:<br>
+<img src="img/catuploadfits.png" width="60%" style="border:3px solid gray"><P>
+
+Uploading a FITS file with many image extensions, with just one
+selected:<br>
+<img src="img/catuploadfitsext2.png" width="60%" style="border:3px solid gray"><P>
+
+Uploading a FITS file with mixed extensions, with just one image
+plane selected:<br>
+<img src="img/catuploadfitsext.png" width="60%" style="border:3px solid gray"><P>
+
+
+Uploading a multi-HDU FITS file containing a mixture of tables and
+images. (Note that in this case, all planes are selected and the lower
+left gives a choice for loading all the images into one window or one
+extension per window. Note also that it has the option of attempting
+to interpret tables as <a href="spectra.html">spectra</A>.)<br>
+<img src="img/catuploadex3.png" width="60%" style="border:3px solid gray"><P>
+
+
+After you verify that the tool is reading your file correctly, and, if
+applicable, selected the HDU(s) you wish to load, click "Load" to load
+the file into the tool.<P>
+
+
+The <a href="images.html">images</A> are then shown and <a
+href="visualization.html">interacted with</A> in the same way as the
+other images described here.<P>
+
+
+<hr width="50%">
+<h3><a name="spectra">Spectra</A></h3>
+
+You can upload tables and tell the tool to attempt to load them in and
+treat them as <a href="spectra.html">spectra</A>. Again, it will give
+you a preview of what it thinks you are uploading. <P>
+
+
+Uploading an IPAC tbl file that is a spectrum included, asking the tool to
+interpret the table as a spectrum:<br>
+<img src="img/catuploadexspec2.png" width="60%" style="border:3px solid gray"><P>
+
+Uploading a FITS file that has a spectrum included, asking the tool to
+interpret the table as a spectrum:<br>
+<img src="img/catuploadexspec.png" width="60%" style="border:3px solid gray"><P>
+
+The <a href="spectra.html">spectra</A> are then shown and interacted
+with in the same way as the other spectra described here.<P>
+
+
+<hr width="50%">
+<h3><a name="moc">MOC Files</A></h3>
+
+<A href="https://ivoa.net/documents/MOC/" target="_blank">Multi-order
+coverage map (MOC) <img src="img/jumpout.jpg" height="10"></A> files
+tell you where data exist (or don't exist). You can upload these kinds
+of files into this tool, and you can choose to view them as a table or
+as an overlay on HiPS files. <P>
+
+You can also load a MOC file <a
+href="visualization.html#hipsmenu">from the HiPS/MOC menu</A> once you
+have a HiPS image loaded.<P>
+
+
+A preview when uploading a MOC file :<br>
+<img src="img/catuploadmoc.png" width="60%" style="border:3px solid gray"><P>
+
+
+<hr width="50%">
+<h3><a name="datalink">Data Link Files</A></h3>
+
+A <A href="https://www.ivoa.net/documents/DataLink/"
+target="_blank">DataLink <img src="img/jumpout.jpg" height="10"></A>
+is a protocol developed by the International Virtual Observatory
+Alliance to specify more sophisticated linking of metadata and
+services to the data itself. You might use this kind of file to
+describe linkages to light curves or a light curve service from a
+single-epoch catalog. These kinds of files can also be loaded into
+this tool.<P>
+
+
+<hr width="50%">
+<h3><a name="uws">UWS Job Files</A></h3>
+
+A <A href="https://www.ivoa.net/documents/UWS/"
+target="_blank">Universal Worker Service (UWS) Pattern 
+<img src="img/jumpout.jpg" height="10"></A>
+is a protocol developed by the International Virtual Observatory
+Alliance to manage asynchronous execution of jobs on a service.  These
+kinds of files can also be loaded into this tool.<P>
+
+
+
+
+
+<hr width="50%">
+
+</BODY>
+</HTML>
