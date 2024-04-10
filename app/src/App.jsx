@@ -13,6 +13,7 @@ import Next from '@mui/icons-material/NavigateNextRounded';
 import Close from '@mui/icons-material/KeyboardDoubleArrowLeftRounded';
 import Open from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
 import Pdf from '@mui/icons-material/PictureAsPdfOutlined';
+import Info from '@mui/icons-material/InfoOutlined';
 
 export function App({tableOfContent, showHidden=false}) {
 
@@ -57,19 +58,19 @@ export function App({tableOfContent, showHidden=false}) {
 
             <div className='inline-flex flex-grow overflow-hidden'>
                 <div className='flex flex-col'>
-                    <Navigator {...{selNode, treeRoot, selectedKeys, defaultExpandedKeys, treeMap, tableOfContent, showHidden, expandedKeys, setExpandedKeys, setHelpId}}/>
+                    <SideBar {...{selNode, treeRoot, selectedKeys, defaultExpandedKeys, treeMap, tableOfContent, showHidden, expandedKeys, setExpandedKeys, setHelpId}}/>
                 </div>
 
                 <div className='flex-grow relative min-w-[100px]'>
                     <iframe id='help-content' title='HelpFrame' src={href} onLoad={() => styleIframe(mode, 'help-content')} className='w-full h-full mx-1 dark:bg-black dark:text-white'/>
                 </div>
             </div>
-            <VersionInfo/>
+            <div id='VersionPopup'/>
         </div>
     );
 }
 
-function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKeys, expandedKeys=[], setExpandedKeys, setHelpId}) {
+function SideBar({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKeys, expandedKeys=[], setExpandedKeys, setHelpId, children}) {
 
     const [open, setOpen] = useState(true);
 
@@ -107,21 +108,8 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
 
     if (open) {
         return (
-            <NavBar className='min-w-60 w-[20vw]'>
-                <div className='inline-flex mb-2 p-1 w-full justify-between shadow bg-slate-300 dark:bg-slate-700'>
-                    <div className='inline-flex space-x-4'>
-                        <div className='inline-flex'>
-                            <Button onClick={() => expandAll(true)}><Expand title='Expand All'/></Button>
-                            <Button onClick={() => expandAll(false)}><Collaspe title='Collapse All'/></Button>
-                        </div>
-                        <div className='inline-flex'>
-                            <Button onClick={previous}><Previous title='Previous'/></Button>
-                            <Button onClick={next}><Next title='Next'/></Button>
-                        </div>
-                        <Button onClick={() => false} className='mx-6'><a href='help.pdf' target='help_pdf'><Pdf title='View PDF'/></a></Button>
-                    </div>
-                    <Button onClick={() => setOpen(false)}><Close title='Close Navigator'/></Button>
-                </div>
+            <SidePanel className='min-w-60 w-[20vw]'>
+                <TopNav{...{expandAll, previous, next, setOpen}}/>
                 <div className='relative grow'>
                     <div className='absolute inset-0 overflow-auto '>
                         <Tree showLine {...pickBy({onSelect, expandedKeys, onExpand, selectedKeys, defaultExpandedKeys, autoExpandParent: true})} >
@@ -129,45 +117,93 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
                         </Tree>
                     </div>
                 </div>
-            </NavBar>
+                <VersionInfo/>
+            </SidePanel>
         );
     } else {
         return (
-            <NavBar className='w-8'>
-                <div className='flex flex-col space-y-4'>
-                    <Button onClick={() => setOpen(true)}><Open title='Open Navigator'/></Button>
-                    <div>
-                        <Button onClick={previous}><Previous title='Previous'/></Button>
-                        <Button onClick={next}><Next title='Next'/></Button>
-                    </div>
-                    <Button onClick={() => false}><a href='help.pdf' target='help_pdf'><Pdf title='View PDF'/></a></Button>
-                </div>
-            </NavBar>
+            <SidePanel className='w-8 justify-between pb-3'>
+                <SideNav {...{setOpen, previous, next}}/>
+                <Button onClick={showVersionPopup}><Info title='Version Information'/></Button>
+            </SidePanel>
         );
     }
+}
+
+function TopNav({expandAll, previous, next, setOpen}) {
+    return (
+        <div className='inline-flex mb-2 p-1 w-full justify-between shadow bg-slate-300 dark:bg-slate-700'>
+            <div className='inline-flex space-x-4'>
+                <div className='inline-flex'>
+                    <Button onClick={() => expandAll(true)}><Expand title='Expand All'/></Button>
+                    <Button onClick={() => expandAll(false)}><Collaspe title='Collapse All'/></Button>
+                </div>
+                <div className='inline-flex'>
+                    <Button onClick={previous}><Previous title='Previous'/></Button>
+                    <Button onClick={next}><Next title='Next'/></Button>
+                </div>
+                <Button onClick={() => false} className='mx-6'><a href={getPdfUrl()} target='help_pdf'><Pdf title='View PDF'/></a></Button>
+            </div>
+            <Button onClick={() => setOpen(false)}><Close title='Close Navigator'/></Button>
+        </div>
+    );
+}
+
+function SideNav({setOpen, previous, next}) {
+    return (
+        <div className='flex flex-col space-y-4'>
+            <Button onClick={() => setOpen(true)}><Open title='Open Navigator'/></Button>
+            <div>
+                <Button onClick={previous}><Previous title='Previous'/></Button>
+                <Button onClick={next}><Next title='Next'/></Button>
+            </div>
+            <Button onClick={() => false}><a href={getPdfUrl()} target='help_pdf'><Pdf title='View PDF'/></a></Button>
+        </div>
+    );
 }
 
 function VersionInfo() {
 
     const vTag = process.env.REACT_APP_VersionTag || 'not set';
+    return (
+        <div className='flex-col px-3 italic text-gray-500' onClick={showVersionPopup}>
+            {`${vTag}`}
+        </div>
+    );
+}
+
+function showVersionPopup () {
+    const div = document.getElementById('VersionPopup');
+    ReactDOM.render( <VersionPopup/>, div);
+};
+
+function VersionPopup () {
+    const vTag = process.env.REACT_APP_VersionTag || 'not set';
     const vCommit = process.env.REACT_APP_BuildCommit || 'not set';
     const buildTime = process.env.REACT_APP_BuildTime || 'not set';
 
-    const hideVersionPopup = () => {
-        const div = document.getElementById('VersionPopup');
-        ReactDOM.unmountComponentAtNode(div);
-    };
-    const showVersionPopup = () => {
-        const div = document.getElementById('VersionPopup');
-        ReactDOM.render( <VersionPopup {...{vTag, vCommit, buildTime, hideVersionPopup}}/>, div);
-    };
+    useEffect(() => {
+        const hideVersionPopup = () => {
+            const div = document.getElementById('VersionPopup');
+            ReactDOM.unmountComponentAtNode(div);
+        };
+
+        document.addEventListener('click', hideVersionPopup);
+        return () => document.removeEventListener('click', hideVersionPopup);
+    }, []);
 
     return (
-        <div className='mx-3 italic text-gray-500' onClick={showVersionPopup}>
+        <div className="flex flex-col px-3 text-sm shadow fixed bottom-0 left-0 right-0 bg-slate-100 dark:bg-slate-800" >
             {`${vTag}`}
-            <div id='VersionPopup'/>
+            <div className='inline-flex space-x-4'><div>Commit Hash: </div><div className='font-bold'>{vCommit}</div></div>
+            <div className='inline-flex space-x-4'><div>Build On: </div><div className='font-bold'>{buildTime}</div></div>
         </div>
     );
+}
+
+function getPdfUrl() {
+    const id = process.env.REACT_APP_BuildCommit || new Date().toISOString;
+    return `help.pdf?id=${id}`;
 }
 
 function convertToTreeNode(key, node, showHidden) {
@@ -204,21 +240,6 @@ function flattenTree(node={}, map={}) {
         flattenTree(mnode, map);
     });
     return map;
-}
-
-
-function VersionPopup ({vTag, vCommit, buildTime, hideVersionPopup}) {
-    useEffect(() => {
-        document.addEventListener('click', hideVersionPopup);
-        return () => document.removeEventListener('click', hideVersionPopup);
-    }, [hideVersionPopup]);
-
-    return (
-        <div className="grid mt-10">
-            <div className='inline-flex space-x-4'><div>Commit Hash: </div><div className='font-bold'>{vCommit}</div></div>
-            <div className='inline-flex space-x-4'><div>Build On: </div><div className='font-bold'>{buildTime}</div></div>
-        </div>
-    );
 }
 
 function getSelNode(helpId, treeMap) {
@@ -260,7 +281,7 @@ function Button({ onClick, className, children }) {
     );
 }
 
-function NavBar({children, className}) {
+function SidePanel({children, className}) {
     return(
         <div className={`${className} flex flex-col flex-grow transition-all max-w-96 border border-gray-200 dark:border-gray-900 bg-gradient-to-bl from-slate-200 dark:from-slate-900`}>
             {children}
