@@ -1,7 +1,7 @@
 version: '3'
 services:
   firefly:
+    image: ipac/firefly-help:${BUILD_TAG:-latest}
     build: .
-    volumes:
-      - ./:/src:delegated
-    command: ["/bin/bash", "-c", "gradle fi:dockerBuild"]
+    ports:
+      - "3000:80"
