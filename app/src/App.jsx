@@ -122,9 +122,13 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
                     </div>
                     <Button onClick={() => setOpen(false)}><Close title='Close Navigator'/></Button>
                 </div>
-                <Tree showLine {...pickBy({onSelect, expandedKeys, onExpand, selectedKeys, defaultExpandedKeys, autoExpandParent: true})} >
-                    {treeRoot}
-                </Tree>
+                <div className='relative grow'>
+                    <div className='absolute inset-0 overflow-auto '>
+                        <Tree showLine {...pickBy({onSelect, expandedKeys, onExpand, selectedKeys, defaultExpandedKeys, autoExpandParent: true})} >
+                            {treeRoot}
+                        </Tree>
+                    </div>
+                </div>
             </NavBar>
         );
     } else {
@@ -258,7 +262,7 @@ function Button({ onClick, className, children }) {
 
 function NavBar({children, className}) {
     return(
-        <div className={`${className} transition-all overflow-auto max-w-96 flex-grow border border-gray-200 dark:border-gray-900 bg-gradient-to-bl from-slate-200 dark:from-slate-900`}>
+        <div className={`${className} flex flex-col flex-grow transition-all max-w-96 border border-gray-200 dark:border-gray-900 bg-gradient-to-bl from-slate-200 dark:from-slate-900`}>
             {children}
         </div>
     )
