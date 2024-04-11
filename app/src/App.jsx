@@ -1,20 +1,18 @@
 import React, {useEffect, useState} from 'react';
+import ReactDOM from 'react-dom';
 import {get, pickBy} from 'lodash';
 
 import Tree, { TreeNode } from 'rc-tree';
 import 'rc-tree/assets/index.css';
 
-import './App.css';
-import ReactDOM from 'react-dom';
 
-import expandIco from './images/expand.png';
-import collapseIco from './images/collapse.png';
-import previousIco from './images/previous.png';
-import nextIco from './images/next.png';
-import openIco from './images/open.png';
-import closeIco from './images/close.png';
-import pdfIco from './images/pdf.png';
-
+import Expand from '@mui/icons-material/UnfoldMore';
+import Collaspe from '@mui/icons-material/UnfoldLess';
+import Previous from '@mui/icons-material/NavigateBeforeRounded';
+import Next from '@mui/icons-material/NavigateNextRounded';
+import Close from '@mui/icons-material/KeyboardDoubleArrowLeftRounded';
+import Open from '@mui/icons-material/KeyboardDoubleArrowRightRounded';
+import Pdf from '@mui/icons-material/PictureAsPdfOutlined';
 
 export function App({tableOfContent, showHidden=false}) {
 
@@ -22,12 +20,16 @@ export function App({tableOfContent, showHidden=false}) {
 
     const [helpId, setHelpId] = useState(idFromUrl());     // using a useState hook
     const [expandedKeys=[], setExpandedKeys] = useState();
+    const [mode, setMOde] = useState(false);
 
     useEffect(() => {
         window.onpopstate = (ev) => {
             setHelpId(idFromUrl());
         }
-    });
+        const urlParams = new URLSearchParams(window.location.search);
+        const mode = urlParams.get('mode');
+        setMOde(mode || 'light');
+    }, []);
 
     const treeRoot = convertToTreeNode('0', tableOfContent, showHidden);
     const treeMap = flattenTree({items: tableOfContent});
@@ -41,22 +43,25 @@ export function App({tableOfContent, showHidden=false}) {
         setExpandedKeys([...expandedKeys, pkey]);
     }
 
+    const modeClz = mode === 'dark' ? 'dark' : '';
+
     return (
-        <div className = 'App'>
+        <div className = {`${modeClz} flex flex-col w-full dark:bg-black dark:text-white`}>
             {title &&
-                <div className='App-header'>
-                    <div style={{fontSize: 'x-large'}}>
+                <div className='inline-flex p-2 justify-center'>
+                    <div className='text-3xl'>
                         {title}
                     </div>
                 </div>
             }
 
-            <div className='App-main'>
+            <div className='inline-flex flex-grow overflow-hidden'>
+                <div className='flex flex-col'>
+                    <Navigator {...{selNode, treeRoot, selectedKeys, defaultExpandedKeys, treeMap, tableOfContent, showHidden, expandedKeys, setExpandedKeys, setHelpId}}/>
+                </div>
 
-                <Navigator {...{selNode, treeRoot, selectedKeys, defaultExpandedKeys, treeMap, tableOfContent, showHidden, expandedKeys, setExpandedKeys, setHelpId}}/>
-
-                <div className='TOC-view'>
-                    <iframe title='HelpFrame' className='HelpFrame' src={href}/>
+                <div className='flex-grow relative min-w-[100px]'>
+                    <iframe id='help-content' title='HelpFrame' src={href} onLoad={() => styleIframe(mode, 'help-content')} className='w-full h-full mx-1 dark:bg-black dark:text-white'/>
                 </div>
             </div>
             <VersionInfo/>
@@ -102,32 +107,42 @@ function Navigator({selNode, treeMap, treeRoot, selectedKeys, defaultExpandedKey
 
     if (open) {
         return (
-            <div className='TOC'>
-                <div className='TOC-toolbar'>
-                    <div style={{display: 'inline-flex'}}>
-                        <div className='button' onClick={() => expandAll(true)}><img alt='' title='Expand All' src={expandIco}/></div>
-                        <div className='button' onClick={() => expandAll(false)}><img alt='' title='Collapse All' src={collapseIco}/></div>
-                        <div className='button' onClick={previous} style={{marginLeft: 10}}><img alt='' title='Previous' src={previousIco}/></div>
-                        <div className='button' onClick={next}><img alt='' title='Next' src={nextIco}/></div>
-                        <div className='button' onClick={() => false} style={{margin: '0 10px'}}><a href='help.pdf' target='help_pdf'><img alt='' title='View PDF' src={pdfIco}/></a></div>
+            <NavBar className='min-w-60 w-[20vw]'>
+                <div className='inline-flex mb-2 p-1 w-full justify-between shadow bg-slate-300 dark:bg-slate-700'>
+                    <div className='inline-flex space-x-4'>
+                        <div className='inline-flex'>
+                            <Button onClick={() => expandAll(true)}><Expand title='Expand All'/></Button>
+                            <Button onClick={() => expandAll(false)}><Collaspe title='Collapse All'/></Button>
+                        </div>
+                        <div className='inline-flex'>
+                            <Button onClick={previous}><Previous title='Previous'/></Button>
+                            <Button onClick={next}><Next title='Next'/></Button>
+                        </div>
+                        <Button onClick={() => false} className='mx-6'><a href='help.pdf' target='help_pdf'><Pdf title='View PDF'/></a></Button>
                     </div>
-                    <div className='button' onClick={() => setOpen(false)}><img alt='' title='Close Navigator' src={closeIco}/></div>
+                    <Button onClick={() => setOpen(false)}><Close title='Close Navigator'/></Button>
                 </div>
-                <Tree showLine {...pickBy({onSelect, expandedKeys, onExpand, selectedKeys, defaultExpandedKeys, autoExpandParent: true})} >
-                    {treeRoot}
-                </Tree>
-            </div>
+                <div className='relative grow'>
+                    <div className='absolute inset-0 overflow-auto '>
+                        <Tree showLine {...pickBy({onSelect, expandedKeys, onExpand, selectedKeys, defaultExpandedKeys, autoExpandParent: true})} >
+                            {treeRoot}
+                        </Tree>
+                    </div>
+                </div>
+            </NavBar>
         );
     } else {
         return (
-            <div className='TOC'>
-                <div className={'navVertical'}>
-                    <div className='button' onClick={() => setOpen(true)}><img alt='' title='Open' src={openIco}/></div>
-                    <div className='button' onClick={previous}><img alt='' title='Previous' src={previousIco}/></div>
-                    <div className='button' onClick={next}><img alt='' title='Next' src={nextIco}/></div>
-                    <div className='button' onClick={() => false} style={{marginTop: 10, border: 'none'}}><a href='help.pdf' target='help_pdf'><img alt='' title='View PDF' src={pdfIco}/></a></div>
+            <NavBar className='w-8'>
+                <div className='flex flex-col space-y-4'>
+                    <Button onClick={() => setOpen(true)}><Open title='Open Navigator'/></Button>
+                    <div>
+                        <Button onClick={previous}><Previous title='Previous'/></Button>
+                        <Button onClick={next}><Next title='Next'/></Button>
+                    </div>
+                    <Button onClick={() => false}><a href='help.pdf' target='help_pdf'><Pdf title='View PDF'/></a></Button>
                 </div>
-            </div>
+            </NavBar>
         );
     }
 }
@@ -148,7 +163,7 @@ function VersionInfo() {
     };
 
     return (
-        <div className='versionInfo' onClick={showVersionPopup}>
+        <div className='mx-3 italic text-gray-500' onClick={showVersionPopup}>
             {`${vTag}`}
             <div id='VersionPopup'/>
         </div>
@@ -199,9 +214,9 @@ function VersionPopup ({vTag, vCommit, buildTime, hideVersionPopup}) {
     }, [hideVersionPopup]);
 
     return (
-        <div style={{display: 'grid', marginTop: 10}}>
-            <div className='verLine'><div>Commit Hash: </div><div className='verValue'>{vCommit}</div></div>
-            <div className='verLine'><div>Build On: </div><div className='verValue'>{buildTime}</div></div>
+        <div className="grid mt-10">
+            <div className='inline-flex space-x-4'><div>Commit Hash: </div><div className='font-bold'>{vCommit}</div></div>
+            <div className='inline-flex space-x-4'><div>Build On: </div><div className='font-bold'>{buildTime}</div></div>
         </div>
     );
 }
@@ -235,4 +250,43 @@ function getNextNode(helpId, treeMap) {
         snode = allNodes.slice(idx+1).find((n) => !n.hidden);
     }
     return snode || allNodes[0];
+}
+
+function Button({ onClick, className, children }) {
+    return (
+        <button onClick={onClick} className={` text-black font-bold dark:text-white hover:bg-gray-400 hover:shadow ${className} `}>
+            {children}
+        </button>
+    );
+}
+
+function NavBar({children, className}) {
+    return(
+        <div className={`${className} flex flex-col flex-grow transition-all max-w-96 border border-gray-200 dark:border-gray-900 bg-gradient-to-bl from-slate-200 dark:from-slate-900`}>
+            {children}
+        </div>
+    )
+}
+
+function styleIframe(mode, iframeId) {
+    const iframe = document.getElementById(iframeId);
+    const body = iframe?.contentWindow?.document?.body;
+
+    if (!body) return;
+
+    if (mode === 'dark') {
+        body.style.backgroundColor = 'black';
+        body.style.color = 'white';
+
+        const images = body.querySelectorAll('img');
+        images.forEach(img => {
+            img.style.filter = 'invert(1)';
+        });
+
+        const anchors = body.querySelectorAll('a');
+        anchors.forEach(a => {
+            a.style.color = '#6ab7ff';
+        });
+    }
+
 }

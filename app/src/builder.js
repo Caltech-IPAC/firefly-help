@@ -30,7 +30,7 @@ function build(outDir, toc) {
                        '</ul>';
 
     const tocHtml =   fs.readFileSync('./public/index.html', {encoding:'utf8', flag:'r'})
-                        .replace('<div id="app-root"></div>', tocSection)
+                        .replace('<div id="app-root" class="flex flex-grow overflow-hidden"/>', tocSection)
                         .replace('%REACT_APP_page_title%', process.env.REACT_APP_page_title);
 
     // generate table of contents
