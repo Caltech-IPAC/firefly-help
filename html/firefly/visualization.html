@@ -35,7 +35,6 @@ in which you might encounter them in the window.<P>
 +<A href="#imagenavigation">Image Navigation</A><br>
 +<A href="#toolbar">Image Toolbar</a><br>
 +<a href="#stretches">Color Stretches</A><br>
-+<a href="#hipsmenu">HiPS Menu</A><br>
 +<a href="#layers">Image Layers: Viewing/Changing the Layers on the Image</A><br>
 +<a href="#wcs">World Coordinate System (WCS) Alignment</A><br>
 +<a href="#extraction">Extraction Tools</A><br>
@@ -261,7 +260,7 @@ at the top of the "Status" column, tick the box next to "Success" and
 then click "filter." The failed images are removed all at once from
 the table and your display. Now, click the top of the "Wavelength"
 column. The table is sorted by wavelength, and the images in your
-display are as well.<P>
+display are sorted that way as well.<P>
 
 
 The "help" links in the far right of this table take you to a master
@@ -824,77 +823,6 @@ Follow-up ticket for scaling coefficients and help is https://jira.lsstcorp.org/
 
 
 
-&nbsp; <P>
-<hr width="50%">
-<h3><a name="hipsViewer">
-<a name="changehips">
-<a name="hipsmenu">HiPS Menu</A></A></A></h3>
-
-
-At the top of the HiPS image, there is a pull-down menu with some
-choices: <br>
-<img src="img/hipsmenu.png" style="border:3px solid gray"><P>
-
-This menu allows you to do two things: Change the HiPS Image, and add
-MOC overlays.<P>
-
-<DL>
-<DT><strong>Changing HiPS images</strong>
-<DD>The choices made by any given creator of a HiPS image may result
-in any particular region being saturated or too faint to see.  Color
-stretches are set by the creator of the HiPS map and cannot be
-changed; color tables can be somewhat changed by this tool, but that
-may be insufficient for your needs. If the HiPS map as shown does not
-suit your needs and you wish to change the HiPS image, click on the
-"HiPS/MOC" menu, and then click "Change HiPS". It brings up this
-pop-up:<br> <img src="img/changehips.png" width="100%" style="border:3px solid gray"> <p>
-Things to note:
-<UL>
-<LI>To select a new image, click on the row corresponding to the new
-HiPS image you want, and click "Change HiPS" on the bottom left. 
-<LI>To cancel without selecting a new image, click "Cancel."
-<LI>This is an interactive table, so all the <a
-href="tables.html#filters">filtering</A> and <a
-href="tables.html#columns">column manipulation</A> tools apply here
-too. You can filter down the columns to find the image you want to
-use.
-<LI>To learn more about each HiPS map, click on the i with the circle
-in the second column. It will spawn another window with standardized
-information about the HiPS map.
-<LI>By default, it shows HiPS maps corresponding to IRSA data
-collections. To see a more comprehensive list, unclick the box marked
-"IRSA Featured."
-</UL>
-<P>
-
-<dt><strong>Adding a MOC Overlay</strong>
-<dd>It is often useful to see what other data are available. Looking
-at a Herschel/PACS far-IR HiPS map? Overlay a Chandra MOC to see what
-X-ray data might be available to go with your IR data. Click on the
-"HiPS/MOC" menu, and then click "Add MOC Layer." It brings up this pop-up:<br> <img
-src="img/addmoclayer.png" width="100%" style="border:3px solid gray"> <p>
-Things to note:
-<UL>
-<LI>Coverage (the first column) is the fraction of the sky covered by
-that MOC.
-<LI>To select a new MOC, click on the row corresponding to the new
-MOC you want, and click "Add MOC" on the bottom left. 
-<LI>To cancel without selecting a new image, click "Cancel."
-<LI>This is an interactive table, so all the <a
-href="tables.html#filters">filtering</A> and <a
-href="tables.html#columns">column manipulation</A> tools apply here
-too. You can filter down the columns to find the image you want to
-use.
-<LI>By default, it shows MOCs likely to be most interesting for IRSA
-users. To see a more comprehensive list, unclick the box at the
-top left.
-<LI>If you have your own MOC FITS file, you may upload it via the
-"Use my MOC" tab on the top center.
-<LI>If you try to upload a MOC FITS file via the <a
-href="upload.html">upload tab</A>, it will behave as if you have
-uploaded it here.
-</UL>
-</dl>
 
 
 

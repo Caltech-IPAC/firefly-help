@@ -232,9 +232,9 @@ const toc_images = {
             href: 'firefly/images.html#coverage',
         },
         {
-            id: 'images.autozoom',
-            title: 'Automatic FITS-HiPS-Aitoff Transitions',
-            href: 'firefly/images.html#autozoom',
+            id: 'images.upperleft',
+            title: 'Upper Left HiPS menus',
+            href: 'firefly/images.html#upperleft',
         },
     ]
 };
@@ -375,11 +375,6 @@ const toc_visualization = {
             id: 'visualization.stretches',
             title: 'Color Stretches',
             href: 'firefly/visualization.html#stretches',
-        },
-        {
-            id: 'visualization.hipsmenu',
-            title: 'HiPS Menu',
-            href: 'firefly/visualization.html#hipsmenu',
         },
         {
             id: 'visualization.layers',

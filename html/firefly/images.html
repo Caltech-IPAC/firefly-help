@@ -32,7 +32,7 @@ chapter</A> for more information.<P>
 +<A href="#hipssearch">Searching for HiPS Images</A> <br>
 +<A href="#adding">Adding New Images</A> <br>
 +<a href="#coverage">Coverage Image</A><br>
-+<a href="#autozoom">Automatic FITS-HiPS-Aitoff Transitions</A><br>
++<a href="#upperleft">Upper Left HiPS menus</A><br>
 <P>&nbsp;<P>
 
 <hr width="50%">
@@ -511,9 +511,9 @@ tool; see the <a href="visualization.html">the visualization
 chapter</A> for much more about those tools.<P>
 
 The thing that makes a coverage image a little bit different, however,
-is that it can automatically adapt.  The next subsection covers more
-details about how it automatically changes to accomodate your needs
-and zoom level.<P>
+is that it can automatically adapt, even beyond what a HiPS image can
+intrinsically do.  The next subsection includes more details about how
+it can automatically change to accomodate your needs and zoom level.<P>
 
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>: 
 <UL>
@@ -533,91 +533,135 @@ image depends on the data product itself.)
 
 
 <hr width="50%">
-<h3><A NAME="autozoom"><A NAME="changing">Automatic FITS-HiPS-Aitoff Transitions</A></A></h3>
+<h3><A NAME="upperleft"><A NAME="changing">Upper Left HiPS menus</A></A></h3>
 
 
-<img src="img/coveragechoices1.png" width="40%"><img
-src="img/coveragechoices.png" width="40%"> <br>
-Coverage images can have several choices;
-it could look something like either of these screen snippets. In this
-section, we cover these choices from left to right.<P>
+In the upper left of the coverage image, there are two drop-down
+menus.<br>
+<img src="img/coveragechoices.png"> <p>
 
+The first drop-down menu looks like this. <br>
+<img src="img/coveragechoices1.png"><p>
+
+There are two sections here. 
 <DL>
-<dT>
-<strong>Type of image.</strong><P>
-<DD>
-The first set of buttons allows you to select the kind of image you
-currently are viewing.
+<DT>Under "Data Options", you can change what data are shown.
+<dd>
+<DL>
+<DT><strong>Change HiPS:</strong> Changing HiPS images
+<DD>The choices made by any given creator of a HiPS image may result
+in any particular region being saturated or too faint to see.  Color
+stretches are set by the creator of the HiPS map and cannot be
+changed; color tables can be somewhat changed by this tool, but that
+may be insufficient for your needs. If the HiPS map as shown does not
+suit your needs and you wish to change the HiPS image, click on the
+"HiPS/MOC" menu, and then click "Change HiPS". It brings up this
+pop-up, which resembles the <A href="#hipssearch">HiPS search</A>
+above:<br> 
+<img src="img/changehips.png" width="80%" style="border:3px solid gray"> <p>
+Things to note:
 <UL>
-<LI>A HiPS image in Aitoff projection (selected in the first example,
-indicated with the darker grey) is an all-sky projection (in this
-case, a DIRBE  image). This is showing the results of an all-sky
-search, which is why it defaulted to an Aitoff projection.
-<LI> A search over a large region might result in a HiPS image, or you
-can force it to give you a HiPS image by clicking on "HiPS" in the
-upper left of the coverage image (selected in the second example,
-indicated with the darker grey). It will load a HiPS image
-corresponding to your current target (in this case, a WISE image from
-AllWISE). 
-<LI> A search over a small area will result in a FITS image, or you
-can force it to give you a FITS image by clicking on "FITS" in the
-upper left of the coverage image. It will select a FITS image
-corresponding to your current target. 
-</UL><P>
+<LI>To select a new image, click on the row corresponding to the new
+HiPS image you want, and click "Change HiPS" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>To learn more about each HiPS map, click on the i with the circle
+in the second column. It will spawn another window with standardized
+information about the HiPS map.
+<LI>By default, it shows HiPS maps corresponding to IRSA data
+collections. To see a more comprehensive list, unclick the box marked
+"IRSA Featured."
+</UL>
+<P>
 
-<dt><strong>Automatic changes</strong><P>
+<dt><strong>Add MOC Layer: </strong> Adding a MOC Overlay
+<dd>It is often useful to see what other data are available. Looking
+at a Herschel/PACS far-IR HiPS map? Overlay a Chandra MOC to see what
+X-ray data might be available to go with your IR data. Click on the
+"HiPS/MOC" menu, and then click "Add MOC Layer." It brings up this pop-up:<br> <img
+src="img/addmoclayer.png" width="80%" style="border:3px solid gray"> <p>
+Things to note:
+<UL>
+<LI>Coverage (the first column) is the fraction of the sky covered by
+that MOC.
+<LI>To select a new MOC, click on the row corresponding to the new
+MOC you want, and click "Add MOC" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>By default, it shows MOCs likely to be most interesting for IRSA
+users. To see a more comprehensive list, unclick the box at the
+top left.
+<LI>If you have your own MOC FITS file, you may upload it via the
+"Use my MOC" tab on the top center.
+<LI>If you try to upload a MOC FITS file via the <a
+href="upload.html">upload tab</A>, it will behave as if you have
+uploaded it here.
+</UL>
+</dl>
+<P>
 
-<dd> If you tick the "Auto" box and then zoom in or out, the viewer
-will automatically toggle between image types as needed.  FITS images
-are best for small regions of the sky. HiPS images are best for large
-regions of sky. Aitoff projections are best for viewing the entire sky
-at once. Zoom in enough, and it will swap from HiPS to FITS. Zoom out
-again enough, and it will swap from FITS to HiPS.<P>
+
+<dt>Under "HiPS to FITS Conversion", you can control whether the viewer
+will automatically toggle between image types as needed. 
+<dd>By default,
+the coverage image is most likely a HiPS image.  FITS images are best
+for small regions of the sky, and HiPS images are best for large
+regions of sky. 
+<DL>
+<dt><strong>Auto Zoom-in to 2MASS K_s FITS: </strong>
+<dd>If you select this, then when you
+zoom in very close to a target, it will automatically convert to a
+FITS image when you get close enough.
+<dt><strong>Switch to 2MASS K_s FITS image: </strong>
+<dd>If you select this, then it will
+jump directly to a FITS image centered on the currently selected
+target.
+</DL>
 
 Note that if you swap between HiPS and FITS and back again, it
 will include a region on the HiPS image that is the footprint of the
 FITS images you had just loaded. A label appears at the center of that
 footprint, which may be disconcerting if you are not zoomed out enough
 to see the region itself. Here is an example, zoomed out so it is
-clear what is going on:<br>
+more clear what is going on:<br>
 <img src="img/lingeringfootprint.png"> <P>
+</DL>
 
+The second drop-down menu looks like this.<br>
+<img src="img/coveragechoices2.png"><P>
+There are three sections in this menu.
 
-<dt><strong>Coordinates</strong><P>
-
-<dd>The drop-down menu allows you to select between coordinate systems.
-Used in conjunction with the image readout and/or the coordinate layer
-button (both described <a href="visualization.html">in the
-visualization section</A>), you can change what coordinate system it
-uses.<P>
-
-
-<dt><strong>Center Galactic button</strong><P>
-
-<dd>If this button appears, you can reorient the HiPS image to have
-Galactic North up, with the Galactic Plane horizontally across the
-middle of your view, with a single click. This is useful if you have
-been zooming or scrolling around to look at individual sources and
-need to bring it back to a familiar orientation quickly.<P>
-
-<dt><strong>HiPS/MOC menu</strong><P>
-
-<DD>The HiPS/MOC menu has a drop down from which you can do two
-things:
-<UL>
-<LI>Change HiPS: change the HiPS image to be something else
-<LI>Add MOC Layer: A <A href="https://ivoa.net/documents/MOC/"
-target="_blank">multi-order coverage map (MOC) <img
-src="img/jumpout.jpg" height="10"></A> adds a layer that
-indicates where there are (or are not) data. 
-</UL>
-For much more information, see <a
-href="visualization.html#hipsmenu">this section</A>.
+<DL>
+<dt><strong>Orientation</strong>
+<dd>Under "Orientation", you can control whether the coordinates are
+in Galactic or Equatorial J2000 (RA/Dec). This can be used  in
+conjunction with the image readout and/or the coordinate layer button
+(both described <a href="visualization.html">in the visualization
+section</A>)
+<dt><strong>Center Galactic</strong>
+<dd>If you select "Center Galactic", the HiPS image slews to put
+Galactic North up, the Galactic Center in the center of the field of
+view, and the Galactic Plane horizontally across your field of view.
+This is useful if you have been zooming or scrolling around to look at
+individual sources and need to bring it back to a familiar orientation
+quickly.
+<dt><strong>Projection</strong>
+<dd>Under "Projection", you can control whether the display is in
+Spherical or Aitoff coordinates.
+Aitoff projection works better for all-sky displays.
 </dl>
 
 
-&nbsp;<P>
 
+&nbsp;<P>
 
 
 
