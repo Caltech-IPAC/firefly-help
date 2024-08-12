@@ -308,6 +308,15 @@ dialog box to edit or delete the column.
 src="img/gears.png" style="vertical-align:middle">) to get to the table
 options, and tick the box corresponding to the row you want to hide or
 show.
+<LI>If you create a new column that turns a floating point column into
+an integer with the "FLOOR()" function, you need to be sure to set the
+resulting column type to "long". For example, if you have data
+covering several days or years, and you have a column that is a
+floating-point MJD, you can convert it into an integer, e.g., via
+FLOOR(mjd) for days or FLOOR(mjd/365.24) for years, then you can use
+the drop-down filter menu for the new column to quickly compare
+different time ranges. But, the new column must be an integer (e.g.,
+"long") in order for this to work properly.
 </UL>
 
 
