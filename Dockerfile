@@ -1,5 +1,5 @@
 
-FROM gradle:7.4-jdk17 AS deps
+FROM gradle:8.10-jdk21-jammy AS deps
 
 RUN apt-get update \
     && apt-get install -y htmldoc unzip wget \
