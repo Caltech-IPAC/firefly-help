@@ -77,8 +77,8 @@ task copyHtml(type: Copy, dependsOn: loadConfig) {
 }
 
 task zipHelp(type: Zip) {
-    baseName = "${app_name}_help"
-    destinationDir = file("$buildRoot/dist")
+    archiveBaseName = "${app_name}_help"
+    destinationDirectory = file("$buildRoot/dist")
     from("$buildDir") {
         exclude "war"
     }
