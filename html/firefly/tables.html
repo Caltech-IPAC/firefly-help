@@ -44,7 +44,7 @@ contents of the table. If it looks like a Firefly table, you can work
 with it whether it is a catalog, an image header, a list of results,
 etc.<P>
 
-If you have loaded a catalog into a tab and it doesn't take up the
+If you have loaded a table into a tab and it doesn't take up the
 whole screen, to see more of the window, grab the divider between the
 two window panes and slide it up, or use the expand arrow icon (<img
 src="img/expand.png">) to enlarge the window pane to take up the
@@ -523,7 +523,7 @@ filtering on that one new column.
 'action', on the currently selected row of the table. When you click
 on it, it reveals a drop-down:<br>
 <img src="img/tableactionspulldown.png" height="250"><br>
-For this example, the selected row is 210.703729,54.394937 in J2000
+For this example, the selected row is 210.703729, 54.394937 in J2000
 decimal degrees. From this drop-down, you can:
 <UL>
 <LI>Send the entire table to a TAP search
@@ -640,16 +640,18 @@ bars. <P>
 
 Other formats include comma-separated values (csv, suitable for, e.g.,
 Excel), tab-separated values (tsv), and three different versions of <A
-href="http://www.ivoa.net/documents/VOTable/"
-target="_blank">VO tables <img
-src="img/jumpout.jpg" height="10"></A>. 
-You can also save the file in DS9 Regions file format. See the <a
-href="http://ds9.si.edu/doc/ref/region.html" target="_blank">DS9
-website <img src="img/jumpout.jpg" height="10"></A> for more
-information on the syntax of these DS9 region files. The advantage of
-saving it here (as opposed to from the <a
-href="visualization.html#saveimage">visualization</A>) is that this way,
-the entire catalog is guaranteed to be saved.<P>
+href="http://www.ivoa.net/documents/VOTable/" target="_blank">VO
+tables <img src="img/jumpout.jpg" height="10"></A>. You can save the
+file in <a href="https://parquet.apache.org/">parquet file format <img
+src="img/jumpout.jpg" height="10"></A>, which is a highly efficient,
+compressed, column-oriented format for tabular data that has been
+adopted by many recent wide area survey projects. You can also save
+the file in <a href="http://ds9.si.edu/doc/ref/region.html"
+target="_blank">DS9 Regions file format <img src="img/jumpout.jpg"
+height="10"></A>. The advantage of saving it here as a regions file
+(as opposed to from the <a
+href="visualization.html#saveimage">visualization</A>) is that this
+way, the entire catalog is guaranteed to be saved.<P>
 
 <dt>File name
 <dd>The tool tries to make a guess at a sensible filename. Feel free

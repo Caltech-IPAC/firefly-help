@@ -60,10 +60,10 @@ src="img/pixelreadout.png"><p>
 You can change the units of what is being read out, in terms of
 coordinates or pixel values.   <br>
 
-<table><tr><td><img src="img/changecoord.png"  style="border:3px solid gray"></td><td> If you click
-on the label of the coordinates, "EQ-J2000" in the screenshot example
-above, you get this pop-up, from which you can choose the coordinates
-from among:
+<table><tr><td><img src="img/changecoord.png"  style="border:3px solid
+gray"></td><td> If you click on the label of the coordinates,
+"EQ-J2000" in the screenshot example above, you get this pop-up, from
+which you can choose the coordinates from among:
 <UL>
 <LI>Equatorial (RA/Dec) J2000 in hh:mm:ss ddd:mm:ss format
 <LI>Equatorial (RA/Dec) J2000 in decimal degrees
@@ -78,9 +78,9 @@ from among:
 
 <table><tr><td><img src="img/changevalue.png" style="border:3px solid
 gray"></td><td> If you have a FITS image loaded, you have an
-additional readout. Click on the label of the readout, "Value" in the
-screenshot example above, you get this pop-up, from which you can
-choose the pixel readout from among:
+additional readout. Click on the label of the readout, "Flux" in the
+tiny snippet of a screenshot example above, and you get this pop-up,
+from which you can choose the pixel readout from among:
 <UL>
 <LI>Integer data readout in decimal 
 <LI>Integer data readout in hexadecimal
@@ -117,11 +117,11 @@ name of the field: "Pixel Size", "EQ-J2000", "Image Pixel", and
 
 
 You can make the cursor 'stick' on a particular place on the image --
-tick the "Lock by click" box (either in the pop-up or in the lower
-right of the image window), and then click on the image at your
-desired location. When this is clicked, small "clipboards" appear near
-the position readout. Click on that icon to copy that position to your
-clipboard.<br> <img src="img/lockposition.png"><P>
+flip the "Click Lock: off" switch to "on" (either in the pop-up or in
+the lower right of the image window), and then click on the image at
+your desired location. When this is clicked, small "clipboards" appear
+near the position readout. Click on that icon to copy that position to
+your clipboard.<br> <img src="img/lockposition.png"><P>
 
 &nbsp;<P>
 
@@ -236,14 +236,15 @@ above on <a href="#breakingout">Breaking out of the pane</A>). <P>
 
 <dt><strong>Image List</strong><P>
 
-<DD>Depending on what you have loaded, you may have an additional icon:
-<img src="img/imagelist.png"><BR> Clicking on this icon brings up a
-list of the images you have loaded, with some additional information
-on each one. This list is a <a href="tables.html">table like any
-other</A> in this tool. You can sort this table, and the images are
-sorted in response.  You can remove selected rows, or delete the
-failed images with one click; click on the corresponding button on the
-lower right of this window.<P>
+<dd>Depending on what you have loaded, you may have an additional
+icon: <img src="img/imagelist.png"><BR> Clicking on this icon brings
+up a list of the images you have loaded, with some additional
+information on each one. This list is a <a href="tables.html">table
+like any other</A> in this tool. There are two important things about
+it, though, that apply to this special case. (1) You can sort this
+table, and the images are sorted in response.  (2) You can remove
+selected rows, or delete the failed images, with one click; click on
+the corresponding button on the lower right of this window.<P>
 
 The power of this table is best demonstrated by an example. <P>
 
@@ -251,7 +252,7 @@ Example: Load the tool. Search on M101, with the default image size.
 Select all bands from the following data sets: SEIP, DUSTiNGS, LVL,
 MIPS_LG. Search. When the tool comes back, click on the image list
 icon above and obtain this pop-up:<br> <img
-src="img/imagelisttable.png" width="100%" style="border:3px solid gray"><br> This
+src="img/imagelisttable.png" width="80%" style="border:3px solid gray"><br> This
 table shows that it found images of M101 from SEIP, and some LVL
 bands, but nothing in DUSTiNGS or MIPS_LG. You can use the table to
 omit the failed images all at once. You can click on "Delete Failed"
@@ -388,11 +389,12 @@ src="img/savecropped.png" style="border:3px solid gray"> <P>
 Note that if you <a href="catalogs.html">overlay a large catalog</A>
 on an image, then turn around and save a regions file from the 
 catalog overlay, the full catalog may not be saved to the regions
-file.  If you have &gt;5,000 sources, <strong>not every source will be
-overlaid on the image</strong>, even if you zoom in, and thus will not
-be in the regions file. If you want to save your entire catalog as a
-regions file, save the catalog from the <a href="tables.html">table
-pane</A>.<P>
+file.  If you have &gt;5,000 sources, it's entirely likely that not
+every source will be overlaid on the image (because of <a
+href="catalogs.html#hier">hierarchical catalogs display</A>), and thus
+will not be in the regions file. If you want to save your entire
+catalog as a regions file, <strong>save the catalog from the <a
+href="tables.html">table pane</A></strong>.<P>
 
 The saved PNG is the same size as it is on your screen. If you want a
 big version, make the desired image big on your screen (view
@@ -630,14 +632,14 @@ images.)  When you click the button, a drop-down menu appears.
 <table><tr><td width="20%"><img src="img/colortableoptions.png" style="border:3px solid
 gray"></td><td>
 <UL>
-<LI>The top of the menu says "Lock color and overlays" -- by default,
-all of the (FITS) images that you have loaded are locked together for
-color and overlays. What that means is if you change the color table
-(via this menu), then the color table for all the (FITS) images are
-changed. (Or, if you add a layer to one image, then the layer is added
-to all the images; see below.) If you don't want this to happen, select
-"Lock color and overlays" to unlock it. Select it again to lock it
-again.<P>
+<LI>The top of the menu either says "Color and overlays locked" or
+"Color and overlays unlocked" -- by default, all of the (FITS) images
+that you have loaded are locked together for color and overlays. What
+that means is if you change the color table (via this menu), then the
+color table for all the (FITS) images are changed. (Or, if you add a
+layer to one image, then the layer is added to all the images; see
+below.) If you don't want this to happen, select "Color and overlays
+locked" to unlock it. Select the text again to lock it again.<P>
 
 <LI>The arrow in the upper right creates a pop-up window out of this
 drop-down menu so that you can leave the choices up while settling on
@@ -681,7 +683,7 @@ tool. Search on M101, and ask for all SEIP channels (4 IRAC, 1 MIPS).
 When it returns, search on catalogs. Select a WISE/AllWISE catalog,
 and ask it for a polygon search covering the image that is loaded.
 When the catalog loads, go up to the image toolbox and be sure to
-select Align and Lock by WCS (see <a href="#wcs">lock image wcs</A>
+select Align and Lock by WCS (see <a href="#wcs">WCS Alignment</A>
 below for more information). Sort the catalog by RA by clicking on the
 top of the RA column. Note that the images are all now slewed to
 center the first object (the furthest east) in the catalog. Click on a
@@ -701,7 +703,7 @@ select from a list.<P>
 <dt><img src="img/selectregion.png"> <em>Selecting a region drop down</em></a>
 <dd>When you click this icon, you can select a region of the image for
 further actions. Because this is complicated, for much more information, 
-please <a href="selectregion">see below</A>.<P>
+please <a href="#selectregion">see below</A>.<P>
 
 
 
@@ -749,7 +751,8 @@ images as already pinned for you. In other cases, you have to actually
 pin them before it will create a pinned images tab.<P>
 
 <dt><img src="img/help.png"> <em>Getting help</em>
-<dd>  Clicking on this icon takes you to this help page.<P>
+<dd>  Clicking on this icon takes you to this help page, usually to a
+spot in the help relevant to whatever you're currently doing.<P>
 
 </dl>
 

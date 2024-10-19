@@ -28,6 +28,7 @@ href="plots.html">make a plot for you</A>, which you can change. <P>
 +<A href="#intro">Introduction</A><br>
 +<A href="#irsacatalogs">IRSA Catalogs</A> -- Searching for catalogs from IRSA<br>
 +<A href="#interacting">Interacting with Catalogs</A> <br> 
++<A href="#hier">Hierarchical Catalog Display</A><br>
 +<a href="#details">Details Tab</A> -- More information about the columns<br>
 <P>&nbsp;<P>
 
@@ -249,9 +250,9 @@ table</A> and you can <a href="#interacting">interact with it</A>.<P>
 <h3><A name="interacting">Interacting with Catalogs</A></h3>
 
 When you load a catalog, the tool may create a table, a plot, and/or,
-if your catalog has position information (e.g., RA and dec), it
-overlays the catalog on an image. All three of these ways of
-displaying the catalog are interlinked and interactive.<P>
+if your catalog has position information (e.g., RA and Dec), it
+overlays the catalog on an image. Tables, plots, and overlays on
+images are all interlinked and interactive.<P>
 
 Catalogs are a special case of <a href="tables.html">tables</A>; the
 basic functionality of tables is covered in the <a
@@ -269,31 +270,142 @@ href="visualization.html">Visualization section</A> includes
 information about that. Each catalog that you load is overlaid on the
 image using different, customizable symbols and colors. <P>
 
+When you have catalogs loaded into the tool, the header of the
+catalogs has the name of the catalog and a color swatch:<br>
+<img src="img/catalogcolorswatch.png"><br>
+This color swatch corresponds to the symbol color that is used in the
+image overlays. You can change the color by clicking on the color
+swatch in the header, or by navigating to the layers in the image
+pane. See the <a href="visualization.html#colorpicker">color picker
+section</A> of the visualization chapter for more information.<P>
+
+
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
-<LI>Note that if you overlay a large catalog <a
-href="visualization.html">on an image</A>, the <strong>full contents
-of the catalog may not be displayed in the overlay</strong>. Catalog
-overlays on images are statistically "thinned" to avoid overcrowding
-the display. This occurs when the number of catalog entries in an
-overlay exceeds 5,000. Currently, this thinning is not reversed even
-when zooming in to the image. However, if you select a catalog entry
-from its table, or from a point in an associated chart, the
-corresponding point in the image display overlay will be displayed
-even if that entry was originally "thinned out." Also, geometric
-selections on an image (using the rectangle or circle tools) will
-still select all the catalog entries in the selection region, even
-ones that have been "thinned out", or "decimated."
+<LI>Large catalogs will be displayed hierarchically! See next section.
 
-<LI>Because of the prior item, if you save the overlays from an image
-as a regions file. If you initiate that save from the image toobar,
-catalogs that have  been "thinned out" will not appear in their
-entirety in the resulting regions file. However, you can save the full
-contents of a single catalog as a regions file using the "save"
-(diskette) icon in the table toolbar, instead of the image toobar. 
+<LI>If you save the overlays from an image as a regions file, you may
+not get your complete catalog, especially if it is a large catalog
+(see next section!). However, you can save the full contents
+of a single catalog as a regions file using the "save" (diskette) icon
+in the table toolbar, instead of the image toobar. 
 </UL>
 
 <P>
+<hr width="50%">
+<h3><A name="hier">Hierarchical Catalog Display</A></h3>
+
+If one has a large catalog loaded into the tool overlaid on top of
+lots of images the possibility exists that the computer or the network
+could be overwhelmed trying to render all the points on all the
+images. Historically we dealt with this by "thinning out" the catalog
+and not showing all the points. However, there is a better solution,
+which is now employed here!<P>
+
+For catalogs below about 1000 points, the tool will show the
+individual points on the image.<P>
+
+For catalogs above that threshold, the tool will bin up the catalogs
+based on HEALPix pixels (see <a href="images.html#hips">HiPS section
+here</A> for more links). In summary, the sky is broken up into
+sections, and the tool will show symbols with a number indicating the
+number of sources in that region. Then, when you zoom in, it will
+dynamically adapt to show you smaller and smaller cells until it shows
+you all the individual sources.<P>
+
+From the layers icon (<img
+src="img/layers.png" align="center"> see <a
+href="visualization.html#layers">visualization chapter</A>), you can
+bring up many display options. Below are examples of what is displayed,
+the options seen in the layers, and additional options. The same
+catalog and zoom level and minimum group size are used for each view.
+The "Min Group" option here is 50, so if there are cells with fewer
+than 50 sources, then the individual sources are shown, and if there
+are more than 50 sources, then the cell is shown with a number inside
+corresponding to the number of sources from the catalog. (See below for
+additional information.)  <P>
+
+<table>
+<tr><td><img src="img/hiercatgrid.png"></td><td>
+<img src="img/hiercatlayergrid.png"><br>
+In this view, the 'cells' used are the cells explicitly associated
+with the HEALPix grid, so the size of the cells is very clear.  In the
+top row here, three of the diamond-shaped cells across the top have
+fewer than 50 sources (so they do not have cell boundaries and the
+individual sources are shown), then the next row of diamond-shaped
+cells have 87, 86, and 57 sources respectively. 
+</td>
+</tr>
+<tr><td><img src="img/hiercatbox.png"></td><td>
+<img src="img/hiercatlayerbox.png"><br>
+In this view, the 'cells' are shown by circles enclosed within boxes.
+The locations and cell sizes are the same as in the prior screenshot,
+but the boundaries between tiles may be less obvious to new users. </td>
+</tr>
+<tr><td><img src="img/hiercatellipse.png"></td><td>
+<img src="img/hiercatlayerellipse.png"> <br>
+In this view, the 'cells' are shown by ellipses shown with dashed
+lines. The locations and cell sizes are the same as in the prior
+screenshot, but the boundaries between tiles may be less obvious to
+new users. It may be more obvious, though, that these are
+representations of groups of points.</td>
+</tr>
+<tr><td><img src="img/hiercatheatmap.png"></td><td>
+<img src="img/hiercatlayerheatmap.png"><br>
+Finally, in this view, the 'cells' are again shown as the HEALPix
+tiles, but in this case the color of the cells corresponds to the
+number of sources in the cell. You can choose "Linear", "Linear
+Compressed", or "Log Stretch" to assign the colors, and you can change
+the color range by changing the color using the <a
+href="visualization.html#colorpicker">color picker in the layers
+pop-up</A>, from which you can also change the transparency. This
+approach makes it more visually clear how many sources are in each
+cell, but makes it harder to see the background image. Even though 
+you can change the transparency of this overlay to reveal more of the
+background, it still can make seeing the image challenging in some
+cases.  </td>
+</tr>
+</table>
+<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>For all of these renditions, when you zoom in close enough, it
+will dynamically adapt and show you individual sources when you zoom
+in. (That is, it no longer decimates the overlaid catalog, which is
+what it used to do.)
+
+<LI>For all of these renditions, if you click on a cell, it will
+display all of the sources in the cell. You can click on many cells in
+a row and it will continue to display all the sources it can until it
+reaches the point at which it thinks performance will suffer, at which
+point it will turn some of the points back into cells.
+
+<LI>If you want to have more of your catalog shown as individual
+sources, pick a smaller "min group" number.
+
+<LI>If you have more than one catalog loaded, the 
+numbers within the cells (and in some cases the cell indicators
+themselves) will be offset slightly so that you can see them.
+<img src="img/multicat.png">
+
+<LI>If you have a catalog that includes sources from all over the sky,
+it very well may just give you box groupings, and may not allow you to
+change that view until you zoom in. 
+
+<LI>If you have cells where only 1/4 of a cell is populated, it
+automatically renders a smaller cell, so if you have a sparsely
+populated but still large catalog, the size of the display will always
+be "small" size cells.
+
+<LI>If you are looking at many footprints from, say, a complex, and 
+long ObsCore search, if you have more than 30,000 footprints, it may
+not be able to render all of the outlines of all of those images. It
+may render the centers of all of those images as if it were a catalog,
+in which case you will encounter these kinds of hierarchical catalog
+display options.
+</UL>
+
 
 
 

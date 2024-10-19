@@ -514,6 +514,11 @@ const toc_catalogs = {
             href: 'firefly/catalogs.html#interacting',
         },
         {
+            id: 'catalogs.hier',
+            title: 'Hierarchical Catalog Display',
+            href: 'firefly/catalogs.html#hier',
+        },
+        {
             id: 'catalogs.details',
             title: 'Details Tab',
             href: 'firefly/catalogs.html#details',
