@@ -26,11 +26,16 @@ section</A>. <P>
 <em>Contents of page/chapter:</em><br>
 +<A href="#header">Table Header</A> <br>
 +<A href="#columns">Table Columns</A>  <br>
++<A href="#addColumn">Adding Columns</A>  <br>
 +<A href="#filters">Table Filters</A>  <br>
++<a href="#tableactions">Table Actions: Searches</A><br>
++<a href="#rowdetails">Row Details</A><br>
++<A href="#cells">Table Cells</A>  <br>
 +<A href="#save">Saving Tables</A>  <br>
 +<a href="#navigation">Table Navigation</A> <br>
 <P>&nbsp;<P>
 
+<hr width="50%">
 
 <h3><A name="header">Table Header</A></h3>
 
@@ -39,10 +44,10 @@ contents of the table. If it looks like a Firefly table, you can work
 with it whether it is a catalog, an image header, a list of results,
 etc.<P>
 
-If you have loaded a catalog into a tab and it doesn't take up  the
+If you have loaded a table into a tab and it doesn't take up the
 whole screen, to see more of the window, grab the divider between the
 two window panes and slide it up, or use the expand arrow icon (<img
-src="img/expand-24x24.png">) to enlarge the window pane to take up the
+src="img/expand.png">) to enlarge the window pane to take up the
 whole window.<P>
 
 The table is shown exactly as it has been provided to the tool, with
@@ -54,87 +59,107 @@ The tab (and table) name itself likely indicates its origin.  To
 remove the tab, it is likely that you can click on the "X" on the
 tab.<P>
 
-Immediately below the tab name, there are several symbols:<br> <img
-src="img/tablehead.png"><br> which we now describe.<P>
-
-The first thing to notice is that only the first 100 rows of the
-retrieved catalog are displayed in the table. In the example here,
-there are ~7,700 sources that were retrieved in the search.  The
-left/right black arrows plus the page number allow you to navigate
-among these 'pages' of 50 sources each.  Note that the entire set of
-results (not just the 50 rows you are currently viewing) can be sorted
-by clicking on any column's name. <P>
+At the top of the table, there can be several symbols:<br> <img
+src="img/tablehead.png"><br> which we now describe, 
+going from left to right along the top of the catalog tab.<P>
 
 
-Going from left to right along the top of the catalog tab, the next
-icon represents a filter: <img src="img/filter.png">  Filters are
-complex and powerful enough that they are covered in a <a
-href="#filters">separate section below</A>.<P>
+<DL>
+<dt><img src="img/table-pagenav.png"> Table navigation
+<dd>The first thing to notice is that (typically) only the first 100
+rows of the retrieved table are displayed. In the
+example here, there are 319 sources that were retrieved as a result of
+the search, grouped into 4 'pages.'  The left/right black arrows plus
+the page number allow you to navigate among these 'pages' of 100
+sources each.  Note that the entire set of results (not just the 100
+rows you are currently viewing) can be sorted by clicking on any
+column's name. <P>
+
+<dt><img src="img/searchaction.png"> Table Actions: Searches
+<dd> This drop-down has choices to launch new searches, and as such, it
+has a <a href="#tableactions">separate section below</A>.<P>
+
+<dt><img src="img/filter.png"> Filter
+<dd>Filters are complex and powerful enough that they are covered in a
+<a href="#filters">separate section below</A>.<P>
+
+<dt><img src="img/texttable.png"> Table as text
+<dd>Clicking on this changes the table display into a text display.
+The icon then changes to <img src="img/table.png"> -- click this again
+to return to the default table view.<P>
+
+<dt><img src="img/savetable.png"> Save table 
+<dd>This is how you can save the table. It has its <a
+href="#save">own section below</A>. <P>
+
+<dt><img src="img/table-addcol.png"> Add a column 
+<dd>This icon adds a new column to the table. This has its <a
+href="#addColumn">own section below</A>.<P>
 
 
-The next icon is <img src="img/texttable.png"> -- clicking on this
-changes the table display into a text display. The icon then changes
-to <img src="img/table.png"> -- click this again to return to the
-default table view.<P>
-
-The next icon is <img src="img/savetable.png"> which is "Save" -- this
-is how you may save the catalog. It has its <a href="#save">own
-section below</A>.<P>
-
-You may or may not see the next icon: <img src="img/infolink.png">
-This is an "information" button and, if it exists, it may provide
-addtional information about the table. It could have information about
-the job that was used to retrieve it:<br>
-<img src="img/tableinfo-jobinfo.png"><br>
-where the direct link to the job is given there (and can be copied by
-clicking on the clipboard, ready to be pasted into a helpdesk query,
-for example), with a job id as shown. It could also just have
-information about the table metadata:<br>
-<img src="img/tableinfo-metadata.png"><br>
+<a name="tableinfo">
+<dt><img src="img/infolink.png"> Info link </A>
+<dd>You may or may not see this icon. This is an "information" button
+and, if it exists, it may provide additional information about the
+table. It could have information about the job that was used to
+retrieve it:<br> <img src="img/tableinfo-jobinfo.png"
+style="border:3px solid gray"><br> where the direct link to the job is
+given there (and can be copied by clicking on the clipboard, ready to
+be pasted into a helpdesk query, for example), with a job id as shown.
+It could also just have information about the table metadata:<br> <img
+src="img/tableinfo-metadata.png" style="border:3px solid gray"><br>
 where the information about this table includes information about the
 query that produced it.<P>
 
-The next option on the top of the catalog tab is this: <img
-src="img/tableoptions.png">.  Clicking on this icon brings up options
-for the table, e.g., how many rows are displayed per page, which
-columns are shown, whether units and data types are shown at the top
-of the column, shown here:<br> <img src="img/toptableoptions.png"
-width="50%"><br> By default, it is often but not always the case that
-all columns are shown. The default page size is 100 rows.  Note that
-expanding the page size to numbers much greater than 100 may result in
-a substantial performance degradation (e.g., your browser will appear
-to freeze or not appear to be doing anything while it manages and
-renders the large table). See the <a href="#filters">Filters section
-below</A> for more things to do from the table options pop-up. <P>
+<dt><img src="img/rowdetails.png"> Row details</A>
+<dd>You may or may not see this icon. This is how you get more
+information about the currently-selected row. It has a <a
+href="#rowdetails">separate section below</A>.<P>
 
-This is one of the last options on the top of the catalog tab: <img
-src="img/expand-24x24.png">. Clicking on this expands the catalog
-window pane to take up the entire browser window. To return to the
-prior view, click on "Close" in the upper left.<P>
+<a name="tableoptions">
+<dt><img src="img/gears.png"> Table options </A>
+<dd>Clicking on this icon brings up options for the table, e.g., how
+many rows are displayed per page, which columns are shown, metadata
+about each column if available, whether units and data types are shown
+at the top of the column, shown here:<br> <img
+src="img/toptableoptions.png" width="50%" style="border:3px solid
+gray"><br> By default, it is often but not always the case that all
+columns are shown. To show or hide columns, select the tickbox in each
+given row. The default page size is 100 rows.  Note that expanding the
+page size to numbers much greater than 100 may result in a substantial
+performance degradation (e.g., your browser will appear to freeze or
+not appear to be doing anything while it manages and renders the large
+table). See the <a href="#filters">Filters section below</A> for more
+things to do from the table options pop-up. <P>
 
-The last option on the top of the catalog tab may be a
-context-sensitive help marker <img src="img/help.png">, which should
-bring you to this online help.<P>
+<dt><img src="img/expand.png"> Expand 
+<dd>Clicking on this expands the catalog window pane to take up the
+entire browser window. To return to the prior view, click on "Close"
+in the upper left.<P>
+
+<dt><img src="img/help.png"> Help 
+<dd>The last option on the top of the catalog tab may be a
+context-sensitive help marker, which should bring you to this online
+help.<P>
+
+</DL>
 
 
+<hr width="50%">
 <h3><A name="columns">Table Columns</A></h3>
-
-The table is shown exactly as it appears in the corresponding database
-(or as it appeared on your disk), with all columns as defined for that
-catalog. To understand what each column is, please see the
-documentation associated with that catalog. (For IRSA catalogs, this
-documentation is available via the catalog searching popup window, see
-figure below, or by navigating through the IRSA website.)<br> <img
-src="img/catalogcoldef.png"><P>
 
 Depending on what you did to display a table, the columns that are
 shown may be in easily-human-readable form, or may reflect column
 names used within the individual catalog. Please consult the detailed
 documentation associated with your specific archive if the headers are
-not clear to you.<P>
+not clear to you. <P>
 
-There may be flexibility to display or hide columns, as described in
-the <a href="#header">headers section above</A>.<P>
+The table is shown exactly as it appears in the corresponding database
+(or as it appeared on your disk), with all columns as defined for that
+catalog. To understand what each column is, please see the
+documentation associated with that catalog. (For IRSA catalogs, this
+documentation is available via navigating through the IRSA
+website.) <P>
 
 Clicking on the column names sorts the table by that column; clicking
 once sorts in ascending order, clicking a second time sorts in
@@ -142,9 +167,9 @@ descending order, and clicking a third time returns the table to the
 original order.  Small arrows appear next to the column names to
 remind you if the column is sorted in ascending or descending order.
 
-When you do a single-position search on catalogs, two new columns
-could be appended to the end of the catalog as it is returned to you.
-These columns are:
+When you do a single-position search on catalogs, depending on how you
+do it, it could be that two new columns are appended to the end of the
+catalog as it is returned to you. These columns are:
 <UL>
 <LI>dist - the distance between the source in question and the
 location you specified
@@ -167,15 +192,138 @@ These additional columns can help you assess if the target it found is
 the target that should be matched to the position you requested.<P>
 
 It could be that, when you do a multi-position search on catalogs, you
-have an option for "one-to-one matching". If that is selected, tne
+have an option for "one-to-one matching". If that is selected, the
 line (and only one line) of output is included for each line of input.
 It chooses the closest source within the radius you specify, or if
 there is no match, it adds a line indicating no match.  <P>
 
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
+
+<UL>
+<LI>You can hide or display columns; click on the gears (<img
+src="img/gears.png" style="vertical-align:middle">) to get to
+the table options, and tick the box corresponding to the row you want
+to hide or show.
+<LI>If you are constructing and loading your own catalog where you
+don't specify the formatting, the tool tries to guess the formatting
+of the column based on the first row's values. Therefore, if you have
+a value in the first row that happens to be a string like "null" where
+the rest of the column isn't like that, or happens to have only one
+decimal place where the rest of the column has 2 or more, it will
+guess incorrectly and format the other rows just like the first one.
+Try editing your catalog file to put the most general case as the
+first row.
+</UL>
+<P>
 
 
 
 
+<hr width="50%">
+<h3><A name="addColumn">Adding Columns</A></h3>
+
+This icon <img src="img/table-addcol.png"> allows you to add a new
+column to your catalog. When you click on it, it brings up this pop-up
+window:<br>
+<img src="img/addcolpopup.png" width="400" style="border:3px solid gray"><br>
+This window asks for:
+<UL>
+<LI><em>Name</em> of the column (required) -- it cannot have special characters
+like a minus sign or a percent symbol; you can only use letters,
+numbers, and underscores.
+<LI><em>Mode</em> "Enter expression" or "Use preset function" --
+options shown here correspond to "Enter expression"
+options; the preset function options are included in the last bullet
+here. 
+<LI><em>Expression</em> (required) -- using basic SQL operators, you can
+manipulate columns to create the new column. (See more on this
+below.)
+<LI><em>Data Type</em> -- specify if your new column is a double
+precision floating point ("double"), a long integer ("long"), or a
+string ("char").
+<LI><em>Precision</em> -- if you have selected "double" for data type,
+select how many decimal places your new column should display. For
+example, if you want the numbers to display as 1.23, enter "F2".
+<LI><em>Units</em> -- specify the units of your new column. For more
+information, see <a href="https://ivoa.net/documents/VOUnits/"
+target="_blank">IVOA
+documentation <img src="img/jumpout.jpg" height="10"> </A>
+<LI><em>UCD</em>, or unified content descriptor -- for VO compliance,
+add this for your new column. For more
+information, see <a href="https://ivoa.net/documents/UCD1+/"
+target="_blank">IVOA
+documentation <img src="img/jumpout.jpg" height="10"> </A>
+<LI><em>Description</em> -- add a description for your new column.
+<LI><em>Select a preset</em> -- if you select "Use preset function",
+you can choose (a) "set filtered rows to 'true' and the rest to 'false'", 
+(b) "set selected rows to 'true' and the rest to 'false'", or (c)
+"number rows in current sort order". These options are useful for
+tagging items you have selected in myriad ways (from plots, images,
+complicated filters), or ordered in complicated ways. For example, if
+you have constructed a complicated filter, then you can create a column that
+is true for the selected rows; if you cancel the complicated filter, you can
+then easily recreate the complicated filter by simply filtering on your newly
+created column.
+</UL>
+
+In order to construct the expression for your new column, your input 
+should follow the syntax of an SQL expression. If you click on the
+magnifying glass next to the form input, you get a pop-up window that
+can help you construct an expression; click "apply" to apply the
+expression.<P>
+
+You need to use the column names
+exactly as they appear in your catalog. 
+Supported operators are:  +, -, *, /, =, &gt;, &lt;, &gt;=, &lt;=, !=,
+LIKE, IN, IS NULL, IS NOT NULL.
+You may use functions as well; for a list of all available functions, 
+<a href="http://hsqldb.org/doc/2.0/guide/builtinfunctions-chapt.html"
+target="_blank"> <img src="img/jumpout.jpg"
+height="10">see here</A>. Some examples include:
+<UL>
+<LI>"w3mpro" - "w4mpro"
+<LI>sqrt(power("w3sigmpro",2) + power("w4sigmpro",2))
+<LI>("ra"-82.0158188)*cos(radians("dec"))
+<LI>"phot_g_mean_mag"-(5*log10(1000/"parallax") - 5)
+</UL>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
+
+<UL>
+<LI>When you create a new column that is calculated from other
+columns, it is created statically. That is, it is not dynamically 
+updated like a spreadsheet, but calculated once and left alone after
+that. 
+<LI>When you create a new column, the header of the new column is red
+to let you know that the column is not present in the original
+catalog.
+<LI>When you save the catalog, the header of the saved catalog
+indicates that you have added a column. When you load the catalog back
+into the tool, the header of the new column is still red.
+<LI>You can edit or delete columns after you have created them; click
+on the gears (<img src="img/gears.png" style="vertical-align:middle">) to get
+to the table options, and then click on the edit icon to bring up a
+dialog box to edit or delete the column.
+<LI>You can hide columns; click on the gears (<img
+src="img/gears.png" style="vertical-align:middle">) to get to the table
+options, and tick the box corresponding to the row you want to hide or
+show.
+<LI>If you create a new column that turns a floating point column into
+an integer with the "FLOOR()" function, you need to be sure to set the
+resulting column type to "long". For example, if you have data
+covering several days or years, and you have a column that is a
+floating-point MJD, you can convert it into an integer, e.g., via
+FLOOR(mjd) for days or FLOOR(mjd/365.24) for years, then you can use
+the drop-down filter menu for the new column to quickly compare
+different time ranges. But, the new column must be an integer (e.g.,
+"long") in order for this to work properly.
+</UL>
+
+
+
+
+
+<hr width="50%">
 <h3><A name="filters">Table Filters</A></h3>
 
 Filters are a <em>very</em> powerful way of exploring the table full
@@ -183,31 +331,31 @@ of search results.  Click on this icon <img src="img/filter.png"> in
 order to start the process of adding filters. A text entry box appears
 above each of the current catalog columns, with a small version of the
 filter icon corresponding to that row on the far left. You can type
-operators and values in these boxes -- hit return after typing or
-click in another box to implement the filter. For fields with a
-limited set of choices, instead of a text entry box, a filter icon
-will appear; click on it to select from the available choices. <P>
+operators and values in these boxes -- hit return or tab after typing
+or click in another box to implement the filter.<P>
 
-<strong>Example:</strong> From a catalog, show only those sources
-with declination above a certain value (say, 31 degrees), type "&gt;
-31" in the box above the "dec" column. Or, if you have retrieved a
+<strong>Example:</strong> From a catalog, show only those sources with
+declination above a certain value (say, 31 degrees), type "&gt; 31" in
+the box at the top of the "dec" column. Or, if you have retrieved a
 WISE catalog and would like to only view the objects with a W1 (3.4
-micron) profile-fitted magnitude less than 6 magnitudes, above the
-'w1mpro' column, type "&lt; 6" in the form.  <P>
+micron) profile-fitted magnitude less than 6 magnitudes, in the box at
+the top of the 'w1mpro' column, type "&lt; 6" in the form.  <P>
 
-For columns (fields) with a limited set of choices, instead
-of a text entry box, an arrow next to the filter box will appear;
-click on it to get a pulldown from which you can select the available
-choices; to implement the filter, make the choices, and click "filter"
-when you are done. Click "clear" in the pull-down menu to remove
-that filter.   <P>
-After you impose a filter, then the number of rows in the catalog is
+<table><tr><td><img src="img/finitefilter.png"></td><td> For columns
+(fields) with a limited set of choices, on the right edge of the text
+entry box, an arrow appears; click on it to get a drop-down from which
+you can select the available choices. To implement the filter, make
+the choices, and click "Apply" when you are done. Click "clear" in the
+top of the drop-down menu to remove that filter. </td></tr></table> 
+<P>
+
+After you impose a filter, then the number of rows in the table is
 restricted according to the rules you have specified, and the
 "filters" icon on the top right of the catalog pane has changed to
-remind you that there has been a filter applied, in this case just one
-filter: <img src="img/filtersapplied.png">. To clear the filters, click on
-the cancel filters icon (which also appears after you impose filters):
-<img src="img/cancelfilters.png">.<P>
+remind you that there has been a filter applied, in this case four
+filters: <img src="img/filtersapplied.png">. To clear the filters,
+click on the cancel filters icon (which also appears after you impose
+filters): <img src="img/cancelfilters.png">.<P>
 
 <em>Filters can be used in combination</em>. Note that the filters
 between columns are logically "AND"ed together, but filters within the
@@ -217,7 +365,7 @@ below.  <P>
 The available logical operators are :
 <UL>
 <LI> =  which means 'equal to' (exactly!), e.g., the parameter on
-whichyou are querying (the column headers as shown) is exactly equal to
+which you are querying (the column headers as shown) is exactly equal to
 this value you are specifying.
 <LI> &gt; which means 'greater than'
 <LI> &lt; which mean 'less than'
@@ -242,35 +390,40 @@ string: !=''
 larger than 1.234: &gt; 1.234 and IS NOT NULL
 <LI> Retain rows that have values between -0.5 and 1.25: &gt; -05 and &lt; 1.25
 <LI> Retain rows with a parameter greater than one value or exactly
-equal to another value: &gt; 12345 or != 3000 
+not equal to another value: &gt; 12345 or != 3000 
 <LI>Retain rows with a parameter equal to one of the values in a list:
  IN a,b,c,d
 </UL>
 
-You can also select rows one at a time from the far left column and
-then filter that down. Example: Search on anything. Select rows by
-ticking the box on the left, say, every other row out of the first 12.
-Click on the filter icon on the top of the column.  The filter is
-imposed to only include the 6 rows you selected.<P>
-
-
 You can also interactively impose filters from <a
-href="plots.html">plots</A> from the catalog - see that section.<P>
+href="plots.html">plots</A> from a catalog. Moreover, all the same
+operators that are available for making <a href="plots.html">plots</A>
+can be applied in filters.  In both cases, see the plots section for
+more information. <P>
+
+You may also be able to select rows one at a time via the far left
+column and then filter that down. Example: Retrieve a catalog of any
+sort. Select rows by ticking the box on the far left, say, every other
+row out of the first 12. Click on the filter icon on the top of the
+column.  The filter is imposed to only include the 6 rows you
+selected.<P>
 
 
+
+<a name="tableoptions">
 If you click on the table options icon (<img
-src="img/tableoptions.png">), you get a pop-up that includes a place
-to filter columns. Here is an example of the tabe columns for a WISE
+src="img/gears.png">)</A>, you get a pop-up that includes a place
+to filter columns. Here is an example of the table columns for a WISE
 catalog that has been filtered to just have SNR&gt;10 for each of the
 four bands:<br>
-<img src="img/tablecolumnoptions.png" width="50%"><br>
+<img src="img/tablecolumnoptions.png" width="50%" style="border:3px solid gray"><br>
 You can type in constraints in the filter box in much the same way as
 you can from the catalog itself; note that the column description is
 included here, which may make this way of setting filters more useful
 when working with a new (to you) catalog.<P>
 
 The second tab is the advanced filter interface:<br>
-<img src="img/tablefilterpopup.png" width="50%"><br>
+<img src="img/tablefilterpopup.png" width="50%" style="border:3px solid gray"><br>
 Here, the columns are listed alphabetically on the left, the
 constraints you have imposed are in the "current constraints" box, and
 you can apply additional SQL constraints via the free-form text box.
@@ -279,10 +432,19 @@ resized such that you can see the whole set of hints and imposed
 filters. Note that in this interface, column headers must be enclosed
 within double quotes.<P>
 
+<strong>Cancelling filters</strong><P>
+
+After you impose a filter, then the "filters" icon on the top right of
+the catalog pane has changed to remind you that there has been a
+filter applied, in this case just one filter: <img
+src="img/filtersapplied.png"> To clear all the filters at once, click
+on the cancel filters icon (which also appears after you impose
+filters): <img src="img/cancelfilters.png">.<P>
 
 
 
-<strong>Tips and Troubleshooting</strong>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
 
 <UL>
 <LI>If you impose logically inconsistent restrictions such as
@@ -305,7 +467,7 @@ catalog, the values are always three letters, such as AAA or ABA or
 CUU. A filter like "ph_qual &lt; f" will operate as if you have
 alphabetized the list. Any string that starts with A comes before F
 and so will be retained. If you do "ph_qual &lt; BBB" then AAA will be
-left in, but so will "BAU", because alphabetically, BAU preceeds BBB.
+left in, but so will "BAU", because alphabetically, BAU precedes BBB.
 
 <LI>If you impose filters from a plot, it can manifest as several
 filters on the catalog, e.g., one for each side of the square you have
@@ -313,19 +475,127 @@ drawn on the plot. If you want to remove, say, just one of the four
 filters (rather than all of them by cancelling all filters), you can
 do so from the table options pop-up. 
 
+<LI>If you want to copy all of the "current constraints", even if the
+entire field is not visible to you, you can triple-click with your
+mouse to select the entire field, and then paste it into another
+field or application to see what it is.
+
+<LI>If you are choosing filters from a list of terms, cancelling those
+filters might not work the way it cavalierly seems like it should. If
+a down arrow appears next to the filter box, then a list of options
+you can select is available. Tick the boxes you want, and click
+"Apply" to apply the filter. Now, if you want to change the filter,
+click the down arrow, select different options, and click "Apply"
+again to re-impose the new filter. To remove the filter, you have to
+treat it like you would when applying a modified second filter --
+unselect the choices, or hit 'clear', and <strong>then hit Apply
+again</strong>. If you deselect the choices and then click elsewhere
+in the window without hitting clear, your actions are interpreted as 
+'cancel without doing anything' as opposed to 'impose the new filter 
+I just set' (which is 'cancel all filters'). When you are resetting the
+filter to be 'select nothing', it is treating that as a new filter
+setting, so you need to set up that filter and click 'Apply' in order
+for it to understand.
+
+<LI>If you impose filters from a plot, image, or table, you can cancel
+them from a plot, image, or table. That is, if you impose filters
+from a plot, and different additional filters from the image, when you
+click the 'cancel filters' icon from the table, <em>all</em> the
+filters are canceled at once. If you have filters imposed from
+multiple places, clicking on 'cancel filters' doesn't cancel just the
+filters imposed from that place; it cancels all of them. If you want
+to be able to reconstruct a complicated set of filters, though, you
+can add a column to your table that is pne of the preset functions --
+set it to true if the row is filtered. Then you can cancel all your 
+filters at any time but you can easily recover the filtered data by
+filtering on that one new column.
+
+
 </UL>
 
 
 
-<strong>Cancelling filters</strong><P>
+<hr width="50%">
+<h3><A name="tableactions">Table Actions</A></h3>
 
-After you impose a filter, then the "filters" icon on the top right of
-the catalog pane has changed to remind you that there has been a
-filter applied, in this case just one filter: <img
-src="img/filtersapplied.png"> To clear the filters, click on the
-cancel filters icon (which also appears after you impose filters):
-<img src="img/cancelfilters.png">.<P>
 
+<img src="img/searchaction.png"> This icon implements a new search, an
+'action', on the currently selected row of the table. When you click
+on it, it reveals a drop-down:<br>
+<img src="img/tableactionspulldown.png" height="250"><br>
+For this example, the selected row is 210.703729, 54.394937 in J2000
+decimal degrees. From this drop-down, you can:
+<UL>
+<LI>Send the entire table to a TAP search
+<LI>Launch a TAP cone search at this position (<a
+href="othersearches.html#generaltap">more information about TAP
+searches</A>)
+<LI>Launch a NED search at this position with a 5 arcsecond radius (<a
+href="othersearches.html#nedcatalogs">more information about NED
+searches</A>)
+<LI>Launch a Simbad search at this position with a 5 arcsecond radius, and
+put the results in a table here in the tool
+<LI>Launch a Simbad search at this position with a 5 arcsecond radius, but
+start another browser window or tab at Simbad with the results
+<LI>Launch a FITS search at this position (at IRSA, via this tool)
+<LI>Launch a HiPS search at this position (via this tool)
+</UL>
+Any of these searches (except the search that launches another browser
+window with the Simbad results) places the search results into this
+same tool.
+
+
+
+<hr width="50%">
+<h3><A name="rowdetails">Row Details</A></h3>
+
+<img src="img/rowdetails.png"> This icon is not always available. When
+it is avaialble, when you click on it, a new pop-up window appears
+with information about the row you have selected:<br>
+<img src="img/rowdetailspopup.png" style="border:3px solid gray"><P>
+
+In some tools, this content appears as additional tab elsewhere in the
+tool (not in the table pane, but often viewable at the same time as
+the table itself), as an additional tab called "Details." <P>
+
+This information is sometimes called a
+"property sheet." <P>
+
+This table consists of each of the columns of the retrieved catalog
+with additional information about each field where available. (Not
+every catalog may have this information available.)  For additional
+information, please consult the full documentation that accompanies
+the catalog. <P>
+
+Note that if you leave the pop-up or tab open as you select different
+rows in your main table (or catalog), it is dynamically updated.<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
+<UL>
+<LI>The property sheet is a more expanded, vertical view of the
+information shown in a row of a catalog, along with documentation of
+the catalog columns. If you think of the main table (catalog) view as
+a single row that you have to scroll left and right to see in its
+entirety, this  view is sort of an orthogonal view, where you have all
+of the same contents of that row but shown as its own table, with the
+full header description, if available, and you can scroll up and down
+to see the entire contents (as opposed to left-right). <em>This is
+sometimes a more user-friendly way to view any given row.</em>
+<LI>Because you can sort/filter the data in the
+property sheet, you can restrict what values are shown. Those filters
+are respected as you page through your main table. 
+<LI>When changing rows in the main table, the property sheet 
+scrolls to preserve the visibility of whatever row in the details
+tab is highlighted. If you scroll down in the property sheet
+<em>without changing the highlight</em>, when you change rows in the
+main table, because the first row in any table is always highlighted
+by default, the property sheet will scroll back to the top.
+</UL>
+
+
+
+
+<hr width="50%">
 
 <h3><A name="cells">Table Cells</A></h3>
 
@@ -333,33 +603,33 @@ Some cell values may be too long for the cell space. If that is the
 case, an ellipsis ("...") will appear in the cell as you mouse over
 it: <br><img src="img/cellellipsis.png"><P>
 
-If you click on the ellipsis, you get a pull-down menu: <br><img
+If you click on the ellipsis, you get a drop-down menu: <br><img
 src="img/cellmenu.png"> from which you can choose to copy the cell
 value or view it in a pop-up window.<P>
 
-If you view it in a pop-up window, it will come up with no special
-formatting:<br> <img src="img/cellpopup-noformatting.png"><br>  If the
-cell has a lot of information, it may help to impose simple
-formatting, which it attempts to do if you tick the box "View with
-formating":<br>  <img src="img/cellpopup-formatting.png"><P>
+If you view it in a pop-up window, it will attempt to format it in 
+a readable fashion:<br>
+<img src="img/cellpopup-formatting.png" width="60%" style="border:3px solid
+gray"><br>
+which, for most cells, will be functionally indistinguishable from no
+special formatting. It will only matter for very complicated cells.
 
 
+<hr width="50%">
 <h3><A name="save">Saving Tables</A></h3>
 
-
-Click on the diskette icon (<img src="img/save.png">), if
-available, to save the table. <P>
-
-If you have filtered the catalog down, it will save the filtered
-catalog (though as of this writing,  the total number of rows
-retrieved in the table header will still be the original number). <P>
+Click on the diskette icon (<img src="img/savetable.png">),
+if available, to save the table. <P>
 
 You obtain this pop-up:<br>
-<img src="img/savetablepopup.png" width="500"><p>
+<img src="img/savetablepopup.png" width="500" style="border:3px solid gray"><p>
 
+You have several choices to make. In order, they are:
 
-From here, you can save the table in a variety of formats:<br> <img
-src="img/savetableoptions.png"><br>
+<DL>
+<DT>File format
+<dd>You can save the table in a variety of formats:<br>
+<img src="img/savetableoptions.png" height="200"><br>
 
 It defaults to saving it as an <a
 href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
@@ -368,19 +638,46 @@ height="10"></A>, which is basically ASCII text with headers
 explaining the type of data in  each column, separated by vertical
 bars. <P>
 
-Other formats include comma-separated values (suitable for, e.g.,
-Excel), tab-separated values, and four different versions of <A
-href="http://www.ivoa.net/documents/VOTable/">VO tables <img
+Other formats include comma-separated values (csv, suitable for, e.g.,
+Excel), tab-separated values (tsv), and three different versions of <A
+href="http://www.ivoa.net/documents/VOTable/" target="_blank">VO
+tables <img src="img/jumpout.jpg" height="10"></A>. You can save the
+file in <a href="https://parquet.apache.org/">parquet file format <img
+src="img/jumpout.jpg" height="10"></A>, which is a highly efficient,
+compressed, column-oriented format for tabular data that has been
+adopted by many recent wide area survey projects. You can also save
+the file in <a href="http://ds9.si.edu/doc/ref/region.html"
+target="_blank">DS9 Regions file format <img src="img/jumpout.jpg"
+height="10"></A>. The advantage of saving it here as a regions file
+(as opposed to from the <a
+href="visualization.html#saveimage">visualization</A>) is that this
+way, the entire catalog is guaranteed to be saved.<P>
+
+<dt>File name
+<dd>The tool tries to make a guess at a sensible filename. Feel free
+to change it to something that makes sense to you.<P>
+
+<dt>File location
+<dd>You may save your file to a local file (on your disk) or, if you
+are <a href="user.html">logged in</A>, in the <a
+href="/docs/workspace/" target="_blank">IRSA Workspace <img
 src="img/jumpout.jpg" height="10"></A>.<P>
 
-The filename  may include the word "gator" because, under the hood,
-the software is talking to the <a
-href="https://irsa.ipac.caltech.edu/applications/Gator/"
-target="_blank">IRSA General Catalog Query Engine <img
-src="img/jumpout.jpg" height="10"></A>, powered by Gator.<P>
+<dt>Modifications to the table
+<dd>Depending on what you have been doing to the table at this point,
+you may have <a href="#filters">filtered</A> or <a
+href="#addColumn">added columns</A>. If you want to save the table as
+it is currently displayed, with all filters as imposed and any columns
+hidden, and any added columns as shown, select "Save table as
+displayed." If you want to save the original table, with all rows and
+the original columns intact, choose "Save table as originally
+retrieved."<P>
+
+</DL>
 
 
 
+<hr width="50%">
 <h3><A name="navigation">Table Navigation</A></h3>
 
 With the ability to <a href="visualization.html#extraction">extract
@@ -391,25 +688,28 @@ accumulated.<P>
 This is probably best explained via an example. Here, I have tabs
 showing that I have <a
 href="visualization.html#extraction">extracted</A> several lines,
-drills, and points from my images:<br>
-<img src="img/tabnav1.png" height="30"><br>
-On the far right, I have a downward pointing arrow. When I click on
-this, I get a pulldown:<br>
-<img src="img/tabnav2.png"><br>
-This pulldown shows that the tab marked "Points 14" is in the
-foreground (it is shaded yellow) and it has a filter box at the top.
-That filter box at the top works just like the filters discussed <a
-href="#filters">above</A>, so if I want to find the tabs with the
-extracted lines, I can type "line" in the box, and it will filter down
-the list, leaving only those tabs with "line" in the name:<br>
-<img src="img/tabnav3.png"><br>
-Then, from there, I can select the tab I want to bring to the
-foreground. (When I select a tab to bring to the foreground, that tab
-is also in the foreground for plotting.)<P>
+drills, and points from my images:<br> <img src="img/tabnav1.png"
+height="30"><br> On the far right of the collection of tabs, at the
+top right of the table pane, I have a downward pointing arrow. When I
+click on this, I get a drop-down:<br> <img src="img/tabnav2.png"><br>
+This drop-down shows that the tab marked "Points 12" is in the
+foreground (it is shaded yellow) and this drop-down has a filter box
+at the top. That filter box at the top works just like the filters
+discussed <a href="#filters">above</A>, so if I want to find the tabs
+with the extracted lines, I can type "line" in the box, and it will
+filter down the list, leaving only those tabs with "line" in the
+name:<br> <img src="img/tabnav3.png"><br> Then, from there, I can
+select the tab I want to bring to the foreground. (When I select a tab
+to bring to the foreground, that tab is also in the foreground for
+plotting.)<P>
 
-In this fashion, you can navigate among many tabs that are open at the
-same time.<P>
+In this fashion, I can navigate easily among many tabs that are open
+at the same time, even if I have so many tabs that their headers are
+not completely shown.<P>
 
+
+
+<hr width="50%">
 
 
 

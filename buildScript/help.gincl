@@ -77,8 +77,8 @@ task copyHtml(type: Copy, dependsOn: loadConfig) {
 }
 
 task zipHelp(type: Zip) {
-    baseName = "${app_name}_help"
-    destinationDir = file("$buildRoot/dist")
+    archiveBaseName = "${app_name}_help"
+    destinationDirectory = file("$buildRoot/dist")
     from("$buildDir") {
         exclude "war"
     }
@@ -133,7 +133,8 @@ task buildClient(dependsOn: loadConfig) {
 }
 
 
-task build(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf, zipHelp])
+task build(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf])
+task buildWithZip(dependsOn: [loadConfig, buildClient, buildPdfInput, copyHtml, generatePdf, zipHelp])
 
 task run(dependsOn: build) {
     doLast {
