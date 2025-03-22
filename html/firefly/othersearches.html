@@ -1,0 +1,719 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Other Searches" -->
+<HEAD>
+<TITLE>Firefly: Other Searches
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: Other Searches</h2>
+
+There are several other searches you can add to Firefly using the  <a
+href="overview.html#drawer">side menu to add to the tabs at the
+top</A>. This chapter covers most of these choices. Basically, all of
+them amount to VO TAP searches that retrieve some sort of <a
+href="tables.html">tables</A>, many of which are <a
+href="catalogs.html">catalogs</A>.  For the results of any of these
+searches, if the tool recognizes positions in a catalog, it will
+overlay the catalog on <a href="images.html">images</A> and <a
+href="plots.html">make plots</A>. <P>
+
+<em>Contents of page/chapter:</em><br>
++<A href="#intro">Introduction &amp; Terminology</A> <br>
++<a href="#interactivetarget">Interactive Target Refinement</A><br>
++<a href="#moreconstraints">VO TAP: More about constraints</A><br>
++<a href="#moreconstraints2">VO ObsCore: More about constraints</A><br>
++<A href="#irsavotap">TAP Search</A> <br>
++<A href="#obscore">ObsCore Search</A> <br>
++<A href="#nedcatalogs">NED Objects</A> -- Searching for NED objects <br>
++<A href="#voscs">VO SCS</A> -- VO Simple Cone Search <br>
+<P>&nbsp;<P>
+
+
+
+<hr width="50%">
+<h3><A name="intro">Introduction &amp; Terminology</A></h3>
+
+There is a lot of terminology in this chapter to understand.
+<UL>
+<LI>VO = <A href="http://www.virtualobservatory.org/"
+target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
+height="10"></A> 
+<LI>TAP = <a href="https://www.ivoa.net/documents/TAP/"
+target="_blank">table access protocol <img src="img/jumpout.jpg"
+height="10"></A>. TAP services enable complex queries of tables using ADQL.  
+<LI>ADQL = <a href="https://www.ivoa.net/documents/ADQL/"
+target="_blank">astronomical data. 
+query language <img src="img/jumpout.jpg" height="10"></A>
+<LI>ObsCore = <a href="https://www.ivoa.net/documents/ObsCore/"
+target="_blank">core components of Observation Data Model <img
+src="img/jumpout.jpg" height="10"></A>
+<LI>Data model = A standard logical structure for a type of dataset;
+more flexible and general than a data format. 
+<LI>ObsTAP = TAP service that serves ObsCore tables
+<LI>SCS = simple cone search.
+</UL>
+
+There are myriad places on the web to learn more about TAP queries and
+ADQL, as well as all the rest of the VO standards and protocols. We
+just provide a brief overview here in the context of this tool. <P>
+
+Firefly can help you interactively create ADQL which then you can
+copy and use in your own code elsewhere.<P>
+
+By using TAP and ObsTAP queries, you can use IRSA (or someone else's)
+services to talk to other archives that also comply with these
+standards, world-wide.<P>
+
+The first several parts of this section talk more generally about 
+interactive target refinement and constraints that are common to more
+than one of the searches discussed here. Specifics of particular
+searches follow after that.<P>
+
+
+
+<hr width="50%">
+<h3><a name="hips.visualselection">
+<a name="interactivetarget">Interactive Target Refinement</A></A></h3>
+
+
+Whenever you see this icon <img src="img/clicktosearch.png"> in
+Firefly, you can click on it to bring up a window to
+<strong>interactively refine your target selection via clicking on a
+HiPS map</strong>. Here, we are using a TAP search to demonstrate this
+process, but you can find this kind of target refinement in several
+places in Firefly.<P>
+
+When you click on the icon <img
+src="img/clicktosearch.png"> you bring up a window:<P>
+<table><tr><td><img src="img/clicktosearch1.png" width="500" style="border:3px solid gray"></td><td>
+If you have entered a target already, the window arrives already
+centered on the target. If not, it is centered on the galactic center,
+zoomed out. If you have entered a cone search radius already, then the
+circle drawn on the image is that cone size. You can manipulate this
+image with the same basic tools as in the <a
+href="visualization.html">visualization tools</A>.
+</td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch2.png" width="500" style="border:3px solid gray"></td><td>
+To change the search region interactively, choose the selection
+tools and draw a shape on the image.<P>
+<strong>Note that</strong> if you have selected a cone search on the
+left, no matter what you select on the right, it will give you a cone
+search. If you change the cone position or radius in the yellow boxes
+after you change the selection, it will update the region in the
+image. </td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch3.png" width="500" style="border:3px solid gray"></td><td>
+If you want to quit out of the selection without changing, click on
+"end selection" (the brown text near the top of the image). 
+ </td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch4.png" width="500" style="border:3px solid gray"></td><td>
+If you select polygon on the left, and you use the selection tool for
+"cone selection" on the right, you will get a spherical polygon
+(a polygon where the line segments are on a sphere).
+ </td></tr></table>
+<P>
+When you are done with this pop-up window, click on the 'x' in the
+upper right of the window. Then you can continue with whatever you
+were doing before you started to refine your target parameters.<P>
+
+
+
+
+
+
+
+
+<hr width="50%">
+<h3><a name="moreconstraints">VO TAP Searches: More information about
+constraints</A></h3><P>
+
+You can have several different ways of constraining your search
+depending on the options you have selected before the "Enter
+Constraints" section, and the options depend on what kind of service
+is available at the TAP service you have selected. If the options do
+not appear initially, click on the downward arrow to "unfold" the
+options.<P>
+
+<dl>
+<dt><strong><a name="tapSearches.spatial">Enter Constraints:
+Spatial</A></strong>
+<dd>
+This part of the interface allows you to specify the details of a
+spatial search. You need to specify both what kind of search you want
+to do and which columns of the catalog are to be used for
+coordinates.<P>
+
+<table><tr><td>
+<img
+src="img/enterconstraints-spatial1.png" width="500" style="border:3px solid gray">
+</td><td>This is what it looks like when you do a <strong>single
+target cone search</strong>; note that you have the same name
+resolution options as in any other search here.</td></tr></table>
+
+<table><tr><td>
+<img src="img/enterconstraints-spatial2.png" width="500" style="border:3px solid gray">
+</td><td>
+And, this is what it looks like when you do a <strong>single target polygon
+search</strong>. The search areas here (visible, selection, and
+custom) are the same as when you do a polygon search on <a
+href="catalogs.html">catalog</A> -- that is, you can select whether
+you want the catalog request to match the entire area of the image you
+have selected ("image"), or just the portion of the image you can see
+in the current view ("visible"), or your own ("custom") area. The list
+of vertices in the coordinates box are in decimal RA and Dec in
+degrees. You must enter at least 3 and at most 15 vertices, separated
+by a comma. <P>
+
+You can also click on this icon <img src="img/clicktosearch.png"> to
+<a href="#interactivetarget">interactively refine your search
+position</A>. </td></tr></table><P>
+
+<P>
+
+<table><tr><td><img src="img/clicktosearch5.png" width="500"
+style="border:3px solid gray"></td><td> If you want to perform a
+<strong>multi-target search</strong>, click on "multi-object", which
+automatically brings up this pop-up, from which you can load a table
+from disk ("Upload tables" tab) or select one of the tables you have
+already loaded into the tool (click on the "Loaded tables" tab).  Your
+uploaded catalog has to follow all the same rules as normal <A
+href="upload.html#catalogs">catalogs from disk</A>. 
+</td></tr></table><P>
+
+<table><tr><td><img src="img/clicktosearch6.png" width="500"
+style="border:3px solid gray"></td><td> After you find your file with
+your listed positions and upload it, the tool attempts to guess which
+two columns are the position columns. In this example, it has
+(correctly) guessed that the position columns are "ra" and "dec". If
+it guesses wrong, or can't figure it out, you can help it along by
+clicking on the down-arrow to 'expand' that part of the panel and
+selecting the two coordinate columns to use.  </td></tr></table><P>
+
+<table><tr><td><img src="img/clicktosearch7.png" width="500"
+style="border:3px solid gray"></td><td> Regardless of what
+configuration you use, the last thing to check is which columns the
+tool has assumed are the position columns in the catalog to be matched
+to your position, region, or list of positions. Again, it attempts to
+make an educated guess as to the right columns, but if it guesses
+wrong, you can help it along by clicking on the down-arrow to 'expand'
+that part of the panel and  selecting the two coordinate columns to
+use.  </td></tr></table><P>
+
+<dt><strong><a name="tapSearches.temporal">Enter Constraints:
+Temporal</A></strong>
+<dd>
+This part of the interface allows you to specify which column of the
+catalog is to be used for timing, and allows you to constrain the date
+in two different systems.<P>
+
+<table>
+<tr><td width="25%">This is what the panel looks like initially, where you
+specify the column in the catalog you are searching with the time and
+then the dates. If you don't remember what the column is in the
+catalog, click on the magnifying glass to get a pop-up with a list of
+all of the columns.
+</td><td><img src="img/enterconstraints-temporal1.png" style="border:3px solid gray"
+width="50%"></td></tr>
+
+<tr><td width="25%">For the dates and times, if you click on the
+calendar icon at the far right of the entry box, you get a pop-up from
+which you can specify the date and time, shown here.</td><td> <img
+src="img/enterconstraints-temporal2.png" width="50%" style="border:3px solid gray"> </td></tr>
+
+
+<tr><td width="25%">
+If you would like to work in MJD instead of ISO dates, select the
+"MJD" radio button. Note that it echoes below the box what it thinks
+you've entered in two different systems (UTC and MJD) to verify what
+you have entered.</td><td><img
+src="img/enterconstraints-temporal4.png" width="50%" style="border:3px solid gray"> </td></tr>
+</table>
+<P>
+
+<dt><strong><a name="tapSearches.objid">Enter Constraints:
+Object ID</A></strong>
+<dd>
+This part of the interface allows you to match object IDs.<P>
+
+<table>
+<tr><td width="25%">This is what the panel looks like initially:
+</td><td><img src="img/enterconstraints-objid.png" style="border:3px solid gray"
+width="50%"></td></tr>
+
+<tr><td width="25%">This is what the panel looks like after you have
+selected your uploaded list of IDs (in this case, a file called
+"gaiaids.tbl", which consists of an IPAC table file that is just the
+list of Gaia IDs, in a column called "gaiaid"), and it is being
+matched against the Gaia DR3 main catalog, where the relevant field
+is "source_id".
+</td><td><img src="img/enterconstraints-objid2.png" style="border:3px solid gray"
+width="50%"></td></tr>
+</table>
+
+<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
+<UL>
+<LI>The names have to match exactly, so in the case of this example,
+since the Gaia column source_id is a long, the IPAC table file must
+also cast the Gaia ID as a long. 
+<LI>If the catalog to which you are matching is not indexed by the
+name column you are using, the search may take a long time.
+<LI>If you are doing, say, an object ID search, you need to turn off the
+position search, otherwise it doesn't understand what you want it to
+do.
+</UL><P>
+</dl>
+
+
+
+
+
+
+
+<hr width="50%">
+<h3><a name="moreconstraints2">VO ObsCore Searches: More information about
+constraints</A></h3><P>
+
+These are several additional ways of constraining your search
+depending on the options you have selected before the "Enter
+Constraints" section. These options appear if you have selected an
+ObsCore search. If all of these options do not appear initially, click
+on the downward arrow to "unfold" the options. <P>
+
+ 
+<dl>
+<dt><strong><a name="tapSearches.obsCore">Enter Constraints:
+Observation Type and Source</A> </strong> 
+<dd> 
+<table><tr><td><img
+src="img/enterconstraints-obstype.png" style="border:3px solid gray"></td>
+<td>This panel provides a way to constrain the:
+<UL>
+<LI><em>Calibration level</em> - 0 is the least processed and 4 is the most
+processed, and not all instruments provide all levels
+<LI><em>Data product type</em> - image, cube, spectrum, SED, time series,
+visibility, event, measurement, or none specified. You can select more
+than one of these at a time by using a right mouse click.
+<LI><em>Instrument name</em> - must match exactly, wild cards not accepted
+<LI><em>Collection</em> - must match exactly, wild cards not accepted
+</UL>
+</td>
+</tr></table>
+<P>
+
+<dt><strong><a name="tapSearches.location">Enter Constraints: Location</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-location1.png" width="500" style="border:3px solid gray"></td>
+<td>This panel provides a way to constrain the location of your
+search. Here, it is a single object search, which works just like it
+does above, including the <a href="#interactivetarget">interactive
+target refinement</A> via the bullsye icon. You can also upload a
+list of targets by selecting "multi-object" -- it brings up the same
+pop-up as above, from which you can load a table from disk ("Upload
+tables" tab) or select one of the tables you have already loaded into
+the tool (click on the "Loaded tables" tab).  Your uploaded catalog
+has to follow all the same rules as normal <A
+href="upload.html#catalogs">catalogs from disk</A>. <P>
+
+</td>
+</tr></table>
+<P>
+You can specify via the drop-down the type of your query:
+"observation boundary contains point", "observation boundary contains
+shape", "observation boundary is contained by shape",
+"observation boundary intersects shape", and "central point (s_ra,
+s_dec) is contained by shape." The latter refers to the columns "s_ra"
+and "s_dec" in the ObsTAP table.
+
+<P>
+
+<dt><strong><a name="tapSearches.exposure">Enter Constraints: Timing</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-timing1.png" style="border:3px solid gray"></td>
+<td>This panel provides a way to constrain the observation time of your
+search. This is the default option, where you want data
+completed in the last x hours (or other unit of time).
+</td></tr>
+<tr><td><img
+src="img/enterconstraints-timing2.png" style="border:3px solid gray"></td>
+<td>This is the alternate option, where you want data
+overlapping a specified date range, where you can specify UTC or MJD
+times.
+</td></tr></table>
+<P>
+
+<dt><strong><a name="tapSearches.wavelength">Enter Constraints:
+Spectral Coverage</A> </strong>
+<dd>
+<table><tr><td><img
+src="img/enterconstraints-spectral1.png" style="border:3px solid gray"></td>
+<td>This panel provides a way to constrain the spectral coverage of your
+search. This is the default option, where you want data
+containing a given wavelength.
+</td></tr>
+<tr><td><img
+src="img/enterconstraints-spectral2.png" style="border:3px solid gray"></td>
+<td>This is the alternate option, where you want data
+overlapping a specified wavelength range.
+</td></tr></table>
+
+</dl><P>
+
+
+
+
+
+<hr width="50%">
+<h3><a name="tapSearches.form"></A>
+<A name="irsavotap"></A>
+<A name="generaltap">General VO TAP Search</A></h3>
+
+To see a TAP search tab as a choice on the top, you may need to select it from
+the <a href="overview.html#drawer">side menu</A>. 
+
+
+This is what a VO TAP search screen looks like by default:<P>
+
+<img src="img/votapsearch.png" width="100%" style="border:3px solid gray"><P>
+
+<dL>
+<dt><strong>Just do it: a quick start</strong><P>
+
+<dd> 
+<strong>Select TAP Service</strong>:  It comes up ready to search on
+<em>IRSA's TAP service</em>. You can select your favorite from the
+drop-down menu, or use the toggle on the left to enter your own custom
+URL.  The rest of this example is going to
+use IRSA's services as an example.<P>
+
+
+<a name="tapSearches.selectTable"><strong>Select Table</strong></A>: 
+If you have selected IRSA's TAP service, the next choices are <em>IRSA
+Tables</em>. You first need to select the "project" (called "Table
+Collection" or "Schema"). Then, having selected that, the drop-down
+menu on the right changes to reflect the tables available under that
+schema.<P>
+
+Then <a name="tapSearches.constraints"><strong>Enter
+Constraints</strong></A>: On the <strong>left</strong>, you can impose
+a variety of constraints. In addition to selecting the tickbox
+indicating that you wish to impose a particular kind of constraints,
+you need to specify which columns should be used for those
+constraints. <a href="#moreconstraints">More information on these
+constraints is above.</A>  On the <strong>right</strong> is a list of
+the columns in the selected table, with tickboxes to indicate which
+columns will be returned. You can also set constraints on the columns
+from here, following the <a href="tables.html#filters">same filter
+rules as for any tables here</A>. Above this section of the screen,
+there is an indication of which columns are selected (e.g., 45 of 298
+columns). You can reset the column selection via the button here as
+well.<P>
+
+Then to <strong>actually do it</strong>, click "Search."<P>
+
+
+<dt><strong>Getting more out of it: Taking advantage of additional
+options</strong><P>
+<dd>
+
+<DL>
+
+<dt><strong>Regaining some space</strong>
+<dd>
+If you want to hide the top row after selecting a service (to
+regain screen real estate), look for this on the far right:<br> <img
+src="img/hidetap.png"><br> The "TAP Services:" button (show/hide) will
+reveal or conceal this top row.<P>
+
+<DT><a name="tapSearches.selectBy"><strong>Selecting a Query Type</strong></A>
+
+<DD>Also on the far right of the top row, there is a slider that is, 
+by default, set to "UI-assisted", as opposed to "Edit
+ADQL". Especially when starting out, UI-assisted is easier.  By using
+the UI assisted" option, you can select pre-defined options and have
+the interface construct the query in ADQL. Alternatively, if you are
+already fluent in ADQL, you can select the second option, "Edit ADQL",
+to construct even more complex queries. <P>
+
+After populating the search parameters using the UI, you can click the
+button on the bottom, "Populate and edit ADQL" -- this takes the
+parameters you have entered, creates the ADQL, and launches the "Edit
+ADQL (advanced)" interface.<P>
+
+<dt><a name="tapSearches.adql"><strong>Advanced ADQL</strong></A>
+<DD>
+<img src="img/voadql.png" width="75%" style="border:3px solid gray"><P>
+You can get to this screen by selecting "Edit ADQL (advanced)" in step
+two, or by clicking on "Populate and edit ADQL" after filling out the
+UI. <P>
+
+You can select the schema from the left side of the screen. Each of
+the schemas can expand into viable tables and then columns within each
+table via clicking on the "+" to the left of the folder icon. Click on
+a column name to have it appear at the location of your cursor in the
+ADQL query box on the right. If you have the tickbox checked on the
+right that says "Insert fully-qualified column names", clicking on the
+column name inserts fully-qualified column names at your cursor
+location in the box. <P>
+
+You can type the ADQL directly into the box. If you configured a
+search on the "UI assisted" page, this box is already pre-filled with
+the ADQL version of your search, and you can proceed to edit it
+further. <P>
+
+Examples of useful functions and queries are given on the lower
+right of this window; you may need to scroll down.<P>
+
+</dl>
+
+</dl>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>All the drop-downs near the top are roughly searchable. This is very useful
+if you are trying to find a particular table or service that you can't
+quite recall. Click in the drop-down area, type the first letter of
+what you are looking for, and it will jump to the first instance of a
+string starting with that letter. Hit that letter again, and it goes to
+the second instance of a string starting with that letter.
+<LI> Not every table available via this interface even has RA/Dec or,
+if it does, it may not be searchable via positions. If you have
+selected a table that doesn't have positions, it will not yield
+results if you try to search by position. 
+<LI>There is a maximum number of returned rows at the bottom. If you
+are anticipating more than this number of rows, increase this number!
+<LI>If you arrive at the advanced ADQL page from the "Populate and
+edit ADQL" button, this is a one-way trip -- any changes you make to
+the ADQL here are NOT transmitted automatically back to the "UI 
+Assisted" query page.
+</ul><P>
+
+
+
+If you choose to use the GUI, you can work within it to set the
+constraints you desire at the bottom of the screen; see <a
+href="#moreconstraints">VO TAP: More About Constraints</A> for all of
+the information about setting constraints.<P>
+
+
+
+
+
+If you select VizieR's TAP services in particular, because there are
+so many tables, the tool will give you a slightly different interface
+under the "Tables" section of the window. Here is the default Vizier
+choices as of this writing:<br>
+<img src="img/viziertap1.png" width="75%" style="border:3px solid
+gray"><br>
+Note that it tells you how many tables and rows are available.
+Switching to tables associated with journal articles, far more tables
+are available:<br>
+<img src="img/viziertap2.png" width="75%" style="border:3px solid
+gray"><br>
+Now, if you click on the second tier menu (J/AJ/100/1091/table9), you
+get a pop-up, which is another Firefly <a href="tables.html">table</A>
+like any other in this tool, so it's searchable and sortable:<br>
+<img src="img/viziertap3.png" width="75%" style="border:3px solid
+gray"><br>
+which makes it trivially easy to find tables in which you are
+interested, such as those associated with papers by Massey, as
+shown. Select the table that you want to search, and then continue to
+specify the rest of your search, just as described above in
+the <a href="#irsavotap">IRSA VO TAP Search</A> screen discussion.<P>
+
+The result of any VO TAP search is a catalog that can be interacted
+with like any other <a href="catalog.html">catalog in this
+tool</A>.<P>
+
+
+A special case of a TAP search is an <a href="#obscore">ObsCore
+search</A>; see next section.<P>
+
+
+<hr width="50%">
+<h3><A name="obscore">ObsCore Search</A></h3>
+
+An ObsCore search is technically a subcategory of a TAP search, but it
+is a special subcategory in that it can return images, spectra,
+catalogs, and more, or even links to services. As such, it is a wholly
+different section than the <a href="#generaltap">TAP</A> section
+above. <P>
+
+There are ObsCore servers all over the world, but a good default
+server to try is the CADC ObsCore service, which is what is used for
+these screenshots. If any given service supports ObsCore, then an
+ObsCore switch appears. Toggle that if so desired.<img
+src="img/useobstap.png"><P>
+
+The "UI Assisted"/"Edit ADQL" switch at the top right works <a
+href="#tapSearches.selectBy">just like it does above</A> -- use the UI
+to construct a query or dive right into the ADQL yourself. <P>
+
+Then in the remaining part of the screen, impose the constraints you
+want -- see <a href="#moreconstraints2">the constraints section
+above</A>.<P>
+
+At the bottom of the screen, you can "Populate and edit ADQL" if you
+want to work with the ADQL directly, or just search straight away
+after setting your search parameters. <P>
+
+Here are results of a basically unconstrained search on M16:<br>
+<img src="img/obscoreresults1.png" width="100%" style="border:3px solid
+gray"><P>
+The coverage image on the left shows the polygons of coverage of the
+observations it found, and the plot on the right is the (relatively
+uninformative) plot of the positions associated with the
+observations.  The table on the bottom as a list of the observations
+that it found consistent with the search parameters. This table is
+like <a href="tables.html">any other table in this tool</A>, so it can
+be sorted, filtered, etc. Data can be selected for download via the
+tickboxes on the left. The other tab on the upper left ("Data
+Product") shows a preview, when possible, of the data product
+corresponding to the highlighted row in the table.   <p>
+
+
+
+
+The result of any ObsCore search is a table that is a list of
+observations, and that table can be interacted with like any other <a
+href="table.html">table in this tool</A>. However, it is a table of
+observations and/or services, so it yields much more than just a row
+in a catalog; it can give you images, spectra, and more.<P>
+
+
+
+
+
+
+
+
+
+<hr width="50%">
+<h3><A name="nedcatalogs">NED Objects</A> -- Searching for NED objects</h3>
+
+(NED= <A href="http://ned.ipac.caltech.edu/" target="_blank">NASA
+Extragalactic Database <img src="img/jumpout.jpg" height="10"></A>.)<P>
+
+To see this tab as a choice on the top, you may need to select it from
+the <a href="overview.html#drawer">side menu</A>.<P>
+
+
+<img src="img/nedcat.png" width="70%" style="border:3px solid
+gray"><P>
+
+As for the other catalog searches, the tool may pre-fill the target
+position with its best guess of the coordinates of the target with
+which you have been working. You can use an object name in place of
+coordinates. Note that although NED is used for name resolution, the
+actual search is then performed using coordinates, as opposed to name.
+In this case, you are limited to a cone search, so the next option is
+the cone search radius. Pick your units from the drop-down first, and
+then enter a number; if you enter a number and then select from the
+drop-down, it will convert your number from the old units to the new
+units. There are both upper and lower limits to your search radius; it
+will tell you if you request something too big or too small. <P>
+
+From the NED results, you have one-click access to the fully detailed
+information from NED on any object returned from such a search.
+The search results will generally include a column "Details", though
+you may have to scroll to the right to see it. Clicking on a link in
+this column takes you directly to the full NED information display for
+the selected object in a new window.
+<P>
+
+The result of any NED search is a table that behaves like any other <a
+href="table.html">table in this tool</A>.<P>
+
+
+
+<hr width="50%">
+<h3><A name="voscs">VO SCS</A> -- VO Simple Cone Search</h3>
+
+(SCS = simple cone search.)<P>
+
+To see this tab as a choice on the top, you may need to select it from
+the <a href="overview.html#drawer">side menu</A>.<P>
+
+<br><img src="img/vocatalogs.png" width="70%" style="border:3px solid
+gray"><br>
+<P>
+
+As for the other searches, the tool may try to pre-fill the target
+position with the coordinates of the target with which you have been
+working. In this case, you are limited to a cone search, so the next
+option is the cone search radius. As usual, pick your units from the
+drop-down first, and then enter a number; if you enter a number and
+then select from the drop-down, it will convert your number from the
+old units to the new units. There are both upper and lower limits to
+your search radius; it will tell you if you request something too big
+or too small. <P>
+
+If you know your VO URL already, you can jump down to the Cone Search
+URL box and type or paste your URL into the box and hit search.<P>
+
+More commonly, however, users do not know <em>a priori</em> which URL
+to use. Click on "Find Astronomical Data Resources" to be dropped into
+a VO search. Find the URL corresponding to the catalog you want, copy
+it, and go back and paste it in the URL box. The URL should not have
+the RA and Dec in it; the tool will add your RA and Dec as listed to
+the URL in the right syntax. Click on
+"Search" to initiate the search. <P>
+
+
+<strong>Example</strong><p>
+
+Load the tool. Search on IC1396. Go to the catalogs tab. Choose "VO
+Catalog." It wants the root URL for a cone search. Click on "Find
+Astronomical Data Resources", which goes <a
+href="http://vao.stsci.edu/keyword-search/" target="_blank">here <img
+src="img/jumpout.jpg" height="10"></A>. Search on IPHAS. Get <a
+href="http://vao.stsci.edu/keyword-search/?utf8=%E2%9C%93&search_field=all_fields&q=iphas"
+target="_blank">this page <img src="img/jumpout.jpg" height="10"></A>.
+Look for the complete catalog release (not just one associated with
+one specific study). The name of the catalog goes <a
+href="http://vao.stsci.edu/directory/getRecord.aspx?id=ivo://CDS.VizieR/II/321"
+target="_blank">here <img src="img/jumpout.jpg" height="10"></A>. Hit
+the [+] to expand it. There is one URL listed there, under "available
+endpoints for the standard interface." Copy that URL and paste it into
+the search form. The IRSA tool will append your coordinates and radius
+and return you a table.<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>
+Note that searching the VO means that you are using resources not
+specifically housed at IRSA, so servers may be down, or timeouts set,
+or limits on numbers of returned sources, etc., that are beyond our
+control. In most cases the solution is to specify as precise a search
+as possible.  The URL you enter into the box in the search panel must be a
+Cone Search base URL (not containing RA and Dec parameters, which are
+inserted into the URL by the tool in response to the search
+parameters you give it).
+
+<LI>The master list of registries is <a href="http://rofr.ivoa.net/"
+target="_blank">here <img src="img/jumpout.jpg" height="10"></A>. You
+can also search the registries directly via that link (as opposed to
+via Firefly). 
+
+</UL><P>
+
+
+
+The result of any VO SCS search is a catalog that can be interacted
+with like any other <a href="catalog.html">catalog in this
+tool</A>.<P>
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>
