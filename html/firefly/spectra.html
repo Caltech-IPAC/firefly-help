@@ -1,0 +1,266 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Spectra" -->
+<HEAD>
+<TITLE>Firefly: Spectra
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: Spectra</h2>
+
+Visualization of spectra use capabilities of  <a
+href="tables.html">Tables</A>, (image) <a
+href="visualization.html">Visualization</A>, and <a
+href="plots.html">Plots</A>. Generic help on those capabilities can be
+found in those other sections; spectra are a special case of all of
+those, and this section attempts to build on that by collecting all
+the spectra-specific information in one place.<P>
+
+
+<em>Contents of page/chapter:</em><br>
++<A href="#loading">Loading Spectra</A> <br>
++<A href="#extracting">Extracting Spectra</A> <br>
++<A href="#plotting">Plotting Spectra</A> <br>
++<A href="#redshifting">Redshifting Spectra</A> <br>
++<A href="#overplotting">Overplotting Spectra</A> <br>
++<A href="#combining">Combining Spectra</A> <br>
+<P>&nbsp;<P>
+
+<hr width="50%">
+<h3><A name="loading">Loading Spectra</A></h3>
+
+The first step to using the spectral features in this tool is getting
+the tool to recognize that you have a spectrum.<P>
+
+When you <a href="upload.html#spectra">upload your own
+files</A> from disk, if you load a table, there is an option that
+appears at the bottom left of the screen:<br> <img
+src="img/interptabspec.png"><br> If you tick this box, and your data
+are formatted consistently with (or at least close to) the <a
+href="https://ivoa.net/documents/SpectrumDM/20111120/index.html"
+target="_blank">IVOA SpectrumDM v1.1 data model <img
+src="img/jumpout.jpg" height="10"></A>, then the tool will recognize
+the data as a spectrum.<P>
+
+There is some flexibility in the interpreter, so if you think your
+file is close to the standard, give it a try. The computer might be
+able to figure it out.<P>
+
+
+
+<hr width="50%">
+<h3><A name="extracting">Extracting Spectra</A></h3>
+
+Alternatively, you can get spectra into Fireefly by extracting them
+from an image file. If you have a multi-HDU file where the planes are
+different wavelengths (such as can be found in data from <a
+href="https://irsa.ipac.caltech.edu/Missions/sofia.html">SOFIA <img
+src="img/jumpout.jpg" height="10"></A>), <a
+href="visualization.html#extraction">use the drill extraction
+tool</A>, and "pin" the extraction, then the tool will also recognize
+the extracted data as a spectrum. It will also (attempt to) propagate
+the errors correctly.<P>
+
+
+
+<hr width="50%">
+<h3><A name="plotting">Plotting Spectra</A> </h3>
+
+Spectra are plotted automatically when loaded. By default, they are
+plotted as F-sub-nu vs. lambda in microns, with connected points. At
+least, this is what it attempts to do, if it understands the units of
+the file you have given it. If it understands the units, it will
+convert them appropriately. If it doesn't understand the units, it may
+serve them to you in the same units it received. <P>
+
+When spectra are plotted, changing what is plotted by clicking on the
+gears is similar to, but not quite the same as, <a
+href="plots.html#changing">the generic case</A>. Now, because it knows
+it is plotting a spectrum, you can select the x- and y-axis columns
+and units from a pre-defined set of choices in the drop-down menus,
+where it will convert the units when necessary.<P>
+
+It is probably most efficient to demonstrate plotting of spectra via
+specific examples.<P>
+
+<table><tr><td><img src="img/spectraplot3.png"  width="400"
+style="border:3px solid gray"> </td><td>In this example, the tool has
+identified the spectral axis as 'wavelength', understood the units,
+converted them to microns, and is showing them in the observed
+reference frame. It has identified the flux axis column as 'FLUX' and
+the corresponding error as 'ERROR', and understood the units as Jy.
+From the drop-down menus, you can choose to convert the wavelength to
+Angstroms, nanometers, microns, millimeters, centimeters, or meters.
+You can choose to convert the flux density to Janskys or
+Watts/meter^2/Hertz. It is plotting the spectrum as connected points,
+with error bars.  <br> <img src="img/spectrum3.png" width="400"
+style="border:3px solid gray"></td></tr></table> <P>
+
+<a name="orders">&nbsp;</A>
+<table><tr><td><img src="img/spectraplot.png" height="400"
+style="border:3px solid gray"> </td><td>In this second example, the
+tool is struggling a bit more. It has identified the spectral axis
+column as 'wavelength' and is showing it in the observed frame, but it
+is guessing about the units; they only appear in the plot. It has
+identified the flux axis column as "flux_density", it has identified
+the errors as "error", and it has understood those units as Jy. It is
+showing the spectrum with connected points. Note too that in this
+case, there are several spectral orders; at the top, you can see that
+there is "choose trace" -- it turns out that there are four orders in
+this spectrum, and it is <a
+href="plots.html#overplotting">overplotting</A> all four on the same
+plot, with errors.<br> <img src="img/spectrum1.png" width="400"
+style="border:3px solid gray"></td></tr></table><P>
+
+<table><tr><td><img src="img/spectraplot2.png" height="400"
+style="border:3px solid gray"> </td><td>In this less well-behaved
+example, the tool has identified the spectral axis column as
+'wavelength' and has figured out the units of it, shown in in microns,
+in the observed frame. The flux axis column in this case is just
+"HDU#0", so it is completely confused. It hasn't figured out what to
+do about errors at all. It is showing the spectrum with connected
+points.<br> <img src="img/spectrum2.png" width="400" style="border:3px
+solid gray"></td></tr></table>
+
+<P>
+
+In all of these cases, you don't have as much flexibility in these
+plots as you do for <a href="plots.html">plots in general</A>, but the
+options you do have are highly customized to spectra, such as
+redshifts. See the next section!<P>
+
+
+<hr width="50%">
+<h3><A name="redshifting">Redshifting Spectra</A> </h3>
+
+When the tool recognizes the wavelength axis, it offers you a choice of
+redshifting the spectrum. By default, it assumes you want to plot the
+data as observed:<br>
+<img src="img/redshift1.png" style="border:3px solid gray"><br>
+but if you pick "Rest Frame":<br>
+<img src="img/redshift2.png" style="border:3px solid gray"><br>
+you can enter a redshift, and it shows you how it adjusts the
+wavelength axis accordingly:<br>
+<img src="img/redshift3.png" style="border:3px solid gray">
+<P>
+
+Click 'Apply' to implement these changes in the plot. The axis labels
+on the plot correspondingly change.<P>
+
+To change back to the data as observed, simply pick "Observed Frame"
+from the drop-down menu.<P>
+
+<hr width="50%">
+<h3><a name="overplotting">Overplotting Spectra</A></h3>
+
+The <a href="plots.html#overplotting">Plots section</A> covers
+overplotting in general, and the example given there is a
+color-magnitude diagram. However, the reason why there is overplotting
+capability in the tool at all is to support overplotting spectral
+orders from a given spectrum on the same plot. <P>
+
+If you load in a spectrum with multiple orders and just try to plot it
+without convincing the tool that the data are a spectrum, you get, by
+default, the plot on the left. But, if you let the tool know that the
+file you have uploaded is, in fact, a spectrum, you get the plot on
+the right, where the four orders in this spectrum are overplotted in
+different colors.<P> 
+
+<img src="img/overplottedspectra.png" width="100%"><p>
+
+If you use the plot options (click on the gears <img
+src="img/gears.png" align="center"> icon), you can change the plot
+parameters. It has options similar to what you get for generic
+plotting, but limited as in the above, specifically for plotting
+spectra:<br> <img src="img/overplotparams.png" width="400"
+style="border:3px solid gray"><p>
+
+
+
+
+<hr width="50%">
+<h3><a name="combining">Combining Plots</A> </h3>
+
+<A href="plots.html#pinning">Pinning plots</A> is covered in the
+generic plots section, but in brief, pinning allows you to temporarily
+'save' a given plot. <P>
+
+When you have more than one plot pinned, this icon may appear at the
+top of the plot pane: <img src="img/combinechart.png" align="bottom">
+This means "Combine Chart".<P>
+
+This option only appears if you have pinned at least two plots, and it
+will only let you combine plots if it recognizes that you have spectra
+loaded. <P> 
+
+To start this process, click to select the first chart you want to
+combine, then click on the "combine chart" icon. You get a  pop-up
+like this:<br> <img src="img/combinechartpopup.png" width="500"
+ style="border:3px solid gray"><br> All of the remaining pinned charts
+that can be combined appear as a list at the top. Once you select them
+via the tickboxes on the far left of the list (the first one in the
+list is selected here), they appear as options on the bottom of the
+pop-up window. For this example, I extracted the observed spectra from
+a SOFIA FIFI-LS data cube at several sky positions. The extractions
+are the default "Extraction Z-Axis - <em>n</em>". <P>
+
+Continuing through this pop-up, you can choose to set the title of the
+new plot you are about to create -- the default is "combined". <P>
+
+The next choice is "Apply cascading." Here is what this is and why it
+matters. If you are combining spectra that are nearly all the same
+brightness, the spectra will be plotted on top of each other.
+Sometimes that is what you want, and sometimes that is not. If you
+click on the "Apply cascading" option, you have an additional
+choice:<br>
+<img src="img/cascadingoptions.png"><br>
+This is telling you how it is going to stack the spectra on the final
+plot. See below for examples with and without cascading. You can
+adjust the amplitude of the cascade by changing the size of the
+padding, as shown.<P>
+
+Finally, you can change the name of the trace as displayed on the plot
+(and in the pull-down menus in the tool) for each of the spectra you
+are combining.<P>
+
+Click "OK" to actually make the new plot.<P>
+
+Here are two examples of combined spectra that were extracted from a
+SOFIA FIFI-LS data cube, one without cascading, and one with
+cascading. Both are useful, but in different contexts.<br>
+<img src="img/combinechartexample.png" width="48%">
+<img src="img/combinechartexample2.png" width="48%"><p> 
+
+
+Note that after you combine a plot, there is a new drop-down at
+the top of the plot that controls which trace is in the 'foreground' for
+changing plot parameters or selecting points, but you can also simply
+click on points in the plot to bring that trace to the foreground.<P>
+
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
+<UL>
+<LI>The plot you have selected when you click on "Combine Chart" is
+implicitly part of the combining process, so it's not available to
+select with a tickbox in the pop-up.
+<LI>If you have loaded spectral files with multiple orders, each order
+appears as a separate color in the plot. You can change the order
+labels before or after combining.
+<LI>At this time, you can't combine charts that the tool doesn't
+recognize as spectra, even if they are in the same parameter space.
+<LI>To delete a combined plot that you have created, just click on the 'x'
+in the upper right of the plot.
+</UL>
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>

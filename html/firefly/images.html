@@ -1,0 +1,675 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Images" -->
+<HEAD>
+<TITLE>Firefly: Images
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+<h2>Firefly: Images</h2>
+
+Firefly can load images as well as support extensive interacting
+with images. This chapter covers loading images; <a
+href="visualization.html">visualization tools</A> are covered in
+another chapter. Firefly can load images that are <a
+href="https://en.wikipedia.org/wiki/FITS" target="_blank">FITS <img
+src="img/jumpout.jpg" height="10"></A> and <a
+href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
+target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A>
+formats. Any <a href="catalogs.html">catalogs</A> you have loaded are
+overlaid on the images; see <a href="visualization.html">visualization
+chapter</A> for more information.<P>
+
+
+<em>Contents of page/chapter:</em><br>
++<A href="#searching">Searching for and Loading Images</A> <br>
++<A href="#3-color">Making 3-color Images</A> <br>
++<A href="#hips">HiPS Images: General Information</A> <br>
++<A href="#hipssearch">Searching for HiPS Images</A> <br>
++<A href="#adding">Adding New Images</A> <br>
++<a href="#coverage">Coverage Image</A><br>
++<a href="#upperleft">Upper Left HiPS menus</A><br>
+<P>&nbsp;<P>
+
+<hr width="50%">
+<a name="loading"> </A>
+<h3><A NAME="searching">Searching for and Loading Images</A></h3>
+
+When you first start Firefly, depending on how you get into
+it, an image may be pre-loaded. If the image is pre-loaded, you can
+start manipulating the image right away; see <a
+href="visualization.html">the Visualization section</A>. <P>
+
+If the first screen you come to is an empty results page, then you
+need to decide what to load. To search for images, click on "images"
+at the top to begin an image search: <img
+src="img/imagesintro.png"><P>
+
+
+If you do not have an image pre-loaded, the default start position is
+in the position search for images. It is assuming by default that you
+want to load a FITS image from IRSA services, though you can also load
+a FITS image from disk or off another service on the web (see below). 
+(<a href="https://en.wikipedia.org/wiki/FITS"target="_blank">Flexible
+image transport system, FITS <img src="img/jumpout.jpg"
+height="10"></A>, files are widely used in astronomy and are an easy
+way to store images.) <P>
+
+The search window looks like this:<br>
+<img src="img/search.png" width="70%" style="border:3px solid gray">
+<P>
+
+<DL>
+<DT><strong>1. Choose Image Type</strong>
+<dd>First, you select which images you want to load: FITS
+images (individually), FITS images that you load into a new
+three-color image (more on <a href="#3-color">3-color images</A>
+below), or <a
+href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
+target="_blank">HiPS images <img src="img/jumpout.jpg"
+height="10"></A> (more on <a href="#hips">HiPS</A> below; also see <a
+href="http://www.ivoa.net/documents/HiPS/" target="_blank">IVOA docs
+<img src="img/jumpout.jpg" height="10"></A> for more about what HiPS
+images are). <P>
+
+<DT><strong>2. Select Image Source</strong>
+<dd>Second, you select whether you want to pull an image
+from IRSA's archives ("Search"; see below), your own disk ("Use my
+image"), elsewhere on the web ("URL"), or the IRSA <a
+href="/docs/workspace/" target="_blank">Workspace <img
+src="img/jumpout.jpg" height="10"></A> ("Workspace"). Note that to use
+the Workspace (reading from or writing to it), you'll need to <a
+href="user.html">log in</A>. <P>
+
+In the cases other than "Search", nearly all of the additional options
+below this line vanish because they are no longer relevant. To
+<strong>select an image off of your local disk</strong>, select "Use
+my image", and then tell it where to find the image on your local
+disk. To load an <strong>image from the web</strong>, pick the "URL"
+option and enter the URL from which you want an image loaded.  To load
+an <strong>image from the IRSA Workspace</strong>, pick the
+"Workspace" option and find the file you want to load.<P>
+
+If you would like to load an image from IRSA's archives, select
+"Search" and go on to these subsequent additional search
+parameters.<P>
+
+
+<a name="selecttarget">
+<DT><strong>3. Select Target</strong></A>
+<dd>Third, you select a target. You may enter a target
+name, and have either NED-then-Simbad  or Simbad-then-NED resolve the
+target name into coordinates.  Alternatively, you may enter
+coordinates directly. These coordinates can be in decimal degrees or
+in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
+assumes you are working in J2000 coordinates; you can also specify
+galactic, ecliptic, or B1950 coordinates as follows:
+<UL>
+<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic
+coordinates 
+<LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
+<LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
+<LI>a source name like 'J140320.67+542028.6' is parsed as 14h03m20.67s
++54d20m28.6s.
+<LI>a source name like 'G102.0360+59.7715' is parsed as 102.0360
++59.7715 in galactic coordinates
+</UL>
+Examples are given below the text entry box before you start typing in
+the box.<P>
+
+As you are completing a valid coordinate entry, it echoes back to
+you what it thinks you are entering. Look just below the box in which
+you are typing the coordinates to see it dynamically change.  <P>
+
+Below the box where you enter the target, you can then specify the
+size of the images you want.  You may enter the cutout size in
+arcseconds, arcminutes, or degrees; just change the drop-down option
+accordingly. <P>
+
+<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
+<UL>
+<LI> Pick your units from the drop-down first, and then enter a
+number; if you enter a number and then select from the drop-down, it
+will convert your number from the old units to the new units. 
+<LI>There are both upper and lower limits to
+your search size; it will tell you if you request something too big
+or too small. Note that these limits may be image-dependent; larger
+images may be available from certain surveys and smaller images may be
+available from other surveys. 
+<LI><strong>If you want the whole image
+tile</strong>, just leave the image size blank, then the closest image
+tile in its entirety will be returned. 
+</UL><P>
+
+
+<DT><strong>4. Select Data Set</strong>
+<dd>Fourth, you select the data set. There are myriad
+choices, which you can filter in various ways to allow you to find
+what you need. Statistically, any one spot on the sky will only be
+found in a few of these data sets, so it makes sense to weed down the
+list, at least a little bit.<P>
+
+<em>On the left hand side</em>, you can filter by :
+<DL>
+<DT>Mission (or survey)
+<DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS, MSX,
+COSMOS, MUSYC, BLAST, IRTS, BOLOCAM.
+<DT>Project Type 
+<dd>Compilation (meaning, e.g., all the data available from a mission
+that was not an all-sky survey), extragalactic, galactic, all-sky. 
+<dt>Band 
+<dd>X-ray, UV, optical, near-IR, mid-IR, far-IR, mm, radio. (Yes, you
+can find data from non-IR missions/surveys here, depending on what
+projects have delivered back to IRSA.)
+</DL>
+The number in parentheses after each type is the number of data sets
+in that category.
+<P>
+
+To expand or contract the options below each of these broad
+categories, click on the black arrow on the right. To see all of the
+choices in each of these broad categories, click on the black arrow
+and then click "more" near the bottom of the list (after which you can
+click "less" to collapse it again). In this example, "Mission" is
+collapsed, "Project Type" is expanded, and "Band" is fully extended to
+reveal more options than are shown by default:<br> <img
+src="img/selectdataset1.png" style="border:3px solid gray">
+<P>
+
+To select any of the options, click on the checkbox on the left. In
+response to your selections, two things happen. (1) checked items
+appear in highlights above this part of the page, next to "Filter By";
+(2) the list of programs for selection on the right hand side changes.
+Here is an example where the list has been filtered down to just
+include WISE data:<br> <img src="img/selectdataset2.png"
+style="border:3px solid gray"><P>
+
+<em>On the right hand side</em>, you can select individual surveys and
+individual bands therein. To expand or contract the options below each
+of the categories, click on the black arrow on the right, next to the
+data set name. To select any of the waveband options, click on the
+checkbox on the left of the individual survey or individual bands.
+Here is an example showing all of the WISE/AllWISE data selected (via
+the tickbox next to "WISE AllWISE"), and just W2 from WISE/AllSky
+selected (via the tickbox next to "W2" in the expanded section under
+"WISE AllSky"). Note the "Selection" indication at the top.<br> <img
+src="img/selectdataset3.png" width="70%" style="border:3px solid gray"> <P>
+
+
+To find out more information about any given data set, click on the i
+in the circle <img src="img/infolink.png">. This takes you to a master
+list of all data sets available, from which you can obtain standard
+information about the data sets (mission, wavelengths, links to more
+information about the program or delivery, and more). <P>
+
+<DT><strong>Search!</strong>
+<DD>To actually initiate the search as specified, choose the "Search"
+button in the lower left.<P>
+
+
+</dL>
+
+
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>You don't have to select something on the left side before
+selecting something on the right side. If you know exactly what you
+want, just jump in and select things on the right and click "search."
+<LI>If you select something on the left side, it will limit your
+choices accordingly on the right side. 
+<LI> <img src="img/clearselection.png">If you clear filters on the
+left side, it doesn't affect selections you've already made on the
+right. You must actually clear all the selections on the right to
+reset everything. The most efficient way to do this is by clicking the
+'x' next to the selection summary at the top of this portion of the
+window -- the 'x' at the end of the "Filter By" line clears the
+filters on the left, and the 'x' at the end of the "Selection" line
+clears the selections.
+<LI><img src="img/expandcollapse.png"> If you want to expand all the
+choices on the right (to ease in band selection), click on the sets of
+arrows in the upper right of this part of the screen to show all
+options, or collapse them again.
+<LI>If you go back to add new images of the same target, be sure to
+uncheck the images you had previously selected, otherwise you will
+load in second copies of those images. 
+<LI>To remove an image you have already loaded (or an error message
+from a data set that had no data covering your target), click on the
+small blue "x" in the upper right of the corresponding image tile. 
+<LI>Most images that are returned will be cropped down to your
+requested size (if you entered a size). Some, however, cannot easily
+be cropped at the moment. Those are delivered full-size, and you can
+crop them down separately if you want. 
+
+<LI>For more information on the data sets included in Firefly, see <a
+href="https://irsa.ipac.caltech.edu/docs/irsaviewer_datasets.html"
+target="_blank">this list <img src="img/jumpout.jpg" height="10"></A>.
+<LI>Firefly will NOT return ALL the images for your specified
+combination of dataset+band+position; it returns the most centered
+science image it can find out of the bands it can access. This is
+usually but not always actually going to be the most useful to you,
+depending on what you're trying to do. Some programs delivered PSFs,
+mosaics created with alternate algorithms, etc.  To find all the data
+at IRSA for a given target, you have several options, but the most
+efficient might be to enter the desired position in the big search box
+on the <a href="https://irsa.ipac.caltech.edu/" target="_blank">IRSA
+home page <img src="img/jumpout.jpg" height="10"></A> (this accesses a
+tool called Data Discovery).
+
+</UL>
+Much more detail about interacting with images can be found in the <a
+href="visualization.html">Visualization section</A>.
+<P>
+
+
+<hr width="50%">
+<h3><A NAME="3-color">Making 3-color Images</A></h3>
+
+You can create 3-color images directly from the image search. Select
+"Create 3-Color Composite" from the top row of options. The rest of
+the window changes to look like the following:<br> <img
+src="img/3colors.png" width="70%" style="border:3px solid gray"><P> By
+default, you can select the red plane first; you then populate that
+color plane with all the same choices as you would have for a single
+channel image (as above). To set the additional color planes, click on
+"green" and then "blue" to populate those planes accordingly.  <p>
+
+It assumes that you must want the same position for all three color
+planes.<P>
+
+Select your options individually for each color plane (red, green,
+blue), and click 'Search' in the lower left.  To exit the search
+window (i.e., cancel) without creating a new 3-color image, click on
+any other tab at the top, e.g., "Results" returns you to the results
+you have already loaded into the tool. <P>
+
+To change the color stretch of each color plane individually, click on
+the "Color Stretch" icon in the toolbox on the top of the images pane;
+see the <a href="visualization.html">Visualization section</A>. Much
+more detail about interacting with images can be found in the <a
+href="visualization.html">Visualization section</A>.<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>You load all three images at once, e.g., you do NOT pick red,
+click search, then go back and pick green, click search, then go back
+and pick blue, click search. Instead, click red and define what you
+want for that image, then go to green and do the same, then go to blue
+and do the same. Don't click "search" until you have specified all
+three bands.
+<LI> The images will be downsampled to the resolution of the red
+image. If you, say, load an MSX image into the red plane, a WISE image
+into the green plane, and a 2MASS image into the blue plane, all of
+the images will have MSX-sized pixels. If you load a WISE image into
+the red and green planes, and a 2MASS image into the blue plane, the
+images will have WISE-sized pixels. 
+</UL>
+
+
+
+
+
+<hr width="50%">
+<h3><A NAME="hips">HiPS Images</A>: General Information & Definitions</h3>
+
+<a
+href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
+target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A>
+stands for hierarchical progressive surveys, and these kinds of images
+are multi-resolution <a href="http://healpix.sourceforge.net/"
+target="_blank">HEALPix <img src="img/jumpout.jpg" height="10"></A>
+images (where HEALPix stands for Hierarchical Equal Area isoLatitude
+Pixelation). (Also see <a href="http://www.ivoa.net/documents/HiPS/"
+target="_blank">IVOA docs on HiPS <img src="img/jumpout.jpg"
+height="10"></A>.) In practice, what this means is that you can
+interact with images of a very large chunk of sky, and as you zoom,
+the pixel size changes dynamically.  HiPS images are fundamentally 
+different than FITS images, and as such, what you can do with the HiPS
+images are different than what you can do with the FITS images. <P>
+
+The whole point of HiPS images is to provide on-demand resolution
+changes. Zoom out, and it loads large pixels. Zoom in, and it loads
+smaller pixels.  HiPS images are designed to cover large areas of sky
+efficiently. If you need to visualize many degrees, this is the image
+type to use.<P>
+
+There are HiPS images from all over the world available via the web;
+the complete list of HiPS images available from the images search
+page includes (once the "IRSA Featured" checkbox is unchecked) many
+HiPS images from <a href="http://cdsweb.u-strasbg.fr/"
+target="_blank">CDS <img src="img/jumpout.jpg" height="10"></A>. <P>
+
+HiPS images typically have the color and stretch set by the person who
+originally made them. The color table can be remapped within this
+tool. But, you cannot, in general, change the stretch of HiPS images
+with as much flexibility as you can with FITS images. This is why
+there may be multiple versions of some data sets in the list of HiPS
+images.<P>
+
+<a name="moc"> </A>
+HiPS maps typically come with a <strong>Multi-Order Coverage map
+(MOC)</strong>. A <A href="https://ivoa.net/documents/MOC/"
+target="_blank">MOC <img src="img/jumpout.jpg" height="10"></A> is a
+format developed by the International Virtual Observatory Alliance to
+specify sky regions. In this context, a MOC tells you via a simple
+boolean yes/no, is there sky coverage from this data set in this
+region. You can overlay a MOC from one data set onto a completely 
+different data set's HiPS image.<P>
+
+
+
+
+<hr width="50%">
+<h3><A NAME="hipssearch">Searching for HiPS Images</A></h3>
+
+
+
+Select "View HiPS Images" from the top row of options. The
+rest of the window changes to look like the following:<br>
+<img src="img/hips.png" width="70%" style="border:3px solid gray"><P>
+
+<DL>
+<DT><strong>1. Choose Image Type</strong>
+<DD> Image type should be "View HiPS Images".<P>
+
+<dt><strong>2. Select Image Source</strong>
+<dd>Second, you tell it whether you want to search among the HiPS
+images available to this tool, or give it a URL for it to construct a
+search. Either option retains the next section. <P>
+
+<DT><strong>3. Select Target</strong>
+<dd>Third, give it a target; this works <a href="#selecttarget">as for
+FITS images above</A>.<P>
+
+Note that here, in the context of HiPS images, the field of view (FOV)
+here has different limits than FITS images; it can be no smaller than
+0.0025 deg, and can be up to 180 degrees. If you leave this blank, it
+will simply load the entire HiPS image for you.<P>
+
+<DT><strong>4. Select Data Set</strong>
+<dd>Fourth, select a data set. By default, the list of possible
+choices is limited (via the checkbox at the top of the table) to "IRSA
+Featured" choices, meaning data that IRSA users are most likely to
+want. If you uncheck this box, you will have a much larger list of
+HiPS image choices (from <a href="http://cdsweb.u-strasbg.fr/"
+target="_blank">CDS <img src="img/jumpout.jpg" height="10"></A>) to
+pick from.  <P> 
+<strong>Column definitions.</strong> The table that appears when
+selecting a HiPS image has several columns:
+<UL>
+<LI>Type - image (all that is available in this context)
+<LI>Properties - links to more information for that image
+<LI>Title - descriptive words for the HiPS image
+<LI>Waveband - Approximate wavelength range
+<LI>Coverage - Approximate sky coverage (100% or less) -- HiPS images
+often carry with them something referred to as "MOC", or multi-order
+coverage. This number gives an indication of the sky coverage of the
+data.
+<LI>Pixel scale - At the highest order (zoomed in the most), this is
+the pixel size
+<LI>HiPS Order - HiPS order, e.g., how deep you can zoom
+<LI>Frame - coordinate sytem, e.g., equatorial, galactic, etc.
+<LI>Release date - Date that HiPS image became available
+<LI>Dataset IVOA ID - Unique (worldwide) identifier for the dataset
+</UL>
+
+<DT><strong>Search!</strong>
+<DD>To actually initiate the search as specified, choose the "Search"
+button in the lower left.<P>
+
+</dl>
+
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>The table of HiPS choices is itself a Firefly table, like all the
+other <a href="tables.html">tables in this tool</A>, so you can
+sort/filter/etc. to locate the image you want to load. 
+<LI>To learn more about any given image, click on the <img
+src="img/infolink.png" width="20"> in the second column of the table. Another
+window will spawn with basic information about that HiPS image.
+<LI>Note that color HiPS images are available and that the color
+stretch is set by the person making the HiPS image originally (so you
+can't really change it). You can change the color table (but not the
+stretch); see the <a href="visualization.html">Visualization
+section</A>.
+<LI>A blank HiPS image (basically a blank canvas) is also available
+from the list of HiPS images.
+</UL>
+<P>
+
+
+
+<hr width="50%">
+<h3><A NAME="adding">Adding New Images</A></h3>
+
+
+Additional images can be added at any time by clicking on the blue
+"Images" tab near the top. <br>
+<img src="img/imagesintro.png"><p>
+
+You can use the same target as before, or change the target. To exit
+the search window (i.e., cancel) without getting a new image, click on
+any other tab at the top, e.g., "Results" returns you to the results
+you have already loaded into the tool.<P>
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI><img src="img/clearselection.png"> After you have done an initial
+search on a set of images, when you go back to the Images tab,
+<em>those same images are still selected.</em> If you just click
+'search' again, you'll get a second copy of all of the images you
+initially selected.  You must actually clear all the selections on the
+right to reset everything. The most efficient way to do this is by
+clicking the 'x' next to the selection summary at the top of this
+portion of the window -- the 'x' at the end of the "Filter By" line
+clears the filters on the left, and the 'x' at the end of the
+"Selection" line clears the selections.
+</UL>
+
+
+<hr width="50%">
+<h3><A NAME="coverage">Coverage Image</A></h3>
+
+
+If you have launched Firefly by loading anything other than just
+images, it will also provide for you a "coverage image", which is
+basically a way for it (and you) to keep track of where you are
+working on the sky. This may be the most surprising when you are
+loading a catalog and therefore don't expect images to appear.
+<P>
+
+<table>
+<tr><td width="25%">You may have a coverage image like this -- this is an example
+of a coverage image showing two different overlaid catalogs.<P>
+Note that in this case, the catalogs cover the whole sky, so the HiPS
+image is displayed in HiPS/Aitoff projection to show the whole sky.
+</td><td><img src="img/coverage-ex1.png" width="60%" style="border:3px
+solid gray"></td></tr>
+<tr><td width="25%">You can also have a coverage image like this,
+which shows a coverage image that has polygons demonstrating the
+coverage of each a list of loaded images (large polygons) and the
+locations of spectra (small squares). This case only has data over a
+relatively small region, so the HiPS image is zoomed in comparatively
+tightly on the relevant region.</td><td> <img
+src="img/coverage-ex2.png" width="60%" style="border:3px solid
+gray"></td></tr>
+</table>
+
+<P>
+
+In all cases, you can interact with the coverage image in pretty much
+exactly the same way as you would any other image loaded into this
+tool; see the <a href="visualization.html">the visualization
+chapter</A> for much more about those tools.<P>
+
+The thing that makes a coverage image a little bit different, however,
+is that it can automatically adapt, even beyond what a HiPS image can
+intrinsically do.  The next subsection includes more details about how
+it can automatically change to accomodate your needs and zoom level.<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>: 
+<UL>
+<LI>The coverage image will show polygons corresponding
+to the data products' coverage. However, if there are too many
+polygons to manage, the tool may fall back to showing just the
+positions of the data products it has retrieved. (Whether that is the
+central point or the lower left corner of the image depends on the
+data product itself.)
+</UL>
+
+
+
+
+
+&nbsp;<P>
+
+
+<hr width="50%">
+<h3><A NAME="upperleft"><A NAME="changing">Upper Left HiPS menus</A></A></h3>
+
+
+In the upper left of the coverage image, there are two drop-down
+menus.<br>
+<img src="img/coveragechoices.png"> <p>
+
+The first drop-down menu looks like this. <br>
+<img src="img/coveragechoices1.png"><p>
+
+There are two sections here. 
+<DL>
+<DT>Under "Data Options", you can change what data are shown.
+<dd>
+<DL>
+<DT><strong>Change HiPS:</strong> Changing HiPS images
+<DD>The choices made by any given creator of a HiPS image may result
+in any particular region being saturated or too faint to see.  Color
+stretches are set by the creator of the HiPS map and cannot be
+changed; color tables can be somewhat changed by this tool, but that
+may be insufficient for your needs. If the HiPS map as shown does not
+suit your needs and you wish to change the HiPS image, click on the
+"HiPS/MOC" menu, and then click "Change HiPS". It brings up this
+pop-up, which resembles the <A href="#hipssearch">HiPS search</A>
+above:<br> 
+<img src="img/changehips.png" width="80%" style="border:3px solid gray"> <p>
+Things to note:
+<UL>
+<LI>To select a new image, click on the row corresponding to the new
+HiPS image you want, and click "Change HiPS" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>To learn more about each HiPS map, click on the i with the circle
+in the second column. It will spawn another window with standardized
+information about the HiPS map.
+<LI>By default, it shows HiPS maps corresponding to IRSA data
+collections. To see a more comprehensive list, unclick the box marked
+"IRSA Featured."
+</UL>
+<P>
+
+<dt><strong>Add MOC Layer: </strong> Adding a MOC Overlay
+<dd>It is often useful to see what other data are available. Looking
+at a Herschel/PACS far-IR HiPS map? Overlay a Chandra MOC to see what
+X-ray data might be available to go with your IR data. Click on the
+"HiPS/MOC" menu, and then click "Add MOC Layer." It brings up this pop-up:<br> <img
+src="img/addmoclayer.png" width="80%" style="border:3px solid gray"> <p>
+Things to note:
+<UL>
+<LI>Coverage (the first column) is the fraction of the sky covered by
+that MOC.
+<LI>To select a new MOC, click on the row corresponding to the new
+MOC you want, and click "Add MOC" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>By default, it shows MOCs likely to be most interesting for IRSA
+users. To see a more comprehensive list, unclick the box at the
+top left.
+<LI>If you have your own MOC FITS file, you may upload it via the
+"Use my MOC" tab on the top center.
+<LI>If you try to upload a MOC FITS file via the <a
+href="upload.html">upload tab</A>, it will behave as if you have
+uploaded it here.
+</UL>
+</dl>
+<P>
+
+
+<dt>Under "HiPS to FITS Conversion", you can control whether the viewer
+will automatically toggle between image types as needed. 
+<dd>By default,
+the coverage image is most likely a HiPS image.  FITS images are best
+for small regions of the sky, and HiPS images are best for large
+regions of sky. 
+<DL>
+<dt><strong>Auto Zoom-in to 2MASS K_s FITS: </strong>
+<dd>If you select this, then when you
+zoom in very close to a target, it will automatically convert to a
+FITS image when you get close enough.
+<dt><strong>Switch to 2MASS K_s FITS image: </strong>
+<dd>If you select this, then it will
+jump directly to a FITS image centered on the currently selected
+target.
+</DL>
+
+Note that if you swap between HiPS and FITS and back again, it
+will include a region on the HiPS image that is the footprint of the
+FITS images you had just loaded. A label appears at the center of that
+footprint, which may be disconcerting if you are not zoomed out enough
+to see the region itself. Here is an example, zoomed out so it is
+more clear what is going on:<br>
+<img src="img/lingeringfootprint.png"> <P>
+</DL>
+
+The second drop-down menu looks like this.<br>
+<img src="img/coveragechoices2.png"><P>
+There are three sections in this menu.
+
+<DL>
+<dt><strong>Orientation</strong>
+<dd>Under "Orientation", you can control whether the coordinates are
+in Galactic or Equatorial J2000 (RA/Dec). This can be used  in
+conjunction with the image readout and/or the coordinate layer button
+(both described <a href="visualization.html">in the visualization
+section</A>)
+<dt><strong>Center Galactic</strong>
+<dd>If you select "Center Galactic", the HiPS image slews to put
+Galactic North up, the Galactic Center in the center of the field of
+view, and the Galactic Plane horizontally across your field of view.
+This is useful if you have been zooming or scrolling around to look at
+individual sources and need to bring it back to a familiar orientation
+quickly.
+<dt><strong>Projection</strong>
+<dd>Under "Projection", you can control whether the display is in
+Spherical or Aitoff coordinates.
+Aitoff projection works better for all-sky displays.
+</dl>
+
+
+
+&nbsp;<P>
+
+
+
+
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>

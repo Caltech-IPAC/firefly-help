@@ -17,31 +17,39 @@
 
 Catalogs are a special case of <a href="tables.html">tables</A>; the
 basic functionality of tables is covered in the <a
-href="tables.html">Tables section</A>.  You can choose from any of a
-wide variety of catalogs to load for overlaying on your <a
-href="visualization.html">visualized data</A>. If you don't have an
-image loaded, and you search on a catalog, the tool will pick an image
-for you and overlay the catalog on that image. Once you've loaded a
-catalog, you can <a href="plots.html">make plots</A>. <P>
+href="tables.html">Tables section</A>.  You can load a wide variety of
+catalogs to load for overlaying on your <a
+href="visualization.html">visualized data</A>. If you don't have an <a
+href="images.html">image</A> loaded, the tool will pick a "coverage
+image" for you and overlay the catalog on that image. It will also <a
+href="plots.html">make a plot for you</A>, which you can change. <P>
 
 <em>Contents of page/chapter:</em><br>
-+<A href="#irsacatalogs">IRSA Catalogs</A> -- Overlaying catalogs
-from IRSA<br>
-+<A href="#nedcatalogs">NED Catalogs</A> <br>
-+<A href="#owncatalogs">Catalogs from Disk</A> <br>
-+<A href="#votap">VO TAP Search</A><br>
-+<A href="#voscs">VO SCS Search</A> <br>
++<A href="#intro">Introduction</A><br>
++<A href="#irsacatalogs">IRSA Catalogs</A> -- Searching for catalogs from IRSA<br>
++<A href="#interacting">Interacting with Catalogs</A> <br> 
++<A href="#hier">Hierarchical Catalog Display</A><br>
++<a href="#details">Details Tab</A> -- More information about the columns<br>
 <P>&nbsp;<P>
 
+<hr width="50%">
+<h3><a name="intro">Introduction</A></h3>
+
+There are several different ways to get catalogs into Firefly.
+This chapter focuses on IRSA catalogs. <P>
+
+<img src="img/catalogsintro.png"> When you click on the "Catalogs" tab
+at the top of the Firefly window, you are dropped into an IRSA
+Catalogs search, which is what we describe here. There are <a
+href="othersearches.html">other kinds of searches</A> you can also do
+that will load catalogs (or other tables) into the tool. <P>
 
 
-<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A></h3>
+<hr width="50%">
+<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A> --
+Searching for catalogs at IRSA</h3>
 
-By clicking on the blue "Catalog" tab (which also looks like a
-button), a window appears with several options, as follows. By
-default, it starts with the IRSA Catalog Search.  <P>
-
-<img src="img/catalogsearch.png" width="100%"><P>
+<img src="img/catalogsearch.png" width="100%" style="border:3px solid gray"><P>
 
 The upper left quadrant of this window is where you specify which
 catalog you want to search.  To change catalogs, first select the
@@ -53,45 +61,58 @@ provided for each of the catalogs, with links for more information
 example is here:<br> <img src="img/catalogcoldef.png"><P>
 
 The upper right quadrant of this window is where you specify the
-target (the position can be pre-filled with its best guess as to what
-you want) and the search method (cone, elliptical, box, polygon,
+target (the position is sometimes pre-filled with its best guess as to
+what you want) and the search method (cone, elliptical, box, polygon,
 multi-object, all-sky), and the parameters that go with that search
 method (e.g., the radius of the cone). The parameters for each of
 these searches change dynamically as you select search options, as
 follows:  <P>
 
 <DL>
-<DT><strong>Caution</strong>: <DD>Pick your units from the pulldown
+<DT><strong>Caution</strong>: <DD>Pick your units from the drop-down
 first, and then enter a number; if you enter a number and then select
-from the pulldown, it will convert your number from the old units to
+from the drop-down, it will convert your number from the old units to
 the new units. There are both upper and lower limits to your search
 radius; it will tell you if you request something too big or too
 small. Note that these limits are catalog-dependent.   <P>
 
 <DT><strong>Cone search</strong>: <dd> <img
-src="img/catsearch-cone.png"> <br>
-In this example, it has guessed a position, based on prior searches.
-You specify the cone radius.<P>
+src="img/catsearch-cone.png" style="border:3px solid gray"> <br>
+You can put in a position, but sometimes it attempts to guess a
+position, based on prior searches. You specify the cone radius; the
+default is 10 arcsec.<P>
 
 <DT><strong>Elliptical search</strong>: <dd> <img
-src="img/catsearch-ellip.png"> <br>
-In this example, it has guessed a position, based on prior searches.
-You specify the search ellipse's semi-major axis, position ratio, and
-axial ratio.<P>
+src="img/catsearch-ellip.png" style="border:3px solid gray"> <br>
+You can put in a position, but sometimes it attempts to guess a
+position, based on prior searches. You specify the search ellipse's
+semi-major axis, position ratio, and axial ratio. Defaults are as
+shown.<P>
 
 <DT><strong>Box search</strong>: <dd> <img
-src="img/catsearch-box.png"> <br>
-In this example, it has guessed a position, based on prior searches.
-You specify the box's length on a side.<P>
+src="img/catsearch-box.png" style="border:3px solid gray"> <br>
+You can put in a position, but sometimes it attempts to guess a
+position, based on prior searches. You specify the box's length on a
+side; default is as shown. <P>
 
-<DT><strong>Polygon search</strong>: <dd> <img
-src="img/catsearch-polygon.png"> <br>
-Now, note that it no longer has a single target location. It has
-pre-filled the vertices of the position it thinks you want, based on
-prior searches or the current image.  You can select whether you want
+<strong><font color="orange">&#x26A0;</font> Tips and
+Troubleshooting:</strong> If you enter coordinates in non-equatorial 
+units (e.g., Galactic or ecliptic), the search is still carried out in
+equatorial coordinates (RA and Dec).<P>
+
+<DT><strong>Polygon search</strong>: 
+<dd> <img
+src="img/catsearch-polygon.png" style="border:3px solid gray"> <img
+src="img/catsearch-polygon2.png" style="border:3px solid gray"> <br>
+For this, note that it no longer has a single target location. It will
+sometimes try to pre-fill the vertices of the position it thinks you want, based on
+prior searches. If you have images loaded, it will give you choices
+based on the current image -- you can select whether you want
 the catalog request to match the entire area of the image you have
 selected ("image"), or just the portion of the image you can see in
-the current view ("visible"), or your own ("custom") area. The list of
+the current view ("visible"), or your own ("custom") area. (However,
+note that if you have selected a HiPS image before searching, you are
+limited to a maximum of 5 degrees.) The list of
 vertices in the coordinates box are in decimal RA and Dec in degrees.
 You must enter at least 3 and at most 15 vertices, separated by a
 comma. Note that, for overlaying catalogs on HiPS images, you cannot
@@ -99,10 +120,20 @@ select "image", because HiPS images are generally very, very large, so
 this would result in too many points being returned. There is a
 maximum of 5 degrees imposed on catalog searches to match HiPS
 images.<P>
+If you <a href="visualization.html#selectregion">select a 
+rectangular region</A> of your image and then select a polygon
+catalog search, you will have a fourth radio button above, "selection",
+which matches the corners of your selected image region.<P>
+If you select the "bullseye" icon on the right (<img
+src="img/clicktosearch.png">), you get a pop-up with
+a way to interactively select your target; this works just like <a
+href="othersearches.html#interactivetarget">this interactive target
+refinement</A> (go there for more details) :<br>
+<img src="img/choosetarget.png" width="300" style="border:3px solid gray"><P>
 
 <DT><strong>Multi-Object search</strong>: <dd> <img
-src="img/catsearch-multiobj.png"><br> 
-In this case, it has not attempted to guess what position you want.
+src="img/catsearch-multiobj.png" style="border:3px solid gray"><br> 
+For a multi-object search, it can't guess what position you want.
 You need to upload a file (from your disk or the <a href="/docs/workspace/"
 target="_blank">IRSA Workspace <img src="img/jumpout.jpg"
 height="10"></A>) in <a
@@ -129,7 +160,7 @@ the target that should be matched to the position you requested.<P>
 
 
 <DT><strong>All-sky search</strong>: <dd> <img
-src="img/catsearch-allsky.png"><br> 
+src="img/catsearch-allsky.png" style="border:3px solid gray"><br> 
 Because this is an all-sky search, it does not have a single target
 entry box. In order to constrain this search, you need to impose
 constraints on the bottom of the screen (see below). <P>
@@ -159,7 +190,7 @@ object in the plot shows it in the table and on the image.<P>
 To close the catalog search window without searching for a catalog,
 click on "Cancel".<P>
 
-<strong>Tips and Troubleshooting</strong> 
+<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
 <UL>
 <LI>If the catalog search is successful quickly, it will promptly return
 the results in a tab of its own. 
@@ -184,7 +215,7 @@ combine constraints such that no sources are retrieved!
 href="plots.html">plot is a binned heatmap</A>, <strong>the entire
 source list is NOT overlaid, even if you zoom in a lot</strong>. The
 way to work within these constraints is to impose a filter on the
-catalog to get it below the threshhold for a regular plot -- weed out
+catalog to get it below the threshold for a regular plot -- weed out
 lower SNR sources, or filter based on RA/Dec, etc. Then all the
 individual sources will be shown.
 
@@ -210,501 +241,223 @@ the full catalog. By selecting "long form" (above the list of
 columns), you can access the full range of available columns. In some
 cases, there are literally hundreds of columns that you can access!
 
+<LI>If you start searching from a HiPS image, you are limited to a 5
+degree search radius.
+
 </ul><P>
 
-
-<h3><A name="nedcatalogs">NED Catalogs</A> -- Overlaying
-catalogs obtained from NED</h3>
-
-(NED= <A href="http://ned.ipac.caltech.edu/" target="_blank">NASA
-Extragalactic Database <img src="img/jumpout.jpg" height="10"></A>.)<P>
-
-By clicking on the blue "Catalogs" tab, you are by default dropped
-into the interface for searching for catalogs at IRSA. However, you
-can pick another tab, "NED", to search for and load a catalog from
-NED.<P>
-
-<img src="img/nedcat.png" width="75%"><P>
-
-
-As for the other catalog searches, the tool pre-fills the target
-position with its best guess o the coordinates of the target with
-which you have been working. In this case, you are limited to a cone
-search, so the next option is the cone search radius. Pick your units
-from the pulldown first, and then enter a number; if you enter a
-number and then select from the pulldown, it will convert your number
-from the old units to the new units. There are both upper and lower
-limits to your search radius; it will tell you if you request
-something too big or too small. <P>
-
-
-The search results are then shown (and interacted with) in the same
-way as the other catalogs described here.<P>
-
-
-<h3><a name="owncatalogs">Loading your own catalogs</A></h3><P>
-
-By clicking on the blue "Catalogs" tab, you are by default dropped
-into the interface for searching for catalogs at IRSA. However, you
-can pick another tab from the top, "Load Catalog File", to load your own
-catalog.<P>
-
-<img src="img/owncat.png" width="75%"><P>
-
-You may upload a file from disk, from the web via a URL, or from the
-<a href="/docs/workspace/" target="_blank">IRSA Workspace <img
-src="img/jumpout.jpg" height="10"></A>.
-
-The file can be in any of a number of formats, which we now briefly
-describe. <P>
-
-<DL>
-<DT><strong>IPAC table format (*.tbl)</strong>
-<DD> <a
-href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
-target="_blank">IPAC table format <img src="img/jumpout.jpg"
-height="10"></A> is plain text with a particular formating. IRSA has a
-<a href="https://irsa.ipac.caltech.edu/applications/TblValidator/"
-target="_blank">table reformatting and validation service <img
-src="img/jumpout.jpg" height="10"></A> which may be helpful, or you
-can download just about any catalog you find through IRSA, and mimic
-that format.<P>
-
-Your table file MUST have RA and Dec values, and unless it is
-specified, it assumes J2000.<P>
-
-You can add a "SYMBOL" parameter to change the shape
-(X, SQUARE, CROSS, EMP_CROSS, DIAMOND, DOT) of catalog marks, e.g.:
-<pre>
-\SYMBOL = X
-</pre>
-<P>
-
-You can add a "DEFAULT_COLOR" parameter to assign a CSS color name or
-a HEX value to catalog marks, e.g., either of these two:
-<pre>
-\DEFAULT_COLOR = lightcyan
-\DEFAULT_COLOR = #00FF00
-</pre>
-You can find the <a
-href="https://www.w3schools.com/cssref/css_colors.asp"
-target="_blank">CSS color code or the CSS color HEX values <img
-src="img/jumpout.jpg" height="10"></A> online.<P> 
-
-<DT><strong>Comma-separated values (CSV) format (*.csv)</strong>
-<DD> CSV format is often accepted by spreadsheet programs, and most
-spreadsheet programs can output CSV. It is plain text, with values for
-each column separated by commas.<P>
-
-<dt><strong>Tab-separated values (TSV) format (*.tsv)</strong>
-<DD> TSV format is sometimes accepted (or generated) by spreadsheet
-programs, and sometimes in tabular data downloaded from journal
-articles from the 90s. It is plain text, with values for each column
-separated by tab characters. <P>
-
-<dt><strong>VOTable (*.vot)</strong>
-<dd>Virtual Observatory (VO) tables are a special case of XML tables.
-(All VO Tables are XML but not all XML are VO Tables.)
-It is a format developed by the International Virtual Observatory
-Alliance (more information <a
-href="https://www.ivoa.net/documents/VOTable/20191021/index.html"
-target="_blank">here <img src="img/jumpout.jpg" height="10"></A>). XML
-tables initially look to the human eye like it might be HTML, but they
-are easier to parse with code. There are packages in astropy that
-handle VO Tables.<P>
-
-<DT><strong>FITS files (*.fits)</strong>
-<DD>Flexible image transport system (<a
-href="https://en.wikipedia.org/wiki/FITS"target="_blank">FITS <img
-src="img/jumpout.jpg" height="10"></A>) files are widely used in
-astronomy and are an easy way to store images. FITS tables can be loaded
-into this tool. Note that this tool is flexible enough to handle
-multiple header data units (HDUs), so that you can upload a FITS file
-that has both images and tables. You can specify which HDU you would
-like to load, and if you choose more than one image, it will give you
-a choice of loading them into individual frames or all into one frame.
-For more information on loading images this way, see <a
-href="visualization.html#catalogload">this section</A>.<P>
-
-<DT><strong>Region files (*reg)</strong>
-<DD>Region files are plain text overlays originally used in<a
-href="http://ds9.si.edu/doc/ref/region.html" target="_blank">ds9 <img
-src="img/jumpout.jpg" height="10"></A>. Regions files can be overlaid
-on images (see <a href="visualization.html#ds9regions">here</A>), but
-they can be loaded from this portion of the tool, and overlaid on
-images that way.<P>
-
-<dt><strong>MOC FITS files</strong>
-<DD>A <A href="https://ivoa.net/documents/MOC/"
-target="_blank">multi-order coverage map (MOC) <img
-src="img/jumpout.jpg" height="10"></A> is  a format developed by the
-International Virtual Observatory Alliance to specify sky regions. You
-might use this kind of file to describe the region over which a given
-survey has observations. These files can also be loaded into this
-tool.<P>
-
-</dl>
-
-
-Nearly every file you load will result in a preview of the file you
-have uploaded. Examples include the following:
-
-Uploading a CSV file with many columns:<br>
-<img src="img/catuploadex1.png" width="100%"><P>
-
-Uploading an IPAC table file with minimal columns:<br>
-<img src="img/catuploadex2.png" width="100%"><P>
-
-Uploading a multi-HDU FITS file containing a mixture of tables and
-images. (Note that in this case, all planes are selected and the lower
-left gives a choice for loading all the images into one window or one
-extension per window.)<br>
-<img src="img/catuploadex3.png" width="100%"><P>
-
-Uploading a FITS file with multiple image planes where only one plane
-is selected:<br>
-<img src="img/catuploadex4.png" width="100%"><P>
-
-After you verify that the tool is reading your file correctly, and, if
-applicable, selected the HDU(s) you wish to load, click "Load" to load
-the file into the tool.<P>
+The search results are then shown in a <a href="tables.html">Firefly
+table</A> and you can <a href="#interacting">interact with it</A>.<P>
 
 
 
-<strong>Tips and Troubleshooting</strong> 
+<hr width="50%">
+<h3><A name="interacting">Interacting with Catalogs</A></h3>
+
+When you load a catalog, the tool may create a table, a plot, and/or,
+if your catalog has position information (e.g., RA and Dec), it
+overlays the catalog on an image. Tables, plots, and overlays on
+images are all interlinked and interactive.<P>
+
+Catalogs are a special case of <a href="tables.html">tables</A>; the
+basic functionality of tables is covered in the <a
+href="tables.html">Tables section</A>. You can sort and filter the
+table.<P>
+
+<A href="plots.html">Plots</A> are also covered in a different
+section. You can make scatter plots, heat maps, and histograms. You
+can plot columns from your catalog, including simple mathematical
+manipulations of catalog columns.<P>
+
+If the catalog has positions included, the catalog will also be
+overlaid on the loaded image(s). The <a
+href="visualization.html">Visualization section</A> includes
+information about that. Each catalog that you load is overlaid on the
+image using different, customizable symbols and colors. <P>
+
+When you have catalogs loaded into the tool, the header of the
+catalogs has the name of the catalog and a color swatch:<br>
+<img src="img/catalogcolorswatch.png"><br>
+This color swatch corresponds to the symbol color that is used in the
+image overlays. You can change the color by clicking on the color
+swatch in the header, or by navigating to the layers in the image
+pane. See the <a href="visualization.html#colorpicker">color picker
+section</A> of the visualization chapter for more information.<P>
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
-<LI>If you would like to have your catalog overlaid on an image,
-it needs to have RA and Dec columns. If the tool doesn't seem to
-recognize your RA and Dec columns, check your formatting, or try
-headers of "ra" instead of "RA" and "dec" instead of "DEC" or "Dec". 
-<LI>Unless specified, the tool assumes any coordinates you give it are
-J2000.
-<LI>If there are no discernible positions in the uploaded file, it
-will still let you plot columns from the file after you've loaded it.
-<LI>If you have multiple HDUs in your file, you can load a plane, and
-then come back to the the "Load catalog file" tab to pick another HDU
-without having to upload it again.
+<LI>Large catalogs will be displayed hierarchically! See next section.
+
+<LI>If you save the overlays from an image as a regions file, you may
+not get your complete catalog, especially if it is a large catalog
+(see next section!). However, you can save the full contents
+of a single catalog as a regions file using the "save" (diskette) icon
+in the table toolbar, instead of the image toobar. 
 </UL>
 
+<P>
+<hr width="50%">
+<h3><A name="hier">Hierarchical Catalog Display</A></h3>
 
-<a name="tapSearches.form"></A>
-<h3><A name="votap">VO TAP Search</A></h3>
+If one has a large catalog loaded into the tool overlaid on top of
+lots of images the possibility exists that the computer or the network
+could be overwhelmed trying to render all the points on all the
+images. Historically we dealt with this by "thinning out" the catalog
+and not showing all the points. However, there is a better solution,
+which is now employed here!<P>
 
-(VO= <A href="http://www.virtualobservatory.org/"
-target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
-height="10"></A> and TAP = <a
-href="https://www.ivoa.net/documents/TAP/" target="_blank">table
-access protocol <img src="img/jumpout.jpg" height="10"></A>.) TAP
-services enable complex queries of tables using astronomical data
-query language (<a href="https://www.ivoa.net/documents/ADQL/"
-target="_blank">ADQL <img src="img/jumpout.jpg" height="10"></A>).<P>
+For catalogs below about 1000 points, the tool will show the
+individual points on the image.<P>
 
-There are myriad places on the web to learn more about TAP queries and
-ADQL. We just provide a brief overview here in the context of this
-tool. This is what the search screen looks like by default:<P>
+For catalogs above that threshold, the tool will bin up the catalogs
+based on HEALPix pixels (see <a href="images.html#hips">HiPS section
+here</A> for more links). In summary, the sky is broken up into
+sections, and the tool will show symbols with a number indicating the
+number of sources in that region. Then, when you zoom in, it will
+dynamically adapt to show you smaller and smaller cells until it shows
+you all the individual sources.<P>
 
-<img src="img/votapsearch.png" width="75%"><P>
-
-<DL>
-<DT>
-<a name="tapSearches.tapService"><strong>Select TAP
-Service</strong></A><P>
-
-<DD>There are many TAP services available, worldwide. By default, this
-tool uses IRSA's TAP service, but you can choose others via
-the pulldown menu, or just start typing in your TAP URL.<P>
-
-<DT><a name="tapSearches.selectBy"><strong>Select Query Type</strong></A><P>
-
-<dd>You can choose to have a UI-assisted single table query, or edit the
-ADQL directly. By using the "Single Table (UI assisted)" option, you
-can select pre-defined options and have the interface construct the
-query in ADQL. Alternatively, if you are already fluent in ADQL, you
-can select the second option, "Edit ADQL", to construct even more
-complext queries. <P>
-
-We first describe the rest of the screen for the "Single Table (UI
-assisted)" option (as seen in the screenshot above), and then the rest
-of the screen for the "Edit ADQL (advanced)" option.<P>
-
-<dt><a name="tapSearches.selectTable"><strong>Select Table</strong></A><P>
-
-<dd>You first need to select the Table Collection (Schema), which in the
-case of IRSA's TAP service is the same as "project" in an
-IRSA-exclusive search. Then, having selected that, the pull-down menu
-on the right changes to reflect the tables available under that
-schema. <P>
-
-<strong>Tips and Troubleshooting</strong>: Not every table available via this
-interface even has RA/Dec or, if it does, it may not be searchable via
-positions. Make sure that you have selected a table that contains what
-you need before proceeding past this step.<P>
-
-
-<dt><a name="tapSearches.constraints"><strong>Enter Constraints</strong></A><P>
-
-<dd>There are two sections to this step. <P>
-
-On the <strong>left</strong>, you can impose a variety of constraints.
-In addition to selecting the tickbox indicating that you wish to
-impose a particular kind of constraints, you need to specify which
-columns should be used for those constraints. <a
-href="#moreconstraints">More information  on these constraints is
-below.</A> <P>
-
-On the <strong>right</strong> is a list of the columns in the selected
-table, with tickboxes to indicate which columns will be returned. You
-can also set constraints on the columns from here, following the <a
-href="tables.html#filters">same filter rules as for any tables
-here</A>. Above this section of the screen, there is an indication of
-which columns are selected (e.g., 45 of 298 columns). You can reset
-the column selection via the button here as well.<P>
-
-<dt><strong>Actually doing it</strong>
-<dd>To initiate the search, click "Search." To cancel it, click
-"Cancel." You can impose a constraint on the number of returned rows
-here. Finally, the "Populate and edit ADQL" button takes the
-parameters you have entered, creates the ADQL, and launches the "Edit
-ADQL (advanced)" interface.<P>
-
-<dt><a name="tapSearches.adql"><strong>Advanced ADQL</strong></A>
-<DD>
-<img src="img/voadql.png" width="75%"><P>
-You can get to this screen by selecting "Edit ADQL (advanced)" in step
-two, or by clicking on "Populate and edit ADQL" after filling out the
-UI. <P>
-
-You can select the schema from the left side of the screen. Each of
-the schemas can expand into viable tables and then columns within each
-table via clicking on the "+" to the left of the folder icon. Click on
-a column name to have it appear at the location of your cursor in the
-ADQL query box on the right. If you have the tickbox checked on the
-right that says "Insert fully-qualified column names", clicking on the
-column name inserts fully-qualified column names at your cursor
-location in the box. <P>
-
-You can type the ADQL directly into the box. If you configured a
-search on the "Single Table (UI assisted)" page, this box is already
-pre-filled with the ADQL version of your search, and you can proceed
-to edit it further. <P>
-
-Examples of useful functions and queries are given on the lower
-right.<P>
-
-<strong>Tips and Troubleshooting</strong>: If you have arrived at this page
-from the "Populate and edit ADQL" button, this is a one-way trip --
-any changes you make to the ADQL here are NOT transmitted
-automatically back to the "Single Table (UI Assisted)" query page.<P>
-
-</dl><P>
-
-
-<strong><a name="moreconstraints">More information about
-constraints</A></strong><P>
-
-You can have several different ways of constraining your search
-depending on the options you have selected before the "Enter
-Constraints" section, and the options depend on what kind of service
-is available at the TAP service you have selected. If the options do
-not appear initially, click on the black triangle to "unfold" the
-options.<P>
-
-<dl>
-<dt><strong><a name="tapSearches.spatial">Enter Constraints:
-Spatial</A></strong>
-<dd>
-This part of the interface allows you to specify which columns of the
-catalog are to be used for coordinates, and to impose a cone search on
-a given target, or a polygon search.<P>
-
-This is what it looks like when you do a cone search; note that you
-have the same name resolution options as in a <a
-href="basics.html#searching">simpler search</A>:<br>
-<img src="img/enterconstraints-spatial1.png" width=40%"><P>
-
-And, this is what it looks like when you do a polygon search.<br>
-<img src="img/enterconstraints-spatial2.png" width=40%">
-
-
-<dt><strong><a name="tapSearches.temporal">Enter Constraints:
-Temporal</A></strong>
-<dd>
-This part of the interface allows you to specify which column of the
-catalog is to be used for timing, and allows you to constrain the date
-in two different systems.<P>
+From the layers icon (<img
+src="img/layers.png" align="center"> see <a
+href="visualization.html#layers">visualization chapter</A>), you can
+bring up many display options. Below are examples of what is displayed,
+the options seen in the layers, and additional options. The same
+catalog and zoom level and minimum group size are used for each view.
+The "Min Group" option here is 50, so if there are cells with fewer
+than 50 sources, then the individual sources are shown, and if there
+are more than 50 sources, then the cell is shown with a number inside
+corresponding to the number of sources from the catalog. (See below for
+additional information.)  <P>
 
 <table>
-<tr><td width="25%">This is what the panel looks like initially, where you
-specify the column with the time and then the dates:
-</td><td><img src="img/enterconstraints-temporal1.png"
-width=50%"></td></tr>
-
-<tr><td width="25%">If you click
-on the calendar icon at the far right of the entry box, you get a
-pop-up from which you can specify the date, shown here.</td><td>
-<img src="img/enterconstraints-temporal2.png" width=50%"> </td></tr>
-
-<tr><td width="25%">Click on the
-time below the calendar pop-up to select a time of day, if necessary.
-Click on the date at the top of the pop-up to go back to the month
-view.</td><td>
-<img src="img/enterconstraints-temporal3.png" width=50%"> </td></tr>
-
-<tr><td width="25%">
-If you would
-like to work in MJD instead of ISO dates, select the "MJD" radio
-button. Note that it echoes below the box what it thinks you've
-entered in twoo different systems (UTC and MJD) to verify what you
-have entered.</td><td><img src="img/enterconstraints-temporal4.png"
-width=50%"> </td></tr>
+<tr><td><img src="img/hiercatgrid.png"></td><td>
+<img src="img/hiercatlayergrid.png"><br>
+In this view, the 'cells' used are the cells explicitly associated
+with the HEALPix grid, so the size of the cells is very clear.  In the
+top row here, three of the diamond-shaped cells across the top have
+fewer than 50 sources (so they do not have cell boundaries and the
+individual sources are shown), then the next row of diamond-shaped
+cells have 87, 86, and 57 sources respectively. 
+</td>
+</tr>
+<tr><td><img src="img/hiercatbox.png"></td><td>
+<img src="img/hiercatlayerbox.png"><br>
+In this view, the 'cells' are shown by circles enclosed within boxes.
+The locations and cell sizes are the same as in the prior screenshot,
+but the boundaries between tiles may be less obvious to new users. </td>
+</tr>
+<tr><td><img src="img/hiercatellipse.png"></td><td>
+<img src="img/hiercatlayerellipse.png"> <br>
+In this view, the 'cells' are shown by ellipses shown with dashed
+lines. The locations and cell sizes are the same as in the prior
+screenshot, but the boundaries between tiles may be less obvious to
+new users. It may be more obvious, though, that these are
+representations of groups of points.</td>
+</tr>
+<tr><td><img src="img/hiercatheatmap.png"></td><td>
+<img src="img/hiercatlayerheatmap.png"><br>
+Finally, in this view, the 'cells' are again shown as the HEALPix
+tiles, but in this case the color of the cells corresponds to the
+number of sources in the cell. You can choose "Linear", "Linear
+Compressed", or "Log Stretch" to assign the colors, and you can change
+the color range by changing the color using the <a
+href="visualization.html#colorpicker">color picker in the layers
+pop-up</A>, from which you can also change the transparency. This
+approach makes it more visually clear how many sources are in each
+cell, but makes it harder to see the background image. Even though 
+you can change the transparency of this overlay to reveal more of the
+background, it still can make seeing the image challenging in some
+cases.  </td>
+</tr>
 </table>
 <P>
 
-<dt><strong><a name="tapSearches.obsCore">Enter Constraints:
-Observation Type and Source</A> </strong>
-<dd>
-<table><tr><td><img
-src="img/enterconstraints-obstype.png"></td>
-<td>This panel provides a way to constrain the:
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
-<LI>Calibration level - 0 is the least processed and 4 is the most
-processed, and not all instruments provide all levels
-<LI>Data product type - image, cube, spectrum, SED, time series,
-visibility, event, measurement, or none specified. You can select more
-than one of these at a time by using a right mouse click.
-<LI>Instrument name - must match exactly, wild cards not accepted
-<LI>Collection - must match exactly, wild cards not accepted
+<LI>For all of these renditions, when you zoom in close enough, it
+will dynamically adapt and show you individual sources when you zoom
+in. (That is, it no longer decimates the overlaid catalog, which is
+what it used to do.)
+
+<LI>For all of these renditions, if you click on a cell, it will
+display all of the sources in the cell. You can click on many cells in
+a row and it will continue to display all the sources it can until it
+reaches the point at which it thinks performance will suffer, at which
+point it will turn some of the points back into cells.
+
+<LI>If you want to have more of your catalog shown as individual
+sources, pick a smaller "min group" number.
+
+<LI>If you have more than one catalog loaded, the 
+numbers within the cells (and in some cases the cell indicators
+themselves) will be offset slightly so that you can see them.
+<img src="img/multicat.png">
+
+<LI>If you have a catalog that includes sources from all over the sky,
+it very well may just give you box groupings, and may not allow you to
+change that view until you zoom in. 
+
+<LI>If you have cells where only 1/4 of a cell is populated, it
+automatically renders a smaller cell, so if you have a sparsely
+populated but still large catalog, the size of the display will always
+be "small" size cells.
+
+<LI>If you are looking at many footprints from, say, a complex, and 
+long ObsCore search, if you have more than 30,000 footprints, it may
+not be able to render all of the outlines of all of those images. It
+may render the centers of all of those images as if it were a catalog,
+in which case you will encounter these kinds of hierarchical catalog
+display options.
 </UL>
-</td>
-</tr></table>
-
-<dt><strong><a name="tapSearches.location">Enter Constraints: Location</A> </strong>
-<dd>
-<table><tr><td><img
-src="img/enterconstraints-location1.png"></td>
-<td>This panel provides a way to constrain the location of your
-search. You can specify via the pull-down the type of your query:
-"observation boundary contains point", "observation boundary contains
-shape" (default), "observation boundary is contained by shape",
-"observation boundary intersects shape", and "central point (s_ra,
-s_dec) is contained by shape." The latter refers to the columns "s_ra"
-and "s_dec" in the ObsTAP table.
-</td>
-</tr></table>
-<dt><strong><a name="tapSearches.exposure">Enter Constraints: Timing</A> </strong>
-<dd>
-<table><tr><td><img
-src="img/enterconstraints-timing1.png"></td>
-<td>This panel provides a way to constrain the observation time of your
-search. This is the default option, where you want data
-completed in the last x hours.
-</td></tr>
-<tr><td><img
-src="img/enterconstraints-timing1.png"></td>
-<td>This is the alternate option, where you want data
-overlapping a specified date range, where you can specify UTC or MJD
-times.
-</td></tr></table>
-
-<dt><strong><a name="tapSearches.wavelength">Enter Constraints:
-Spectral Coverage</A> </strong>
-<dd>
-<table><tr><td><img
-src="img/enterconstraints-spectral1.png"></td>
-<td>This panel provides a way to constrain the spectral coverage of your
-search. This is the default option, where you want data
-containing a given wavelength.
-</td></tr>
-<tr><td><img
-src="img/enterconstraints-spectral2.png"></td>
-<td>This is the alternate option, where you want data
-overlapping a specified wavelength range.
-</td></tr></table>
-
-</dl><P>
 
 
 
 
-<h3><A name="voscs">VO SCS Search</A></h3>
+<hr width="50%">
+<h3><A name="details">Details Tab</A></h3>
+
+If you load a catalog from IRSA, you will likely have an additional
+tab on the right hand side, under the plot, called "Details." This
+additional tab is sometimes called a "property sheet." This tab is,
+itself, another <a href="tables.html">Firefly table</A>, and consists
+of each of the columns of the retrieved catalog with additional
+information about each field where available. (Not every catalog may
+have this information available.) This information can be used to
+learn more about each of the columns in retrieved. For additional
+information, please consult the full documentation that accompanies
+the catalog. <P>
 
 
-(VO= <A href="http://www.virtualobservatory.org/" target="_blank">Virtual
-Observatory <img src="img/jumpout.jpg" height="10"></A> and SCS =
-simple cone search.)<P>
-
-By clicking on the blue "Catalogs" tab, you are by default dropped
-into the interface for searching for catalogs at IRSA. However, you
-can pick another tab, "VO SCS Search", to search for
-and load catalogs from the VO simple cone search services.<P>
-
-<br><img src="img/vocatalogs.png" width="75%"><br>
-<P>
-
-As for the IRSA catalog search, the tool tries to pre-fill the target
-position with the coordinates of the target with which you have been
-working. In this case, you are limited to a cone search, so the next
-option is the cone search radius. As usual, pick your units from the
-pulldown first, and then enter a number; if you enter a number and
-then select from the pulldown, it will convert your number from the
-old units to the new units. There are both upper and lower limits to
-your search radius; it will tell you if you request something too big
-or too small. <P>
-
-If you know your VO URL already, you can jump down to the Cone Search
-URL box and type or paste your URL into the box and hit search.<P>
-
-More commonly, however, users do not know <em>a priori</em> which URL
-to use. Click on "Find Astronomical Data Resources" to be droped into
-a VO search. Find the URL corresponding to the catalog you want, copy
-it, and go back and paste it in the URL box. The URL should not have
-the RA and Dec in it; the tool will add your RA and Dec as listed to
-the URL in the right syntax. Click on
-"Search" to initiate the search. <P>
-
-The search results are then shown (and interacted with) in the same way as
-the other catalogs described here.<P>
-
-<strong>Example</strong><p>
-
-Load the tool. Search on IC1396. Go to the catalogs tab. Choose "VO
-Catalog." It wants the root URL for a cone search. Click on "Find
-Astronomical Data Resources", which goes <a
-href="http://vao.stsci.edu/keyword-search/" target="_blank">here <img
-src="img/jumpout.jpg" height="10"></A>. Search on IPHAS. Get <a
-href="http://vao.stsci.edu/keyword-search/?utf8=%E2%9C%93&search_field=all_fields&q=iphas"
-target="_blank">this page <img src="img/jumpout.jpg" height="10"></A>.
-Look for the complete catalog release (not just one associated with
-one specific study). The name of the catalog goes <a
-href="http://vao.stsci.edu/directory/getRecord.aspx?id=ivo://CDS.VizieR/II/321"
-target="_blank">here <img src="img/jumpout.jpg" height="10"></A>. Hit
-the [+] to expand it. There is one URL listed there, under "available
-endpoints for the standard interface." Copy that URL and paste it into
-the search form. The IRSA tool will append your coordinates and radius
-and return you a table.<P>
-
-<strong>Tips and Troubleshooting</strong> 
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
 <UL>
-<LI>
-Note that searching the VO means that you are using resources not
-specifically housed at IRSA, so servers may be down, or timeouts set,
-or limits on numbers of returned sources, etc., that are beyond our
-control. In most cases the solution is to specify as precise a search
-as possible.  The URL you enter into the box in Finder Chart must be a
-Cone Search base URL (not containing RA and Dec parameters, which are
-inserted into the URL by the tool in response to the search
-parameters you give it).
-
-<LI>The master list of registries is <a href="http://rofr.ivoa.net/"
-target="_blank">here <img src="img/jumpout.jpg" height="10"></A>. You
-can also search the registries directly via that link (as opposed to
-via the IRSA tools). 
+<LI>The property sheet is a more expanded, vertical view of the
+information shown in a row of a catalog, along with documentation of
+the catalog columns. Because you can sort/filter the data in the
+property sheet, you can restrict what values are shown. Those filters
+are respected as you page through a catalog. So, for example (see
+screenshot below), you can pull up the property sheet, filter it down
+to only show the profile-fitted magnitudes and errors by filtering on
+"mpro", and then step through the values in the catalog and inspecting
+the brightnesses as shown in the property sheet for each source. 
+<LI>When changing rows in the main table, the property sheet/details
+tab scrolls to preserve the visibility of whatever row in the details
+tab is highlighted. If you scroll down in the property sheet
+<em>without changing the highlight</em>, when you change rows in the
+main table, because the first row in any table is always highlighted
+by default, the property sheet will scroll back to the top.
 
 </UL><P>
 
+<img src="img/propertysheet.png" width="70%" style="border:3px solid gray"><br>
 
-</BODY>
-</HTML>
+
+<hr width="50%">
+
+
+
+
+
 
 
 
