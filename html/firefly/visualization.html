@@ -778,16 +778,29 @@ pane view.<P>
 <img src="img/stretch.png"> This icon enables you to change the color
 stretch of the displayed image. (This option is only available for
 FITS, not HiPS, images.) When you click the button, a drop-down menu
-appears with a variety of choices. You can choose from a set of
-pre-selected options:<br><img src="img/stretchoptions.png"
-style="border:3px solid gray"><br> If you pick the first one, "color
-stretch", you can customize the stretch. A pop-up window appears with
-a histogram of the values in the image, and you can change the stretch
-type and range. <br><img src="img/customstretch.png" style="border:3px
-solid gray"> <BR> If you pick a color stretch from the pre-defined
-options, the pop-up window reflects this change. If you change the
-color stretch in the pop-up window, the drop-down menu changes
-correspondingly.<P>
+appears with a variety of choices.<P>
+
+<table><tr><td><img src="img/stretchoptions.png"
+style="border:3px solid gray"></td><td> 
+The top of the menu either says "Color and overlays locked" or "Color
+and overlays unlocked" -- by default, all of the (FITS) images that
+you have loaded are locked together for color and overlays. What that
+means is if you change the color stretch (via this menu), then the
+color stretch for all the (FITS) images are changed. (Or, if you add a
+layer to one image, or change the color table of one image, then the
+change is made to all the images; see other sections of this chapter.)
+If you don't want this to happen, select "Color and overlays locked"
+to unlock it. Select the text again to lock it
+again.</td></tr></table>
+
+Below that, you can choose from a set of pre-selected options. If you
+pick the first one, "color stretch", you can customize the stretch. A
+pop-up window appears with a histogram of the values in the image, and
+you can change the stretch type and range. <br><img
+src="img/customstretch.png" style="border:3px solid gray"> <BR> If you
+pick a color stretch from the pre-defined options, the pop-up window
+reflects this change. If you change the color stretch in the pop-up
+window, the drop-down menu changes correspondingly.<P>
 
 <strong>Example:</strong> Display the pop-up for color stretch. From
 the main drop-down, pick 'Linear stretch to 99%'. Go back to the color

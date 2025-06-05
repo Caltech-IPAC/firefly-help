@@ -177,6 +177,56 @@ const toc_download = {
         },
     ]
 };
+const toc_jobmon = {
+    id: 'jobmon',
+    title: 'Job Monitor',
+    href: 'firefly/jobmon.html',
+    items: [
+        {
+            id: 'download.bgmon',
+            title: 'Background Monitor',
+            href: 'firefly/jobmon.html',
+            hidden: true,
+        },
+        {
+            id: 'basics.bgmon',
+            title: 'Background Monitor',
+            href: 'firefly/jobmon.html',
+            hidden: true,
+        },
+        {
+            id: 'basics.bgJobInfo',
+            title: 'Background Job Info',
+            href: 'firefly/jobmon.html#info',
+            hidden: true,
+        },
+        {
+            id: 'jobmon.into',
+            title: 'Intro',
+            href: 'firefly/jobmon.html#intro',
+        },
+        {
+            id: 'jobmon.sending',
+            title: 'Sending Jobs',
+            href: 'firefly/jobmon.html#sending',
+        },
+        {
+            id: 'jobmon.tab',
+            title: 'Job Monitor Tab',
+            href: 'firefly/jobmon.html#tab',
+        },
+        {
+            id: 'jobmon.email',
+            title: 'Sending Email',
+            href: 'firefly/jobmon.html#email',
+        },
+        {
+            id: 'jobmon.info',
+            title: 'Job Information',
+            href: 'firefly/jobmon.html#info',
+        },
+    ]
+};
 
 const toc_images = {
     id: 'images',
@@ -832,6 +882,7 @@ export const fireflyToc = [
     toc_plots,
     toc_spectra,
     toc_download,
+    toc_jobmon,
     toc_user,
     toc_privacy
 ];

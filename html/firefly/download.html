@@ -20,8 +20,8 @@
 +<A href="#tables">Tables</A><br>
 +<A href="#plots">Plots</A><br>
 +<A href="#preparedownload">Prepare Download</A><br>
++<A href="#scripts">Scripts</A><br>
 +<A href="#filelocation">File Location</A><br>
-+<A href="#bgmon">Background Monitor</A> <br> 
 <P>&nbsp;<P>
 
 <hr width="50%">
@@ -29,8 +29,8 @@
 
 
 You can download images and tables and plots from Firefly. The
-Background Monitor helps keep track of downloads placed in the
-background. <P>
+<a href="jobmon.html">Job Monitor</A> helps keep track of downloads
+placed in the background.  <P>
 
 <hr width="50%">
 <h3><A NAME="images">Images</A></h3>
@@ -74,7 +74,38 @@ the column to "select all" -- and then click "Prepare Download." It
 may ask you for additional information, like how much ancillary
 information you want, and what the filename you want for the zip
 files. If you ask for a lot of data, the packaging will likely need to
-spin off to the <a href="#bgmon">Background Monitor</A>.<P>
+spin off to the <a href="jobmon.html">Job Monitor</A>.<P>
+
+<hr width="50%">
+<h3><A NAME="scripts">Scripts</A></h3>
+
+Depending on how you choose to download the data and specifically what
+archive you use, but particularly if you <a
+href="jobmon.html#email">get an email from the Job Monitor</A>, you
+may get a curl or wget script that you can execute on your computer to
+download the files you have requested, or you may choose to obtain
+just a list of URLs that you can feed to your own code to download the
+data. The scripts are designed to echo to the screen updates on what
+they are doing, so that you can track the download's progress.<P>
+
+To use these, save the script to a plain text file, and invoke the
+script. You may need to do something at the commmand line like "chmod
++x script.sh" and then "./script.sh" to invoke it.  You could also
+copy and paste the script lines individually into your terminal
+window. <P>
+
+Generally speaking, the wget script is best for Linux and Unix users.
+The curl script is best for Mac users, because curl is part of the
+standard OS distribution; Mac users can also go retrieve and install
+<a href="http://www.gnu.org/software/wget/" target="_blank">wget <img
+src="img/jumpout.jpg" height="10"></A> and then use the wget
+scripts.<P>
+
+Double-clicking on the downloaded zip files should uncompress them,
+and then you should be off and running. However, some Windows users
+have reported having difficulty unzipping files. We recommend using <a
+href="https://www.7-zip.org/download.html" target="_blank">7-zip <img
+src="img/jumpout.jpg" height="10"></A>.<P>
 
 
 <hr width="50%">
@@ -95,55 +126,6 @@ href="/docs/workspace/" target="_blank">IRSA Workspace <img
 src="img/jumpout.jpg" height="10"></A>.
 </UL>
 
-
-<hr width="50%">
-<h3><A NAME="bgmon">Background Monitor</A></h3>
-
-
-The Background Monitor appears as blue text <img src="img/bgmon.png">
-in the upper right of your window to keep track of the data downloads
-you have requested.  It actively changes to reflect what it is doing
-(e.g., this is preparing a download or catalog: <img
-src="img/preparing.png">)  Larger catalog requests can be sent to the
-Background Monitor.   <P>
-
-A pop-up window can be called up at any time by clicking the
-"Background Monitor" tab.  You can watch your data being retrieved. It
-will update that window when the data are available for download
-and/or overlay on your image, providing a link (or links) for
-obtaining the data.  Remove them from the list by clicking on the 
-'x'. <br> <img src="img/backgroundpopup.png" height="180" style="border:3px solid
-gray"> <img src="img/backgroundpopup2.png" height="180" style="border:3px solid
-gray"><P>
-
-If you have made, say, a large catalog request and don't want the
-pending catalog request to occupy screen space while it loads, you can
-click on the button marked "send to background" to reclaim your screen
-space, seen here:<br>
-<img src="img/background-sendto.png"><br>
-When the background monitor finishes, however, you will have to
-actively tell it to display results; it doesn't do it automatically if
-you have sent it to the background.
-You can ask it to send you email when it is ready by clicking on the
-"enable email notification" and giving it an email address.<br>
-
-To stop any query mid-way through, click on the little red octagon
-("stop sign") that appears next to the query in the Background Monitor
-pop-up.<P>
-
-If you forgot to put in your email at the beginning, or if the
-packaging is taking longer than you expected, you can click on "Enable
-email notification" from the bottom of the Background Monitor popup
-and add your email during the packaging process. <P>
-<img src="img/backgroundemail.png" height="180" style="border:3px solid
-gray"> <P>
-
-If you are having technical difficulties, click on the circle with an
-"i" in it to get additional information, like this:<br>
-<img src="img/backgroundinfo.png" height="180" style="border:3px solid
-gray"><br>
-In this case, the job is executing, at the time as given, with a job
-id as shown.<P>
 
 
 
