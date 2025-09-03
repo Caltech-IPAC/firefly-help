@@ -1096,10 +1096,12 @@ pixels in a plane, and the points extracts points from a plane.<P>
 Here, we cover the basic approach, with specifics of each
 tool integrated as we go along.<P>
 
+<strong>Intitiate extraction mode.</strong>
 When you click on one of these icons, you enter into the extraction
 mode. Text appears next to the image toolbar to remind you that
 you are in this mode: <img src="img/endextraction.png"> When you are
 done, to end this mode, click on this "end extraction."<P>
+
 
 When starting out, the pop-up window that you get depends on the tool
 you pick.
@@ -1110,10 +1112,20 @@ you pick.
 <td><img src="img/pointsinit.png" width="300" style="border:3px solid gray"></td>
 </table>
 
-In all three cases, the top center of the extract pop-up window has a
-drop-down from which you can select the aperture value. You can choose,
-in pixels, 1x1, 3x3, 5x5, or 7x7. Values can be summed or averaged. <P>
+<strong>Set aperture.</strong> In all three cases, the top center of
+the extract pop-up window has a drop-down from which you can select
+the aperture value. For the drill and points, you can choose, in
+pixels, 1x1, 3x3, 5x5, or 7x7. Values can be summed or averaged. For
+the line, it's a little different. The apertures are 1x1, 1x3, 1x5, or
+1x7, and you control whether the points are summed or averaged. You
+can have it extract along a line that you draw with your mouse on the
+image (useful for examining brightness profiles, e.g., across spiral
+arms of a galaxy), or you can have it extract an entire line or column
+of the image that you specify (useful in the cases where the 'image'
+is a file where the first row is an extracted spectrum, the second row
+is the error, the third row is a mask, etc.).<P>
 
+<strong>Try extraction.</strong>
 From this point, you can click on your image, or click and drag for
 the line tool. The pop-up then contains a plot of your extraction. 
 <table>
@@ -1126,7 +1138,7 @@ the line tool. The pop-up then contains a plot of your extraction.
 In each of these cases, it does the best that it can to label the axes
 accordingly. The cube that is used for the drill example here follows
 the spectral data model so that it is recognized as a spectrum, and it
-plots against wavelength. The line extraction is a 7x7 average and
+plots against wavelength. The line extraction is a 1x3 average and
 plots the offset in arcseconds from the initial mouse click, given the
 WCS information in the header of the image. The point extraction is a
 3x3 sum, and plotted in image x coordinates, but can be changed to
@@ -1134,21 +1146,22 @@ show image y coordinates. <P>
 
 Note that for the line, if you have more than one image loaded and
 visible, you can shift-click on a new image to see the same line on a
-new image. And, for the points, you can shift-click to change images
-without extracting points.<P>
+new image. Similarly, for the points, you can shift-click to change images
+without extracting points. For the line extraction, if you want to
+change at this point to extraction along a line or column, use the
+drop-down menu at the bottom of the pop-up (shown here as "free hand
+selection").<P>
 
+<strong>Pin extraction.</strong>
 Once you have an extraction that you like, you can retain the
-extraction for further analysis, in any of three ways. "<strong>Pin
-chart/table</strong>" extracts the information as a <a
+extraction for further analysis. "<em>Pin
+chart/table</em>" extracts the information as a <a
 href="tables.html">table</A>, just like any of the other tables in
 this tool, with an accompanying <a href="plots.html">plot</A>. You can
 then manipulate the table/plot just like any other table or plot in
 this tool. If the tool recognizes the extraction as a <a
 href="spectra.html">spectrum</A>, you may have additional
-capabilities. <strong>Download as Table</strong> saves the table to
-your local disk <a href="tables.html#save">with all the same options
-as a regular table</A>. <strong>Download Chart</strong> saves the plot
-as shown, as a png file.<P>
+capabilities. <P>
 
 Once you pin or save your extraction, the tool leaves a "footprint" of
 your extraction on the image so that you can remember what the
@@ -1162,10 +1175,59 @@ rendered as these pixels:<br>
 The point appears on the image at the lower left corner of the
 relevant pixel.<P>
 
-You can pin as many different extractions as you want. Each one will
-result in new tabs with the corresponding table at the bottom of the
-screen. There are navigation aids within the <a
+You can pin as many different extractions as you want. <P>
+
+From the line extraction pop-up, when you click on "Pin Chart/Table",
+you get another pop-up:<br>
+<img src="img/pinextract.png" width="300" style="border:3px solid
+gray"><br>
+From this pop-up, you can choose to do a line extraction from just the
+currently selected image (most likely where you drew your line); all
+the images and putting all of the extracted lines into one big table
+(and tab); or all the images and putting all of the extracted lines
+into individual tables (and tabs). When you do this, the question
+naturally arises as to how the tool should specify which column (or
+tab) goes with which image. Some of the images have long, sometimes
+cryptic titles. You can choose to have the tool use the full image
+titles in the column headers or tab titles, or abbreviations. <P>
+
+If you choose to have the tool generate one table for each image you
+have loaded, you may suddenly have a lot of new tabs at the bottom of
+the screen. There are navigation aids within the <a
 href="tables.html#navigation">tables section</A> that may help.<P>
+
+<strong>Download extraction.</strong> You can download the extraction
+as a table or plot without pinning it. <em>Download as Table</em>
+saves the table to your local disk -- first, you have the same options
+as immediately above, where you can choose to do a line extraction
+from just the currently selected image; all the images and putting all
+of the extracted lines into one big table; or all the images and
+putting all of the extracted lines into individual tables. Then you
+have <a href="tables.html#save">all the same save options as a regular
+table</A>. <em>Download Chart</em> saves the plot as shown, as a png
+file.<P>
+
+After pinning an extraction, you also have the extraction appearing as
+a table in the tables section of your window and as a plot in the
+plots section of your window.  As with <a href="tables.html#save">any
+table</A> in this tool, you can save the table by clicking on the
+diskette icon in the table. You can choose from a variety of formats;
+<a href="tables.html#save">see the tables chapter for more
+information</A>. Similarly, as with <a href="plots.html#saving">any
+plot</A> in this tool, you can save the plot by clicking on the
+diskette icon in the plot. See the <a href="plots.html#saving">plots
+chapter</A> for more information.<P>
+
+
+<strong>Repeat extraction.</strong> As long as the extraction pop-up
+is still open, you can continue to click points or draw lines to make
+additional extractions.<P>
+
+
+<strong>End extraction mode.</strong> <img src="img/endextraction.png">
+When you are done, to end the extraction, click on "end extraction" to
+end the extraction. Alternatively, just click on the 'x' in the upper
+right corner of the extraction pop-up.<P>
 
 
 

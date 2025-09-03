@@ -110,7 +110,10 @@ href="#info">below</A>).</td></tr>
 Jobs accumulate in the Job Monitor over a given session, which could
 include more than one browser window accessing the same archive,
 because it relies on cookies being set. Jobs that are older than 2
-weeks will not appear. <P>
+weeks will not appear. Some jobs (particularly TAP jobs) may only
+persist for up to 72 hours. Jobs that are launched via a different
+browser type (e.g., Chrome vs. Firefox) or on a different computer
+will not appear. <P>
 
 
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</A></strong> 
@@ -119,6 +122,9 @@ weeks will not appear. <P>
 through your browser; your browser may be configured to store all
 downloads in a particular location on your disk. Try looking in a
 "Downloads" directory, or for "recently modified files."
+<LI>Jobs that are older than 2 weeks or launched on a different
+browser or computer will not appear in the job monitor. Some jobs
+(particularly TAP jobs) may only persist for up to 72 hours. 
 </UL>
 
 
@@ -169,11 +175,12 @@ completes to toggle an email being sent to you upon completion.
 <hr width="50%">
 <h3><A NAME="info">Job Information</A></h3>
 
+<table>
+<tr><Td><img src="img/backgroundinfo.png" style="border:3px solid
+gray"></td><td>
 The information you get when you click on the i-in-a-circle <img
-src="img/jm_info.png"> looks
-something like this:<br>
-<img src="img/backgroundinfo.png" style="border:3px solid
-gray"><br>
+src="img/jm_info.png"> in the Job Monitor looks something like this,
+which is for a SPHEREx Data Explorer Spectral Image search.<P>
 
 It specifies things about the query, like when it was submitted and
 how long it took, but also the job ID (useful for helpdesk tickets),
@@ -181,10 +188,25 @@ and the parameters you used (which you can copy using the ellipsis,
 just like for <A href="tables.html#cells">table cells</A>), and also
 what information you provided -- username if you <a
 href="user.html">logged in</A>, <a href="#email">email</A> if you
-provided it, title if you provided it, and the URL that links directly
-to the job (also useful for helpdesk tickets; to copy it, click on the
-tiny clipboard icon next to the "jobURL" text). 
+provided it, title if you provided it, and sometimes the URL that
+links directly to the job (also useful for helpdesk tickets; to copy
+it, click on the tiny clipboard icon). <P>
+</td></tr>
+<tr><td><img src="img/backgroundinfo2.png" style="border:3px solid
+gray"></td><td>
+It could also look like this, where this is for a spectrophotometry
+job in the SPHEREx Data Explorer, which uses a UWS service. 
+It includes things about the specified parameters and how long
+the runtime was, among other things. <P>
 
+Here, again, the UWS job id is very useful for helpdesk tickets -- to
+copy it, click on the tiny clipboard icon.<P>
+
+Note that the "Destruction time" tells you when, nominally, the job
+will no longer be accessible to your browser session.<P>
+
+</td></tr>
+</table>
 
 
 
