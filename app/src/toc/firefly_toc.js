@@ -881,6 +881,7 @@ export const fireflyToc = [
     toc_othersearches,
     toc_plots,
     toc_spectra,
+    toc_upload,
     toc_download,
     toc_jobmon,
     toc_user,
