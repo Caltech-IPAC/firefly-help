@@ -655,13 +655,28 @@ the best option.<P>
 <LI>The next portion of the menu has a wide variety of color table
 choices. Select your new color table from the options shown.<P>
 
-<LI>Alternatively, you can use the "color bar" slider to move among the
-color tables by number. These numbers correspond to the color bar
-number used in the Python implementation of the Firefly tools. <P>
+<LI>The sort of swirly, hurricane-like icon at the end of each color
+table means "invert this color table." If you click on this icon, it
+will invert the specific color table and then implement it in your
+image(s).<P>
 
-<LI> Below the color bar slider, there are sliders controlling the
-bias and contrast. Click or drag the slider to change the image
-display. <P>
+<LI>Alternatively, you can use the "color bar" slider to move
+among the color tables by number. These numbers correspond to the
+color bar number used in the Python implementation of the Firefly
+tools. <P>
+
+<LI>Pixels that are NaNs in the image are portrayed as the color shown
+by the swatch next to "NaN Pixel Color (Auto)." The tool is finding a
+color that is most different from the colors used in the image(s) as
+currently shown, and using that to render the NaNs in the image. If
+you want to change that, click on the color swatch to bring up a
+pop-up from which you can click on a different color, enter the hex
+code, OR enter the RGB numerical values; the color you pick will
+persist until you pick a different color table:<br> <img
+src="img/nancolorpicker.png" style="border:3px solid gray"><P>
+
+<LI> At the bottom, there are sliders controlling the bias and
+contrast. Click or drag the slider to change the image display. <P>
 </UL>
 </td></tr></table>
 
@@ -1086,8 +1101,8 @@ All three of these follow the same basic structure --
 <LI>Try extraction; repeat if desired
 <LI>Pin (retain) extraction if desired
 <LI>Download (as table or chart) if desired
-<LI>Repeat if desired
-<LI>Click on "end extraction" to finish the process.
+<LI>Repeat extraction if desired
+<LI>Click on "end extraction" to finish the process
 </OL>
 
 The drill pokes down through multiple planes, the line moves across
@@ -1147,10 +1162,15 @@ show image y coordinates. <P>
 Note that for the line, if you have more than one image loaded and
 visible, you can shift-click on a new image to see the same line on a
 new image. Similarly, for the points, you can shift-click to change images
-without extracting points. For the line extraction, if you want to
-change at this point to extraction along a line or column, use the
-drop-down menu at the bottom of the pop-up (shown here as "free hand
-selection").<P>
+without extracting points.<P>
+
+For the line extraction, if you want to change at this point to
+extract along a line or column, use the drop-down menu at the bottom
+of the pop-up. It's shown here as "free hand selection", but the other
+choices are line or column selection; you click on the image to select
+a line or a column, which is particularly useful for quick looks at
+semi-extracted spectral images.<P>
+
 
 <strong>Pin extraction.</strong>
 Once you have an extraction that you like, you can retain the
@@ -1228,6 +1248,19 @@ additional extractions.<P>
 When you are done, to end the extraction, click on "end extraction" to
 end the extraction. Alternatively, just click on the 'x' in the upper
 right corner of the extraction pop-up.<P>
+
+<strong>Advanced capabilities</strong> If you have a complicated
+multi-extension FITS file with HDUs that are labeled things like
+image, uncertainty, variance, flags, etc., you have some additional
+options for extraction. When you pin the extraction, you can specify
+an aperture larger than 1x1, which then begs the question of how the
+pixel values are combined. When you have information that the tool
+recognizes, and when you choose a larger aperture, you then get an
+additional pulldown from which you can choose how the pixels are
+combined: average, sum, or even logical "OR", depending on the
+data:<br> <img src="img/extractionadv.png" style="border:3px solid
+gray"><P>
+
 
 
 
@@ -1412,7 +1445,7 @@ seconds, they vanish.<P>
 image, some of these footprints will be larger than your image. Zoom
 out to see it, or find a larger image to use. If you overlay, say, a
 Nancy Grace Roman Space Telescope (formerly WFIRST) footprint on a
-2MASS image, you may need to zoom out a considerable amount before you
+2MASS Atlas FITS image, you may need to zoom out a considerable amount before you
 can see the Roman footprint. You will see the center indicator of the
 marker before you will see the Roman footprint itself. 
 <LI>You can add multiple copies of the same marker using the <a
@@ -1445,7 +1478,7 @@ Spitzer, SOFIA, HST, JWST, and Roman. HST, JWST and Roman are derived
 from information provided via MAST (see <a
 href="http://gsss.stsci.edu/webservices/footprints/help.html"
 target="_blank">http://gsss.stsci.edu/webservices/footprints/help.html
-<img src="img/jumpout.jpg" height="10"></A>.) For JWST and Roman in
+<img src="img/jumpout.jpg" height="10"></A>.) For Roman in
 particular, they are pre-launch values.<P>
 
 <img src="img/iracfoot.png"> <strong>Spitzer/IRAC 3.6 and 4.5 micron

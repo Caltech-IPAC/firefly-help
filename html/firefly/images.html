@@ -101,9 +101,17 @@ parameters.<P>
 
 <a name="selecttarget">
 <DT><strong>3. Select Target</strong></A>
-<dd>Third, you select a target. You may enter a target
-name, and have either NED-then-Simbad  or Simbad-then-NED resolve the
-target name into coordinates.  Alternatively, you may enter
+<dd>Third, you select a target. Examples are given below the text
+entry box before you start typing in the box.<P>
+
+You may enter a target name, and have either NED-then-Simbad  or
+Simbad-then-NED resolve the target name into coordinates. After it
+resolves the name, it will tell you which resolver service it used,
+and also what that service has for the object type:<br>
+<img src="img/objecttype.png" style="border:3px solid gray">
+ <P>
+
+Alternatively, you may enter
 coordinates directly. These coordinates can be in decimal degrees or
 in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
 assumes you are working in J2000 coordinates; you can also specify
@@ -140,9 +148,10 @@ your search size; it will tell you if you request something too big
 or too small. Note that these limits may be image-dependent; larger
 images may be available from certain surveys and smaller images may be
 available from other surveys. 
-<LI><strong>If you want the whole image
-tile</strong>, just leave the image size blank, then the closest image
-tile in its entirety will be returned. 
+<LI><strong>If you want the whole image tile</strong>, just leave the
+image size blank, then the most centered image tile in its entirety
+will be returned. ("Most centered" means the one that best centers the
+position you entered.)
 </UL><P>
 
 
@@ -580,11 +589,11 @@ collections. To see a more comprehensive list, unclick the box marked
 
 <dt><strong>Add MOC Layer: </strong> Adding a MOC Overlay
 <dd>It is often useful to see what other data are available. Looking
-at a Herschel/PACS far-IR HiPS map? Overlay a Chandra MOC to see what
-X-ray data might be available to go with your IR data. Click on the
-"HiPS/MOC" menu, and then click "Add MOC Layer." It brings up this pop-up:<br> <img
-src="img/addmoclayer.png" width="80%" style="border:3px solid gray"> <p>
-Things to note:
+at a Herschel/PACS far-IR HiPS map? Overlay a MOC from a different
+survey to see what complementary data might be available to go with
+your IR data. Click on the "HiPS/MOC" menu, and then click "Add MOC
+Layer." It brings up this pop-up:<br> <img src="img/addmoclayer.png"
+width="80%" style="border:3px solid gray"> <p> Things to note:
 <UL>
 <LI>Coverage (the first column) is the fraction of the sky covered by
 that MOC.
