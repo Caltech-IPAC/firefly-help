@@ -12,17 +12,19 @@
 <BODY BGCOLOR="white" >
 <h2>Firefly: Images</h2>
 
-Firefly can load images as well as support extensive interacting
-with images. This chapter covers loading images; <a
+Firefly can load images as well as support extensive interaction with
+images. This chapter covers loading images; <a
 href="visualization.html">visualization tools</A> are covered in
 another chapter. Firefly can load images that are <a
 href="https://en.wikipedia.org/wiki/FITS" target="_blank">FITS <img
-src="img/jumpout.jpg" height="10"></A> and <a
+src="img/jumpout.jpg" height="10"></A>, <a
 href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
-target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A>
-formats. Any <a href="catalogs.html">catalogs</A> you have loaded are
-overlaid on the images; see <a href="visualization.html">visualization
-chapter</A> for more information.<P>
+target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A>, or
+<a href="https://www.asdf-format.org/en/latest/">ASDF <img
+src="img/jumpout.jpg" height="10"></A> formats. Any <a
+href="catalogs.html">catalogs</A> you have loaded are overlaid on the
+images; see <a href="visualization.html">visualization chapter</A> for
+more information.<P>
 
 
 <em>Contents of page/chapter:</em><br>
@@ -74,7 +76,10 @@ target="_blank">HiPS images <img src="img/jumpout.jpg"
 height="10"></A> (more on <a href="#hips">HiPS</A> below; also see <a
 href="http://www.ivoa.net/documents/HiPS/" target="_blank">IVOA docs
 <img src="img/jumpout.jpg" height="10"></A> for more about what HiPS
-images are). <P>
+images are). (To load <a
+href="https://www.asdf-format.org/en/latest/">ASDF files <img
+src="img/jumpout.jpg" height="10"></A>, go to the <a
+href="upload.html">Upload</A> tab.)<P>
 
 <DT><strong>2. Select Image Source</strong>
 <dd>Second, you select whether you want to pull an image
@@ -371,6 +376,28 @@ region. You can overlay a MOC from one data set onto a completely
 different data set's HiPS image.<P>
 
 
+<strong>Things that define a HiPS image.</strong> When selecting a
+HiPS image, the tool gives you a table. The table that appears has
+several columns that summarize important things about the available
+HiPS images:
+<UL>
+<LI>Type - image (all that is available in this context)
+<LI>Properties - links to more information for that image
+<LI>Title - descriptive words for the HiPS image
+<LI>Waveband - Approximate wavelength range
+<LI>Coverage - Approximate sky coverage (100% or less) -- HiPS images
+often carry with them something referred to as "MOC", or multi-order
+coverage. This number gives an indication of the sky coverage of the
+data.
+<LI>Pixel scale - At the highest order (zoomed in the most), this is
+the pixel size
+<LI>HiPS Order - HEALPix tile order; without getting into the guts of
+HEALPix, this represents how deep you can zoom
+<LI>Frame - coordinate sytem, e.g., equatorial, galactic, etc.
+<!-- <LI>Release date - Date that HiPS image became available -->
+<LI>Dataset IVOA ID - Unique (worldwide) identifier for the dataset
+</UL>
+
 
 
 <hr width="50%">
@@ -493,24 +520,46 @@ images, it will also provide for you a "coverage image", which is
 basically a way for it (and you) to keep track of where you are
 working on the sky. This may be the most surprising when you are
 loading a catalog and therefore don't expect images to appear.
-<P>
+There is a legend that appears in the upper right of the coverage
+image, and if there is more than one or two overlays, there is a quick
+link to the layers icon; see <a
+href="visualization.html#layers">layers section</A> of the <a
+href="visualization.html">Visualization chapter</A>. You can collapse
+the legend to make it smaller by clicking on the arrow in the upper
+right of the legend box.<P>
 
 <table>
-<tr><td width="25%">You may have a coverage image like this -- this is an example
-of a coverage image showing two different overlaid catalogs.<P>
-Note that in this case, the catalogs cover the whole sky, so the HiPS
-image is displayed in HiPS/Aitoff projection to show the whole sky.
-</td><td><img src="img/coverage-ex1.png" width="60%" style="border:3px
-solid gray"></td></tr>
-<tr><td width="25%">You can also have a coverage image like this,
+<tr><td width="30%">You may have a coverage image like this -- this is
+an example of a coverage image showing two different overlaid
+catalogs.<P> Note that in this case, the catalogs cover the whole sky,
+so the HiPS image is displayed in HiPS/Aitoff projection to show the
+whole sky. The legend in the upper right primarily denotes the
+uploaded catalog name. The catalog is shown in a <a
+href="catalogs.html#hier">hierarchical display</A>. </td><td><img
+src="img/coverage-ex1.png" width="60%" style="border:3px solid
+gray"></td></tr> 
+<tr><td width="30%">You can also have a coverage image like this,
 which shows a coverage image that has polygons demonstrating the
 coverage of each a list of loaded images (large polygons) and the
 locations of spectra (small squares). This case only has data over a
 relatively small region, so the HiPS image is zoomed in comparatively
-tightly on the relevant region.</td><td> <img
-src="img/coverage-ex2.png" width="60%" style="border:3px solid
-gray"></td></tr>
-</table>
+tightly on the relevant region. The legend is collapsed here, so you
+can't read the whole thing.</td><td> <img src="img/coverage-ex2.png"
+width="60%" style="border:3px solid gray"></td></tr> 
+<tr><td width="30%">You might have a coverage image something like
+this, which shows a coverage image with a WISE catalog overlaid. This
+has data over a relatively small region, so the HiPS image is zoomed
+in comparatively tightly on the relevant region. The catalog is more
+than 1000 sources, so the tool has shown you individual sources in the
+HEALPix cells where there are fewer sources than a given threshold,
+and where there are more sources, it simply shows you the cell and the
+total number of sources in that cell --  catalog is shown in a <a
+href="catalogs.html#hier">hierarchical display</A>.  Because this is a
+catalog over a small region (as opposed to the whole sky), you can
+control what this threshold is and how it renders the cells from the
+<a href="visualization.html#layers">layers pop-up</A>. </td><td> <img
+src="img/coverage-ex3.png" width="60%" style="border:3px solid
+gray"></td></tr></table>
 
 <P>
 
@@ -546,15 +595,19 @@ data product itself.)
 
 
 In the upper left of the coverage image, there are two drop-down
-menus.<br>
+menus. The first is covered immediately below; the second is covered
+<a href="#hipscoords">here</A>.<br>
 <img src="img/coveragechoices.png"> <p>
 
 The first drop-down menu looks like this. <br>
 <img src="img/coveragechoices1.png"><p>
 
-There are two sections here. 
+
+There are two sections here, "Data Options" (see immediately below)
+and "<a href="#hipstofits">HiPS to FITS Conversion</A>." 
+
 <DL>
-<DT>Under "Data Options", you can change what data are shown.
+<DT><a name="dataoptions">Under "Data Options"</A>, you can change what data are shown.
 <dd>
 <DL>
 <DT><strong>Change HiPS:</strong> Changing HiPS images
@@ -618,7 +671,7 @@ uploaded it here.
 <P>
 
 
-<dt>Under "HiPS to FITS Conversion", you can control whether the viewer
+<dt><a name="hipstofits">Under "HiPS to FITS Conversion"</A>, you can control whether the viewer
 will automatically toggle between image types as needed. 
 <dd>By default,
 the coverage image is most likely a HiPS image.  FITS images are best
@@ -644,29 +697,46 @@ more clear what is going on:<br>
 <img src="img/lingeringfootprint.png"> <P>
 </DL>
 
-The second drop-down menu looks like this.<br>
+<a name="hipscoords">The second drop-down menu</A> looks like this.<br>
+<table><tr><td>
 <img src="img/coveragechoices2.png"><P>
+</td><td>
+
 There are three sections in this menu.
 
 <DL>
 <dt><strong>Orientation</strong>
 <dd>Under "Orientation", you can control whether the coordinates are
-in Galactic or Equatorial J2000 (RA/Dec). This can be used  in
-conjunction with the image readout and/or the coordinate layer button
-(both described <a href="visualization.html">in the visualization
-section</A>)
+in Galactic, Equatorial J2000 (RA/Dec), or Ecliptic J2000. This
+basically is a quick way to orient which way is up on your screen.
+Note that this can be
+used in conjunction with the <a href="visualization.html#fitsViewer">image readout</A>
+and/or the <a href="visualization.html#coordgrid">coordinate overlay</A> <a
+href="visualization.html#layers">layers</A> button.
 <dt><strong>Center Galactic</strong>
-<dd>If you select "Center Galactic", the HiPS image slews to put
-Galactic North up, the Galactic Center in the center of the field of
-view, and the Galactic Plane horizontally across your field of view.
-This is useful if you have been zooming or scrolling around to look at
-individual sources and need to bring it back to a familiar orientation
-quickly.
+<dd>If you select "Center Galactic", the HiPS image slews (or maybe
+twists is a better word) to put Galactic North up, the Galactic Center
+in the center of the field of view, and the Galactic Plane
+horizontally across your field of view. This is useful if you have
+been zooming or scrolling around to look at individual sources and
+need to bring it back to a familiar orientation quickly. "Center
+Equatorial" does the same thing for the celestial poles, equator, and
+ra/dec=0 (those defined by RA/Dec). "Center Ecliptic" does the same
+thing, but for the ecliptic plane, poles, and coordinate 0,0. This
+feature can be most useful when comparing sky coverage (MOCs) to those
+from other missions or surveys that 'work' in alternate coordinate
+systems. If you are looking at a coverage map, and you've clicked this
+menu choice when you were zoomed in closely on a target that isn't 0,0
+in your coordinate system, to "find" your position, click on a row in
+whatever table you have loaded on the left to bring your target back
+into view.
 <dt><strong>Projection</strong>
 <dd>Under "Projection", you can control whether the display is in
-Spherical or Aitoff coordinates.
-Aitoff projection works better for all-sky displays.
+Spherical or Aitoff coordinates. Aitoff projection works better for
+all-sky displays.
 </dl>
+
+</td></tr></table>
 
 
 

@@ -1086,7 +1086,10 @@ use of locking. You can align FITS and HiPS images to each other. <P>
 <h3><a name="extraction">Extraction Tools</A></h3>
 
 Several tools allow you to extract information from images or image
-planes, but only for FITS (not HiPS) files.
+planes, but only for FITS (not HiPS) files.<strong>All of these
+extraction tools are meant for quick-look assessments, not
+science-ready analyses.</strong> They don't do any pixel
+interpolation, for example.<P>
 
 <UL>
 <LI><img src="img/drill.png" align="center"> -- Extract down through image planes
@@ -1096,7 +1099,7 @@ planes, but only for FITS (not HiPS) files.
 
 All three of these follow the same basic structure -- 
 <OL>
-<LI>Intitiate extraction mode
+<LI>Initiate extraction mode
 <LI>Set aperture  
 <LI>Try extraction; repeat if desired
 <LI>Pin (retain) extraction if desired
@@ -1111,7 +1114,7 @@ pixels in a plane, and the points extracts points from a plane.<P>
 Here, we cover the basic approach, with specifics of each
 tool integrated as we go along.<P>
 
-<strong>Intitiate extraction mode.</strong>
+<strong>Initiate extraction mode.</strong>
 When you click on one of these icons, you enter into the extraction
 mode. Text appears next to the image toolbar to remind you that
 you are in this mode: <img src="img/endextraction.png"> When you are
