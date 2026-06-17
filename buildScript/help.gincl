@@ -98,7 +98,7 @@ task dockerCopyArtifacts(type: Copy) {
 
 task buildPdfInput(type:Exec) {
     workingDir = appRoot
-    commandLine "npx -p @babel/core -p @babel/node babel-node --presets @babel/preset-env ./src/builder.js ${app_name} ${buildDir}".split(" ")
+    commandLine "yarn", "babel-node", "--presets", "@babel/preset-env", "./src/builder.js", app_name, "${buildDir}"
     doFirst {
         for (String key : appProps.keySet()) {
             if (key.startsWith('REACT_APP_')) {
