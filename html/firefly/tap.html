@@ -1,0 +1,106 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Other Searches" -->
+<HEAD>
+<TITLE>Firefly: TAP Searches
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: TAP Searches</h2>
+
+VO TAP searches that retrieve some sort of <a
+href="tables.html">tables</A>, many of which are <a
+href="catalogs.html">catalogs</A>.  For the results of any of these
+searches, if the tool recognizes positions in a catalog, it will
+overlay the catalog on <a href="images.html">images</A> and <a
+href="plots.html">make plots</A>. <P>
+
+<em>Contents of page/chapter:</em><br>
++<A href="#intro">Introduction &amp; Terminology</A> <br>
++<A href="#tap">General TAP Search</A> <br>
+
+
+
++<a href="#interactivetarget">Interactive Target Refinement</A><br>
++<a href="#moreconstraints">VO TAP: More about constraints</A><br>
++<a href="#moreconstraints2">VO ObsCore: More about constraints</A><br>
++<A href="#irsavotap">TAP Search</A> <br>
++<A href="#obscore">ObsCore Search</A> <br>
++<A href="#nedcatalogs">NED Objects</A> -- Searching for NED objects <br>
++<A href="#voscs">VO SCS</A> -- VO Simple Cone Search <br>
+<P>&nbsp;<P>
+
+
+
+<hr width="50%">
+<h3><A name="intro">Introduction &amp; Terminology</A></h3>
+
+There is a lot of terminology in this chapter to understand.
+<UL>
+<LI>VO = <A href="http://www.virtualobservatory.org/"
+target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
+height="10"></A> 
+<LI>TAP = <a href="https://www.ivoa.net/documents/TAP/"
+target="_blank">table access protocol <img src="img/jumpout.jpg"
+height="10"></A>. TAP services enable complex queries of tables using ADQL.  
+<LI>ADQL = <a href="https://www.ivoa.net/documents/ADQL/"
+target="_blank">astronomical data. 
+query language <img src="img/jumpout.jpg" height="10"></A>
+<LI>ObsCore = <a href="https://www.ivoa.net/documents/ObsCore/"
+target="_blank">core components of Observation Data Model <img
+src="img/jumpout.jpg" height="10"></A>
+<LI>Data model = A standard logical structure for a type of dataset;
+more flexible and general than a data format. 
+<LI>ObsTAP = TAP service that serves ObsCore tables
+<LI>SCS = simple cone search.
+</UL>
+
+There are myriad places on the web to learn more about TAP queries and
+ADQL, as well as all the rest of the VO standards and protocols. We
+just provide a brief overview here in the context of this tool. <P>
+
+Firefly can help you interactively create ADQL which then you can
+copy and use in your own code elsewhere.<P>
+
+By using TAP and ObsTAP queries, you can use IRSA (or someone else's)
+services to talk to other archives that also comply with these
+standards, world-wide.<P>
+
+This section assumes you already know how to work with <a
+href="tables.html">tables in Firefly</A>.<P>
+
+
+
+<hr width="50%">
+<h3><A name="tap">General TAP Search</A></h3>
+
+This is the kind of search you access when you select the "Tables
+(TAP)" tab.<P>
+
+When you first go to this tab, you will see this near the top of your
+screen:<br>
+<img src="img/generaltap.png" width="75%" style="border:3px solid
+gray"><br>
+At the top, you now have a choice of which TAP service you want to use,
+and it defaults to IRSA's. You can select your favorite from the list,
+or use the toggle on the left to enter your own custom URL. It will
+remember your custom URL in the same session, so you can select it
+again later. If you
+want to hide this top row after setting it (to, say, regain screen
+real estate), look for this on the far right:<br> <img
+src="img/hidetap.png"><br> the "TAP Services:" button (show/hide) will
+reveal or conceal this top row.<P>
+
+
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>
