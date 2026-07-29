@@ -575,83 +575,143 @@ const toc_catalogs = {
         },
     ]
 };
-const toc_othersearches = {
-    id: 'othersearches',
-    title: 'Other Searches',
-    href: 'firefly/othersearches.html',
+
+const toc_tap = {
+    id: 'tap',
+    title: 'TAP',
+    href: 'firefly/tap.html',
     items: [
+        {
+            id: 'tap.intro',
+            title: 'Introduction',
+            href: 'firefly/tap.html#intro',
+        },
+        {
+            id: 'tap.tap',
+            title: 'General TAP',
+            href: 'firefly/tap.html#tap',
+        },
+        {
+            id: 'tap.moretables',
+            title: 'Selecting Tables',
+            href: 'firefly/tap.html#moretables',
+        },
+        {
+            id: 'tap.obstap',
+            title: 'ObsTAP',
+            href: 'firefly/tap.html#obstap',
+        },
+        {
+            id: 'tap.moreconstraints',
+            title: 'TAP Constraints',
+            href: 'firefly/tap.html#moreconstraints',
+        },
+        {
+            id: 'tap.moreconstraints2',
+            title: 'ObsCore Constraints',
+            href: 'firefly/tap.html#moreconstraints2',
+        },
+        {
+            id: 'SearchRefinementTool',
+            title: 'Interactive Target Refinement',
+            href: 'firefly/tap.html#interactivetarget',
+            hidden: true,
+        },
+        {
+            id: 'othersearches.interactivetarget',
+            title: 'Interactive Target Refinement',
+            href: 'firefly/tap.html#interactivetarget',
+        },
+        {
+            id: 'tap.adql',
+            title: 'ADQL',
+            href: 'firefly/tap.html#adql',
+        },
         {
             id: 'tapSearches.form',
             title: 'VO TAP Search Form',
-            href: 'firefly/othersearches.html#tapSearches.form',
+            href: 'firefly/tap.html#tapSearches.form',
             hidden: true,
         },
         {
             id: 'tapSearches.tapService',
             title: 'Select TAP Service',
-            href: 'firefly/othersearches.html#tapSearches.tapService',
+            href: 'firefly/tap.html#tapSearches.tapService',
             hidden: true,
         },
         {
             id: 'tapSearches.selectBy',
             title: 'Select Query Type',
-            href: 'firefly/othersearches.html#tapSearches.selectBy',
+            href: 'firefly/tap.html#tapSearches.selectBy',
             hidden: true,
         },
         {
             id: 'tapSearches.selectTable',
             title: 'Select Table',
-            href: 'firefly/othersearches.html#tapSearches.selectTable',
+            href: 'firefly/tap.html#moretables',
             hidden: true,
         },
         {
             id: 'tapSearches.constraints',
             title: 'Enter Constraints',
-            href: 'firefly/othersearches.html#tapSearches.constraints',
+            href: 'firefly/tap.html#moreconstraints',
             hidden: true,
         },
         {
             id: 'tapSearches.spatial',
             title: 'Spatial Constraints',
-            href: 'firefly/othersearches.html#tapSearches.spatial',
+            href: 'firefly/tap.html#tapSearches.spatial',
             hidden: true,
         },
         {
             id: 'tapSearches.temporal',
             title: 'Temporal Constraints',
-            href: 'firefly/othersearches.html#tapSearches.temporal',
+            href: 'firefly/tap.html#tapSearches.temporal',
             hidden: true,
         },
         {
             id: 'tapSearches.obsCore',
             title: 'Observation Type and Source',
-            href: 'firefly/othersearches.html#tapSearches.obsCore',
+            href: 'firefly/tap.html#tapSearches.obsCore',
             hidden: true,
         },
         {
             id: 'tapSearches.location',
             title: 'Location',
-            href: 'firefly/othersearches.html#tapSearches.location',
+            href: 'firefly/tap.html#tapSearches.location',
             hidden: true,
         },
         {
             id: 'tapSearches.exposure',
             title: 'Timing',
-            href: 'firefly/othersearches.html#tapSearches.exposure',
+            href: 'firefly/tap.html#tapSearches.exposure',
             hidden: true,
         },
         {
             id: 'tapSearches.wavelength',
             title: 'Spectral Coverage',
-            href: 'firefly/othersearches.html#tapSearches.wavelength',
+            href: 'firefly/tap.html#tapSearches.wavelength',
             hidden: true,
         },
         {
             id: 'tapSearches.adql',
             title: 'ADQL',
-            href: 'firefly/othersearches.html#tapSearches.adql',
+            href: 'firefly/tap.html#adql',
             hidden: true,
         },
+        {
+            id: 'hips.VisualSelection',
+            title: 'VO TAP Search',
+            href: 'firefly/othersearches.html#hips.visualselection',
+            hidden: true,
+        },
+    ]
+};
+const toc_othersearches = {
+    id: 'othersearches',
+    title: 'Other Searches',
+    href: 'firefly/othersearches.html',
+    items: [
         {
             id: 'catalogs.ned',
             title: 'NED Catalogs',
@@ -665,42 +725,6 @@ const toc_othersearches = {
             hidden: true,
         },
         {
-            id: 'SearchRefinementTool',
-            title: 'Interactive Target Refinement',
-            href: 'firefly/othersearches.html#interactivetarget',
-            hidden: true,
-        },
-        {
-            id: 'othersearches.intro',
-            title: 'Introduction',
-            href: 'firefly/othersearches.html#intro',
-        },
-        {
-            id: 'othersearches.interactivetarget',
-            title: 'Interactive Target Refinement',
-            href: 'firefly/othersearches.html#interactivetarget',
-        },
-        {
-            id: 'othersearches.moreconstraints',
-            title: 'VO TAP Constraints',
-            href: 'firefly/othersearches.html#moreconstraints',
-        },
-        {
-            id: 'othersearches.moreconstraints2',
-            title: 'VO ObsCore Constraints',
-            href: 'firefly/othersearches.html#moreconstraints2',
-        },
-        {
-            id: 'othersearches.irsavotap',
-            title: 'VO TAP Search',
-            href: 'firefly/othersearches.html#irsavotap',
-        },
-        {
-            id: 'othersearches.obscore',
-            title: 'ObsCore Search',
-            href: 'firefly/othersearches.html#obscore',
-        },
-        {
             id: 'othersearches.nedcatalogs',
             title: 'NED Objects',
             href: 'firefly/othersearches.html#nedcatalogs',
@@ -709,12 +733,6 @@ const toc_othersearches = {
             id: 'othersearches.voscs',
             title: 'VO SCS',
             href: 'firefly/othersearches.html#voscs',
-        },
-        {
-            id: 'hips.VisualSelection',
-            title: 'VO TAP Search',
-            href: 'firefly/othersearches.html#hips.visualselection',
-            hidden: true,
         },
         {
             id: 'catalogs.vo',
@@ -874,6 +892,7 @@ export const toc_spectra = {
 export const fireflyToc = [
     toc_about,
     toc_overview,
+    toc_tap,
     toc_images,
     toc_visualization,
     toc_tables,
