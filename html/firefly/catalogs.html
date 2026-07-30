@@ -20,13 +20,12 @@ basic functionality of tables is covered in the <a
 href="tables.html">Tables section</A>.  You can load a wide variety of
 catalogs to load for overlaying on your <a
 href="visualization.html">visualized data</A>. If you don't have an <a
-href="images.html">image</A> loaded, the tool will pick a "coverage
-image" for you and overlay the catalog on that image. It will also <a
-href="plots.html">make a plot for you</A>, which you can change. <P>
+href="images.html">image</A> loaded, the tool will overlay your
+catalog on a "coverage image". It will also <a href="plots.html">make
+a plot for you</A>, which you can change. <P>
 
 <em>Contents of page/chapter:</em><br>
 +<A href="#intro">Introduction</A><br>
-+<A href="#irsacatalogs">IRSA Catalogs</A> -- Searching for catalogs from IRSA<br>
 +<A href="#interacting">Interacting with Catalogs</A> <br> 
 +<A href="#hier">Hierarchical Catalog Display</A><br>
 +<a href="#details">Details Tab</A> -- More information about the columns<br>
@@ -35,199 +34,40 @@ href="plots.html">make a plot for you</A>, which you can change. <P>
 <hr width="50%">
 <h3><a name="intro">Introduction</A></h3>
 
-There are several different ways to get catalogs into Firefly.
-This chapter focuses on IRSA catalogs. <P>
-
-<img src="img/catalogsintro.png"> When you click on the "Catalogs" tab
-at the top of the Firefly window, you are dropped into an IRSA
-Catalogs search, which is what we describe here. There are <a
-href="othersearches.html">other kinds of searches</A> you can also do
-that will load catalogs (or other tables) into the tool. <P>
+There are several different ways to get catalogs into Firefly. Among
+other things, you can do a <a href="tap.html">TAP search for a
+catalog</A>, or <a href="upload.html">upload your own catalog</A>. The
+search results are shown in a <a href="tables.html">Firefly
+table</A> and you can <a href="#interacting">interact with it</A>.<P>
+<P>
 
 
-<hr width="50%">
-<h3><a name="irsacatalogs"><a name="catalogs">IRSA Catalogs</A></A> --
-Searching for catalogs at IRSA</h3>
+Here are some general guidlines for working with catalogs:
 
-<img src="img/catalogsearch.png" width="100%" style="border:3px solid gray"><P>
-
-The upper left quadrant of this window is where you specify which
-catalog you want to search.  To change catalogs, first select the
-"project" under which they are housed at IRSA, such as 2MASS, IRAS,
-WISE, MSX, etc.  The available choices underneath that change
-according to the project you have selected.  A short description is
-provided for each of the catalogs, with links for more information
-(including definitions of the sometimes cryptic column names); an
-example is here:<br> <img src="img/catalogcoldef.png"><P>
-
-The upper right quadrant of this window is where you specify the
-target (the position is sometimes pre-filled with its best guess as to
-what you want) and the search method (cone, elliptical, box, polygon,
-multi-object, all-sky), and the parameters that go with that search
-method (e.g., the radius of the cone). The parameters for each of
-these searches change dynamically as you select search options, as
-follows:  <P>
-
-<DL>
-<DT><strong>Caution</strong>: <DD>Pick your units from the drop-down
-first, and then enter a number; if you enter a number and then select
-from the drop-down, it will convert your number from the old units to
-the new units. There are both upper and lower limits to your search
-radius; it will tell you if you request something too big or too
-small. Note that these limits are catalog-dependent.   <P>
-
-<DT><strong>Cone search</strong>: <dd> <img
-src="img/catsearch-cone.png" style="border:3px solid gray"> <br>
-You can put in a position, but sometimes it attempts to guess a
-position, based on prior searches. You specify the cone radius; the
-default is 10 arcsec.<P>
-
-<DT><strong>Elliptical search</strong>: <dd> <img
-src="img/catsearch-ellip.png" style="border:3px solid gray"> <br>
-You can put in a position, but sometimes it attempts to guess a
-position, based on prior searches. You specify the search ellipse's
-semi-major axis, position ratio, and axial ratio. Defaults are as
-shown.<P>
-
-<DT><strong>Box search</strong>: <dd> <img
-src="img/catsearch-box.png" style="border:3px solid gray"> <br>
-You can put in a position, but sometimes it attempts to guess a
-position, based on prior searches. You specify the box's length on a
-side; default is as shown. <P>
-
-<strong><font color="orange">&#x26A0;</font> Tips and
-Troubleshooting:</strong> If you enter coordinates in non-equatorial 
-units (e.g., Galactic or ecliptic), the search is still carried out in
-equatorial coordinates (RA and Dec).<P>
-
-<DT><strong>Polygon search</strong>: 
-<dd> <img
-src="img/catsearch-polygon.png" style="border:3px solid gray"> <img
-src="img/catsearch-polygon2.png" style="border:3px solid gray"> <br>
-For this, note that it no longer has a single target location. It will
-sometimes try to pre-fill the vertices of the position it thinks you want, based on
-prior searches. If you have images loaded, it will give you choices
-based on the current image -- you can select whether you want
-the catalog request to match the entire area of the image you have
-selected ("image"), or just the portion of the image you can see in
-the current view ("visible"), or your own ("custom") area. (However,
-note that if you have selected a HiPS image before searching, you are
-limited to a maximum of 5 degrees.) The list of
-vertices in the coordinates box are in decimal RA and Dec in degrees.
-You must enter at least 3 and at most 15 vertices, separated by a
-comma. Note that, for overlaying catalogs on HiPS images, you cannot
-select "image", because HiPS images are generally very, very large, so
-this would result in too many points being returned. There is a
-maximum of 5 degrees imposed on catalog searches to match HiPS
-images.<P>
-If you <a href="visualization.html#selectregion">select a 
-rectangular region</A> of your image and then select a polygon
-catalog search, you will have a fourth radio button above, "selection",
-which matches the corners of your selected image region.<P>
-If you select the "bullseye" icon on the right (<img
-src="img/clicktosearch.png">), you get a pop-up with
-a way to interactively select your target; this works just like <a
-href="othersearches.html#interactivetarget">this interactive target
-refinement</A> (go there for more details) :<br>
-<img src="img/choosetarget.png" width="300" style="border:3px solid gray"><P>
-
-<DT><strong>Multi-Object search</strong>: <dd> <img
-src="img/catsearch-multiobj.png" style="border:3px solid gray"><br> 
-For a multi-object search, it can't guess what position you want.
-You need to upload a file (from your disk or the <a href="/docs/workspace/"
-target="_blank">IRSA Workspace <img src="img/jumpout.jpg"
-height="10"></A>) in <a
-href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
-target="_blank">IPAC table format <img src="img/jumpout.jpg"
-height="10"></A>, which is a varietal of plain text. (IRSA has a <a
-href="https://irsa.ipac.caltech.edu/applications/TblValidator/"
-target="_blank">table validator <img src="img/jumpout.jpg"
-height="10"></A> which may be helpful.) Note that you also have to
-specify the radius over which to search for each of the targets in
-your list.<P>
-
-When you do a multi-position search on catalogs, three new columns are
-added to the catalog as it is returned to you. These columns are :
 <UL>
-<LI>cntr_01 - the target position you requested
-<LI>dist_x - the distance between the target position you requested
-and the object it found
-<LI>pang_x - the position angle between the target position you requested
-and the object it found
-</UL>
-These additional columns can help you assess if the target(s) it found is
-the target that should be matched to the position you requested.<P>
 
+<LI>If the catalog search is successful quickly, it will promptly
+return the results. The search may take a long time to return,
+especially if you have asked for a large catalog, and you may think
+that nothing has happened, but be patient and eventually it will
+return. The tool may give you an option to place the search in the
+<a href="jobmon.html">background</A> so that you can keep working.
 
-<DT><strong>All-sky search</strong>: <dd> <img
-src="img/catsearch-allsky.png" style="border:3px solid gray"><br> 
-Because this is an all-sky search, it does not have a single target
-entry box. In order to constrain this search, you need to impose
-constraints on the bottom of the screen (see below). <P>
+<LI>Use large search radii with caution! Searches that retrieve more
+rows will take longer. Searches that retrieve tens or hundreds of
+thousands of rows will take quite a while to load into the tool. 
 
-</dl>
-
-The bottom of this window allows you to set restrictions on specific
-columns. It gives you a list of all the available column names in the
-corresponding catalog. (Most catalogs have identical "standard" and
-"long form" selections, but some have more columns available in "long
-form".) From here, you can choose what to display (tickboxes on the
-left), and filter what is returned ("constraints" column). For
-example, only return objects with values in column y that are greater
-than x. If you add more than one restriction, they are combined
-logically using an "AND" operators; be careful, because you can thus
-restrict data such that none of the catalog meets your criteria.<P>
-
-Click on "Search" to initiate the search. It will load the catalog
-into a tab of its own. The objects will also be overlaid on any images
-you have loaded, and a default x-y plot will be shown. (For more on the
-x-y plots, see <a href="plots.html">Plots section</A>.)  All of these
-representations are interlinked -- clicking on a row in the table
-shows it on the image and in the plot, and clicking on an object in
-the image shows it in the table and in the plot, and clicking on an
-object in the plot shows it in the table and on the image.<P>
-
-To close the catalog search window without searching for a catalog,
-click on "Cancel".<P>
-
-<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
-<UL>
-<LI>If the catalog search is successful quickly, it will promptly return
-the results in a tab of its own. 
-
-<LI>The search may take a long time to return, especially
-if you have asked for a large catalog, and you may think that nothing
-has happened, but be patient and eventually it will 
-return a tab.
-
-<LI>Use large search radii with caution! Be sure you understand how many
-sources you are likely to retrieve. Searches that retrieve more rows
-will take longer. Searches that retrieve tens of thousands of rows
-will take quite a while. 
-
-<LI>If you want to impose additional constraints on the catalog during
-your initial search, you can do so in the lower half of the screen
-(e.g., SNR &gt; n in some band, or an SQL command), you can place
-constraints at this point. However, be advised that it is easy to
-combine constraints such that no sources are retrieved!
-
-<LI> If you overlay a large catalog, large enough that the <a
-href="plots.html">plot is a binned heatmap</A>, <strong>the entire
-source list is NOT overlaid, even if you zoom in a lot</strong>. The
-way to work within these constraints is to impose a filter on the
-catalog to get it below the threshold for a regular plot -- weed out
-lower SNR sources, or filter based on RA/Dec, etc. Then all the
-individual sources will be shown.
+<LI> If you overlay a large catalog, the tool will show cells with a
+number enclosed indicating the number of sources in that region. As
+you zoom in closer and closer, the tool will adjust those bins to
+smaller and smaller cells until it shows you individual sources. <a
+href="catalogs.html#hier">See below</A> for more information!
 
 <LI> If you overlay a large catalog, then turn around and <a
 href="visualization.html#fitsDownloadOptions">save a regions file from
-the catalog overlay</A>, then unusual things can happen. If the plot
-that results from the catalog is small enough to show individual
-points in the plot, then all of the overlays will be saved to the
-regions file. BUT if you have a <a href="plots.html">plot with enough
-points that it is a binned heatmap</A>, the greatly abbreviated
-("decimated") source list overlay will be saved, <strong>NOT</strong>
-the entire catalog!
+the catalog overlay</A>, then the entire catalog may not be saved. To
+get a large catalog saved as a regions file, <a
+href="tables.html#save">save it from the table</A>.
 
 <LI>If you have "pan by table row" turned on (see <a
 href="visualization.html#panbytablerow">Visualization chapter</A>),
@@ -246,8 +86,6 @@ degree search radius.
 
 </ul><P>
 
-The search results are then shown in a <a href="tables.html">Firefly
-table</A> and you can <a href="#interacting">interact with it</A>.<P>
 
 
 

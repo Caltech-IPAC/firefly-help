@@ -1,0 +1,138 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Other Searches" -->
+<HEAD>
+<TITLE>Firefly: SIAv2 Searches
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: SIAv2 Searches</h2>
+
+VO SIAv2 searches retrieve <a
+href="images.html">images</A>, which then can be interacted with using <a
+href="visualization.html">Visualization Tools</A>.  The tool can also 
+overlay <a href="catalogs.html">catalogs</A> on images. 
+<P>
+
+<em>Contents of page/chapter:</em><br>
++<A href="#intro">Introduction &amp; Terminology</A> <br>
++<A href="#sia">General SIAv2 Search: Overview</A> <br>
++<a href="#constraints">VO SIAv2: More about constraints</A><br>
+
+
+
+<hr width="50%">
+<h3><A name="intro">Introduction &amp; Terminology</A></h3>
+
+There are some specific terminology in this chapter to understand.
+<UL>
+<LI>VO = <A href="http://www.virtualobservatory.org/"
+target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
+height="10"></A> 
+<LI>SIA = <a href="https://www.ivoa.net/documents/SIA/"
+target="_blank">simple image access <img src="img/jumpout.jpg"
+height="10"></A>
+</UL>
+
+
+There are myriad places on the web to learn more about these kinds of
+queries, as well as all the rest of the VO standards and protocols. We
+just provide a brief overview here in the context of this tool. <P>
+
+This section covers just the SIAv2 search; there is another section on
+<a href="images.html">images in general</A> and the <a
+href="visualization.html">visualization tools</A> in Firefly.<P>
+
+
+<hr width="50%">
+<h3><A name="sia">General SIAv2 Search: Overview</A></h3>
+
+This is the kind of search you access when you select the "Images
+(SIAv2)" tab.<P>
+
+
+When you first go to this tab, you need to <strong>Select SIAv2
+Service</strong>. This is near the top of your screen:<br>
+<img src="img/generalsia.png" width="75%" style="border:3px solid
+gray"><br>
+At the top, you now have a choice of which SIAv2 service you want to use,
+and it defaults to IRSA's. You can select your favorite from the list,
+or use the toggle on the left to enter your own custom URL. It will
+remember your custom URL in the same session, so you can select it
+again later. <P>
+
+
+
+<hr width="50%">
+<h3><a name="constraints">VO SIAv2 Searches: More information about
+constraints</A></h3><P>
+
+<dl>
+<dt><strong>Constraints: Spatial</strong>
+<dd>This part of the interface allows you to specify the details of a
+spatial search. 
+<table><tr><td>
+<img src="img/enterconstraints-sia1.png" width="500" style="border:3px solid gray">
+</td><td>This is what it looks like when you do a <strong>cone
+search</strong>; note that you have the same name resolution options
+as in any other search in this tool.</td></tr></table>
+<table><tr><td>
+<img src="img/enterconstraints-sia1b.png" width="500" style="border:3px solid gray">
+</td><td>This is what it looks like when you do a <strong>polygon
+search</strong>.</td></tr></table><P>
+In both cases, you can use <a
+href="tap.html#interactivetarget">interactive target refinement</A>
+just like for TAP searches.<P>
+
+<dt><strong>Constraints: Observation Type and Source</strong>
+<dd>
+<table><tr><td>
+<img src="img/enterconstraints-sia2.png" width="500" style="border:3px solid gray">
+</td><td>This part of the interface allows you to specify the calibration
+level -- level 1 is relatively unprocessed and level 4 is
+science-ready mosaics. You can constrain the facility, instrument
+name, or collection as well.</td></tr></table><P>
+
+<dt><strong>Constraints: Timing</strong>
+<dd>
+<table><tr><td>
+<img src="img/enterconstraints-sia3.png" width="500" style="border:3px solid gray">
+</td><td>This panel provides a way to constrain the observation time
+of your search. This is the default option, where you want data
+completed in the last x hours (or other unit of time). You can
+alternatively specify that you want data overlapping a particular date
+range, in UTC or MJD times.</td></tr></table><P>
+
+
+<dt><strong>Constraints: Spectral Coverage</strong>
+<dd>
+<table><tr><td>
+<img src="img/enterconstraints-sia4.png" width="500" style="border:3px solid gray">
+</td><td>This panel provides a way to constrain the spectral coverage
+of your search. This is the default option, where you want data
+containing a given wavelength. There is an alternate option, where you
+can specify data overlapping a particular wavelength range.</td></tr></table><P>
+
+
+<dt><strong>Constraints: Observation ID</strong>
+<dd>
+<table><tr><td>
+<img src="img/enterconstraints-sia5.png" width="500" style="border:3px solid gray">
+</td><td>This panel enables a search by observation ID. Note that the
+observation ID must match exactly for this search to be succesful.</td></tr></table><P>
+
+</DL>
+
+
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>

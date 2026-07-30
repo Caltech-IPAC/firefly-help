@@ -28,301 +28,33 @@ more information.<P>
 
 
 <em>Contents of page/chapter:</em><br>
-+<A href="#searching">Searching for and Loading Images</A> <br>
-+<A href="#3-color">Making 3-color Images</A> <br>
++<A href="#fits">FITS Images: General Information</A> <br>
 +<A href="#hips">HiPS Images: General Information</A> <br>
 +<A href="#hipssearch">Searching for HiPS Images</A> <br>
-+<A href="#adding">Adding New Images</A> <br>
 +<a href="#coverage">Coverage Image</A><br>
 +<a href="#upperleft">Upper Left HiPS menus</A><br>
++<A href="#asdf">ASDF files: General Information</A> <br>
 <P>&nbsp;<P>
 
 <hr width="50%">
-<a name="loading"> </A>
-<h3><A NAME="searching">Searching for and Loading Images</A></h3>
+<h3><A NAME="fits">FITS Images</A>: General Information & Definitions</h3>
 
-When you first start Firefly, depending on how you get into
-it, an image may be pre-loaded. If the image is pre-loaded, you can
-start manipulating the image right away; see <a
-href="visualization.html">the Visualization section</A>. <P>
-
-If the first screen you come to is an empty results page, then you
-need to decide what to load. To search for images, click on "images"
-at the top to begin an image search: <img
-src="img/imagesintro.png"><P>
-
-
-If you do not have an image pre-loaded, the default start position is
-in the position search for images. It is assuming by default that you
-want to load a FITS image from IRSA services, though you can also load
-a FITS image from disk or off another service on the web (see below). 
-(<a href="https://en.wikipedia.org/wiki/FITS"target="_blank">Flexible
+<a href="https://en.wikipedia.org/wiki/FITS"target="_blank">Flexible
 image transport system, FITS <img src="img/jumpout.jpg"
 height="10"></A>, files are widely used in astronomy and are an easy
-way to store images.) <P>
+way to store images. The venerable FITS format has been around for
+decades since the 1970s. It can also be used to store tables, or
+multi-dimensional images.<P>
 
-The search window looks like this:<br>
-<img src="img/search.png" width="70%" style="border:3px solid gray">
-<P>
+A FITS file has a text header followed by the data. It can have one
+or more Header + Data Units (HDUs).  The data can be a 1-D spectrum, a
+2-D image, or a 3-D (multi-plane) data cube. Additional HDUs are
+sometimes called "FITS extensions." <P>
 
-<DL>
-<DT><strong>1. Choose Image Type</strong>
-<dd>First, you select which images you want to load: FITS
-images (individually), FITS images that you load into a new
-three-color image (more on <a href="#3-color">3-color images</A>
-below), or <a
-href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
-target="_blank">HiPS images <img src="img/jumpout.jpg"
-height="10"></A> (more on <a href="#hips">HiPS</A> below; also see <a
-href="http://www.ivoa.net/documents/HiPS/" target="_blank">IVOA docs
-<img src="img/jumpout.jpg" height="10"></A> for more about what HiPS
-images are). (To load <a
-href="https://www.asdf-format.org/en/latest/">ASDF files <img
-src="img/jumpout.jpg" height="10"></A>, go to the <a
-href="upload.html">Upload</A> tab.)<P>
-
-<DT><strong>2. Select Image Source</strong>
-<dd>Second, you select whether you want to pull an image
-from IRSA's archives ("Search"; see below), your own disk ("Use my
-image"), elsewhere on the web ("URL"), or the IRSA <a
-href="/docs/workspace/" target="_blank">Workspace <img
-src="img/jumpout.jpg" height="10"></A> ("Workspace"). Note that to use
-the Workspace (reading from or writing to it), you'll need to <a
-href="user.html">log in</A>. <P>
-
-In the cases other than "Search", nearly all of the additional options
-below this line vanish because they are no longer relevant. To
-<strong>select an image off of your local disk</strong>, select "Use
-my image", and then tell it where to find the image on your local
-disk. To load an <strong>image from the web</strong>, pick the "URL"
-option and enter the URL from which you want an image loaded.  To load
-an <strong>image from the IRSA Workspace</strong>, pick the
-"Workspace" option and find the file you want to load.<P>
-
-If you would like to load an image from IRSA's archives, select
-"Search" and go on to these subsequent additional search
-parameters.<P>
-
-
-<a name="selecttarget">
-<DT><strong>3. Select Target</strong></A>
-<dd>Third, you select a target. Examples are given below the text
-entry box before you start typing in the box.<P>
-
-You may enter a target name, and have either NED-then-Simbad  or
-Simbad-then-NED resolve the target name into coordinates. After it
-resolves the name, it will tell you which resolver service it used,
-and also what that service has for the object type:<br>
-<img src="img/objecttype.png" style="border:3px solid gray">
- <P>
-
-Alternatively, you may enter
-coordinates directly. These coordinates can be in decimal degrees or
-in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
-assumes you are working in J2000 coordinates; you can also specify
-galactic, ecliptic, or B1950 coordinates as follows:
-<UL>
-<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic
-coordinates 
-<LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
-<LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
-<LI>a source name like 'J140320.67+542028.6' is parsed as 14h03m20.67s
-+54d20m28.6s.
-<LI>a source name like 'G102.0360+59.7715' is parsed as 102.0360
-+59.7715 in galactic coordinates
-</UL>
-Examples are given below the text entry box before you start typing in
-the box.<P>
-
-As you are completing a valid coordinate entry, it echoes back to
-you what it thinks you are entering. Look just below the box in which
-you are typing the coordinates to see it dynamically change.  <P>
-
-Below the box where you enter the target, you can then specify the
-size of the images you want.  You may enter the cutout size in
-arcseconds, arcminutes, or degrees; just change the drop-down option
-accordingly. <P>
-
-<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
-<UL>
-<LI> Pick your units from the drop-down first, and then enter a
-number; if you enter a number and then select from the drop-down, it
-will convert your number from the old units to the new units. 
-<LI>There are both upper and lower limits to
-your search size; it will tell you if you request something too big
-or too small. Note that these limits may be image-dependent; larger
-images may be available from certain surveys and smaller images may be
-available from other surveys. 
-<LI><strong>If you want the whole image tile</strong>, just leave the
-image size blank, then the most centered image tile in its entirety
-will be returned. ("Most centered" means the one that best centers the
-position you entered.)
-</UL><P>
-
-
-<DT><strong>4. Select Data Set</strong>
-<dd>Fourth, you select the data set. There are myriad
-choices, which you can filter in various ways to allow you to find
-what you need. Statistically, any one spot on the sky will only be
-found in a few of these data sets, so it makes sense to weed down the
-list, at least a little bit.<P>
-
-<em>On the left hand side</em>, you can filter by :
-<DL>
-<DT>Mission (or survey)
-<DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS, MSX,
-COSMOS, MUSYC, BLAST, IRTS, BOLOCAM.
-<DT>Project Type 
-<dd>Compilation (meaning, e.g., all the data available from a mission
-that was not an all-sky survey), extragalactic, galactic, all-sky. 
-<dt>Band 
-<dd>X-ray, UV, optical, near-IR, mid-IR, far-IR, mm, radio. (Yes, you
-can find data from non-IR missions/surveys here, depending on what
-projects have delivered back to IRSA.)
-</DL>
-The number in parentheses after each type is the number of data sets
-in that category.
-<P>
-
-To expand or contract the options below each of these broad
-categories, click on the black arrow on the right. To see all of the
-choices in each of these broad categories, click on the black arrow
-and then click "more" near the bottom of the list (after which you can
-click "less" to collapse it again). In this example, "Mission" is
-collapsed, "Project Type" is expanded, and "Band" is fully extended to
-reveal more options than are shown by default:<br> <img
-src="img/selectdataset1.png" style="border:3px solid gray">
-<P>
-
-To select any of the options, click on the checkbox on the left. In
-response to your selections, two things happen. (1) checked items
-appear in highlights above this part of the page, next to "Filter By";
-(2) the list of programs for selection on the right hand side changes.
-Here is an example where the list has been filtered down to just
-include WISE data:<br> <img src="img/selectdataset2.png"
-style="border:3px solid gray"><P>
-
-<em>On the right hand side</em>, you can select individual surveys and
-individual bands therein. To expand or contract the options below each
-of the categories, click on the black arrow on the right, next to the
-data set name. To select any of the waveband options, click on the
-checkbox on the left of the individual survey or individual bands.
-Here is an example showing all of the WISE/AllWISE data selected (via
-the tickbox next to "WISE AllWISE"), and just W2 from WISE/AllSky
-selected (via the tickbox next to "W2" in the expanded section under
-"WISE AllSky"). Note the "Selection" indication at the top.<br> <img
-src="img/selectdataset3.png" width="70%" style="border:3px solid gray"> <P>
-
-
-To find out more information about any given data set, click on the i
-in the circle <img src="img/infolink.png">. This takes you to a master
-list of all data sets available, from which you can obtain standard
-information about the data sets (mission, wavelengths, links to more
-information about the program or delivery, and more). <P>
-
-<DT><strong>Search!</strong>
-<DD>To actually initiate the search as specified, choose the "Search"
-button in the lower left.<P>
-
-
-</dL>
-
-
-
-
-<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
-<UL>
-<LI>You don't have to select something on the left side before
-selecting something on the right side. If you know exactly what you
-want, just jump in and select things on the right and click "search."
-<LI>If you select something on the left side, it will limit your
-choices accordingly on the right side. 
-<LI> <img src="img/clearselection.png">If you clear filters on the
-left side, it doesn't affect selections you've already made on the
-right. You must actually clear all the selections on the right to
-reset everything. The most efficient way to do this is by clicking the
-'x' next to the selection summary at the top of this portion of the
-window -- the 'x' at the end of the "Filter By" line clears the
-filters on the left, and the 'x' at the end of the "Selection" line
-clears the selections.
-<LI><img src="img/expandcollapse.png"> If you want to expand all the
-choices on the right (to ease in band selection), click on the sets of
-arrows in the upper right of this part of the screen to show all
-options, or collapse them again.
-<LI>If you go back to add new images of the same target, be sure to
-uncheck the images you had previously selected, otherwise you will
-load in second copies of those images. 
-<LI>To remove an image you have already loaded (or an error message
-from a data set that had no data covering your target), click on the
-small blue "x" in the upper right of the corresponding image tile. 
-<LI>Most images that are returned will be cropped down to your
-requested size (if you entered a size). Some, however, cannot easily
-be cropped at the moment. Those are delivered full-size, and you can
-crop them down separately if you want. 
-
-<LI>For more information on the data sets included in Firefly, see <a
-href="https://irsa.ipac.caltech.edu/docs/irsaviewer_datasets.html"
-target="_blank">this list <img src="img/jumpout.jpg" height="10"></A>.
-<LI>Firefly will NOT return ALL the images for your specified
-combination of dataset+band+position; it returns the most centered
-science image it can find out of the bands it can access. This is
-usually but not always actually going to be the most useful to you,
-depending on what you're trying to do. Some programs delivered PSFs,
-mosaics created with alternate algorithms, etc.  To find all the data
-at IRSA for a given target, you have several options, but the most
-efficient might be to enter the desired position in the big search box
-on the <a href="https://irsa.ipac.caltech.edu/" target="_blank">IRSA
-home page <img src="img/jumpout.jpg" height="10"></A> (this accesses a
-tool called Data Discovery).
-
-</UL>
-Much more detail about interacting with images can be found in the <a
-href="visualization.html">Visualization section</A>.
-<P>
-
-
-<hr width="50%">
-<h3><A NAME="3-color">Making 3-color Images</A></h3>
-
-You can create 3-color images directly from the image search. Select
-"Create 3-Color Composite" from the top row of options. The rest of
-the window changes to look like the following:<br> <img
-src="img/3colors.png" width="70%" style="border:3px solid gray"><P> By
-default, you can select the red plane first; you then populate that
-color plane with all the same choices as you would have for a single
-channel image (as above). To set the additional color planes, click on
-"green" and then "blue" to populate those planes accordingly.  <p>
-
-It assumes that you must want the same position for all three color
-planes.<P>
-
-Select your options individually for each color plane (red, green,
-blue), and click 'Search' in the lower left.  To exit the search
-window (i.e., cancel) without creating a new 3-color image, click on
-any other tab at the top, e.g., "Results" returns you to the results
-you have already loaded into the tool. <P>
-
-To change the color stretch of each color plane individually, click on
-the "Color Stretch" icon in the toolbox on the top of the images pane;
-see the <a href="visualization.html">Visualization section</A>. Much
-more detail about interacting with images can be found in the <a
-href="visualization.html">Visualization section</A>.<P>
-
-<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
-<UL>
-<LI>You load all three images at once, e.g., you do NOT pick red,
-click search, then go back and pick green, click search, then go back
-and pick blue, click search. Instead, click red and define what you
-want for that image, then go to green and do the same, then go to blue
-and do the same. Don't click "search" until you have specified all
-three bands.
-<LI> The images will be downsampled to the resolution of the red
-image. If you, say, load an MSX image into the red plane, a WISE image
-into the green plane, and a 2MASS image into the blue plane, all of
-the images will have MSX-sized pixels. If you load a WISE image into
-the red and green planes, and a 2MASS image into the blue plane, the
-images will have WISE-sized pixels. 
-</UL>
+More information on FITS format can be found in any of a number of
+places, including <a
+href="https://heasarc.gsfc.nasa.gov/docs/heasarc/fits_overview.html">
+here <img src="img/jumpout.jpg" height="10"></A>. <P>
 
 
 
@@ -738,9 +470,24 @@ all-sky displays.
 
 </td></tr></table>
 
-
-
 &nbsp;<P>
+
+
+<hr width="50%">
+<h3><A NAME="asdf">ASDF Images</A>: General Information & Definitions</h3>
+
+<a href="https://www.asdf-format.org/en/latest/">Advanced Scientific
+Data Format (ASDF)<img src="img/jumpout.jpg" height="10"></A> is a new
+format for text and binary data. It is designed to deal with more
+structured and complext metadata than FITS format can handle, as well
+as large and complex binary data. Some upcoming NASA missions will
+use ASDF format.<P>
+
+
+More information on ASDF format can be found in any of a number of
+places, including <a href="https://www.asdf-format.org/en/latest/">
+here <img src="img/jumpout.jpg" height="10"></A>. <P>
+
 
 
 

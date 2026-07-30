@@ -22,6 +22,7 @@ overlays, from off your local disk, the web, and/or other services.
 
 <em>Contents of page/chapter:</em><br>
 +<A href="#terminology">Terminology</A><br>
++<A href="#basics">Basic Searching</A><br>
 +<A href="#tools">Tools Overview</A><br>
 +<a href="#drawer">Side Menu and Adding to the Tabs Menu</A><br>
 +<a href="#layout">Side Menu and Layout/Appearance</A><br>
@@ -74,6 +75,60 @@ this plot (or image or table) to disk", nor does it mean "download the
 data behind this"; it means "retain this item in this tool for now."
 <P>
 
+<hr width="50%">
+
+<h3><A NAME="basics">Basic Searching</A></h3>
+
+<table><tr><td><img src="img/resultstab.png"></td><td>In general, most
+of the tabs you have (or can add) are various kinds of searches, and
+all of the results are collected in the Results tab.</td></tr></table><P>
+
+<a name="selecttarget"></A>
+If you are in any of a number of places where you can specify a
+target, often you can specify a name rather than just a position. 
+<P>
+
+You may enter a target name, and have either NED-then-Simbad  or
+Simbad-then-NED resolve the target name into coordinates. After it
+resolves the name, it will tell you which resolver service it used,
+and also what that service has for the object type:<br>
+<img src="img/objecttype.png" style="border:3px solid gray">
+ <P>
+
+Alternatively, you may enter
+coordinates directly. These coordinates can be in decimal degrees or
+in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
+assumes you are working in J2000 coordinates; you can also specify
+galactic, ecliptic, or B1950 coordinates as follows:
+<UL>
+<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic
+coordinates 
+<LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
+<LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
+<LI>a source name like 'J140320.67+542028.6' is parsed as 14h03m20.67s
++54d20m28.6s.
+<LI>a source name like 'G102.0360+59.7715' is parsed as 102.0360
++59.7715 in galactic coordinates
+</UL>
+Examples are given below the text entry box before you start typing in
+the box.<P>
+
+As you are completing a valid coordinate entry, it echoes back to
+you what it thinks you are entering. Look just below the box in which
+you are typing the coordinates to see it dynamically change.  <P>
+
+
+<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
+<UL>
+<LI> Pick your units from the drop-down first, and then enter a
+number; if you enter a number and then select from the drop-down, it
+will convert your number from the old units to the new units. 
+<LI>There are usually both upper and lower limits to
+your search size; it will tell you if you request something too big
+or too small. Note that these limits may be service-dependent. 
+</UL><P>
+
+
 
 
 <hr width="50%">
@@ -119,7 +174,8 @@ the foreground on your main window.<P>
 
 You can use this side menu to add (or remove) blue tabs from the top
 of your Firefly interface. By default, the following tabs appear:
-"Results", "<a href="tap.html">Tables (TAP)</A>", "Images (SIAv2)", "Survey Maps (HiPS)", 
+"Results", "<a href="tap.html">Tables (TAP)</A>", "<a
+href="siav2.html">Images (SIAv2)</A>", "Survey Maps (HiPS)", 
 <a href="upload.html">Upload</A>, and 
 <a href="jobmon.html">Job Monitor</A>. Results of any search appear in
 the Results tab.<a href="tap.html">TAP</A> is table access protocol,

@@ -38,6 +38,11 @@ const toc_overview = {
             href: 'firefly/overview.html#terminology',
         },
         {
+            id: 'overview.basics',
+            title: 'Basic Searching',
+            href: 'firefly/overview.html#basics',
+        },
+        {
             id: 'overview.tools',
             title: 'Tools Overview',
             href: 'firefly/overview.html#tools',
@@ -234,32 +239,15 @@ const toc_images = {
     href: 'firefly/images.html',
     items: [
         {
-            id: 'basics.three-color',
-            title: 'Making 3-color Images',
-            href: 'firefly/images.html#3-color',
-            hidden: true,
-        },
-        {
             id: 'basics.hips',
             title: 'HiPS Images',
             href: 'firefly/images.html#hips',
             hidden: true,
         },
         {
-            id: 'basics.searching',
-            title: 'Loading Images',
-            href: 'firefly/images.html#searching',
-            hidden: true,
-        },
-        {
-            id: 'images.loading',
-            title: 'Loading Images',
-            href: 'firefly/images.html#searching',
-        },
-        {
-            id: 'images.three-color',
-            title: 'Making 3-color Images',
-            href: 'firefly/images.html#3-color',
+            id: 'images.fits',
+            title: 'FITS Images: Information',
+            href: 'firefly/images.html#fits',
         },
         {
             id: 'images.hips',
@@ -285,6 +273,46 @@ const toc_images = {
             id: 'images.upperleft',
             title: 'Upper Left HiPS menus',
             href: 'firefly/images.html#upperleft',
+        },
+        {
+            id: 'images.asdf',
+            title: 'ASDF files: Information',
+            href: 'firefly/images.html#asdf',
+        },
+    ]
+};
+const toc_irsa = {
+    id: 'irsa',
+    title: 'IRSA',
+    href: 'firefly/irsa.html',
+    items: [
+        {
+            id: 'basics.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/images.html#3-color',
+            hidden: true,
+        },
+        {
+            id: 'irsa.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/irsa.html#3-color',
+            hidden: true,
+        },
+        {
+            id: 'basics.searching',
+            title: 'Loading Images',
+            href: 'firefly/irsa.html#searching',
+            hidden: true,
+        },
+        {
+            id: 'irsa.loading',
+            title: 'Loading Images',
+            href: 'firefly/irsa.html#searching',
+        },
+        {
+            id: 'irsa.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/irsa.html#3-color',
         },
     ]
 };
@@ -544,19 +572,14 @@ const toc_catalogs = {
     items: [
         {
             id: 'catalogs.catalogs',
-            title: 'IRSA Catalogs',
-            href: 'firefly/catalogs.html#catalogs',
+            title: 'Catalogs',
+            href: 'firefly/catalogs.html#intro',
             hidden: true,
         },
         {
             id: 'catalogs.intro',
             title: 'Introduction',
             href: 'firefly/catalogs.html#intro',
-        },
-        {
-            id: 'catalogs.irsacatalogs',
-            title: 'IRSA Catalogs',
-            href: 'firefly/catalogs.html#irsacatalogs',
         },
         {
             id: 'catalogs.interacting',
@@ -575,10 +598,32 @@ const toc_catalogs = {
         },
     ]
 };
+const toc_sia = {
+    id: 'sia',
+    title: 'SIAv2',
+    href: 'firefly/siav2.html',
+    items: [
+        {
+            id: 'sia.intro',
+            title: 'Introduction',
+            href: 'firefly/siav2.html#intro',
+        },
+        {
+            id: 'sia.overview',
+            title: 'SIA Overview',
+            href: 'firefly/siav2.html#overview',
+        },
+        {
+            id: 'sia.constraints',
+            title: 'Constraints',
+            href: 'firefly/siav2.html#constraints',
+        },
+    ]
+};
 
 const toc_tap = {
     id: 'tap',
-    title: 'TAP',
+    title: 'TAP Searches',
     href: 'firefly/tap.html',
     items: [
         {
@@ -893,10 +938,12 @@ export const fireflyToc = [
     toc_about,
     toc_overview,
     toc_tap,
-    toc_images,
-    toc_visualization,
     toc_tables,
     toc_catalogs,
+    toc_sia,
+    toc_images,
+    toc_visualization,
+    toc_irsa,
     toc_othersearches,
     toc_plots,
     toc_spectra,
