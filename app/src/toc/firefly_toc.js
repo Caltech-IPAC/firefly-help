@@ -38,11 +38,6 @@ const toc_overview = {
             href: 'firefly/overview.html#terminology',
         },
         {
-            id: 'overview.basics',
-            title: 'Basic Searching',
-            href: 'firefly/overview.html#basics',
-        },
-        {
             id: 'overview.tools',
             title: 'Tools Overview',
             href: 'firefly/overview.html#tools',
@@ -278,41 +273,6 @@ const toc_images = {
             id: 'images.asdf',
             title: 'ASDF files: Information',
             href: 'firefly/images.html#asdf',
-        },
-    ]
-};
-const toc_irsa = {
-    id: 'irsa',
-    title: 'IRSA',
-    href: 'firefly/irsa.html',
-    items: [
-        {
-            id: 'basics.three-color',
-            title: 'Making 3-color Images',
-            href: 'firefly/images.html#3-color',
-            hidden: true,
-        },
-        {
-            id: 'irsa.three-color',
-            title: 'Making 3-color Images',
-            href: 'firefly/irsa.html#3-color',
-            hidden: true,
-        },
-        {
-            id: 'basics.searching',
-            title: 'Loading Images',
-            href: 'firefly/irsa.html#searching',
-            hidden: true,
-        },
-        {
-            id: 'irsa.loading',
-            title: 'Loading Images',
-            href: 'firefly/irsa.html#searching',
-        },
-        {
-            id: 'irsa.three-color',
-            title: 'Making 3-color Images',
-            href: 'firefly/irsa.html#3-color',
         },
     ]
 };
@@ -621,6 +581,43 @@ const toc_sia = {
     ]
 };
 
+const toc_target = {
+    id: 'target',
+    title: 'Targets',
+    href: 'firefly/target.html',
+    items: [
+        {
+            id: 'target.name',
+            title: 'Target Name',
+            href: 'firefly/target.html#name',
+        },
+        {
+            id: 'target.interactivetarget',
+            title: 'Interactive Target',
+            href: 'firefly/target.html#interactivetarget',
+        },
+        {
+            id: 'target.list',
+            title: 'Target List',
+            href: 'firefly/target.html#list',
+        },
+        {
+            id: 'SearchRefinementTool',
+            title: 'Interactive Target Refinement',
+            href: 'firefly/target.html#interactivetarget',
+            hidden: true,
+        },
+        {
+            id: 'othersearches.interactivetarget',
+            title: 'Interactive Target Refinement',
+            href: 'firefly/target.html#interactivetarget',
+            hidden: true,
+        },
+    ]
+};
+
+
+
 const toc_tap = {
     id: 'tap',
     title: 'TAP Searches',
@@ -655,17 +652,6 @@ const toc_tap = {
             id: 'tap.moreconstraints2',
             title: 'ObsCore Constraints',
             href: 'firefly/tap.html#moreconstraints2',
-        },
-        {
-            id: 'SearchRefinementTool',
-            title: 'Interactive Target Refinement',
-            href: 'firefly/tap.html#interactivetarget',
-            hidden: true,
-        },
-        {
-            id: 'othersearches.interactivetarget',
-            title: 'Interactive Target Refinement',
-            href: 'firefly/tap.html#interactivetarget',
         },
         {
             id: 'tap.adql',
@@ -747,7 +733,7 @@ const toc_tap = {
         {
             id: 'hips.VisualSelection',
             title: 'VO TAP Search',
-            href: 'firefly/othersearches.html#hips.visualselection',
+            href: 'firefly/target.html#hips.visualselection',
             hidden: true,
         },
     ]
@@ -758,21 +744,37 @@ const toc_othersearches = {
     href: 'firefly/othersearches.html',
     items: [
         {
-            id: 'catalogs.ned',
-            title: 'NED Catalogs',
-            href: 'firefly/othersearches.html#nedcatalogs',
+            id: 'basics.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/othersearches.html#3-color',
             hidden: true,
         },
         {
-            id: 'catalogs.nedcatalogs',
-            title: 'NED Catalogs',
-            href: 'firefly/othersearches.html#nedcatalogs',
+            id: 'irsa.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/othersearches.html#3-color',
             hidden: true,
         },
         {
-            id: 'othersearches.nedcatalogs',
-            title: 'NED Objects',
-            href: 'firefly/othersearches.html#nedcatalogs',
+            id: 'basics.searching',
+            title: 'Loading Images',
+            href: 'firefly/othersearches.html#searching',
+            hidden: true,
+        },
+        {
+            id: 'irsa.loading',
+            title: 'Loading Images',
+            href: 'firefly/othersearches.html#searching',
+        },
+        {
+            id: 'irsa.three-color',
+            title: 'Making 3-color Images',
+            href: 'firefly/othersearches.html#3-color',
+        },
+        {
+            id: 'irsa.siav2',
+            title: 'SIAv2',
+            href: 'firefly/othersearches.html#siav2',
         },
         {
             id: 'othersearches.voscs',
@@ -790,6 +792,23 @@ const toc_othersearches = {
             title: 'VO SCS Search',
             href: 'firefly/othersearches.html#voscs',
             hidden: true,
+        },
+        {
+            id: 'catalogs.ned',
+            title: 'NED Catalogs',
+            href: 'firefly/othersearches.html#nedcatalogs',
+            hidden: true,
+        },
+        {
+            id: 'catalogs.nedcatalogs',
+            title: 'NED Catalogs',
+            href: 'firefly/othersearches.html#nedcatalogs',
+            hidden: true,
+        },
+        {
+            id: 'othersearches.nedcatalogs',
+            title: 'NED Objects',
+            href: 'firefly/othersearches.html#nedcatalogs',
         },
     ]
 };
@@ -937,13 +956,13 @@ export const toc_spectra = {
 export const fireflyToc = [
     toc_about,
     toc_overview,
+    toc_target, 
     toc_tap,
     toc_tables,
     toc_catalogs,
     toc_sia,
     toc_images,
     toc_visualization,
-    toc_irsa,
     toc_othersearches,
     toc_plots,
     toc_spectra,

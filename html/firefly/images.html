@@ -13,7 +13,7 @@
 <h2>Firefly: Images</h2>
 
 Firefly can load images as well as support extensive interaction with
-images. This chapter covers loading images; <a
+images. This chapter covers the basics of images; <a
 href="visualization.html">visualization tools</A> are covered in
 another chapter. Firefly can load images that are <a
 href="https://en.wikipedia.org/wiki/FITS" target="_blank">FITS <img
@@ -137,30 +137,29 @@ HEALPix, this represents how deep you can zoom
 
 
 
-Select "View HiPS Images" from the top row of options. The
+Select "Survey Maps (HiPS)" from the <a href="overview.html#drawer">side menu</A>. The
 rest of the window changes to look like the following:<br>
 <img src="img/hips.png" width="70%" style="border:3px solid gray"><P>
 
 <DL>
-<DT><strong>1. Choose Image Type</strong>
-<DD> Image type should be "View HiPS Images".<P>
 
-<dt><strong>2. Select Image Source</strong>
-<dd>Second, you tell it whether you want to search among the HiPS
+<dt><strong>Select Image Source</strong>
+<dd>First, you tell it whether you want to search among the HiPS
 images available to this tool, or give it a URL for it to construct a
 search. Either option retains the next section. <P>
 
-<DT><strong>3. Select Target</strong>
-<dd>Third, give it a target; this works <a href="#selecttarget">as for
-FITS images above</A>.<P>
+<DT><strong>Select Target</strong>
+<dd>Give it a target; this works <a
+href="target.html#name">just as for
+other targets in this tool</A>.<P>
 
-Note that here, in the context of HiPS images, the field of view (FOV)
-here has different limits than FITS images; it can be no smaller than
-0.0025 deg, and can be up to 180 degrees. If you leave this blank, it
-will simply load the entire HiPS image for you.<P>
+Note that in the context of HiPS images, the field of view (FOV) is
+effectively the "initial zoom" for the image upon loading; it can be
+no smaller than 0.0025 deg, and can be up to 180 degrees. If you leave
+this blank, it will still load the entire HiPS image for you.<P>
 
-<DT><strong>4. Select Data Set</strong>
-<dd>Fourth, select a data set. By default, the list of possible
+<DT><strong>Select Data Set</strong>
+<dd>Then, select a data set. By default, the list of possible
 choices is limited (via the checkbox at the top of the table) to "IRSA
 Featured" choices, meaning data that IRSA users are most likely to
 want. If you uncheck this box, you will have a much larger list of
@@ -213,34 +212,6 @@ from the list of HiPS images.
 <P>
 
 
-
-<hr width="50%">
-<h3><A NAME="adding">Adding New Images</A></h3>
-
-
-Additional images can be added at any time by clicking on the blue
-"Images" tab near the top. <br>
-<img src="img/imagesintro.png"><p>
-
-You can use the same target as before, or change the target. To exit
-the search window (i.e., cancel) without getting a new image, click on
-any other tab at the top, e.g., "Results" returns you to the results
-you have already loaded into the tool.<P>
-
-
-<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
-<UL>
-<LI><img src="img/clearselection.png"> After you have done an initial
-search on a set of images, when you go back to the Images tab,
-<em>those same images are still selected.</em> If you just click
-'search' again, you'll get a second copy of all of the images you
-initially selected.  You must actually clear all the selections on the
-right to reset everything. The most efficient way to do this is by
-clicking the 'x' next to the selection summary at the top of this
-portion of the window -- the 'x' at the end of the "Filter By" line
-clears the filters on the left, and the 'x' at the end of the
-"Selection" line clears the selections.
-</UL>
 
 
 <hr width="50%">
@@ -477,7 +448,7 @@ all-sky displays.
 <h3><A NAME="asdf">ASDF Images</A>: General Information & Definitions</h3>
 
 <a href="https://www.asdf-format.org/en/latest/">Advanced Scientific
-Data Format (ASDF)<img src="img/jumpout.jpg" height="10"></A> is a new
+Data Format (ASDF) <img src="img/jumpout.jpg" height="10"></A> is a new
 format for text and binary data. It is designed to deal with more
 structured and complext metadata than FITS format can handle, as well
 as large and complex binary data. Some upcoming NASA missions will
@@ -488,6 +459,8 @@ More information on ASDF format can be found in any of a number of
 places, including <a href="https://www.asdf-format.org/en/latest/">
 here <img src="img/jumpout.jpg" height="10"></A>. <P>
 
+To load ASDF files into Firefly, you need to use the <a
+href="upload.html">Upload tab</A>.<P>
 
 
 
