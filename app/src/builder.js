@@ -1,33 +1,7 @@
 /* eslint-env node */
 
-import {get, uniq} from 'lodash';
+import {uniq, cloneDeep} from 'lodash';
 import {create} from './toc/toc_creator';
-
-
-const htmlStart = `
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<!--NewPage-->
-<HTML>
-<!-- FOOTER LEFT "Table of Contents" -->
-    <title>--TITLE--</title>
-<HEAD>
-</HEAD>
-<BODY BGCOLOR="white" >
-<div id="toc">
-
-    <ul> <b>Table of Contents</b>
-`;
-
-
-const htmlEnd = `
-
-<!--end of page    -->
-    </ul>
-</div>
-</BODY>
-</HTML>
-`;
-
 
 const appName = process.argv[2] || './build';
 const buildDir = process.argv[3] || './build';
@@ -49,12 +23,14 @@ function build(outDir, toc) {
         fs.mkdirSync(outDir, {recursive: true} );
     }
 
+    const _toc = cloneDeep(toc);
+    stripPath(_toc);
     const tocSection = '<ul> <b>Table of Contents</b>' +
-                        toc.map((n) => toHtml(n)).join('\n') +
-                        '</ul>';
+                            _toc.map((n) => toHtml(n)).join('\n') +
+                       '</ul>';
 
     const tocHtml =   fs.readFileSync('./public/index.html', {encoding:'utf8', flag:'r'})
-                        .replace('<div id="app-root"></div>', tocSection)
+                        .replace('<div id="app-root" class="flex flex-grow overflow-hidden"/>', tocSection)
                         .replace('%REACT_APP_page_title%', process.env.REACT_APP_page_title);
 
     // generate table of contents
@@ -69,13 +45,9 @@ function build(outDir, toc) {
         // console.log(tocHtml);
     });
 
-
-    // generate .pdf-input file based on the given toc
-    const files = tocSection.split('\n')
-        .filter(( (l) => l.toUpperCase().includes('HREF')))
-        .map( (l) => get(l.match(/href[ ]*=[ ]*"([^"]+)"/i), [1], l))      // return all href with double quotes
-        .map( (l) => get(l.match(/href[ ]*=[ ]*'([^']+)'/i), [1], l))              // return all href with single quotes
-        .map( (l) => l.split('#')[0]);          // return the portion before the hash... this should be the file path
+    const files = getHrefs(toc)
+                  .map(s => s.split('#')[0])
+                  .map(s => s.replaceAll(`"|'`, ''));
 
     const pdfInput = 'blank.gif _toc.html ' + uniq(files).join(' ');
     const pdfFname =  outDir + '/.pdf-input';
@@ -86,17 +58,42 @@ function build(outDir, toc) {
         console.log(pdfInput);
     });
 
-
 }
 
 function toHtml(node) {
     const {id, title, href, hidden=false, items} = node || {};
+    if (hidden) return '';
 
-    const style = hidden ? 'display:none' : '';
     const children = items ? '<ul>' + items.map((n) => toHtml(n)).join('\n') + '</ul>' : '';
     return `
-        <li id="${id}" title="${title}" style="${style}">
+        <li id="${id}" title="${title}">
             <a href="${href}">${title}</a>
             ${children} 
         </li>`;
 }
+
+
+function stripPath(nodes) {
+    nodes.forEach(node => {
+        if (node.href) {
+            node.href = node.href.replace(/^.*\//, '');
+        }
+        if (node.items) {
+            stripPath(node.items);
+        }
+    });
+}
+
+function getHrefs(nodes) {
+    return nodes.flatMap(node => {
+        const hrefs = [];
+        if (node.href) {
+            hrefs.push(node.href);
+        }
+        if (node.items) {
+            hrefs.push(...getHrefs(node.items));
+        }
+        return hrefs;
+    });
+}
+

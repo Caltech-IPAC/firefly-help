@@ -1,0 +1,135 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Download" -->
+<HEAD>
+<TITLE>Firefly: Download
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: Download</h2>
+
+
+<em>Contents of page/chapter:</em><br>
++<A href="#intro">Introduction</A><br>
++<A href="#images">Images</A> <br>
++<A href="#tables">Tables</A><br>
++<A href="#plots">Plots</A><br>
++<A href="#preparedownload">Prepare Download</A><br>
++<A href="#scripts">Scripts</A><br>
++<A href="#filelocation">File Location</A><br>
+<P>&nbsp;<P>
+
+<hr width="50%">
+<h3><a name="intro">Introduction</A></h3>
+
+
+You can download images and tables and plots from Firefly. The
+<a href="jobmon.html">Job Monitor</A> helps keep track of downloads
+placed in the background.  <P>
+
+<hr width="50%">
+<h3><A NAME="images">Images</A></h3>
+
+If you want to save an image, click on the image you want to save so
+that it has the brown highlighted box around it. The diskette icon
+(<img src="img/save.png"> ) in the image toolbar is within the tools
+drop-down (<img src="img/toolsdropdown-small.png">), and that will
+allow you to save that currently selected image as a FITS file (or <a
+href="visualization.html#saveimage">other formats</A>, including
+saving just the overlays).  Note that <b>you</b> control where the
+file is saved on your disk through your browser; your browser may be
+configured to store all downloads in a particular location on your
+disk. <P>
+
+
+<hr width="50%">
+<h3><A NAME="tables">Tables</A></h3>
+
+On the upper right of any table shown in the tool, there is a diskette
+option: <img src="img/savetable.png">. Click on this icon to save the
+table; you have a <a href="tables.html#save">variety of choices</A> of
+file format. <P>
+
+
+<hr width="50%">
+<h3><A NAME="plots">Plots</A></h3>
+
+To save a plot, click on the diskette icon (<img src="img/save.png">).
+The plot will be saved to your disk as a png file.<P>
+
+
+<hr width="50%">
+<h3><A NAME="preparedownload">Prepare Download</A></h3>
+
+Some windows may have a button that reads "Prepare Download." If that
+button appears, then you just have to select the rows corresponding to
+the data (or data product) you wish to download -- tick the tickbox on
+the far left of the corresponding row, or tick the box at the top of
+the column to "select all" -- and then click "Prepare Download." It
+may ask you for additional information, like how much ancillary
+information you want, and what the filename you want for the zip
+files. If you ask for a lot of data, the packaging will likely need to
+spin off to the <a href="jobmon.html">Job Monitor</A>.<P>
+
+<hr width="50%">
+<h3><A NAME="scripts">Scripts</A></h3>
+
+Depending on how you choose to download the data and specifically what
+archive you use, but particularly if you <a
+href="jobmon.html#email">get an email from the Job Monitor</A>, you
+may get a curl or wget script that you can execute on your computer to
+download the files you have requested, or you may choose to obtain
+just a list of URLs that you can feed to your own code to download the
+data. The scripts are designed to echo to the screen updates on what
+they are doing, so that you can track the download's progress.<P>
+
+To use these, save the script to a plain text file, and invoke the
+script. You may need to do something at the commmand line like "chmod
++x script.sh" and then "./script.sh" to invoke it.  You could also
+copy and paste the script lines individually into your terminal
+window. <P>
+
+Generally speaking, the wget script is best for Linux and Unix users.
+The curl script is best for Mac users, because curl is part of the
+standard OS distribution; Mac users can also go retrieve and install
+<a href="http://www.gnu.org/software/wget/" target="_blank">wget <img
+src="img/jumpout.jpg" height="10"></A> and then use the wget
+scripts.<P>
+
+Double-clicking on the downloaded zip files should uncompress them,
+and then you should be off and running. However, some Windows users
+have reported having difficulty unzipping files. We recommend using <a
+href="https://www.7-zip.org/download.html" target="_blank">7-zip <img
+src="img/jumpout.jpg" height="10"></A>.<P>
+
+
+<hr width="50%">
+<h3><A NAME="filelocation">File Location</A></h3>
+
+The files that you are saving can go to your own disk, or to the <a
+href="/docs/workspace/" target="_blank">IRSA Workspace <img
+src="img/jumpout.jpg" height="10"></A>. <P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</A></strong> 
+<UL>
+<LI><strong>You</strong> control where the file is saved on your disk
+through your browser; your browser may be configured to store all
+downloads in a particular location on your disk. Try looking in a
+"Downloads" directory, or for "recently modified files."
+<LI>You need to be <a href="user.html">logged in</A> to use the <a
+href="/docs/workspace/" target="_blank">IRSA Workspace <img
+src="img/jumpout.jpg" height="10"></A>.
+</UL>
+
+
+
+
+<hr width="50%">
+
+</BODY>
+</HTML>

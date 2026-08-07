@@ -1,0 +1,7 @@
+version: '3'
+services:
+  firefly:
+    image: ipac/firefly-help:${BUILD_TAG:-latest}
+    build: .
+    ports:
+      - "3000:80"

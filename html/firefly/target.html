@@ -1,0 +1,143 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Targets" -->
+<HEAD>
+<TITLE>Firefly: Targets
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+
+<h2>Firefly: Targets</h2>
+
+Firefly has several places where you can search on a target. Often you
+can specify a name rather than just a position, interactively refine a
+search position, or submit a list of targets. All of this is
+consolidated here in this section.  <P>
+
+
+
+<em>Contents of page/chapter:</em><br>
++<A href="#name">Target Name</A><br>
++<a href="#interactivetarget">Interactive Target Refinement</A><br>
++<a href="#list">A List of Targets</A><br>
+<P>&nbsp;<P>
+
+
+
+<hr width="50%">
+
+<h3><A NAME="name">Target Name</A></h3>
+
+
+<a name="selecttarget"></A>
+If you are in any of a number of places where you can specify a
+target, often you can specify a name rather than just a position. 
+<P>
+
+You may enter a target name, and have either NED-then-Simbad  or
+Simbad-then-NED resolve the target name into coordinates. After it
+resolves the name, it will tell you which resolver service it used,
+and also what that service has for the object type:<br>
+<img src="img/objecttype.png" style="border:3px solid gray">
+ <P>
+
+Alternatively, you may enter
+coordinates directly. These coordinates can be in decimal degrees or
+in hh:mm:ss dd:mm:ss format, or Jhhmmss+ddmmss format. By default, it
+assumes you are working in J2000 coordinates; you can also specify
+galactic, ecliptic, or B1950 coordinates as follows:
+<UL>
+<LI>'46.53, -0.251 gal' means 46.53, -0.251 degrees in galactic
+coordinates 
+<LI>'12.7, +4.3 ecl' means 12.7, +4.3 degrees in ecliptic coordinates
+<LI>'19h17m 11d58m b1950' means 19h17m 11d58m in B1950 coordinates 
+<LI>a source name like 'J140320.67+542028.6' is parsed as 14h03m20.67s
++54d20m28.6s.
+<LI>a source name like 'G102.0360+59.7715' is parsed as 102.0360
++59.7715 in galactic coordinates
+</UL>
+Examples are given below the text entry box before you start typing in
+the box.<P>
+
+As you are completing a valid coordinate entry, it echoes back to
+you what it thinks you are entering. Look just below the box in which
+you are typing the coordinates to see it dynamically change.  <P>
+
+
+<strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
+<UL>
+<LI> Pick your units from the drop-down first, and then enter a
+number; if you enter a number and then select from the drop-down, it
+will convert your number from the old units to the new units. 
+<LI>There are usually both upper and lower limits to
+your search size; it will tell you if you request something too big
+or too small. Note that these limits may be service-dependent. 
+</UL><P>
+
+
+<hr width="50%">
+
+<h3><a name="hips.visualselection">
+<a name="interactivetarget">Interactive Target Refinement</A></A></h3>
+
+
+Whenever you see this icon <img src="img/clicktosearch.png"> in
+Firefly, you can click on it to bring up a window to
+<strong>interactively refine your target selection via clicking on a
+HiPS map</strong>. Here, we are using a TAP search to demonstrate this
+process, but you can find this kind of target refinement in several
+places in Firefly.<P>
+
+When you click on the icon <img
+src="img/clicktosearch.png"> you bring up a window:<P>
+<table><tr><td><img src="img/clicktosearch1.png" width="500" style="border:3px solid gray"></td><td>
+If you have entered a target already, the window arrives already
+centered on the target. If not, it is centered on the galactic center,
+zoomed out. If you have entered a cone search radius already, then the
+circle drawn on the image is that cone size. You can manipulate this
+image with the same basic tools as in the <a
+href="visualization.html">visualization tools</A>.
+</td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch2.png" width="500" style="border:3px solid gray"></td><td>
+To change the search region interactively, choose the selection
+tools and draw a shape on the image.<P>
+<strong>Note that</strong> if you have selected a cone search on the
+left, no matter what you select on the right, it will give you a cone
+search. If you change the cone position or radius in the yellow boxes
+after you change the selection, it will update the region in the
+image. </td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch3.png" width="500" style="border:3px solid gray"></td><td>
+If you want to quit out of the selection without changing, click on
+"end selection" (the brown text near the top of the image). 
+ </td></tr></table><P>
+<table><tr><td><img src="img/clicktosearch4.png" width="500" style="border:3px solid gray"></td><td>
+If you select polygon on the left, and you use the selection tool for
+"cone selection" on the right, you will get a spherical polygon
+(a polygon where the line segments are on a sphere).
+ </td></tr></table>
+<P>
+When you are done with this pop-up window, click on the 'x' in the
+upper right of the window. Then you can continue with whatever you
+were doing before you started to refine your target parameters.<P>
+
+<hr width="50%">
+
+<h3><a name="list">List of Targets</A></h3>
+
+In some cases, you may be able to upload a list of targets. Follow the
+same guidelines as for <a href="uploads.html">other uploads</A> -- for
+best results, use an IPAC Table format file, with columns labeled "ra"
+and "dec". <P>
+
+
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>

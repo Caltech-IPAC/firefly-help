@@ -1,0 +1,474 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!--NewPage-->
+<HTML>
+<!-- FOOTER LEFT "Firefly: Images" -->
+<HEAD>
+<TITLE>Firefly: Images
+</TITLE>
+
+</HEAD>
+
+<BODY BGCOLOR="white" >
+<h2>Firefly: Images</h2>
+
+Firefly can load images as well as support extensive interaction with
+images. This chapter covers the basics of images; <a
+href="visualization.html">visualization tools</A> are covered in
+another chapter. Firefly can load images that are <a
+href="https://en.wikipedia.org/wiki/FITS" target="_blank">FITS <img
+src="img/jumpout.jpg" height="10"></A>, <a
+href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
+target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A>, or
+<a href="https://www.asdf-format.org/en/latest/">ASDF <img
+src="img/jumpout.jpg" height="10"></A> formats. Any <a
+href="catalogs.html">catalogs</A> you have loaded are overlaid on the
+images; see <a href="visualization.html">visualization chapter</A> for
+more information.<P>
+
+
+<em>Contents of page/chapter:</em><br>
++<A href="#fits">FITS Images: General Information</A> <br>
++<A href="#hips">HiPS Images: General Information</A> <br>
++<A href="#hipssearch">Searching for HiPS Images</A> <br>
++<a href="#coverage">Coverage Image</A><br>
++<a href="#upperleft">Upper Left HiPS menus</A><br>
++<A href="#asdf">ASDF files: General Information</A> <br>
+<P>&nbsp;<P>
+
+<hr width="50%">
+<h3><A NAME="fits">FITS Images</A>: General Information & Definitions</h3>
+
+<a href="https://en.wikipedia.org/wiki/FITS"target="_blank">Flexible
+image transport system, FITS <img src="img/jumpout.jpg"
+height="10"></A>, files are widely used in astronomy and are an easy
+way to store images. The venerable FITS format has been around for
+decades since the 1970s. It can also be used to store tables, or
+multi-dimensional images.<P>
+
+A FITS file has a text header followed by the data. It can have one
+or more Header + Data Units (HDUs).  The data can be a 1-D spectrum, a
+2-D image, or a 3-D (multi-plane) data cube. Additional HDUs are
+sometimes called "FITS extensions." <P>
+
+More information on FITS format can be found in any of a number of
+places, including <a
+href="https://heasarc.gsfc.nasa.gov/docs/heasarc/fits_overview.html">
+here <img src="img/jumpout.jpg" height="10"></A>. <P>
+
+
+
+
+
+<hr width="50%">
+<h3><A NAME="hips">HiPS Images</A>: General Information & Definitions</h3>
+
+<a
+href="https://ui.adsabs.harvard.edu/#abs/2015A&A...578A.114F/abstract"
+target="_blank">HiPS <img src="img/jumpout.jpg" height="10"></A>
+stands for hierarchical progressive surveys, and these kinds of images
+are multi-resolution <a href="http://healpix.sourceforge.net/"
+target="_blank">HEALPix <img src="img/jumpout.jpg" height="10"></A>
+images (where HEALPix stands for Hierarchical Equal Area isoLatitude
+Pixelation). (Also see <a href="http://www.ivoa.net/documents/HiPS/"
+target="_blank">IVOA docs on HiPS <img src="img/jumpout.jpg"
+height="10"></A>.) In practice, what this means is that you can
+interact with images of a very large chunk of sky, and as you zoom,
+the pixel size changes dynamically.  HiPS images are fundamentally 
+different than FITS images, and as such, what you can do with the HiPS
+images are different than what you can do with the FITS images. <P>
+
+The whole point of HiPS images is to provide on-demand resolution
+changes. Zoom out, and it loads large pixels. Zoom in, and it loads
+smaller pixels.  HiPS images are designed to cover large areas of sky
+efficiently. If you need to visualize many degrees, this is the image
+type to use.<P>
+
+There are HiPS images from all over the world available via the web;
+the complete list of HiPS images available from the images search
+page includes (once the "IRSA Featured" checkbox is unchecked) many
+HiPS images from <a href="http://cdsweb.u-strasbg.fr/"
+target="_blank">CDS <img src="img/jumpout.jpg" height="10"></A>. <P>
+
+HiPS images typically have the color and stretch set by the person who
+originally made them. The color table can be remapped within this
+tool. But, you cannot, in general, change the stretch of HiPS images
+with as much flexibility as you can with FITS images. This is why
+there may be multiple versions of some data sets in the list of HiPS
+images.<P>
+
+<a name="moc"> </A>
+HiPS maps typically come with a <strong>Multi-Order Coverage map
+(MOC)</strong>. A <A href="https://ivoa.net/documents/MOC/"
+target="_blank">MOC <img src="img/jumpout.jpg" height="10"></A> is a
+format developed by the International Virtual Observatory Alliance to
+specify sky regions. In this context, a MOC tells you via a simple
+boolean yes/no, is there sky coverage from this data set in this
+region. You can overlay a MOC from one data set onto a completely 
+different data set's HiPS image.<P>
+
+
+<strong>Things that define a HiPS image.</strong> When selecting a
+HiPS image, the tool gives you a table. The table that appears has
+several columns that summarize important things about the available
+HiPS images:
+<UL>
+<LI>Type - image (all that is available in this context)
+<LI>Properties - links to more information for that image
+<LI>Title - descriptive words for the HiPS image
+<LI>Waveband - Approximate wavelength range
+<LI>Coverage - Approximate sky coverage (100% or less) -- HiPS images
+often carry with them something referred to as "MOC", or multi-order
+coverage. This number gives an indication of the sky coverage of the
+data.
+<LI>Pixel scale - At the highest order (zoomed in the most), this is
+the pixel size
+<LI>HiPS Order - HEALPix tile order; without getting into the guts of
+HEALPix, this represents how deep you can zoom
+<LI>Frame - coordinate sytem, e.g., equatorial, galactic, etc.
+<!-- <LI>Release date - Date that HiPS image became available -->
+<LI>Dataset IVOA ID - Unique (worldwide) identifier for the dataset
+</UL>
+
+
+
+<hr width="50%">
+<h3><A NAME="hipssearch">Searching for HiPS Images</A></h3>
+
+
+
+Select "Survey Maps (HiPS)" from the <a href="overview.html#drawer">side menu</A>. The
+rest of the window changes to look like the following:<br>
+<img src="img/hips.png" width="70%" style="border:3px solid gray"><P>
+
+<DL>
+
+<dt><strong>Select Image Source</strong>
+<dd>First, you tell it whether you want to search among the HiPS
+images available to this tool, or give it a URL for it to construct a
+search. Either option retains the next section. <P>
+
+<DT><strong>Select Target</strong>
+<dd>Give it a target; this works <a
+href="target.html#name">just as for
+other targets in this tool</A>.<P>
+
+Note that in the context of HiPS images, the field of view (FOV) is
+effectively the "initial zoom" for the image upon loading; it can be
+no smaller than 0.0025 deg, and can be up to 180 degrees. If you leave
+this blank, it will still load the entire HiPS image for you.<P>
+
+<DT><strong>Select Data Set</strong>
+<dd>Then, select a data set. By default, the list of possible
+choices is limited (via the checkbox at the top of the table) to "IRSA
+Featured" choices, meaning data that IRSA users are most likely to
+want. If you uncheck this box, you will have a much larger list of
+HiPS image choices (from <a href="http://cdsweb.u-strasbg.fr/"
+target="_blank">CDS <img src="img/jumpout.jpg" height="10"></A>) to
+pick from.  <P> 
+<strong>Column definitions.</strong> The table that appears when
+selecting a HiPS image has several columns:
+<UL>
+<LI>Type - image (all that is available in this context)
+<LI>Properties - links to more information for that image
+<LI>Title - descriptive words for the HiPS image
+<LI>Waveband - Approximate wavelength range
+<LI>Coverage - Approximate sky coverage (100% or less) -- HiPS images
+often carry with them something referred to as "MOC", or multi-order
+coverage. This number gives an indication of the sky coverage of the
+data.
+<LI>Pixel scale - At the highest order (zoomed in the most), this is
+the pixel size
+<LI>HiPS Order - HiPS order, e.g., how deep you can zoom
+<LI>Frame - coordinate sytem, e.g., equatorial, galactic, etc.
+<LI>Release date - Date that HiPS image became available
+<LI>Dataset IVOA ID - Unique (worldwide) identifier for the dataset
+</UL>
+
+<DT><strong>Search!</strong>
+<DD>To actually initiate the search as specified, choose the "Search"
+button in the lower left.<P>
+
+</dl>
+
+
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
+<UL>
+<LI>The table of HiPS choices is itself a Firefly table, like all the
+other <a href="tables.html">tables in this tool</A>, so you can
+sort/filter/etc. to locate the image you want to load. 
+<LI>To learn more about any given image, click on the <img
+src="img/infolink.png" width="20"> in the second column of the table. Another
+window will spawn with basic information about that HiPS image.
+<LI>Note that color HiPS images are available and that the color
+stretch is set by the person making the HiPS image originally (so you
+can't really change it). You can change the color table (but not the
+stretch); see the <a href="visualization.html">Visualization
+section</A>.
+<LI>A blank HiPS image (basically a blank canvas) is also available
+from the list of HiPS images.
+</UL>
+<P>
+
+
+
+
+<hr width="50%">
+<h3><A NAME="coverage">Coverage Image</A></h3>
+
+
+If you have launched Firefly by loading anything other than just
+images, it will also provide for you a "coverage image", which is
+basically a way for it (and you) to keep track of where you are
+working on the sky. This may be the most surprising when you are
+loading a catalog and therefore don't expect images to appear.
+There is a legend that appears in the upper right of the coverage
+image, and if there is more than one or two overlays, there is a quick
+link to the layers icon; see <a
+href="visualization.html#layers">layers section</A> of the <a
+href="visualization.html">Visualization chapter</A>. You can collapse
+the legend to make it smaller by clicking on the arrow in the upper
+right of the legend box.<P>
+
+<table>
+<tr><td width="30%">You may have a coverage image like this -- this is
+an example of a coverage image showing two different overlaid
+catalogs.<P> Note that in this case, the catalogs cover the whole sky,
+so the HiPS image is displayed in HiPS/Aitoff projection to show the
+whole sky. The legend in the upper right primarily denotes the
+uploaded catalog name. The catalog is shown in a <a
+href="catalogs.html#hier">hierarchical display</A>. </td><td><img
+src="img/coverage-ex1.png" width="60%" style="border:3px solid
+gray"></td></tr> 
+<tr><td width="30%">You can also have a coverage image like this,
+which shows a coverage image that has polygons demonstrating the
+coverage of each a list of loaded images (large polygons) and the
+locations of spectra (small squares). This case only has data over a
+relatively small region, so the HiPS image is zoomed in comparatively
+tightly on the relevant region. The legend is collapsed here, so you
+can't read the whole thing.</td><td> <img src="img/coverage-ex2.png"
+width="60%" style="border:3px solid gray"></td></tr> 
+<tr><td width="30%">You might have a coverage image something like
+this, which shows a coverage image with a WISE catalog overlaid. This
+has data over a relatively small region, so the HiPS image is zoomed
+in comparatively tightly on the relevant region. The catalog is more
+than 1000 sources, so the tool has shown you individual sources in the
+HEALPix cells where there are fewer sources than a given threshold,
+and where there are more sources, it simply shows you the cell and the
+total number of sources in that cell --  catalog is shown in a <a
+href="catalogs.html#hier">hierarchical display</A>.  Because this is a
+catalog over a small region (as opposed to the whole sky), you can
+control what this threshold is and how it renders the cells from the
+<a href="visualization.html#layers">layers pop-up</A>. </td><td> <img
+src="img/coverage-ex3.png" width="60%" style="border:3px solid
+gray"></td></tr></table>
+
+<P>
+
+In all cases, you can interact with the coverage image in pretty much
+exactly the same way as you would any other image loaded into this
+tool; see the <a href="visualization.html">the visualization
+chapter</A> for much more about those tools.<P>
+
+The thing that makes a coverage image a little bit different, however,
+is that it can automatically adapt, even beyond what a HiPS image can
+intrinsically do.  The next subsection includes more details about how
+it can automatically change to accomodate your needs and zoom level.<P>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>: 
+<UL>
+<LI>The coverage image will show polygons corresponding
+to the data products' coverage. However, if there are too many
+polygons to manage, the tool may fall back to showing just the
+positions of the data products it has retrieved. (Whether that is the
+central point or the lower left corner of the image depends on the
+data product itself.)
+</UL>
+
+
+
+
+
+&nbsp;<P>
+
+
+<hr width="50%">
+<h3><A NAME="upperleft"><A NAME="changing">Upper Left HiPS menus</A></A></h3>
+
+
+In the upper left of the coverage image, there are two drop-down
+menus. The first is covered immediately below; the second is covered
+<a href="#hipscoords">here</A>.<br>
+<img src="img/coveragechoices.png"> <p>
+
+The first drop-down menu looks like this. <br>
+<img src="img/coveragechoices1.png"><p>
+
+
+There are two sections here, "Data Options" (see immediately below)
+and "<a href="#hipstofits">HiPS to FITS Conversion</A>." 
+
+<DL>
+<DT><a name="dataoptions">Under "Data Options"</A>, you can change what data are shown.
+<dd>
+<DL>
+<DT><strong>Change HiPS:</strong> Changing HiPS images
+<DD>The choices made by any given creator of a HiPS image may result
+in any particular region being saturated or too faint to see.  Color
+stretches are set by the creator of the HiPS map and cannot be
+changed; color tables can be somewhat changed by this tool, but that
+may be insufficient for your needs. If the HiPS map as shown does not
+suit your needs and you wish to change the HiPS image, click on the
+"HiPS/MOC" menu, and then click "Change HiPS". It brings up this
+pop-up, which resembles the <A href="#hipssearch">HiPS search</A>
+above:<br> 
+<img src="img/changehips.png" width="80%" style="border:3px solid gray"> <p>
+Things to note:
+<UL>
+<LI>To select a new image, click on the row corresponding to the new
+HiPS image you want, and click "Change HiPS" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>To learn more about each HiPS map, click on the i with the circle
+in the second column. It will spawn another window with standardized
+information about the HiPS map.
+<LI>By default, it shows HiPS maps corresponding to IRSA data
+collections. To see a more comprehensive list, unclick the box marked
+"IRSA Featured."
+</UL>
+<P>
+
+<dt><strong>Add MOC Layer: </strong> Adding a MOC Overlay
+<dd>It is often useful to see what other data are available. Looking
+at a Herschel/PACS far-IR HiPS map? Overlay a MOC from a different
+survey to see what complementary data might be available to go with
+your IR data. Click on the "HiPS/MOC" menu, and then click "Add MOC
+Layer." It brings up this pop-up:<br> <img src="img/addmoclayer.png"
+width="80%" style="border:3px solid gray"> <p> Things to note:
+<UL>
+<LI>Coverage (the first column) is the fraction of the sky covered by
+that MOC.
+<LI>To select a new MOC, click on the row corresponding to the new
+MOC you want, and click "Add MOC" on the bottom left. 
+<LI>To cancel without selecting a new image, click "Cancel."
+<LI>This is an interactive table, so all the <a
+href="tables.html#filters">filtering</A> and <a
+href="tables.html#columns">column manipulation</A> tools apply here
+too. You can filter down the columns to find the image you want to
+use.
+<LI>By default, it shows MOCs likely to be most interesting for IRSA
+users. To see a more comprehensive list, unclick the box at the
+top left.
+<LI>If you have your own MOC FITS file, you may upload it via the
+"Use my MOC" tab on the top center.
+<LI>If you try to upload a MOC FITS file via the <a
+href="upload.html">upload tab</A>, it will behave as if you have
+uploaded it here.
+</UL>
+</dl>
+<P>
+
+
+<dt><a name="hipstofits">Under "HiPS to FITS Conversion"</A>, you can control whether the viewer
+will automatically toggle between image types as needed. 
+<dd>By default,
+the coverage image is most likely a HiPS image.  FITS images are best
+for small regions of the sky, and HiPS images are best for large
+regions of sky. 
+<DL>
+<dt><strong>Auto Zoom-in to 2MASS K_s FITS: </strong>
+<dd>If you select this, then when you
+zoom in very close to a target, it will automatically convert to a
+FITS image when you get close enough.
+<dt><strong>Switch to 2MASS K_s FITS image: </strong>
+<dd>If you select this, then it will
+jump directly to a FITS image centered on the currently selected
+target.
+</DL>
+
+Note that if you swap between HiPS and FITS and back again, it
+will include a region on the HiPS image that is the footprint of the
+FITS images you had just loaded. A label appears at the center of that
+footprint, which may be disconcerting if you are not zoomed out enough
+to see the region itself. Here is an example, zoomed out so it is
+more clear what is going on:<br>
+<img src="img/lingeringfootprint.png"> <P>
+</DL>
+
+<a name="hipscoords">The second drop-down menu</A> looks like this.<br>
+<table><tr><td>
+<img src="img/coveragechoices2.png"><P>
+</td><td>
+
+There are three sections in this menu.
+
+<DL>
+<dt><strong>Orientation</strong>
+<dd>Under "Orientation", you can control whether the coordinates are
+in Galactic, Equatorial J2000 (RA/Dec), or Ecliptic J2000. This
+basically is a quick way to orient which way is up on your screen.
+Note that this can be
+used in conjunction with the <a href="visualization.html#fitsViewer">image readout</A>
+and/or the <a href="visualization.html#coordgrid">coordinate overlay</A> <a
+href="visualization.html#layers">layers</A> button.
+<dt><strong>Center Galactic</strong>
+<dd>If you select "Center Galactic", the HiPS image slews (or maybe
+twists is a better word) to put Galactic North up, the Galactic Center
+in the center of the field of view, and the Galactic Plane
+horizontally across your field of view. This is useful if you have
+been zooming or scrolling around to look at individual sources and
+need to bring it back to a familiar orientation quickly. "Center
+Equatorial" does the same thing for the celestial poles, equator, and
+ra/dec=0 (those defined by RA/Dec). "Center Ecliptic" does the same
+thing, but for the ecliptic plane, poles, and coordinate 0,0. This
+feature can be most useful when comparing sky coverage (MOCs) to those
+from other missions or surveys that 'work' in alternate coordinate
+systems. If you are looking at a coverage map, and you've clicked this
+menu choice when you were zoomed in closely on a target that isn't 0,0
+in your coordinate system, to "find" your position, click on a row in
+whatever table you have loaded on the left to bring your target back
+into view.
+<dt><strong>Projection</strong>
+<dd>Under "Projection", you can control whether the display is in
+Spherical or Aitoff coordinates. Aitoff projection works better for
+all-sky displays.
+</dl>
+
+</td></tr></table>
+
+&nbsp;<P>
+
+
+<hr width="50%">
+<h3><A NAME="asdf">ASDF Images</A>: General Information & Definitions</h3>
+
+<a href="https://www.asdf-format.org/en/latest/">Advanced Scientific
+Data Format (ASDF) <img src="img/jumpout.jpg" height="10"></A> is a new
+format for text and binary data. It is designed to deal with more
+structured and complext metadata than FITS format can handle, as well
+as large and complex binary data. Some upcoming NASA missions will
+use ASDF format.<P>
+
+
+More information on ASDF format can be found in any of a number of
+places, including <a href="https://www.asdf-format.org/en/latest/">
+here <img src="img/jumpout.jpg" height="10"></A>. <P>
+
+To load ASDF files into Firefly, you need to use the <a
+href="upload.html">Upload tab</A>.<P>
+
+
+
+
+
+
+<hr width="50%">
+
+
+</BODY>
+</HTML>
