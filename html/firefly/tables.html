@@ -317,6 +317,17 @@ FLOOR(mjd) for days or FLOOR(mjd/365.24) for years, then you can use
 the drop-down filter menu for the new column to quickly compare
 different time ranges. But, the new column must be an integer (e.g.,
 "long") in order for this to work properly.
+<LI>If you need to, say, take the square root of a column that
+occasionally has a negative number, and you want it to attempt to
+handle this in a physically reasonable manner, you can construct
+expressions like this for a column named 'col' that has some positive
+and some negative numbers: if("col">=0,sqrt("col"),-sqrt(-"col"))
+<LI>If you have a <a href="catalogs.html">catalog</A> that doesn't
+have columns that are called "ra" and "dec" and therefore the tool
+doesn't overplot your catalog on images, you can create new columns
+called "ra" and "dec" that are simply copies of whatever position
+columns you have ("RA_2000" or whatever), and then the tool will
+recognize the new "ra" and "dec" columns as positions.
 </UL>
 
 

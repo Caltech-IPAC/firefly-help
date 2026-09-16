@@ -840,6 +840,11 @@ export const toc_plots = {
             href: 'firefly/plots.html#linking'
         },
         {
+            id: 'plots.zooming',
+            title: 'Plot Zooming',
+            href: 'firefly/plots.html#zooming'
+        },
+        {
             id: 'plots.changing',
             title: 'Changing What is Plotted',
             href: 'firefly/plots.html#changing'
