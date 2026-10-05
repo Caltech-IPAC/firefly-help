@@ -53,6 +53,11 @@ const toc_overview = {
             href: 'firefly/overview.html#layout',
         },
         {
+            id: 'overview.server',
+            title: 'Firefly Server',
+            href: 'firefly/overview.html#server',
+        },
+        {
             id: 'overview.login',
             title: 'User Login',
             href: 'firefly/overview.html#login',
