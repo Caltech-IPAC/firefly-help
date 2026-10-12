@@ -430,6 +430,11 @@ const toc_visualization = {
             href: 'firefly/visualization.html#extraction',
         },
         {
+            id: 'visualization.hipsdebug',
+            title: 'HiPS Debug',
+            href: 'firefly/visualization.html#hipsdebug',
+        },
+        {
             id: 'visualization.selectregion',
             title: 'Region Selection',
             href: 'firefly/visualization.html#selectregion',

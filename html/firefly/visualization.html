@@ -38,6 +38,7 @@ in which you might encounter them in the window.<P>
 +<a href="#layers">Image Layers: Viewing/Changing the Layers on the Image</A><br>
 +<a href="#wcs">World Coordinate System (WCS) Alignment</A><br>
 +<a href="#extraction">Extraction Tools</A><br>
++<a href="#hipsdebug">HiPS Debug Tools</A><br>
 +<a href="#selectregion">Region Selection</A><br>
 +<a href="#footprints">Footprints</A><br>
 <P>&nbsp;<P>
@@ -361,6 +362,7 @@ We now discuss each icon in the order in which they appear.<P>
 <em><a href="#rotateImage">jump to rotate</A></em><P>
 <em><a href="#compass">jump to layers</A></em><P>
 <em><a href="#extractshort">jump to extract</A></em><P>
+<em><a href="#hipsdebug">jump to HiPS debug</A></em><P>
 </td></tr></table>
 <p>
 
@@ -564,6 +566,17 @@ in another image to extract points from another image. For more
 information on saving the information, see the <a
 href="#extraction">extraction section below</A>. <P>
 
+<dt><img src="img/hipsgrid.png"> <em>Show the HiPS grid</em>
+<dd>When this tool is activated, the HiPS grid corresponding to your
+current view of a HiPS image is shown.  For more information, see the
+<a href="#hipsdebug">HiPS debug section below</A>. <P>
+
+<dt><img src="img/hipstile.png"> <em>Retrieve the FITS tile </em>
+<dd>When this tool is activated, by clicking on the HiPS image, the
+FITS file corresponding to the HiPS tile is retrieved, if possible. 
+For more information, see the <a href="#hipsdebug">HiPS debug section
+below</A>. <P>
+
 </dl>
 
 <dt><img src="img/zoom.png"> <em>Zoom</em>
@@ -677,6 +690,10 @@ src="img/nancolorpicker.png" style="border:3px solid gray"><P>
 
 <LI> At the bottom, there are sliders controlling the bias and
 contrast. Click or drag the slider to change the image display. <P>
+
+<LI>If you create a 3-color image, the color table pulldown allows you
+to turn individual color planes (red, green, and blue) on and off, and
+also to change the bias and contrast individually for the 3 color planes. <P>
 </UL>
 </td></tr></table>
 
@@ -1263,6 +1280,73 @@ additional pulldown from which you can choose how the pixels are
 combined: average, sum, or even logical "OR", depending on the
 data:<br> <img src="img/extractionadv.png" style="border:3px solid
 gray"><P>
+
+
+&nbsp;<P>
+
+
+<hr width="50%">
+<a name="hipsdebug"><h3>HiPS Debug </h3></A>
+
+These "HiPS Debug" tools are listed near the <a
+href="#extraction">extraction tools</A> because they are in the same
+family as the extraction tools in that they can be used on the image
+to extract additional information. <P>
+
+<a href="images.html#hips">HiPS images</A> are constructed from FITS
+images, and if the metadata are assembled correctly, the HiPS image
+should be able to communicate to this tool where and how to obtain the
+corresponding FITS image. It is complicated, there can be some really
+obvious projection effects, and the phrase "if the metadata are
+assembled correctly" is doing a lot of heavy lifting in that sentence.
+Your mileage may vary. This is why it's called "HiPS Debug." <P>
+
+There are two icons here: 
+<img src="img/hipsgrid.png"> <img src="img/hipstile.png"> <P>
+
+To use these tools in the most efficient method possible, after you
+have loaded a HiPS image, first enable the HiPS grid overlay by
+clicking on the grid icon, which turns on the grid. (This is the same
+grid overlay as <a href="#hipsgrid">here</A>.) If you zoom in and out
+on your loaded HiPS image, the grid will respond and show you the
+corresponding HiPS tiles. When you find a tile you want to retrieve,
+click on the HiPS tile icon. This initiates a tile selection mode. 
+(Note that you have to have selected a HiPS image before you can do
+this.) You get this pop-up window:<br>
+
+<img src="img/hipstileextract.png" style="border:3px solid gray"><P>
+
+You can grab and drag the top of the window to reposition it if need
+be. Then click on the tile you want in the HiPS window and click on
+"Extract Tile" in the pop-up. The corresponding FITS image will appear
+on the right hand side. To select another FITS image, go back to the
+HiPS image and select again. When you're done, close the pop-up or
+click on "End Extraction."<P>
+
+By default, the images should all be <a href="#wcs">WCS-matched</A>,
+e.g., move one and they all should move together.<P>
+
+<strong><font color="orange">&#x26A0;</font>  Tips and
+Troubleshooting:</strong> 
+
+<UL>
+<LI>This is a complex and often confusing process. You will have better
+luck <strong>in all of the issues listed here</strong> by zooming in
+farther on the HiPS images, as far as you can go, before requesting
+the corresponding FITS tiles.
+<LI>Any given HiPS file may not have enough information to go back to
+the constituent FITS images properly. 
+<LI>HiPS tiles are rarely square, but the FITS tiles are pretty much
+always square. The distortions can be super obvious and disconcerting.
+(Ellipsoidal stars! Substantial diamonds rather than squares!)
+Projection effects are real (HiPS are spherical projections), and can
+be worse in some locations.
+<strong>When in doubt, before doing science on the FITS images, go
+back to the original archive and retrieve original FITS
+files.</strong>
+<LI>Positional uncertainties may be large. 
+</UL>
+<P>
 
 
 
