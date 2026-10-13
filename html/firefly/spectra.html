@@ -26,9 +26,10 @@ the spectra-specific information in one place.<P>
 +<A href="#loading">Loading Spectra</A> <br>
 +<A href="#extracting">Extracting Spectra</A> <br>
 +<A href="#plotting">Plotting Spectra</A> <br>
-+<A href="#redshifting">Redshifting Spectra</A> <br>
 +<A href="#overplotting">Overplotting Spectra</A> <br>
 +<A href="#combining">Combining Spectra</A> <br>
++<A href="#linelists">Line Lists</A> <br>
++<A href="#redshifting">Redshifting Spectra</A> <br>
 <P>&nbsp;<P>
 
 <hr width="50%">
@@ -132,28 +133,9 @@ solid gray"></td></tr></table>
 In all of these cases, you don't have as much flexibility in these
 plots as you do for <a href="plots.html">plots in general</A>, but the
 options you do have are highly customized to spectra, such as
-redshifts. See the next section!<P>
+<a href="#redshifting">redshifts</A>. <P>
 
 
-<hr width="50%">
-<h3><A name="redshifting">Redshifting Spectra</A> </h3>
-
-When the tool recognizes the wavelength axis, it offers you a choice
-of shifting the spectrum to correct for cosmological redshift. By
-default, it assumes you want to plot the data as observed:<br>
-<img src="img/redshift1.png" style="border:3px solid gray"><br>
-but if you pick "Rest Frame":<br>
-<img src="img/redshift2.png" style="border:3px solid gray"><br>
-you can enter a redshift, and it shows you how it adjusts the
-wavelength axis accordingly:<br>
-<img src="img/redshift3.png" style="border:3px solid gray">
-<P>
-
-Click 'Apply' to implement these changes in the plot. The axis labels
-on the plot correspondingly change.<P>
-
-To change back to the data as observed, simply pick "Observed Frame"
-from the drop-down menu.<P>
 
 <hr width="50%">
 <h3><a name="overplotting">Overplotting Spectra</A></h3>
@@ -265,6 +247,74 @@ recognize as spectra, even if they are in the same parameter space.
 <LI>To delete a combined plot that you have created, just click on the 'x'
 in the upper right of the plot.
 </UL>
+
+
+
+
+<hr width="50%">
+<h3><a name="linelists">Line lists</A> </h3>
+
+If the tool has recognized that there is a spectrum, then you may have
+this as an additional icon in the upper left of the plot: <img
+src="img/linelisticon.png"><P>
+If you click on this icon, it brings up a pop-up from which you can
+add an overplotted line list:<P>
+
+ <img src="img/linelistpopup.png" width="50%" style="border:3px solid gray"><p>
+ 
+From this pop-up, you can select pre-loaded line lists (in this
+example, there are SPHEREx, Spitzer, and Herschel line choices), or
+you can upload your own line list. The line list needs to be
+formatted <a href="upload.html">in a format the tool can
+recognize</A>. <P>
+
+Once you select what line list to load and click "Load lines", the top
+of the pop-up collapses and the bottom is filled in:<P>
+
+ <img src="img/linelistpopup2.png" width="50%" style="border:3px solid gray"><p>
+ 
+This is a <a href="table.html">table like any other table in this
+tool</A>, so you can sort, filter, deselect, etc. Lines that are
+selected here appear overplotted on your spectrum with grey dotted
+lines and the string from the "label" column shown. <P>
+
+ <img src="img/linelistspectrum.png" width="80%" style="border:3px solid gray"><p>
+
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
+<UL>
+<LI>You can <a href="plots.html#zooming">zoom</A> with your mouse on
+only an axis, not the whole plot.
+<LI>If you filter the line list, then only the lines that survive the
+filter are shown on the plot.
+<LI>By default, the spectrum is as observed, and the line list is in
+the rest frame. Therefore, if you are working in a regime where
+redshift matters, when you go to the gears for the plot, you either have
+to shift the lines or the plot. 
+</UL>
+
+
+
+
+
+<hr width="50%">
+<h3><A name="redshifting">Redshifting Spectra</A> </h3>
+
+When the tool recognizes the wavelength axis, it offers you a choice
+of shifting the spectrum to correct for cosmological redshift. By
+default, it assumes you want to plot the data as observed:<br>
+<img src="img/redshift1.png" style="border:3px solid gray"><br>
+but if you pick "Rest Frame":<br>
+<img src="img/redshift2.png" style="border:3px solid gray"><br>
+you can enter a redshift, and it shows you how it adjusts the
+wavelength axis accordingly:<br>
+<img src="img/redshift3.png" style="border:3px solid gray">
+<P>
+
+Click 'Apply' to implement these changes in the plot. The axis labels
+on the plot correspondingly change.<P>
+
+To change back to the data as observed, simply pick "Observed Frame"
+from the drop-down menu.<P>
 
 
 <hr width="50%">
