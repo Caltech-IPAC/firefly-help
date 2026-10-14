@@ -23,7 +23,7 @@ top</A>.  <P>
 +<A href="#adding">Adding New IRSA Images</A> <br>
 +<A href="#siav2">IRSA SIAv2 Images</A> <br>
 +<A href="#irsacatalogs">IRSA Catalogs</A><br>
-+<A href="#voscs">VO SCS</A> -- VO Simple Cone Search <br>
++<A href="#voscs">Catalogs (SCS)</A> -- VO Simple Cone Search <br>
 +<A href="#nedcatalogs">NED Objects</A> -- Searching for NED objects <br>
 <P>&nbsp;<P>
 
@@ -37,7 +37,7 @@ top</A>.  <P>
 <a name="loading"> </A>
 <h3><A NAME="searching">IRSA Images</A></h3>
 
-To search for images, from the "IRSA Images" tab,
+To search for images, click on the "IRSA Images" tab
 at the top to begin an image search: <br>
 <img src="img/imagesintro.png" width="80%" ><P>
 
@@ -90,7 +90,7 @@ parameters.<P>
 
 <a name="selecttarget">
 <DT><strong>3. Select Target</strong></A>
-<dd>Third, you select a target. Target entry works like <a
+<dd>Third, you select a target. Target entry works <a
 href="target.html#name">like elsewhere in this tool</A>.<P>
 
 
@@ -118,7 +118,7 @@ what you need. Statistically, any one spot on the sky will only be
 found in a few of these data sets, so it makes sense to weed down the
 list, at least a little bit.<P>
 
-<em>On the left hand side</em>, you can filter by :
+<em>On the left-hand side</em>, you can filter by:
 <DL>
 <DT>Mission (or survey)
 <DD>Spitzer, WISE, Herschel, 2MASS, IRAS, ZTF, PTF, AKARI, DSS, SDSS, MSX,
@@ -140,7 +140,7 @@ categories, click on the black arrow on the right. To see all of the
 choices in each of these broad categories, click on the black arrow
 and then click "more" near the bottom of the list (after which you can
 click "less" to collapse it again). In this example, "Mission" is
-collapsed, "Project Type" is expanded, and "Band" is fully extended to
+collapsed, "Project Type" is expanded, and "Band" is fully expanded to
 reveal more options than are shown by default:<br> <img
 src="img/selectdataset1.png" style="border:3px solid gray">
 <P>
@@ -148,19 +148,19 @@ src="img/selectdataset1.png" style="border:3px solid gray">
 To select any of the options, click on the checkbox on the left. In
 response to your selections, two things happen. (1) checked items
 appear in highlights above this part of the page, next to "Filter By";
-(2) the list of programs for selection on the right hand side changes.
+(2) the list of programs for selection on the right-hand side changes.
 Here is an example where the list has been filtered down to just
 include WISE data:<br> <img src="img/selectdataset2.png"
 style="border:3px solid gray"><P>
 
-<em>On the right hand side</em>, you can select individual surveys and
+<em>On the right-hand side</em>, you can select individual surveys and
 individual bands therein. To expand or contract the options below each
 of the categories, click on the black arrow on the right, next to the
 data set name. To select any of the waveband options, click on the
 checkbox on the left of the individual survey or individual bands.
 Here is an example showing all of the WISE/AllWISE data selected (via
-the tickbox next to "WISE AllWISE"), and just W2 from WISE/AllSky
-selected (via the tickbox next to "W2" in the expanded section under
+the checkbox next to "WISE AllWISE"), and just W2 from WISE/AllSky
+selected (via the checkbox next to "W2" in the expanded section under
 "WISE AllSky"). Note the "Selection" indication at the top.<br> <img
 src="img/selectdataset3.png" width="70%" style="border:3px solid gray"> <P>
 
@@ -215,7 +215,7 @@ crop them down separately if you want.
 href="https://irsa.ipac.caltech.edu/docs/irsaviewer_datasets.html"
 target="_blank">this list <img src="img/jumpout.jpg" height="10"></A>.
 <LI>Firefly will NOT return ALL the images for your specified
-combination of dataset+band+position; it returns the most centered
+combination of data set+band+position; it returns the most centered
 science image it can find out of the bands it can access. This is
 usually but not always actually going to be the most useful to you,
 depending on what you're trying to do. Some programs delivered PSFs,
@@ -244,7 +244,7 @@ color plane with all the same choices as you would have for a single
 channel image (as above). To set the additional color planes, click on
 "green" and then "blue" to populate those planes accordingly.  <p>
 
-It assumes that you must want the same position for all three color
+It assumes that you want the same position for all three color
 planes.<P>
 
 Select your options individually for each color plane (red, green,
@@ -365,7 +365,7 @@ default is 10 arcsec.<P>
 src="img/catsearch-ellip.png" style="border:3px solid gray"> <br>
 You can put in a position, but sometimes it attempts to guess a
 position, based on prior searches. You specify the search ellipse's
-semi-major axis, position ratio, and axial ratio. Defaults are as
+semi-major axis, position angle, and axial ratio. Defaults are as
 shown.<P>
 
 <DT><strong>Box search</strong>: <dd> <img
@@ -392,7 +392,7 @@ selected ("image"), or just the portion of the image you can see in
 the current view ("visible"), or your own ("custom") area. (However,
 note that if you have selected a HiPS image before searching, you are
 limited to a maximum of 5 degrees.) The list of
-vertices in the coordinates box are in decimal RA and Dec in degrees.
+vertices in the coordinates box is in decimal RA and Dec in degrees.
 You must enter at least 3 and at most 15 vertices, separated by a
 comma. Note that, for overlaying catalogs on HiPS images, you cannot
 select "image", because HiPS images are generally very, very large, so
@@ -406,8 +406,8 @@ which matches the corners of your selected image region.<P>
 If you select the "bullseye" icon on the right (<img
 src="img/clicktosearch.png">), you get a pop-up with
 a way to interactively select your target; this works just like <a
-href="othersearches.html#interactivetarget">this interactive target
-refinement</A> (go there for more details) :<br>
+href="target.html#interactivetarget">this interactive target
+refinement</A> (go there for more details):<br>
 <img src="img/choosetarget.png" width="300" style="border:3px solid gray"><P>
 
 <DT><strong>Multi-Object search</strong>: <dd> <img
@@ -418,7 +418,7 @@ target="_blank">IRSA Workspace <img src="img/jumpout.jpg"
 height="10"></A>) in <a
 href="https://irsa.ipac.caltech.edu/applications/DDGEN/Doc/ipac_tbl.html"
 target="_blank">IPAC table format <img src="img/jumpout.jpg"
-height="10"></A>, which is a varietal of plain text. (IRSA has a <a
+height="10"></A>, which is a variant of plain text. (IRSA has a <a
 href="https://irsa.ipac.caltech.edu/applications/TblValidator/"
 target="_blank">table validator <img src="img/jumpout.jpg"
 height="10"></A> which may be helpful.) Note that you also have to
@@ -426,7 +426,7 @@ specify the radius over which to search for each of the targets in
 your list.<P>
 
 When you do a multi-position search on catalogs, three new columns are
-added to the catalog as it is returned to you. These columns are :
+added to the catalog as it is returned to you. These columns are:
 <UL>
 <LI>cntr_01 - the target position you requested
 <LI>dist_x - the distance between the target position you requested
@@ -450,11 +450,11 @@ The bottom of this window allows you to set restrictions on specific
 columns. It gives you a list of all the available column names in the
 corresponding catalog. (Most catalogs have identical "standard" and
 "long form" selections, but some have more columns available in "long
-form".) From here, you can choose what to display (tickboxes on the
+form".) From here, you can choose what to display (checkboxes on the
 left), and filter what is returned ("constraints" column). For
 example, only return objects with values in column y that are greater
 than x. If you add more than one restriction, they are combined
-logically using an "AND" operators; be careful, because you can thus
+logically using an "AND" operator; be careful, because you can thus
 restrict data such that none of the catalog meets your criteria.<P>
 
 Click on "Search" to initiate the search. It will load the catalog
@@ -475,7 +475,7 @@ click on "Cancel".<P>
 
 <strong><font color="orange">&#x26A0;</font>  Tips and Troubleshooting</strong> 
 <UL>
-<LI>If the catalog search is successful quickly, it will promptly return
+<LI>If the catalog search succeeds quickly, it will promptly return
 the results in a tab of its own. 
 
 <LI>The search may take a long time to return, especially
@@ -490,8 +490,7 @@ will take quite a while.
 
 <LI>If you want to impose additional constraints on the catalog during
 your initial search, you can do so in the lower half of the screen
-(e.g., SNR &gt; n in some band, or an SQL command), you can place
-constraints at this point. However, be advised that it is easy to
+(e.g., SNR &gt; n in some band, or an SQL command). However, be advised that it is easy to
 combine constraints such that no sources are retrieved!
 
 <LI> If you overlay a large catalog, large enough that the <a
@@ -524,8 +523,8 @@ the full catalog. By selecting "long form" (above the list of
 columns), you can access the full range of available columns. In some
 cases, there are literally hundreds of columns that you can access!
 
-<LI>If you start searching from a HiPS image, you are limited to a 5
-degree search radius.
+<LI>If you start searching from a HiPS image, you are limited to a 5-degree
+search radius.
 
 </ul><P>
 
@@ -539,9 +538,9 @@ degree search radius.
 
 
 <hr width="50%">
-<h3><A name="voscs">VO SCS</A> -- VO Simple Cone Search</h3>
+<h3><A name="voscs">Catalogs (SCS)</A> -- VO Simple Cone Search</h3>
 
-(SCS = simple cone search.)<P>
+(SCS = Simple Cone Search.)<P>
 
 To have this search as a choice, you may need to select "Catalogs
 (SCS)" from the <a href="overview.html#drawer">side menu</A>.<P>
@@ -562,7 +561,7 @@ and lower limits to your search radius; it will tell you if you
 request something too big or too small. <P>
 
 If you know your VO URL already, you can jump down to the Cone Search
-URL box and type or paste your URL into the box and hit search.<P>
+URL box and type or paste your URL into the box and click "Search."<P>
 
 More commonly, however, users do not know <em>a priori</em> which URL
 to use. Click on "Find Astronomical Data Resources" to be dropped into
@@ -575,9 +574,11 @@ the URL in the right syntax. Click on
 
 <strong>Example</strong><p>
 
-Load the tool. Search on IC1396. Go to the catalogs tab. Choose "VO
-Catalog." It wants the root URL for a cone search. Click on "Find
-Astronomical Data Resources", which goes <a
+Open the "Catalogs (SCS)" tab (if it is not already at the top, add
+it from the <a href="overview.html#drawer">side menu</A>). Enter IC1396
+as the target, and pick a search radius. The tool now needs the base
+URL for a cone search. Click on "Find
+Astronomical Data Resources," which goes <a
 href="http://vao.stsci.edu/keyword-search/" target="_blank">here <img
 src="img/jumpout.jpg" height="10"></A>. Search on IPHAS. Get <a
 href="http://vao.stsci.edu/keyword-search/?utf8=%E2%9C%93&search_field=all_fields&q=iphas"
@@ -588,8 +589,8 @@ href="http://vao.stsci.edu/directory/getRecord.aspx?id=ivo://CDS.VizieR/II/321"
 target="_blank">here <img src="img/jumpout.jpg" height="10"></A>. Hit
 the [+] to expand it. There is one URL listed there, under "available
 endpoints for the standard interface." Copy that URL and paste it into
-the search form. The IRSA tool will append your coordinates and radius
-and return you a table.<P>
+the Cone Search URL box and click "Search." The tool will append your
+coordinates and radius and return a table.<P>
 
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
@@ -597,7 +598,7 @@ and return you a table.<P>
 Note that searching the VO means that you are using resources not
 specifically housed at IRSA, so servers may be down, or timeouts set,
 or limits on numbers of returned sources, etc., that are beyond our
-control. In most cases the solution is to specify as precise a search
+control. In most cases, the solution is to specify as precise a search
 as possible.  The URL you enter into the box in the search panel must be a
 Cone Search base URL (not containing RA and Dec parameters, which are
 inserted into the URL by the tool in response to the search
@@ -613,7 +614,7 @@ via Firefly).
 
 
 The result of any VO SCS search is a catalog that can be interacted
-with like any other <a href="catalog.html">catalog in this
+with like any other <a href="catalogs.html">catalog in this
 tool</A>.<P>
 
 
@@ -621,10 +622,10 @@ tool</A>.<P>
 <hr width="50%">
 <h3><A name="nedcatalogs">NED Objects</A> -- Searching for NED objects</h3>
 
-(NED= <A href="http://ned.ipac.caltech.edu/" target="_blank">NASA
+(NED = <A href="http://ned.ipac.caltech.edu/" target="_blank">NASA/IPAC
 Extragalactic Database <img src="img/jumpout.jpg" height="10"></A>.)<P>
 
-To see this tab as a choice on the top, you may need to select it from
+To see this tab as a choice at the top, you may need to select it from
 the <a href="overview.html#drawer">side menu</A>.<P>
 
 
@@ -646,14 +647,14 @@ or too small. <P>
 
 From the NED results, you have one-click access to the fully detailed
 information from NED on any object returned from such a search.
-The search results will generally include a column "Details", though
+The search results will generally include a column "Details," though
 you may have to scroll to the right to see it. Clicking on a link in
 this column takes you directly to the full NED information display for
 the selected object in a new window.
 <P>
 
 The result of any NED search is a table that behaves like any other <a
-href="table.html">table in this tool</A>.<P>
+href="tables.html">table in this tool</A>.<P>
 
 
 

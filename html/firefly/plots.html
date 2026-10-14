@@ -70,9 +70,9 @@ src="img/defaultradecunbinned.png" width="50%"><P>
 The difference between them is that, for larger catalogs (left), the
 plot is binned -- more points are encompassed in a black tile and
 fewer points are encompassed in a white tile. In the context of this
-tool, this is called a <strong>heatmap</strong>. The shades of grey
+tool, this is called a <strong>heatmap</strong>. The shades of gray
 correspond to how many points are encompassed in each 'cell', with the
-density scale given on the right hand side of the plot.  For smaller
+density scale given on the right-hand side of the plot.  For smaller
 catalogs (right), each individual point is shown as a blue dot. In the
 context of this tool, this is called a <strong>scatter plot</strong>.
 Note that even when individual points are shown, where the points
@@ -146,7 +146,7 @@ view, click on <img src="img/plotnav-1x.png" align="center">. <P>
 
 <DT><img src="img/plotnav-select.png"> <em>Select mode</em>  
 <DD>When this mode is active, when you click and drag in the plot, you
-are given additional options at the top of the plot : <img
+are given additional options at the top of the plot: <img
 src="img/plotnav-filter.png" align="center"> The checkmark means
 "select" and the funnel means "filter." The difference is that
 filtering (temporarily) limits what is shown in the plot, catalog, and
@@ -161,22 +161,22 @@ src="img/cancelselection.png" align="center">. <P>
 Return to the view that optimizes the range of x and y to show the
 currently displayed points. <P>
 <strong><font color="orange">&#x26A0;</font> Tips and
-Troubleshooting:</strong> Did you accidently zoom in the plot with
-your magic mouse or touchpad? Click on this icon to reset the plot.<P>
+Troubleshooting:</strong> Did you accidentally zoom in the plot with
+your Magic Mouse or touchpad? Click on this icon to reset the plot.<P>
 
 
 <DT><a name="saving"><img src="img/save.png"> <em>Save
 plot</em></A> 
-<DD>Save the plot. It will save as a png file, wherever your browser
-is configured to save files. The saved png is the same size as it is on
+<DD>Save the plot. It will save as a PNG file, wherever your browser
+is configured to save files. The saved PNG is the same size as it is on
 your screen. If you want a big version, make the desired plot big on
 your screen (expand the view to take up as much space as possible)
-before saving the png. <P>
+before saving the PNG. <P>
 
 <DT><img src="img/plotnav-undo.png"> <em>Undo</em>  
 <DD> Restore everything to the defaults. If you've played a lot with
 the plot, you may want to undo everything you've done. Click this icon
-to restore everything back to the defaults.  <P>
+to restore everything to the defaults.  <P>
 
 <a name="filterfromplot"></A>
 <DT><img src="img/filter.png"> <em>Filter from plot</em>  
@@ -214,22 +214,22 @@ get a pop-up telling you the values corresponding to the point under
 your cursor. For scatter plots, if you click on any of the points, the
 object(s) corresponding to that point will be highlighted in the
 overlays in the images shown, and highlighted in the catalog table. 
-This works the other way too - click on a row in the catalog, or an
+This works the other way too -- click on a row in the catalog, or an
 object in the images, and the object will be highlighted in the plot
 or the catalog or the image.<P>
 
 <hr width="50%">
 <h3><a name="zooming">Plot Zooming</A> </h3>
 
-If you have a magic mouse or touchpad, you can zoom in the plot by
-just putting your mouse anywhere in the plot and then scroll or pinch
+If you have a Magic Mouse or touchpad, you can zoom in the plot by
+just putting your mouse anywhere in the plot and then scrolling or pinching
 to zoom. (This happens to me accidentally all the time -- click on
 this icon <img src="img/plotnav-1x.png"> to reset the default zoom.)
 <P>
 
 If you want to zoom in the plot along just one axis, move your mouse
 in between the numbers on the axis where you want to zoom until your
-mouse changes <img src="img/expandplotarrows.png"> and then scroll or
+cursor changes to <img src="img/expandplotarrows.png"> and then scroll or
 pinch to zoom along that axis. <P>
 
 If you <a href="tables.html#filters">filter your table</A> and it
@@ -251,12 +251,12 @@ depending on whether the points are binned or not.  This section
 describes how to change what is plotted, i.e., the "Modify Trace"
 option at the top of both of these pop-ups. The <a
 href="#overplotting">overplotting</A> option (and, for that matter, <a
-href="#adding">adding plots</A>) are covered in more detail below. <P>
+href="#adding">adding plots</A>) is covered in more detail below. <P>
 
 <table>
 <tr><td><img src="img/plotoptionspopup-decimated.png" width="300"
 style="border:3px solid gray"> </td><td>This is the configuration
-window for a binned (a.k.a. heatmap, or greyscale) plot. By
+window for a binned (a.k.a. heatmap, or grayscale) plot. By
 default, the "chart options" may be hidden; to reveal them, click on
 the name "Chart Options" or the disclosure arrow on the right. To hide
 them again, click on the disclosure arrow on the right.
@@ -292,12 +292,12 @@ pulled the column name for the label; in this table, the column is
 "ra" rather than "RA", and it is case-sensitive. It has copied over
 the units ("deg") from the catalog, and plotted the x-axis increasing
 to the left as per astronomical convention. You can change what column
-is plotted, and whether or not errors are shown.
+is plotted, and whether or not errors are shown.<P>
 
-Under "<strong>Chart Options</strong>", you can specify:
+Under "<strong>Chart Options</strong>," you can specify:
 <UL>
 <LI>title of the plot;
-<LI>labels on the x and y-axis;
+<LI>labels on the x- and y-axes;
 <LI>whether or not there is a grid shown;
 <LI>whether or not the axis is reversed (as for ra in the examples
 above);
@@ -323,7 +323,7 @@ exp(x), floor(x), lg(x), ln(x), log10(x), log(x), power(x,y),
 round(x), sin(x), sqrt(x), tan(x)
 <LI>degree(x) and radians(x) are also supported -- these are the same
 functions as in ADQL and convert radians to degrees or degrees to
-radians. For small astrometric offsets, you could make a scatterplot
+radians. For small astrometric offsets, you could make a scatter plot
 of dec2-dec1 vs. (ra2-ra1)*cos(radians(dec1)) instead of typing
 cos(dec1*pi()/180). (NB: pi() is also a supported function you can
 use, instead of typing 3.14159.)
@@ -340,7 +340,7 @@ upper right.)<P>
 <dt><strong>Options found only in binned plots</strong>
 <dd>(Plots are binned by default if there are &gt; 5,000 points in the catalog.)
 From the pop-up, you can control the color table that is used
-(greyscale is the default; there are many other choices in the
+(grayscale is the default; there are many other choices in the
 drop-down menu), as well as the number of bins in the x and y
 directions.  The default value for the number of bins is 100 in both
 directions.<P>
@@ -362,10 +362,10 @@ Under <strong>Trace Options</strong>, you have many choices.
 circle, square, open square, diamond, open diamond, cross, x,
 upward-pointing triangle, hexagon, or star. <P>
 <LI><A name="colorpicker">Choose the <strong>color</strong>. By
-default, the point color is a mid-range blue that is darker where more
-points. This is specified by the rgba vector shown in the example
-here (31, 119, 180, 50) where the last number is in units of fraction
-of 1, so 0.5=50% in this example.  Click on the magnifying glass to bring
+default, the point color is a mid-range blue that is darker where there are more
+points. This is specified by the RGBA vector shown in the example
+here (31, 119, 180, 50), where the last number (A) is the opacity in
+percent, so 50 = 50% in this example.  Click on the magnifying glass to bring
 up a color picker window:<br><img src="img/colorpickerplot.png" style="border:3px solid
 gray"><br>
 From here, you can click on your desired color in the top colorful
@@ -382,10 +382,10 @@ right to close the window without changing the color.<P>
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting:</strong> 
 Don't like the transparency feature of the
 points that makes them darker when there are more points? Set the last
-value of the vector (A) to 1. Don't like the blue? Pick a diferent
+value of the vector (A) to 100. Don't like the blue? Pick a different
 color entirely. Want the faintest point to be brighter than it is by
-default? Set the last element of the color vector ("A") to be 0.7 or
-0.8.<P>
+default? Set the last element of the color vector ("A") to be 70 or
+80.<P>
 <LI>Choose the <strong>color map</strong>. By default, all of the
 points are the same color, but darker where there are more points. You
 can change this such that the color scale of the points is tied to a
@@ -394,8 +394,8 @@ catalog. If you select this option, you can also change the color
 scale to any of many different options (see the drop-down). Simple
 mathematical relations (as above) are also permitted in this box.<P>
 <LI>Choose the <strong>size map</strong>. By default, all of the
-points are the same size. You can change this such that the color
-scale of the points is tied to a column value, such as w1snr (WISE-1
+points are the same size. You can change this such that the size
+of the points is tied to a column value, such as w1snr (WISE-1
 signal-to-noise ratio) in a WISE catalog. Simple mathematical
 relations (as above) are also permitted in this box.<P>
 </UL> 
@@ -405,10 +405,10 @@ relations (as above) are also permitted in this box.<P>
 
 
 Example: Load a large WISE catalog. Plot w1snr (WISE-1 signal-to-noise
-ratio) vs. w1mpro (WISE-1 profile fitted magnitude). It defaults to a
+ratio) vs. w1mpro (WISE-1 profile-fitted magnitude). It defaults to a
 heatmap. Change the labels, making the y-axis label "WISE-1 SNR"
-rather than the more cryptic column header "w1snr". Change the x-axis
-label to "[W1]." Change the greyscale to yellow-green-blue ("YlGnBu")
+rather than the more cryptic column header "w1snr." Change the x-axis
+label to "[W1]." Change the grayscale to yellow-green-blue ("YlGnBu")
 to make it easier to see the lowest-populated bins. Depending on your
 catalog, you may need to adjust the ranges. Obtain this plot:<P> <img
 src="img/w1snrexample.png" width="60%" style="border:3px solid gray"><img
@@ -420,8 +420,8 @@ catalog, but <a href="tables.html#filters">filter</A> it down such
 that w1snr, w2snr, and w3snr are all greater than 10, which limits the
 number of points to be &lt;5,000. Plot w1snr vs. w1mpro. It shows the
 points individually. Change the labels.  Change the point color map to
-scale with w2mpro (WISE-2 profile fitted magnitude). Change the point
-size map to scale with w4snr (WISE-4 signal-to-noise). Obtain this
+scale with w2mpro (WISE-2 profile-fitted magnitude). Change the point
+size map to scale with w4snr (WISE-4 signal-to-noise ratio). Obtain this
 plot:<P> <img src="img/w1snrexample2.png" width="60%" style="border:3px solid gray"><img
 src="img/w1snrexample2config.png" width="30%" style="border:3px solid gray"><p>
 
@@ -478,9 +478,9 @@ pop-up (discussed above).<P>
 
 However, and perhaps more powerfully, you can set limits from the plot
 itself using a rubber band zoom.  Click on the select icon in the plot
-<img src="img/plotnav-select.png" align="center"> Then, click and drag
+<img src="img/plotnav-select.png" align="center">. Then, click and drag
 in a sub-region of the plot. New icons appear: <img
-src="img/plotnav-filter.png" align="center"> If you click on the
+src="img/plotnav-filter.png" align="center">. If you click on the
 funnel icon, only those data points that pass the filter are shown in
 the plot, in the table, and/or overlaid on the image(s). (This is the
 behavior of 'filter', as opposed to 'select'; the former restricts
@@ -489,10 +489,10 @@ filters, see <a href="tables.html#filters">the filtering discussion in
 the tables section</A>.<P>
 
 <strong>Example:</strong> Obtain a WISE catalog of a star-forming
-region, say IC1396. Filter down the catalog to only have detections at
+region, say IC1396. Filter down the catalog to only have detections in
 all four WISE bands. (Limits have undefined errors, so ask the catalog
 to filter down such that w1sigmpro&gt;0, w2sigmpro&gt;0,
-w3sigmpro&gt;0, and w4sigmpro&gt;0). Plot w1mpro-w4mpro on the x-axis,
+w3sigmpro&gt;0, and w4sigmpro&gt;0.) Plot w1mpro-w4mpro on the x-axis,
 and w1mpro on the y-axis. Reverse the y-axis to put bright objects at
 the top. Click and drag in the plot to select the bright and red
 objects, and filter them down to get a subset of bright and red
@@ -518,10 +518,10 @@ very similar to the original interface where you selected what to
 plot:<br>
 <img src="img/overplot2.png" style="border:3px solid gray"><P>
 
-As before, you need to :
+As before, you need to:
 <UL>
 <LI>select a plot type (scatter, heatmap, histogram);
-<LI>tell it what column(s) (and and manipulations thereof) you want for x, y, and associated errors;
+<LI>tell it what column(s) (and manipulations thereof) you want for x, y, and associated errors;
 <LI>select the trace style (points, connected points, lines);
 <LI>set any additional trace options;
 <LI>set any additional chart options.
@@ -532,15 +532,15 @@ As before, you need to :
 <table><tr><td><img src="img/overplot3.png" width="400" style="border:3px solid gray">
 </td><td>
 The best way to explain how to use this feature is probably via an
-example.  We have a plot of [W1] vs. [W1-W4] from above. Now  add on
-top of it a plot of [W2] vs. [W1-W4]. Click on the gears to bring up
+example.  We have a plot of [W1] vs. [W1]-[W4] from above. Now add on
+top of it a plot of [W2] vs. [W1]-[W4]. Click on the gears to bring up
 the pop-up. Select "Overplot New Trace." Enter "w1mpro-w4mpro" for x
 and "w2mpro" for y. Expand "Chart Options." Note that it has preserved
 the overall chart title from before, but has erased the X and Y labels
-(and lost the reversal of the y axis) because the overplot could
+(and lost the reversal of the y-axis) because the overplot could
 literally be anything, and need not be the same columns or even the
 same units as what is already plotted. Type them in again. Here is the
-configuration window right before clicking "ok", and the resultant
+configuration window right before clicking "OK," and the resultant
 plot. <br> <img
 src="img/overplot4.png" width="400" style="border:3px solid gray"><p> 
 </td></tr></table>
@@ -554,15 +554,15 @@ overplotted trace, modify a trace, or remove the active trace. Each
 trace that you add is a new 'layer' on the plot. The drop-down menu
 near the top of the window controls which trace is 'active' for
 setting the x, y, errors, trace style, name, symbol, color, etc. 
-there is now a drop-down menu at the top of the plot: There is a
+There is a
 legend on the plot specifying which color corresponds to which trace.
 In this example, the plot above has appeared using a blue and green
 color scheme, which may be too hard to differentiate. To change the
 new points' color, click on the gears, ensure "Modify Trace" is
-selected, select "trace 1" (as opposed to "trace 0", the first one you
+selected, select "trace 1" (as opposed to "trace 0," the first one you
 loaded), go down and expand the "Trace Options" and pick a different
-color. You can also change the legend name from "Trace 1" to, in this
-case, "[W2]". Click "apply" to apply the changes to the plot. Note
+color. You can also change the legend name from "trace 1" to, in this
+case, "[W2]." Click "Apply" to apply the changes to the plot. Note
 that once you change the trace name, the relevant drop-down menus in
 the pop-up window and the legends on the plot update accordingly.<br>
 <img src="img/overplot7.png" width="400" style="border:3px solid gray"><P>
@@ -572,8 +572,8 @@ the pop-up window and the legends on the plot update accordingly.<br>
 
 
 Note that the pop-up spawned by clicking the gears now has an additional
-option at the top: "Add New Chart", "Overplot New Trace", "Modify
-Trace", and "Remove Active Trace." From here, you can modify a trace
+option at the top: "Add New Chart," "Overplot New Trace," "Modify
+Trace," and "Remove Active Trace." From here, you can modify a trace
 you have already plotted (as described above), overplot another trace
 (also as described above), or remove the selected trace:<br> <img
 src="img/overplot6.png" style="border:3px solid gray"><P>
@@ -589,7 +589,7 @@ say, by overplotting a histogram onto a scatter plot. If you find
 yourself in a hopeless mess, click on the "undo" icon to reset
 everything  <img src="img/plotnav-undo.png" align="center"> and try
 again.
-<LI>When you have more than one thing (trace) plotted, double click on
+<LI>When you have more than one thing (trace) plotted, double-click on
 the legend to bring that trace to the foreground and temporarily hide
 the other traces.
 <LI>You can overplot a scatter plot on top of a heatmap if you really
@@ -622,12 +622,15 @@ specify which columns to plot or manipulate and plot, specify labels,
 etc. <P>
 
 <strong>Scatter plots</strong> allow you to choose points, connected
-points, or lines; you can add errors to each point. <P>
+points, or lines; you can add errors to each point. By default,
+catalogs with more than 5,000 points are plotted as heatmaps rather
+than scatter plots, but you can force a scatter plot if you really
+want one (see the tips below).<P>
 
 <strong>Heatmap plots</strong> are binned scatter plots; you can
 choose what color scale and how many bins to use. <P>
 
-<strong>Histogram plots</strong> allow you to choose how many bins or
+<strong>Histogram plots</strong> allow you to choose the number of bins or
 the bin width.  Note that, if you provide a minimum number, the
 binning starts at the minimum value you provide, and may exceed the
 maximum you entered in order to fit in a whole bin. <P>
@@ -640,8 +643,8 @@ You can have many plots up at the same time.  <P>
 You can view multiple plots all at once or one at a time by clicking
 on the corresponding icons above the plots (just as when you have
 multiple images loaded).  <img src="img/singlegrid.png"> The single
-box means "one at a time", the set of four boxes means "all the plots
-at once". If you are viewing one at a time and have more than one plot
+box means "one at a time," the set of four boxes means "all the plots
+at once." If you are viewing one at a time and have more than one plot
 loaded, you will see the "&gt;" and "&lt;" signs (as in the image
 here), and you can scroll among the plots by clicking on these arrows
 (just as when you have multiple images loaded).<P>
@@ -649,9 +652,9 @@ here), and you can scroll among the plots by clicking on these arrows
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong>
 <UL>
 <LI>Note that many plots of a large catalog may make your browser run slowly.
-<LI>You can force the tool to make a scatter plot even if you have a
-catalog of &gt;5,000 points; it just might make your browser slow
-down. You can even overplot a scatter plot on top of a heatmap if you
+<LI>If your catalog has more than 5,000 points, the tool defaults to a
+heatmap, but you can force it to make a scatter plot anyway; it just
+might make your browser slow down. You can even overplot a scatter plot on top of a heatmap if you
 really want to!
 <LI>To remove a plot, click on the 'x' in the upper right corner of the
 plot.
@@ -665,14 +668,14 @@ plot.
 
 The idea behind "pinning plots" (or "pinning charts") is that you can
 retain a plot. Within this tool, "pinning" just means "hold on to this
-item within this tool." It doesn't mean "save this plot to disk", nor
+item within this tool." It doesn't mean "save this plot to disk," nor
 does it mean "download the data behind this"; it means "retain this
 item in this tool for now." Think of it as if you have a metaphorical
 bulletin board behind your computer monitor and you want to put a plot
 you make on that bulletin board temporarily (with a pushpin!) while
 you continue to work on other plots or other catalogs. For example,
-you could make the same color-magnitiude diagram from two catalogs of
-two different regions, pin both, and then compare them side-by-side.
+you could make the same color-magnitude diagram from two catalogs of
+two different regions, pin both, and then compare them side by side.
 <P>
 
 When you make a plot that you want to retain, click on the "pin chart"
@@ -698,14 +701,14 @@ tables pane.
 <LI>If you click on a source in the image (or catalog or plot), the
 same source is highlighted in the catalog (or image or plot). 
 <LI>To change a pinned plot, click on the plot to bring it to the
-foreground, then click on the gears in the the corresponding plot
+foreground, then click on the gears in the corresponding plot
 area, and change what is plotted as described <a
 href="#changing">above</A>.
-<LI>You can view the plots one a time or in a
+<LI>You can view the plots one at a time or in a
 grid by clicking on the icon for one-at-a-time (big square) or tiled
 (4 small squares; if you are viewing them one at a time, you can use
 the "&gt;" and "&lt;" arrows to scroll through the list): <img src="img/singlegrid.png">
-<LI>There is a maxium of 12 charts that you can pin at one time.
+<LI>There is a maximum of 12 charts that you can pin at one time.
 <LI>When many plots are pinned, and you view many plots at once, the
 margins on the plots will shrink down (effectively vanish) to make the
 data more easily visible. To view the plots with axes, view the plots
@@ -724,7 +727,7 @@ corresponding catalog tab, the pinned plot will be removed as well.
 
 <img src="img/combinechart.png"> When you have more than one plot
 pinned, you have an additional icon that can appear -- it means
-"Combine Chart".<P>
+"Combine Chart."<P>
 
 This option only appears if you have pinned at least two plots, and it
 will only let you combine plots if it recognizes that you have spectra

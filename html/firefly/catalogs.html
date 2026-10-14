@@ -18,7 +18,7 @@
 Catalogs are a special case of <a href="tables.html">tables</A>; the
 basic functionality of tables is covered in the <a
 href="tables.html">Tables section</A>.  You can load a wide variety of
-catalogs to load for overlaying on your <a
+catalogs for overlaying on your <a
 href="visualization.html">visualized data</A>. If you don't have an <a
 href="images.html">image</A> loaded, the tool will overlay your
 catalog on a "coverage image". It will also <a href="plots.html">make
@@ -42,11 +42,11 @@ table</A> and you can <a href="#interacting">interact with it</A>.<P>
 <P>
 
 
-Here are some general guidlines for working with catalogs:
+Here are some general guidelines for working with catalogs:
 
 <UL>
 
-<LI>If the catalog search is successful quickly, it will promptly
+<LI>If the catalog search succeeds quickly, it will promptly
 return the results. The search may take a long time to return,
 especially if you have asked for a large catalog, and you may think
 that nothing has happened, but be patient and eventually it will
@@ -64,9 +64,9 @@ smaller and smaller cells until it shows you individual sources. <a
 href="catalogs.html#hier">See below</A> for more information!
 
 <LI> If you overlay a large catalog, then turn around and <a
-href="visualization.html#fitsDownloadOptions">save a regions file from
+href="visualization.html#fitsDownloadOptions">save a region file from
 the catalog overlay</A>, then the entire catalog may not be saved. To
-get a large catalog saved as a regions file, <a
+get a large catalog saved as a region file, <a
 href="tables.html#save">save it from the table</A>.
 
 <LI>If you have "pan by table row" turned on (see <a
@@ -74,15 +74,15 @@ href="visualization.html#panbytablerow">Visualization chapter</A>),
 then it may be disconcerting to have the images "jump" right after the
 catalog loads. It is centering the selected catalog object (the first
 one upon catalog loading) in the viewer. If you don't like this, turn
-off "pan by table row".
+off "pan by table row."
 
 <LI>By default, it may show you fewer columns than are available in
 the full catalog. By selecting "long form" (above the list of
 columns), you can access the full range of available columns. In some
 cases, there are literally hundreds of columns that you can access!
 
-<LI>If you start searching from a HiPS image, you are limited to a 5
-degree search radius.
+<LI>If you start searching from a HiPS image, you are limited to a 5-degree
+search radius.
 
 </ul><P>
 
@@ -92,15 +92,13 @@ degree search radius.
 <hr width="50%">
 <h3><A name="interacting">Interacting with Catalogs</A></h3>
 
-When you load a catalog, the tool may create a table, a plot, and/or,
+When you load a catalog, the tool may create a table and a plot, and,
 if your catalog has position information (e.g., RA and Dec), it
 overlays the catalog on an image. Tables, plots, and overlays on
 images are all interlinked and interactive.<P>
 
-Catalogs are a special case of <a href="tables.html">tables</A>; the
-basic functionality of tables is covered in the <a
-href="tables.html">Tables section</A>. You can sort and filter the
-table.<P>
+You can sort and filter the table; see the <a
+href="tables.html">Tables section</A>.<P>
 
 <A href="plots.html">Plots</A> are also covered in a different
 section. You can make scatter plots, heat maps, and histograms. You
@@ -113,8 +111,8 @@ href="visualization.html">Visualization section</A> includes
 information about that. Each catalog that you load is overlaid on the
 image using different, customizable symbols and colors. <P>
 
-When you have catalogs loaded into the tool, the header of the
-catalogs has the name of the catalog and a color swatch:<br>
+When you have catalogs loaded into the tool, the header of each
+catalog has the name of the catalog and a color swatch:<br>
 <img src="img/catalogcolorswatch.png"><br>
 This color swatch corresponds to the symbol color that is used in the
 image overlays. You can change the color by clicking on the color
@@ -127,11 +125,11 @@ section</A> of the visualization chapter for more information.<P>
 <UL>
 <LI>Large catalogs will be displayed hierarchically! See next section.
 
-<LI>If you save the overlays from an image as a regions file, you may
+<LI>If you save the overlays from an image as a region file, you may
 not get your complete catalog, especially if it is a large catalog
 (see next section!). However, you can save the full contents
-of a single catalog as a regions file using the "save" (diskette) icon
-in the table toolbar, instead of the image toobar. 
+of a single catalog as a region file using the "save" (diskette) icon
+in the table toolbar, instead of the image toolbar. 
 </UL>
 
 <P>
@@ -139,9 +137,9 @@ in the table toolbar, instead of the image toobar.
 <h3><A name="hier">Hierarchical Catalog Display</A></h3>
 
 If one has a large catalog loaded into the tool overlaid on top of
-lots of images the possibility exists that the computer or the network
+lots of images, the possibility exists that the computer or the network
 could be overwhelmed trying to render all the points on all the
-images. Historically we dealt with this by "thinning out" the catalog
+images. Historically, we dealt with this by "thinning out" the catalog
 and not showing all the points. However, there is a better solution,
 which is now employed here!<P>
 
@@ -149,15 +147,15 @@ For catalogs below about 1000 points, the tool will show the
 individual points on the image.<P>
 
 For catalogs above that threshold, the tool will bin up the catalogs
-based on HEALPix pixels (see <a href="images.html#hips">HiPS section
-here</A> for more links). In summary, the sky is broken up into
+based on HEALPix pixels (see the <a href="images.html#hips">HiPS section</A>
+for more links). In summary, the sky is broken up into
 sections, and the tool will show symbols with a number indicating the
 number of sources in that region. Then, when you zoom in, it will
 dynamically adapt to show you smaller and smaller cells until it shows
 you all the individual sources.<P>
 
 From the layers icon (<img
-src="img/layers.png" align="center"> see <a
+src="img/layers.png" align="center">; see the <a
 href="visualization.html#layers">visualization chapter</A>), you can
 bring up many display options. Below are examples of what is displayed,
 the options seen in the layers, and additional options. The same
@@ -175,8 +173,8 @@ In this view, the 'cells' used are the cells explicitly associated
 with the HEALPix grid, so the size of the cells is very clear.  In the
 top row here, three of the diamond-shaped cells across the top have
 fewer than 50 sources (so they do not have cell boundaries and the
-individual sources are shown), then the next row of diamond-shaped
-cells have 87, 86, and 57 sources respectively. 
+individual sources are shown), and the cells in the next row
+have 87, 86, and 57 sources, respectively. 
 </td>
 </tr>
 <tr><td><img src="img/hiercatbox.png"></td><td>
@@ -187,7 +185,7 @@ but the boundaries between tiles may be less obvious to new users. </td>
 </tr>
 <tr><td><img src="img/hiercatellipse.png"></td><td>
 <img src="img/hiercatlayerellipse.png"> <br>
-In this view, the 'cells' are shown by ellipses shown with dashed
+In this view, the 'cells' are shown as ellipses with dashed
 lines. The locations and cell sizes are the same as in the prior
 screenshot, but the boundaries between tiles may be less obvious to
 new users. It may be more obvious, though, that these are
@@ -214,8 +212,7 @@ cases.  </td>
 <strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
 <LI>For all of these renditions, when you zoom in close enough, it
-will dynamically adapt and show you individual sources when you zoom
-in. (That is, it no longer decimates the overlaid catalog, which is
+will dynamically adapt and show you individual sources. (That is, it no longer decimates the overlaid catalog, which is
 what it used to do.)
 
 <LI>For all of these renditions, if you click on a cell, it will
@@ -225,7 +222,7 @@ reaches the point at which it thinks performance will suffer, at which
 point it will turn some of the points back into cells.
 
 <LI>If you want to have more of your catalog shown as individual
-sources, pick a smaller "min group" number.
+sources, pick a smaller "Min Group" number.
 
 <LI>If you have more than one catalog loaded, the 
 numbers within the cells (and in some cases the cell indicators
@@ -241,8 +238,8 @@ automatically renders a smaller cell, so if you have a sparsely
 populated but still large catalog, the size of the display will always
 be "small" size cells.
 
-<LI>If you are looking at many footprints from, say, a complex, and 
-long ObsCore search, if you have more than 30,000 footprints, it may
+<LI>If you are looking at many footprints from, say, a complex and 
+long ObsCore search, and you have more than 30,000 footprints, it may
 not be able to render all of the outlines of all of those images. It
 may render the centers of all of those images as if it were a catalog,
 in which case you will encounter these kinds of hierarchical catalog
@@ -256,13 +253,13 @@ display options.
 <h3><A name="details">Details Tab</A></h3>
 
 If you load a catalog from IRSA, you will likely have an additional
-tab on the right hand side, under the plot, called "Details." This
+tab on the right-hand side, under the plot, called "Details." This
 additional tab is sometimes called a "property sheet." This tab is,
 itself, another <a href="tables.html">Firefly table</A>, and consists
 of each of the columns of the retrieved catalog with additional
 information about each field where available. (Not every catalog may
 have this information available.) This information can be used to
-learn more about each of the columns in retrieved. For additional
+learn more about each of the columns in the retrieved catalog. For additional
 information, please consult the full documentation that accompanies
 the catalog. <P>
 
@@ -276,7 +273,7 @@ property sheet, you can restrict what values are shown. Those filters
 are respected as you page through a catalog. So, for example (see
 screenshot below), you can pull up the property sheet, filter it down
 to only show the profile-fitted magnitudes and errors by filtering on
-"mpro", and then step through the values in the catalog and inspecting
+"mpro", and then step through the values in the catalog, inspecting
 the brightnesses as shown in the property sheet for each source. 
 <LI>When changing rows in the main table, the property sheet/details
 tab scrolls to preserve the visibility of whatever row in the details

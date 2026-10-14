@@ -50,11 +50,6 @@ two window panes and slide it up, or use the expand arrow icon (<img
 src="img/expand.png">) to enlarge the window pane to take up the
 whole window.<P>
 
-The table is shown exactly as it has been provided to the tool, with
-all columns as defined by the creator of the table. To understand what
-each column is, please see the documentation associated with that
-catalog or table.<P>
-
 The tab (and table) name itself likely indicates its origin.  To
 remove the tab, it is likely that you can click on the "X" on the
 tab.<P>
@@ -105,15 +100,15 @@ table. It could have information about the job that was used to
 retrieve it:<br> <img src="img/tableinfo-jobinfo.png"
 style="border:3px solid gray"><br> where the direct link to the job is
 given there (and can be copied by clicking on the clipboard, ready to
-be pasted into a helpdesk query, for example), with a job id as shown.
+be pasted into a Help Desk query, for example), with a job ID as shown.
 It could also just have information about the table metadata:<br> <img
 src="img/tableinfo-metadata.png" style="border:3px solid gray"><br>
 where the information about this table includes information about the
 query that produced it.<P>
 
-<dt><img src="img/rowdetails.png"> Row details</A>
+<dt><img src="img/rowdetails.png"> Row details
 <dd>You may or may not see this icon. This is how you get more
-information about the currently-selected row. It has a <a
+information about the currently selected row. It has a <a
 href="#rowdetails">separate section below</A>.<P>
 
 <a name="tableoptions">
@@ -121,10 +116,10 @@ href="#rowdetails">separate section below</A>.<P>
 <dd>Clicking on this icon brings up options for the table, e.g., how
 many rows are displayed per page, which columns are shown, metadata
 about each column if available, whether units and data types are shown
-at the top of the column, shown here:<br> <img
+at the top of the column, as shown here:<br> <img
 src="img/toptableoptions.png" width="50%" style="border:3px solid
 gray"><br> By default, it is often but not always the case that all
-columns are shown. To show or hide columns, select the tickbox in each
+columns are shown. To show or hide columns, select the checkbox in each
 given row. The default page size is 100 rows.  Note that expanding the
 page size to numbers much greater than 100 may result in a substantial
 performance degradation (e.g., your browser will appear to freeze or
@@ -138,7 +133,7 @@ entire browser window. To return to the prior view, click on "Close"
 in the upper left.<P>
 
 <dt><img src="img/help.png"> Help 
-<dd>The last option on the top of the catalog tab may be a
+<dd>The last option at the top of the catalog tab may be a
 context-sensitive help marker, which should bring you to this online
 help.<P>
 
@@ -149,7 +144,7 @@ help.<P>
 <h3><A name="columns">Table Columns</A></h3>
 
 Depending on what you did to display a table, the columns that are
-shown may be in easily-human-readable form, or may reflect column
+shown may be in easily human-readable form, or may reflect column
 names used within the individual catalog. Please consult the detailed
 documentation associated with your specific archive if the headers are
 not clear to you. <P>
@@ -165,7 +160,7 @@ Clicking on the column names sorts the table by that column; clicking
 once sorts in ascending order, clicking a second time sorts in
 descending order, and clicking a third time returns the table to the
 original order.  Small arrows appear next to the column names to
-remind you if the column is sorted in ascending or descending order.
+remind you if the column is sorted in ascending or descending order.<P>
 
 When you do a single-position search on catalogs, depending on how you
 do it, it could be that two new columns are appended to the end of the
@@ -180,7 +175,7 @@ and the object it found (degrees E of N)
 <a name="multi">
 When you do a multi-position search on catalogs</A>, you could have
 three new columns  prepended to the catalog as it is returned to you.
-These columns are :
+These columns are:
 <UL>
 <LI>cntr_01 - the target position you requested
 <LI>dist_x - the distance between the target position you requested
@@ -192,7 +187,7 @@ These additional columns can help you assess if the target it found is
 the target that should be matched to the position you requested.<P>
 
 It could be that, when you do a multi-position search on catalogs, you
-have an option for "one-to-one matching". If that is selected, the
+have an option for "one-to-one matching." If that is selected, one
 line (and only one line) of output is included for each line of input.
 It chooses the closest source within the radius you specify, or if
 there is no match, it adds a line indicating no match.  <P>
@@ -202,7 +197,7 @@ there is no match, it adds a line indicating no match.  <P>
 <UL>
 <LI>You can hide or display columns; click on the gears (<img
 src="img/gears.png" style="vertical-align:middle">) to get to
-the table options, and tick the box corresponding to the row you want
+the table options, and check the box corresponding to the row you want
 to hide or show.
 <LI>If you are constructing and loading your own catalog where you
 don't specify the formatting, the tool tries to guess the formatting
@@ -254,22 +249,24 @@ information, see <a href="https://ivoa.net/documents/UCD1+/"
 target="_blank">IVOA
 documentation <img src="img/jumpout.jpg" height="10"> </A>
 <LI><em>Description</em> -- add a description for your new column.
-<LI><em>Select a preset</em> -- if you select "Use preset function",
-you can choose (a) "set filtered rows to 'true' and the rest to 'false'", 
+<LI><em>Select a preset</em> -- if you select "Use preset function,"
+you can choose (a) "set filtered rows to 'true' and the rest to 'false'," 
 (b) "set selected rows to 'true' and the rest to 'false'", or (c)
-"number rows in current sort order". These options are useful for
-tagging items you have selected in myriad ways (from plots, images,
-complicated filters), or ordered in complicated ways. For example, if
-you have constructed a complicated filter, then you can create a column that
-is true for the selected rows; if you cancel the complicated filter, you can
-then easily recreate the complicated filter by simply filtering on your newly
-created column.
+"number rows in current sort order". These presets let you capture a complicated selection or filter so
+you can get it back later. For example, suppose you have filtered a
+WISE catalog on eight columns at once (SNR &gt; 10 and error &lt; 0.1
+in all four bands). Instead of retyping all eight filters each time,
+add a column (say, "goodphot") using "set filtered rows to 'true' and
+the rest to 'false'." You can then clear the filters and work on
+something else. Whenever you need that subset again, just filter on
+goodphot = true. The "selected rows" preset works the same way for
+rows you have selected by hand or from a plot.
 </UL>
 
 In order to construct the expression for your new column, your input 
 should follow the syntax of an SQL expression. If you click on the
 magnifying glass next to the form input, you get a pop-up window that
-can help you construct an expression; click "apply" to apply the
+can help you construct an expression; click "Apply" to apply the
 expression.<P>
 
 You need to use the column names
@@ -306,16 +303,16 @@ to the table options, and then click on the edit icon to bring up a
 dialog box to edit or delete the column.
 <LI>You can hide columns; click on the gears (<img
 src="img/gears.png" style="vertical-align:middle">) to get to the table
-options, and tick the box corresponding to the row you want to hide or
+options, and check the box corresponding to the row you want to hide or
 show.
-<LI>If you create a new column that turns a floating point column into
+<LI>If you create a new column that turns a floating-point column into
 an integer with the "FLOOR()" function, you need to be sure to set the
 resulting column type to "long". For example, if you have data
 covering several days or years, and you have a column that is a
 floating-point MJD, you can convert it into an integer, e.g., via
-FLOOR(mjd) for days or FLOOR(mjd/365.24) for years, then you can use
+FLOOR(mjd) for days or FLOOR(mjd/365.25) for years; then you can use
 the drop-down filter menu for the new column to quickly compare
-different time ranges. But, the new column must be an integer (e.g.,
+different time ranges. But the new column must be an integer (e.g.,
 "long") in order for this to work properly.
 <LI>If you need to, say, take the square root of a column that
 occasionally has a negative number, and you want it to attempt to
@@ -345,7 +342,7 @@ filter icon corresponding to that row on the far left. You can type
 operators and values in these boxes -- hit return or tab after typing
 or click in another box to implement the filter.<P>
 
-<strong>Example:</strong> From a catalog, show only those sources with
+<strong>Example:</strong> To show only those sources in a catalog with
 declination above a certain value (say, 31 degrees), type "&gt; 31" in
 the box at the top of the "dec" column. Or, if you have retrieved a
 WISE catalog and would like to only view the objects with a W1 (3.4
@@ -356,7 +353,7 @@ the top of the 'w1mpro' column, type "&lt; 6" in the form.  <P>
 (fields) with a limited set of choices, on the right edge of the text
 entry box, an arrow appears; click on it to get a drop-down from which
 you can select the available choices. To implement the filter, make
-the choices, and click "Apply" when you are done. Click "clear" in the
+the choices, and click "Apply" when you are done. Click "Clear" in the
 top of the drop-down menu to remove that filter. </td></tr></table> 
 <P>
 
@@ -373,21 +370,21 @@ between columns are logically "AND"ed together, but filters within the
 same column can be logically "AND"ed or "OR"ed together; examples are
 below.  <P>
 
-The available logical operators are :
+The available logical operators are:
 <UL>
-<LI> =  which means 'equal to' (exactly!), e.g., the parameter on
+<LI> =  which means 'equal to' (exactly!), i.e., the parameter on
 which you are querying (the column headers as shown) is exactly equal to
 this value you are specifying.
 <LI> &gt; which means 'greater than'
-<LI> &lt; which mean 'less than'
+<LI> &lt; which means 'less than'
 <LI> != which means 'not equal to' (exactly!)
 <LI> &gt;= which means 'greater than or equal to'
 <LI> &lt;= which means 'less than or equal to'
-<LI> IN which means 'included within this list', e.g., the parameter
+<LI> IN which means 'included within this list', i.e., the parameter
 on which you are querying is included within the list you are
 specifying (if the column filter is free-form text, type
 "value1,value2" and it will give you rows that have value1 or value2).
-<LI> LIKE which means 'resembles the text that is entered', e.g., the text
+<LI> LIKE which means 'resembles the text that is entered', i.e., the text
 resembles the text that you type in the box.
 <LI>IS which effectively is the same as =
 <LI>IS NOT  which effectively is the same as !=
@@ -400,8 +397,8 @@ string: !=''
 <LI> Retain rows for which a certain parameter is not NULL and is
 larger than 1.234: &gt; 1.234 and IS NOT NULL
 <LI> Retain rows that have values between -0.5 and 1.25: &gt; -0.5 and &lt; 1.25
-<LI> Retain rows with a parameter greater than one value or exactly
-not equal to another value: &gt; 12345 or != 3000 
+<LI> Retain rows with a parameter greater than one value or not
+equal to another value: &gt; 12345 or != 3000 
 <LI>Retain rows with a parameter equal to one of the values in a list:
  IN a,b,c,d
 </UL>
@@ -414,16 +411,15 @@ more information. <P>
 
 You may also be able to select rows one at a time via the far left
 column and then filter that down. Example: Retrieve a catalog of any
-sort. Select rows by ticking the box on the far left, say, every other
-row out of the first 12. Click on the filter icon on the top of the
+sort. Select rows by checking the box on the far left, say, every other
+row out of the first 12. Click on the filter icon at the top of the
 column.  The filter is imposed to only include the 6 rows you
 selected.<P>
 
 
 
-<a name="tableoptions">
 If you click on the table options icon (<img
-src="img/gears.png">)</A>, you get a pop-up that includes a place
+src="img/gears.png">), you get a pop-up that includes a place
 to filter columns. Here is an example of the table columns for a WISE
 catalog that has been filtered to just have SNR&gt;10 for each of the
 four bands:<br>
@@ -443,12 +439,12 @@ resized such that you can see the whole set of hints and imposed
 filters. Note that in this interface, column headers must be enclosed
 within double quotes.<P>
 
-<strong>Cancelling filters</strong><P>
+<strong>Canceling filters</strong><P>
 
-After you impose a filter, then the "filters" icon on the top right of
+After you impose a filter, then the "filters" icon at the top right of
 the catalog pane has changed to remind you that there has been a
 filter applied, in this case just one filter: <img
-src="img/filtersapplied.png"> To clear all the filters at once, click
+src="img/filtersapplied.png">. To clear all the filters at once, click
 on the cancel filters icon (which also appears after you impose
 filters): <img src="img/cancelfilters.png">.<P>
 
@@ -461,14 +457,14 @@ filters): <img src="img/cancelfilters.png">.<P>
 <LI>If you impose logically inconsistent restrictions such as
 "exposure time &gt; 160" and "exposure time &lt; 100"
 ("&gt;160;&lt;100" in the filter box for the column marked "exposure
-time"), no data will result, because no data are (can be) both less
-than 160 seconds long and greater than 100 seconds long at the same
+time"), no data will result, because no data are (can be) both greater
+than 160 seconds long and less than 100 seconds long at the same
 time. However, "exposure time &gt; 160 or &lt; 100" works just fine
 ("&gt;160 or &lt;100" in the filter box for the column marked
 "exposure time").  
 
 <LI>If you impose nonsensical filters (like using a letter where a
-number should be, like "w1snr &lt; f") then it will let you know that
+number should be, like "w1snr &lt; f"), then it will let you know that
 something has gone really wrong, and let you go back to fix it.
 
 <LI>However, a filter like "ph_qual &lt; f" could be valid -- if the
@@ -483,7 +479,7 @@ left in, but so will "BAU", because alphabetically, BAU precedes BBB.
 <LI>If you impose filters from a plot, it can manifest as several
 filters on the catalog, e.g., one for each side of the square you have
 drawn on the plot. If you want to remove, say, just one of the four
-filters (rather than all of them by cancelling all filters), you can
+filters (rather than all of them by canceling all filters), you can
 do so from the table options pop-up. 
 
 <LI>If you want to copy all of the "current constraints", even if the
@@ -491,22 +487,15 @@ entire field is not visible to you, you can triple-click with your
 mouse to select the entire field, and then paste it into another
 field or application to see what it is.
 
-<LI>If you are choosing filters from a list of terms, cancelling those
-filters might not work the way it cavalierly seems like it should. If
-a down arrow appears next to the filter box, then a list of options
-you can select is available. Tick the boxes you want, and click
-"Apply" to apply the filter. Now, if you want to change the filter,
-click the down arrow, select different options, and click "Apply"
-again to re-impose the new filter. To remove the filter, you have to
-treat it like you would when applying a modified second filter --
-unselect the choices, or hit 'clear', and <strong>then hit Apply
-again</strong>. If you deselect the choices and then click elsewhere
-in the window without hitting clear, your actions are interpreted as 
-'cancel without doing anything' as opposed to 'impose the new filter 
-I just set' (which is 'cancel all filters'). When you are resetting the
-filter to be 'select nothing', it is treating that as a new filter
-setting, so you need to set up that filter and click 'Apply' in order
-for it to understand.
+<LI>If you are filtering from a list of terms (a down arrow appears
+next to the filter box), removing that filter works differently than
+you might expect. To apply the filter, check the boxes you want and
+click "Apply." To change it, click the down arrow, change your
+choices, and click "Apply" again. To remove the filter, uncheck all
+the choices (or click "Clear") and <strong>then click "Apply"
+again</strong>. If you uncheck the choices and just click elsewhere
+without clicking "Apply," the tool treats that as "cancel; don't
+change anything," and the old filter stays in place.
 
 <LI>If you impose filters from a plot, image, or table, you can cancel
 them from a plot, image, or table. That is, if you impose filters
@@ -516,9 +505,9 @@ filters are canceled at once. If you have filters imposed from
 multiple places, clicking on 'cancel filters' doesn't cancel just the
 filters imposed from that place; it cancels all of them. If you want
 to be able to reconstruct a complicated set of filters, though, you
-can add a column to your table that is pne of the preset functions --
+can add a column to your table that is one of the preset functions --
 set it to true if the row is filtered. Then you can cancel all your 
-filters at any time but you can easily recover the filtered data by
+filters at any time, but you can easily recover the filtered data by
 filtering on that one new column.
 
 
@@ -539,20 +528,20 @@ decimal degrees. From this drop-down, you can:
 <UL>
 <LI>Send the entire table to a TAP search
 <LI>Launch a TAP cone search at this position (<a
-href="othersearches.html#generaltap">more information about TAP
+href="tap.html#tap">more information about TAP
 searches</A>)
 <LI>Launch a NED search at this position with a 5 arcsecond radius (<a
 href="othersearches.html#nedcatalogs">more information about NED
 searches</A>)
-<LI>Launch a Simbad search at this position with a 5 arcsecond radius, and
+<LI>Launch a SIMBAD search at this position with a 5 arcsecond radius, and
 put the results in a table here in the tool
-<LI>Launch a Simbad search at this position with a 5 arcsecond radius, but
-start another browser window or tab at Simbad with the results
+<LI>Launch a SIMBAD search at this position with a 5 arcsecond radius, but
+start another browser window or tab at SIMBAD with the results
 <LI>Launch a FITS search at this position (at IRSA, via this tool)
 <LI>Launch a HiPS search at this position (via this tool)
 </UL>
 Any of these searches (except the search that launches another browser
-window with the Simbad results) places the search results into this
+window with the SIMBAD results) places the search results into this
 same tool.
 
 
@@ -561,11 +550,11 @@ same tool.
 <h3><A name="rowdetails">Row Details</A></h3>
 
 <img src="img/rowdetails.png"> This icon is not always available. When
-it is avaialble, when you click on it, a new pop-up window appears
+it is available, when you click on it, a new pop-up window appears
 with information about the row you have selected:<br>
 <img src="img/rowdetailspopup.png" style="border:3px solid gray"><P>
 
-In some tools, this content appears as additional tab elsewhere in the
+In some tools, this content appears elsewhere in the
 tool (not in the table pane, but often viewable at the same time as
 the table itself), as an additional tab called "Details." <P>
 
@@ -649,17 +638,16 @@ height="10"></A>, which is basically ASCII text with headers
 explaining the type of data in  each column, separated by vertical
 bars. <P>
 
-Other formats include comma-separated values (csv, suitable for, e.g.,
-Excel), tab-separated values (tsv), and three different versions of <A
-href="http://www.ivoa.net/documents/VOTable/" target="_blank">VO
-tables <img src="img/jumpout.jpg" height="10"></A>. You can save the
-file in <a href="https://parquet.apache.org/">parquet file format <img
+Other formats include comma-separated values (CSV, suitable for, e.g.,
+Excel), tab-separated values (TSV), and three different versions of <A
+href="http://www.ivoa.net/documents/VOTable/" target="_blank">VOTables <img src="img/jumpout.jpg" height="10"></A>. You can save the
+file in <a href="https://parquet.apache.org/">Apache Parquet file format <img
 src="img/jumpout.jpg" height="10"></A>, which is a highly efficient,
 compressed, column-oriented format for tabular data that has been
-adopted by many recent wide area survey projects. You can also save
+adopted by many recent wide-area survey projects. You can also save
 the file in <a href="http://ds9.si.edu/doc/ref/region.html"
-target="_blank">DS9 Regions file format <img src="img/jumpout.jpg"
-height="10"></A>. The advantage of saving it here as a regions file
+target="_blank">DS9 region file format <img src="img/jumpout.jpg"
+height="10"></A>. The advantage of saving it here as a region file
 (as opposed to from the <a
 href="visualization.html#saveimage">visualization</A>) is that this
 way, the entire catalog is guaranteed to be saved.<P>
@@ -701,7 +689,7 @@ showing that I have <a
 href="visualization.html#extraction">extracted</A> several lines,
 drills, and points from my images:<br> <img src="img/tabnav1.png"
 height="30"><br> On the far right of the collection of tabs, at the
-top right of the table pane, I have a downward pointing arrow. When I
+top right of the table pane, I have a downward-pointing arrow. When I
 click on this, I get a drop-down:<br> <img src="img/tabnav2.png"><br>
 This drop-down shows that the tab marked "Points 12" is in the
 foreground (it is shaded yellow) and this drop-down has a filter box

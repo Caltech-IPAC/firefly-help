@@ -41,15 +41,15 @@ There is a lot of terminology in this chapter to understand.
 target="_blank">Virtual Observatory <img src="img/jumpout.jpg"
 height="10"></A> 
 <LI>TAP = <a href="https://www.ivoa.net/documents/TAP/"
-target="_blank">table access protocol <img src="img/jumpout.jpg"
+target="_blank">Table Access Protocol <img src="img/jumpout.jpg"
 height="10"></A>. TAP services enable complex queries of tables using ADQL.  
 <LI>ADQL = <a href="https://www.ivoa.net/documents/ADQL/"
-target="_blank">astronomical data. 
-query language <img src="img/jumpout.jpg" height="10"></A>
+target="_blank">Astronomical Data
+Query Language <img src="img/jumpout.jpg" height="10"></A>
 <LI>ObsCore = <a href="https://www.ivoa.net/documents/ObsCore/"
-target="_blank">core components of Observation Data Model <img
+target="_blank">Observation Data Model Core Components <img
 src="img/jumpout.jpg" height="10"></A>
-<LI>Data model = A standard logical structure for a type of dataset;
+<LI>Data model = A standard logical structure for a type of data set;
 more flexible and general than a data format. 
 <LI>ObsTAP = TAP service that serves ObsCore tables
 </UL>
@@ -60,9 +60,9 @@ just provide a brief overview here in the context of this tool. <P>
 
 By using TAP and ObsTAP queries, you can use IRSA (or someone else's)
 services to talk to other archives that also comply with these
-standards, world-wide.<P>
+standards, worldwide.<P>
 
-Firefly can help you interactively create ADQL which then you can
+Firefly can help you interactively create ADQL, which you can then
 copy and use in your own code elsewhere.<P>
 
 
@@ -95,8 +95,8 @@ src="img/hidetap.png"><br> the "TAP Services:" button (show/hide) will
 reveal or conceal this top row.<P>
 
 The contents of the next section entitled "<strong>Tables</strong>"
-changes in response to which service you select. For IRSA services, as
-shown in the screen shot above, you first need to select the "project"
+change in response to which service you select. For IRSA services, as
+shown in the screenshot above, you first need to select the "project"
 (sometimes called "Table Collection" or "Schema" in other contexts).
 Then, having selected that, the drop-down menu on the right changes to
 reflect the tables available under that project. <a
@@ -105,12 +105,12 @@ this is below</A>.<P>
 
 The last major section is <strong>Enter Constraints</strong>.  On the
 <em>left</em>, you can impose a variety of constraints, sorted by
-type. In addition to selecting the tickbox indicating that you wish to
-impose a particular kind of constraints, you need to specify which
+type. In addition to checking the box indicating that you wish to
+impose a particular kind of constraint, you need to specify which
 columns should be used for those constraints. <a
 href="#moreconstraints">More information on these constraints is
 below.</A>  On the <em>right</em> is a list of the columns in the
-selected table, with tickboxes to indicate which columns will be
+selected table, with checkboxes to indicate which columns will be
 returned. You can also set constraints on the columns from here,
 following the <a href="tables.html#filters">same filter rules as for
 any tables here</A>. Above this section of the screen, there is an
@@ -137,8 +137,8 @@ results if you try to search by position.
 you have selected all of the columns.
 <LI>There is a maximum number of returned rows at the bottom. If you
 are anticipating more than this number of rows, increase this number!
-<LI>You can set the title of the returned table (e.g., what it will
-use in the tab that it shows in the tool or in the job monitor) by
+<LI>You can set the title of the returned table (i.e., what it will
+use in the tab that it shows in the tool or in the Job Monitor) by
 clicking on the 'pencil' icon at the bottom in the center next to
 "Title" to change the title. (Once you change it, all subsequent
 searches you make will still have that same title.)
@@ -157,7 +157,7 @@ the specific table you'd like to search out of that project. <P>
 
 For VizieR's services in particular, because there are so many tables,
 the tool will give you a slightly different interface under the
-"Tables" section of the window. Here is the default Vizier choices as
+"Tables" section of the window. Here are the default VizieR choices as
 of this writing:<br>
 <img src="img/viziertap1.png" width="75%" style="border:3px solid
 gray"><br>
@@ -166,7 +166,7 @@ Switching to tables associated with journal articles, far more tables
 are available:<br>
 <img src="img/viziertap2.png" width="75%" style="border:3px solid
 gray"><br>
-Now, if you click on the second tier menu (J/AJ/100/1091/table9), you
+Now, if you click on the second-tier menu (J/AJ/100/1091/table9), you
 get a pop-up, which is another Firefly <a href="tables.html">table</A>
 like any other in this tool, so it's searchable and sortable:<br>
 <img src="img/viziertap3.png" width="75%" style="border:3px solid
@@ -176,6 +176,7 @@ interested, such as those associated with papers by Massey, as
 shown. Select the table that you want to search, and then continue to
 specify the rest of your search, just as described below.<P>
 
+<a name="obstap"></a>
 There is a "Use Image Search (ObsTAP)" toggle switch up in the
 "Tables" section. If you toggle that, you have different tables
 available to you.  An ObsCore search is technically a subcategory of a
@@ -219,12 +220,12 @@ resolution options as in any other search in this tool.</td></tr></table>
 </td><td>
 And, this is what it looks like when you do a <strong>single target polygon
 search</strong>. The search areas here (visible, selection, and
-custom) are the same as when you do a polygon search on <a
+custom) are the same as when you do a polygon search on a <a
 href="catalogs.html">catalog</A> -- that is, you can select whether
 you want the catalog request to match the entire area of the image you
 have selected ("image"), or just the portion of the image you can see
 in the current view ("visible"), or your own ("custom") area. The list
-of vertices in the coordinates box are in decimal RA and Dec in
+of vertices in the coordinates box is in decimal RA and Dec in
 degrees. You must enter at least 3 and at most 15 vertices, separated
 by a comma. <P>
 
@@ -248,7 +249,7 @@ href="upload.html#catalogs">catalogs from disk</A>.
 style="border:3px solid gray"></td><td> After you find your file with
 your listed positions and upload it, the tool attempts to guess which
 two columns are the position columns. In this example, it has
-(correctly) guessed that the position columns are "ra" and "dec". If
+(correctly) guessed that the position columns are "ra" and "dec." If
 it guesses wrong, or can't figure it out, you can help it along by
 clicking on the down-arrow to 'expand' that part of the panel and
 selecting the two coordinate columns to use.  </td></tr></table><P>
@@ -373,7 +374,7 @@ src="img/enterconstraints-location1.png" width="500" style="border:3px solid gra
 <td>This panel provides a way to constrain the location of your
 search. Here, it is a single object search, which works just like it
 does above, including the <a href="target.html#interactivetarget">interactive
-target refinement</A> via the bullsye icon. You can also upload a
+target refinement</A> via the bullseye icon. You can also upload a
 list of targets by selecting "multi-object" -- it brings up the same
 pop-up as above, from which you can load a table from disk ("Upload
 tables" tab) or select one of the tables you have already loaded into
@@ -437,7 +438,7 @@ overlapping a specified wavelength range.
 On the far right of the top row, there is a slider that is, 
 by default, set to "UI-assisted", as opposed to "Edit
 ADQL". Especially when starting out, UI-assisted is easier.  By using
-the UI assisted" option, you can select pre-defined options and have
+the "UI-assisted" option, you can select pre-defined options and have
 the interface construct the query in ADQL. Alternatively, if you are
 already fluent in ADQL, you can select the second option, "Edit ADQL",
 to construct even more complex queries. <P>
@@ -458,10 +459,10 @@ or by clicking on "Populate and edit ADQL" after filling out the
 constraints. <P>
 
 You can select the schema from the left side of the screen. Each of
-the schemas can expand into viable tables and then columns within each
+the schemas can expand into available tables and then columns within each
 table via clicking on the "+" to the left of the folder icon. Click on
 a column name to have it appear at the location of your cursor in the
-ADQL query box on the right. If you have the tickbox checked on the
+ADQL query box on the right. If you have the box checked on the
 right that says "Insert fully-qualified column names", clicking on the
 column name inserts fully-qualified column names at your cursor
 location in the box. <P>

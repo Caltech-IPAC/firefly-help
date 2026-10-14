@@ -166,18 +166,18 @@ const toc_download = {
         {
             id: 'download.bgmon',
             title: 'Background Monitor',
-            href: 'firefly/download.html#bgmon',
+            href: 'firefly/jobmon.html',
         },
         {
             id: 'basics.bgmon',
             title: 'Background Monitor',
-            href: 'firefly/download.html#bgmon',
+            href: 'firefly/jobmon.html',
             hidden: true,
         },
         {
             id: 'basics.bgJobInfo',
             title: 'Background Job Info',
-            href: 'firefly/download.html#bgmon',
+            href: 'firefly/jobmon.html',
             hidden: true,
         },
     ]
@@ -262,7 +262,7 @@ const toc_images = {
         {
             id: 'images.adding',
             title: 'Adding new Images',
-            href: 'firefly/images.html#adding',
+            href: 'firefly/othersearches.html#adding',
         },
         {
             id: 'images.coverage',
@@ -447,7 +447,7 @@ const toc_visualization = {
         {
             id: 'visualization.hipsViewer',
             title: 'Specific HiPS Features',
-            href: 'firefly/visualization.html#hipsViewer',
+            href: 'firefly/visualization.html#fitsViewer',
             hidden: true,
         },
         {
@@ -458,7 +458,7 @@ const toc_visualization = {
         {
             id: 'visualization.changehips',
             title: 'Change HiPS',
-            href: 'firefly/visualization.html#changehips',
+            href: 'firefly/images.html#changehips',
             hidden: true,
         },
     ]
@@ -581,7 +581,7 @@ const toc_sia = {
         {
             id: 'sia.overview',
             title: 'SIA Overview',
-            href: 'firefly/siav2.html#overview',
+            href: 'firefly/siav2.html#sia',
         },
         {
             id: 'sia.constraints',
@@ -782,13 +782,23 @@ const toc_othersearches = {
             href: 'firefly/othersearches.html#3-color',
         },
         {
+            id: 'othersearches.adding',
+            title: 'Adding New Images',
+            href: 'firefly/othersearches.html#adding',
+        },
+        {
             id: 'irsa.siav2',
             title: 'SIAv2',
             href: 'firefly/othersearches.html#siav2',
         },
         {
+            id: 'othersearches.irsacatalogs',
+            title: 'IRSA Catalogs',
+            href: 'firefly/othersearches.html#irsacatalogs',
+        },
+        {
             id: 'othersearches.voscs',
-            title: 'VO SCS',
+            title: 'Catalogs (SCS)',
             href: 'firefly/othersearches.html#voscs',
         },
         {
@@ -915,6 +925,11 @@ export const toc_plots = {
             hidden: true,
         },
         {
+            id: 'plots.combining',
+            title: 'Combining Plots',
+            href: 'firefly/plots.html#combining',
+        },
+        {
             id: 'plots.example',
             title: 'Example Plots',
             href: 'firefly/plots.html#example',
@@ -943,11 +958,6 @@ export const toc_spectra = {
             href: 'firefly/spectra.html#plotting',
         },
         {
-            id: 'spectra.redshifting',
-            title: 'Redshifting Spectra',
-            href: 'firefly/spectra.html#redshifting',
-        },
-        {
             id: 'spectra.overplotting',
             title: 'Overplotting Spectra',
             href: 'firefly/spectra.html#overplotting',
@@ -956,6 +966,16 @@ export const toc_spectra = {
             id: 'spectra.combining',
             title: 'Combining Spectra',
             href: 'firefly/spectra.html#combining',
+        },
+        {
+            id: 'spectra.linelists',
+            title: 'Line Lists',
+            href: 'firefly/spectra.html#linelists',
+        },
+        {
+            id: 'spectra.redshifting',
+            title: 'Redshifting Spectra',
+            href: 'firefly/spectra.html#redshifting',
         },
     ]
 };

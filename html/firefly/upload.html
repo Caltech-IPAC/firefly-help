@@ -14,7 +14,7 @@
 <h2>Firefly: Upload</h2>
 
 You can upload images and tables and even other kinds of files (like
-ds9 region files and MOC files!) to Firefly. <P>
+DS9 region files and MOC files!) to Firefly. <P>
 
 <em>Contents of page/chapter:</em><br>
 +<A href="#intro">Introduction</A><br>
@@ -32,7 +32,7 @@ ds9 region files and MOC files!) to Firefly. <P>
 <h3><a name="intro">Introduction</A></h3>
 
 <img src="img/uploadtab.png"> The "Upload" tab is one of the tabs that
-can appear on the top of the screen. <P>
+can appear at the top of the screen. <P>
 
 When you click on that tab, you get this:<br>
 <img src="img/uploadscreen.png" width="100%" style="border:3px solid
@@ -50,10 +50,10 @@ height="10"></A>. (Note that you need to be <a href="user.html">logged
 in</A> to use the Workspace.)<p>
 
 
-<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</A></strong> 
+<strong><font color="orange">&#x26A0;</font> Tips and Troubleshooting</strong> 
 <UL>
 <LI>If you have multiple HDUs in your file, you can load a plane, and
-then come back to the the "Uploads" tab to pick another HDU
+then come back to the "Upload" tab to pick another HDU
 without having to upload it again. Or, you can load all of them at
 once.
 </UL>
@@ -65,8 +65,8 @@ once.
 
 
 You may upload a file from disk (you can use the system browser to
-identify the file, or drag-and-drop them into this window), from the
-web via a URL You can use the system browser to find your file
+identify the file, or drag and drop it into this window), from the
+web via a URL. You can use the system browser to find your file
 (accessible by clicking "Browse"), or drag-and-drop your file into
 this part of the browser window.<P>
 
@@ -87,7 +87,7 @@ that format.<P>
 
 If you want it recognized as a catalog, your table file MUST have RA
 and Dec values, and unless it is specified, it assumes J2000. (See
-also "<a href="#tabletips">tips and troubleshooting</A>", below.)<P>
+also "<a href="#tabletips">tips and troubleshooting</A>," below.)<P>
 
 You can add a "SYMBOL" parameter to change the shape
 (X, SQUARE, CROSS, EMP_CROSS, DIAMOND, DOT) of catalog marks, e.g.:
@@ -114,20 +114,20 @@ each column separated by commas.<P>
 
 <dt><strong>Tab-separated values (TSV) format (*.tsv)</strong>
 <DD> TSV format is sometimes accepted (or generated) by spreadsheet
-programs, and sometimes in tabular data downloaded from journal
-articles from the 90s. It is plain text, with values for each column
+programs, and sometimes found in tabular data downloaded from journal
+articles from the 1990s. It is plain text, with values for each column
 separated by tab characters. <P>
 
 <dt><strong>VOTable (*.vot)</strong>
 <dd>Virtual Observatory (VO) tables are a special case of XML tables.
-(All VO Tables are XML but not all XML are VO Tables.)
+(All VOTables are XML, but not all XML tables are VOTables.)
 It is a format developed by the International Virtual Observatory
 Alliance (more information <a
 href="https://www.ivoa.net/documents/VOTable/20191021/index.html"
 target="_blank">here <img src="img/jumpout.jpg" height="10"></A>). XML
-tables initially look to the human eye like it might be HTML, but they
+tables initially look to the human eye like they might be HTML, but they
 are easier to parse with code. There are packages in astropy that
-handle VO Tables.<P>
+handle VOTables.<P>
 
 <DT><strong>FITS files (*.fits)</strong>
 <DD> FITS tables can be loaded
@@ -144,7 +144,7 @@ href="images.html">images</A> in this tool in general.<P>
 <Dd><a href="https://www.asdf-format.org/en/latest/">ASDF file format
 <img src="img/jumpout.jpg" height="10"></A> is an extensible and
 human-readable tree-based data structure for text and binary data that
-has been adopted by a few projects, namely JWST and Roman. There are
+has been adopted by a few projects, including JWST and Roman. There are
 packages in astropy that handle these files.<P>
 
 </dl>
@@ -159,7 +159,7 @@ Uploading a CSV file:<br>
 Uploading an IPAC table file:<br>
 <img src="img/catuploadex2.png" width="60%" style="border:3px solid gray"><P>
 
-Uploading an xml file:<br>
+Uploading an XML file:<br>
 <img src="img/catuploadex2.5.png" width="100%" style="border:3px solid gray"><P>
 
 The <a href="tables.html">tables</A> are then shown and, if <a
@@ -196,7 +196,7 @@ it just can't overlay things on images in that case.
 <img src="img/jumpout.jpg" height="10"></A> is a popular program for
 visualizing FITS files. It uses a file format for storing image
 overlays called region files. Firefly can write and read DS9
-region files. Usually, you would read regions files from the <a
+region files. Usually, you would read region files from the <a
 href="visualization.html#ds9regions">image toolbar</A>, but you can
 also upload region files via this upload tab. <P>
 
@@ -247,7 +247,7 @@ to interpret tables as <a href="spectra.html">spectra</A>.)<br>
 
 
 After you verify that the tool is reading your file correctly, and, if
-applicable, selected the HDU(s) you wish to load, click "Load" to load
+applicable, select the HDU(s) you wish to load, click "Load" to load
 the file into the tool.<P>
 
 
@@ -264,7 +264,7 @@ treat them as <a href="spectra.html">spectra</A>. Again, it will give
 you a preview of what it thinks you are uploading. <P>
 
 
-Uploading an IPAC tbl file that is a spectrum included, asking the tool to
+Uploading an IPAC tbl file that is a spectrum, and asking the tool to
 interpret the table as a spectrum:<br>
 <img src="img/catuploadexspec2.png" width="60%" style="border:3px solid gray"><P>
 
@@ -286,18 +286,18 @@ of files into this tool, and you can choose to view them as a table or
 as an overlay on HiPS files. <P>
 
 You can also load a MOC file <a
-href="visualization.html#hipsmenu">from the HiPS/MOC menu</A> once you
+href="images.html#upperleft">from the HiPS/MOC menu</A> once you
 have a HiPS image loaded.<P>
 
 
-A preview when uploading a MOC file :<br>
+A preview when uploading a MOC file:<br>
 <img src="img/catuploadmoc.png" width="60%" style="border:3px solid gray"><P>
 
 
 <hr width="50%">
 <h3><a name="datalink">Data Link Files</A></h3>
 
-A <A href="https://www.ivoa.net/documents/DataLink/"
+<A href="https://www.ivoa.net/documents/DataLink/"
 target="_blank">DataLink <img src="img/jumpout.jpg" height="10"></A>
 is a protocol developed by the International Virtual Observatory
 Alliance to specify more sophisticated linking of metadata and
@@ -310,7 +310,7 @@ this tool.<P>
 <hr width="50%">
 <h3><a name="uws">UWS Job Files</A></h3>
 
-A <A href="https://www.ivoa.net/documents/UWS/"
+<A href="https://www.ivoa.net/documents/UWS/"
 target="_blank">Universal Worker Service (UWS) Pattern 
 <img src="img/jumpout.jpg" height="10"></A>
 is a protocol developed by the International Virtual Observatory
