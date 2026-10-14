@@ -1,0 +1,19 @@
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+/* Light mode thumb */
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode thumb */
+.dark ::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* override rc-tree highlight color when in dark mode */
+.dark .rc-tree-node-content-wrapper.rc-tree-node-selected {
+    background-color: black;
+}

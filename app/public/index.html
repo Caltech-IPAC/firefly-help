@@ -13,6 +13,9 @@
       display: inline-flex;
       align-items: center;
     }
+    .dark .rc-tree-node-content-wrapper.rc-tree-node-selected {
+      background-color: black;
+    }
     #title {
       color: white;
       font-size: 25pt;
@@ -20,9 +23,9 @@
       text-shadow: 1px 1px 3px rgba(195,235,234, 0.79);
     }
   </style>
-  <body>
+  <body class="h-screen">
 
-    <div id="page-root">
+    <div id="page-root" class="flex flex-col h-full">
       <div id="banner">
         <img src="firefly/img/fftools-logo-offset-small-75x75.png">
         <div id="title">Firefly</div>
@@ -31,7 +34,7 @@
       <!--
         This HTML file is a template.  app-root is where the application with mount to.
       -->
-      <div id="app-root"></div>
+      <div id="app-root" class="flex flex-grow overflow-hidden"/>
     </div>
   </body>
 </html>
