@@ -394,6 +394,17 @@ const toc_visualization = {
             href: 'firefly/visualization.html#imageinfo',
         },
         {
+            id: 'visualization.withinfile',
+            title: 'Navigating Within a FITS File',
+            href: 'firefly/visualization.html#withinfile',
+        },
+        {
+            id: 'visualization.cubes',
+            title: 'Image Cubes: Stepping Through Planes',
+            href: 'firefly/visualization.html#cubes',
+            hidden: true,
+        },
+        {
             id: 'visualization.breakingout',
             title: 'Breaking Out of the Pane',
             href: 'firefly/visualization.html#breakingout',

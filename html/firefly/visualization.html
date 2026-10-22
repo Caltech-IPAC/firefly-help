@@ -31,6 +31,7 @@ in which you might encounter them in the window.<P>
 <em>Contents of page/chapter:</em><br>
 +<A href="#fitsViewer">FITS/HiPS Viewer</a><br>
 +<A href="#imageinfo">Image Information</a><br>
++<A href="#withinfile">Navigating Within a FITS File: HDUs and Planes (Cubes)</A><br>
 +<A href="#breakingout">Breaking Out of the Pane (and Going Back)</A><br>
 +<A href="#imagenavigation">Image Navigation</A><br>
 +<A href="#toolbar">Image Toolbar</a><br>
@@ -156,9 +157,17 @@ is from MIPS channel 3, which is 160 micron data; the field of view is
 far-ultraviolet (FUV) data, and the field of view is 32 arcseconds.
 <P>
 
-<img src="img/multiplanelabel.png"> Images can have multiple planes;
-the arrows allow you to page through the planes. (This is from the
-HerMES project and is Herschel SPIRE 250 micron data.)<P>
+If the file has more than one HDU or image plane, controls for stepping
+through them appear just above the label; see <a
+href="#withinfile">Navigating Within a FITS File</A> below.<P>
+
+The concept of <a href="images.html#coverage">coverage images</A> (and
+the issues unique to them) is covered in another section, but the
+basic interactions with them are the same as for any other images.
+They are, however, HiPS images. Choices of what you can do and what
+you can manipulate with HiPS images can be different than your choices
+for FITS images, but are largely the same as discussed in the rest of
+this chapter.<P>
 
 For HiPS images, the FOV is the angular size of the width of the
 HiPS viewer.  Even if the image as displayed is smaller than the
@@ -184,6 +193,74 @@ crosshair marker, sometimes called a "reticle." You can remove this
 below.</td></tr></table><P>
 
 
+
+&nbsp;<P>
+
+<hr width="50%">
+<H3><A NAME="withinfile">Navigating Within a FITS File: HDUs and Planes
+(Cubes)</A></H3>
+
+A single FITS file can contain more than one image. It can have
+multiple HDUs (header data units), and any image HDU can itself be a
+multi-plane data cube. (See the <a href="images.html#fits">Images
+section</A> for more on HDUs and planes.) The controls described here
+let you move around within one file. (To move among different images
+you have loaded, see <a href="#imagenavigation">Image Navigation</A>
+below.)<P>
+
+<strong>HDUs (Header Data Units)</strong><P>
+
+When a file has more than one HDU, an HDU control appears just above
+the image label:<br>
+<img src="img/imagelabel.png" align="middle"><br>
+Here, "HDU (#1): IMAGE" tells you which HDU you are viewing, including
+its name, if the file provides one, and "/ 5" tells you that there are
+5 image HDUs. You can step among the image HDUs by using the arrows
+(the "greater than" and "less than" symbols) next to the HDU label.
+When there are enough HDUs (as here), there is also a box in which you
+can type an HDU number, or use the small up and down arrows to change
+the number. When there are only a few HDUs, you get just the arrows and
+a count.<P>
+
+You can also navigate among the HDUs using the "File Contents" menu
+near the upper left of the image:<br> <img src="img/hdulist.png"
+style="border:3px solid gray"><br>
+This menu lists all of the HDUs in the file, including any tables.
+When it is set to "All Images in File" (the default), you get the HDU
+arrows described above.<P>
+
+<a name="cubes"></a><strong>Image Cubes (3-D FITS): Stepping Through
+the Planes</strong><P>
+
+You can interactively step through the individual planes of a 3-D FITS
+image cube (much like the Cube dialog in DS9). When the image HDU you
+are viewing has more than one plane, a "Plane" control appears to the
+right of the HDU control:<br>
+<img src="img/cubenav.png"><br>
+In this example, the file has 3 HDUs, each with 102 planes. The HDU
+control shows the first of the 3 HDUs, and the Plane control shows the
+first of the 102 planes, at 0.7530 &mu;m. To step through the planes:
+<UL>
+<LI>click on the arrows next to the "Plane" label to go to the
+previous or next plane, or
+<LI>type a plane number into the box to jump directly to that plane
+(or use the small up and down arrows in the box).
+</UL>
+As for HDUs, when there are only a few planes, you get just the arrows
+and a count. The HDU and Plane controls are independent: choose an
+HDU, and then step through the planes of that HDU. When the FITS header
+provides the information, the label tells you the wavelength (or name)
+of the current plane, as with the 0.7530 &mu;m plane here. Not every
+cube is a set of wavelengths, though; the planes can represent other
+things, and then they will not be labeled with wavelengths.<P>
+
+Currently, there is no automatic "play" or animation through the
+planes; you step through them yourself.<P>
+
+To get a "quick look" at the values at a given position through all
+of the planes of a cube (e.g., a spectrum), use the <a
+href="#extractshort">drill tool</A>; see the <a
+href="#extraction">Extraction Tools section</A> for more details.<P>
 
 &nbsp;<P>
 
