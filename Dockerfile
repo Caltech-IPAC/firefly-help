@@ -1,28 +1,36 @@
 
-FROM node:12.22.4-slim AS deps
-WORKDIR "/app"
+FROM gradle:8.10-jdk21-jammy AS deps
+
+RUN apt-get update \
+    && apt-get install -y htmldoc unzip wget \
+# use node v18.x. may not be available via apt-get
+    && curl -sL https://deb.nodesource.com/setup_18.x | bash -  \
+    && apt-get install -y nodejs \
+    && npm install yarn -g  \
+# cleanup
+    && rm -rf /var/lib/apt/lists/*;
+
+WORKDIR "/work"
 COPY ./app/package.json ./app/yarn.lock ./
 RUN yarn install --frozen-lockfile
 
-FROM gradle:4.10-jre-slim AS builder
-USER root
-RUN apt-get update \
-    && apt-get install -y curl htmldoc \
-    && curl -sL https://deb.nodesource.com/setup_12.x | bash -  \
-    && apt-get install -y nodejs \
-    && npm install yarn -g  \
-    && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /work
+FROM deps AS builder
 
 WORKDIR "/work"
-COPY ./buildScript ./buildScript
-COPY build.gradle settings.gradle ./
-COPY --from=deps /app/node_modules ./app/node_modules
+COPY . .
+COPY --from=deps /work/node_modules ./app/node_modules
 
 ENV GRADLE_USER_HOME=/work \
     GRADLE_OPTS="-Dorg.gradle.daemon=false -Dorg.gradle.internal.launcher.welcomeMessageEnabled=false"
 
+ARG target=build
+ARG env=dev
 
-ENTRYPOINT []
-CMD ["gradle", "tasks"]
-#CMD ["sleep", "30m"]
+RUN gradle -Penv=${env} ${target}
+
+
+FROM httpd:2.4-alpine
+
+RUN rm /usr/local/apache2/htdocs/index.html && mkdir /usr/local/apache2/htdocs/onlinehelp
+
+COPY --from=builder /work/build/ /usr/local/apache2/htdocs/onlinehelp/
