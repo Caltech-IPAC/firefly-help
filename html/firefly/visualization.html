@@ -1181,7 +1181,8 @@ use of locking. You can align FITS and HiPS images to each other. <P>
 <h3><a name="extraction">Extraction Tools</A></h3>
 
 Several tools allow you to extract information from images or image
-planes, but only for FITS (not HiPS) files. <strong>All of these
+planes, but only for FITS (and <a href="#hipsdebug">sometimes even
+HiPS</A>) files. <strong>All of these
 extraction tools are meant for quick-look assessments, not
 science-ready analyses.</strong> They don't do any pixel
 interpolation, for example.<P>
@@ -1402,6 +1403,14 @@ click on "End Extraction."<P>
 By default, the images should all be <a href="#wcs">WCS-matched</A>;
 i.e., move one and they all should move together.<P>
 
+<strong>Note that</strong> if these tools appear, you may also
+be able to perform the <a href="#extraction">other kinds of
+extractions</A> <em>on the HiPS image</em>. What this is doing is
+reaching down to the underlying FITS images, much like these "HiPS
+Debug" tools, and running the (drill, line, point) extractions on the
+underlying FITS files, just as described <a
+href="#extraction">above</A>, with all the corresponding caveats.<P>
+
 <strong><font color="orange">&#x26A0;</font>  Tips and
 Troubleshooting:</strong> 
 
@@ -1421,6 +1430,8 @@ be worse in some locations.
 back to the original archive and retrieve original FITS
 files.</strong>
 <LI>Positional uncertainties may be large. 
+<LI>For extractions, see all the <a href="#extraction">caveats
+above</A>, plus the caveats here.
 </UL>
 <P>
 
