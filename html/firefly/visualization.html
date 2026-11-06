@@ -31,7 +31,7 @@ in which you might encounter them in the window.<P>
 <em>Contents of page/chapter:</em><br>
 +<A href="#fitsViewer">FITS/HiPS Viewer</a><br>
 +<A href="#imageinfo">Image Information</a><br>
-+<A href="#withinfile">Navigating Within a FITS File: HDUs and Planes (Cubes)</A><br>
++<A href="#withinfile">Navigating Within a FITS (or HiPS) File: HDUs and Planes (Cubes)</A><br>
 +<A href="#breakingout">Breaking Out of the Pane (and Going Back)</A><br>
 +<A href="#imagenavigation">Image Navigation</A><br>
 +<A href="#toolbar">Image Toolbar</a><br>
@@ -159,7 +159,7 @@ far-ultraviolet (FUV) data, and the field of view is 32 arcseconds.
 
 If the file has more than one HDU or image plane, controls for stepping
 through them appear just above the label; see <a
-href="#withinfile">Navigating Within a FITS File</A> below.<P>
+href="#withinfile">Navigating Within a FITS (or HiPS) File</A> below.<P>
 
 The concept of <a href="images.html#coverage">coverage images</A> (and
 the issues unique to them) is covered in another section, but the
@@ -197,10 +197,10 @@ below.</td></tr></table><P>
 &nbsp;<P>
 
 <hr width="50%">
-<H3><A NAME="withinfile">Navigating Within a FITS File: HDUs and Planes
+<H3><A NAME="withinfile">Navigating Within a FITS (or HiPS) File: HDUs and Planes
 (Cubes)</A></H3>
 
-A single FITS file can contain more than one image. It can have
+A single FITS (or sometimes HiPS) file can contain more than one image. It can have
 multiple HDUs (header data units), and any image HDU can itself be a
 multi-plane data cube. (See the <a href="images.html#fits">Images
 section</A> for more on HDUs and planes.) The controls described here
@@ -229,15 +229,17 @@ This menu lists all of the HDUs in the file, including any tables.
 When it is set to "All Images in File" (the default), you get the HDU
 arrows described above.<P>
 
-<a name="cubes"></a><strong>Image Cubes (3-D FITS): Stepping Through
+<a name="cubes"></a><strong>Image Cubes (3-D FITS or HiPS): Stepping Through
 the Planes</strong><P>
 
 You can interactively step through the individual planes of a 3-D FITS
-image cube (much like the Cube dialog in DS9). When the image HDU you
-are viewing has more than one plane, a "Plane" control appears to the
-right of the HDU control:<br>
+or HiPS image cube (much like the Cube dialog in DS9). When the image (or image
+HDU) you are viewing has more than one plane, a "Plane" control
+appears. In this example, there are multiple HDUs and multiple
+planes, and the plane control appears to the right of the HDU
+control:<br>
 <img src="img/cubenav.png"><br>
-In this example, the file has 3 HDUs, each with 102 planes. The HDU
+Here, the file has 3 HDUs, each with 102 planes. The HDU
 control shows the first of the 3 HDUs, and the Plane control shows the
 first of the 102 planes, at 0.7530 &mu;m. To step through the planes:
 <UL>
@@ -248,7 +250,7 @@ previous or next plane, or
 </UL>
 As for HDUs, when there are only a few planes, you get just the arrows
 and a count. The HDU and Plane controls are independent: choose an
-HDU, and then step through the planes of that HDU. When the FITS header
+HDU, and then step through the planes of that HDU. When the FITS or HiPS header
 provides the information, the label tells you the wavelength (or name)
 of the current plane, as with the 0.7530 &mu;m plane here. Not every
 cube is a set of wavelengths, though; the planes can represent other

@@ -395,7 +395,7 @@ const toc_visualization = {
         },
         {
             id: 'visualization.withinfile',
-            title: 'Navigating Within a FITS File',
+            title: 'Navigating Within a FITS (or HiPS) File',
             href: 'firefly/visualization.html#withinfile',
         },
         {
