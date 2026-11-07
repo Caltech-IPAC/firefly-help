@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {App} from './App';
 import {create} from './toc/toc_creator';
+import 'tailwindcss/tailwind.css';
+import './help.css';
+
 
 
 const appName = process.env.REACT_APP_app_name;
